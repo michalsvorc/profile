@@ -1,0 +1,27 @@
+[user]
+  email = dev@michalsvorc.com
+  name = Michal Svorc
+[init]
+  defaultBranch = main
+[merge]
+  tool = vimdiff3
+[pull]
+  rebase = false
+[help]
+  autocorrect = 30
+[alias]
+  c = clone
+  cc = checkout
+  cm = commit
+  l = log
+  l1 = log -1 HEAD --stat
+  s = status
+[diff]
+  tool = vimdiff3
+[difftool]
+  prompt = false
+[tig "bind"]
+  status = P !git push origin
+  main = L !git pull origin
+[difftool "vimdiff3"]
+  path = nvim

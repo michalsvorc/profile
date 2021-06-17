@@ -1,0 +1,8 @@
+#===============================================================================
+# Colors
+#===============================================================================
+
+color cursor        black blue  bold
+color title-blur    black blue
+color title-focus   black blue  bold
+
