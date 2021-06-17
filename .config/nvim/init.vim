@@ -26,7 +26,7 @@ let mapleader=","
 
 "===============================================================================
 " # Plugins
-" Link: https://github.com/junegunn/vim-plug
+" Link: https://github.com/junegunn/vim-plug#neovim
 "===============================================================================
 
 call plug#begin('~/.config/nvim/plugged')
