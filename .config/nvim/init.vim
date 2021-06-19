@@ -10,7 +10,7 @@ endif
 " Ask before unsafe actions
 set confirm
 
-" Required: 
+" Required:
 filetype plugin indent on
 
 " Only set syntax highlighting once
@@ -22,7 +22,7 @@ endif
 nnoremap <c-z> <nop
 
 " Leader key
-let mapleader="," 
+let mapleader=","
 
 "===============================================================================
 " # System dependencies
@@ -45,7 +45,10 @@ Plug 'alvan/vim-closetag'       " https://github.com/alvan/vim-closetag
 Plug 'jiangmiao/auto-pairs'     " https://github.com/jiangmiao/auto-pairs
 Plug 'tpope/vim-surround'       " https://github.com/tpope/vim-surround
 Plug 'tpope/vim-repeat'         " https://github.com/tpope/vim-repeat
-Plug 'ap/vim-buftabline'
+Plug 'ap/vim-buftabline'        " https://github.com/ap/vim-buftabline
+
+Plug 'editorconfig/editorconfig-vim'
+"https://github.com/editorconfig/editorconfig-vim
 
 " Git
 Plug 'mhinz/vim-signify'   " https://github.com/mhinz/vim-signify
