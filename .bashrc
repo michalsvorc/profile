@@ -28,9 +28,9 @@ if [[ -e $_git_prompt_script ]]; then
   export GIT_PS1_SHOWUNTRACKEDFILES=true
   export GIT_PS1_SHOWUPSTREAM="auto"
 
-  PS1='\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[33m\]$(__git_ps1 "(%s) ")\[\e[34m\]\\$\[\e[m\] '
+  PS1='\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[33m\]$(__git_ps1 "(%s) ")\[\e[34m\]\$\[\e[m\] '
 else
-  PS1='\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w\ \[\e[34m\]\\$\[\e[m\] '
+  PS1='\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[34m\]\$\[\e[m\] '
   printf '%s not found\n' $_git_prompt_script
 fi
 
