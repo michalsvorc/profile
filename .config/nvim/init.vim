@@ -47,6 +47,9 @@ Plug 'tpope/vim-surround'       " https://github.com/tpope/vim-surround
 Plug 'tpope/vim-repeat'         " https://github.com/tpope/vim-repeat
 Plug 'ap/vim-buftabline'
 
+" Git
+Plug 'mhinz/vim-signify'   " https://github.com/mhinz/vim-signify
+
 " Syntax
 Plug 'ekalinin/Dockerfile.vim'  " https://github.com/ekalinin/Dockerfile.vim
 
@@ -175,21 +178,31 @@ endif
 " # Invisible characters
 " "extends" and "precedes" is when long lines are not wrapped
 "===============================================================================
+
 set list
 set listchars=tab:→\ ,extends:>,precedes:<
 set showbreak=↪
 set linebreak
 
 "===============================================================================
-" # Invisible characters
+" # Backup and swap files
 "===============================================================================
+
 set nobackup
 set nowb
 set noswapfile
 
 "===============================================================================
+" # Vimdiff
+"===============================================================================
+
+" Prevent opening files as RO in vimdiff
+set noro
+
+"===============================================================================
 " # Cursor line
 "===============================================================================
+
 set cursorline
 
 " Disable cursor line highlighting in Insert mode
@@ -202,6 +215,7 @@ augroup END
 "===============================================================================
 " # Theme
 "===============================================================================
+
 " Credit joshdick
 " Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 " Link: https://github.com/rakr/vim-one#true-color-support
