@@ -266,3 +266,9 @@ set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
 
+"===============================================================================
+" # Terminal emulator
+"===============================================================================
+
+" Map <Esc> to exit terminal-mode
+tnoremap <Esc> <C-\><C-n>
