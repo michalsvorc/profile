@@ -46,6 +46,7 @@ Plug 'jiangmiao/auto-pairs'     " https://github.com/jiangmiao/auto-pairs
 Plug 'tpope/vim-surround'       " https://github.com/tpope/vim-surround
 Plug 'tpope/vim-repeat'         " https://github.com/tpope/vim-repeat
 Plug 'ap/vim-buftabline'        " https://github.com/ap/vim-buftabline
+Plug 'wincent/ferret'           " https://github.com/wincent/ferret
 
 Plug 'editorconfig/editorconfig-vim'
 "https://github.com/editorconfig/editorconfig-vim
