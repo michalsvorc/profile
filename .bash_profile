@@ -11,9 +11,6 @@ fi
 # $PATH
 PATH="/home/share/bin:${PATH}"
 
-# $EDITOR
-EDITOR='/usr/bin/nvim'
-
 # Non $DISPLAY environment
 if [ -z "${DISPLAY}" ]; then
 
