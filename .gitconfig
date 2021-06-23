@@ -30,7 +30,6 @@
 
 [pager]
     diff = delta
-    log = delta
     reflog = delta
     show = delta
 
