@@ -48,7 +48,6 @@ Plug 'tpope/vim-repeat'         " https://github.com/tpope/vim-repeat
 Plug 'ap/vim-buftabline'        " https://github.com/ap/vim-buftabline
 Plug 'wincent/ferret'           " https://github.com/wincent/ferret
 Plug 'tpope/vim-commentary'     " https://github.com/tpope/vim-commentary
-Plug 'ms-jpq/chadtree'          " https://github.com/ms-jpq/chadtree
 
 Plug 'editorconfig/editorconfig-vim'
 "https://github.com/editorconfig/editorconfig-vim
@@ -276,10 +275,9 @@ set statusline+=\ %l:%c
 tnoremap <Esc> <C-\><C-n>
 
 "===============================================================================
-" # Plug 'ms-jpq/chadtree'
-" # https://github.com/ms-jpq/chadtree
+" # Plug 'francoiscabrol/ranger.vim'
+" Link: https://github.com/francoiscabrol/ranger.vim
 "===============================================================================
 
-let g:chadtree_settings = { "view": {"open_direction": "right", "width": 48}}
-
-nnoremap <Leader>e :CHADopen<CR>
+" open ranger when vim open a directory
+let g:ranger_replace_netrw = 1
