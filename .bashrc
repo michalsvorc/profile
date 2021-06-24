@@ -18,20 +18,21 @@ fi
 #===============================================================================
 
 # git-prompt integration
-_git_prompt_script='/usr/share/git/git-prompt.sh'
+git_prompt='/usr/share/git/git-prompt.sh'
+docker_env=$([[ -f '/.dockerenv' ]] && printf '(D) ')
 
-if [[ -e $_git_prompt_script ]]; then
-  source $_git_prompt_script
+if [[ -e $git_prompt ]]; then
+  source $git_prompt
 
   export GIT_PS1_SHOWCOLORHINTS=true
   export GIT_PS1_SHOWDIRTYSTATE=true
   export GIT_PS1_SHOWUNTRACKEDFILES=true
   export GIT_PS1_SHOWUPSTREAM="auto"
 
-  PS1='\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[33m\]$(__git_ps1 "(%s) ")\[\e[34m\]\$\[\e[m\] '
+  PS1='$docker_env\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[33m\]$(__git_ps1 "(%s) ")\[\e[34m\]\$\[\e[m\] '
 else
-  PS1='\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[34m\]\$\[\e[m\] '
-  printf '%s not found\n' $_git_prompt_script
+  PS1='$docker_env\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[34m\]\$\[\e[m\] '
+  printf '%s not found\n' $git_prompt
 fi
 
 #===============================================================================
@@ -58,25 +59,16 @@ alias rc-service='sudo rc-service'
 alias vim='nvim'
 
 #===============================================================================
-# Functions
-#===============================================================================
-
-# https://wiki.archlinux.org/title/SSH_keys#ssh-agent
-_ssh_agent() {
-  ssh-agent && eval $(ssh-agent)
-}
-
-#===============================================================================
 # Ranger file manager integration
 #===============================================================================
 
 ## Automatically change the directory in bash after closing ranger with ranger-cd
-_file='/opt/ranger/core/examples/shell_automatic_cd.sh'
+plugin='/opt/ranger/examples/shell_automatic_cd.sh'
 
-[[ -f $_file ]] && source $_file && alias ranger='ranger_cd'
+[[ -f $plugin ]] && source $plugin && alias ranger='ranger_cd'
 
 
 ## Change the prompt when you open a shell from inside ranger
-_file='/opt/ranger/core/examples/shell_subshell_notice.sh'
-[[ -f $_file ]] && source $_file
+plugin='/opt/ranger/examples/shell_subshell_notice.sh'
+[[ -f $plugin ]] && source $plugin
 
