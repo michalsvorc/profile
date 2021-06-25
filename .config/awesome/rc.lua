@@ -227,33 +227,73 @@ local tasklist_buttons = gears.table.join(
                 awful.button({ }, 4, function () awful.layout.inc( 1) end),
             awful.button({ }, 5, function () awful.layout.inc(-1) end)))
             -- Create a taglist widget
-            s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, taglist_buttons)
+            s.mytaglist = awful.widget.taglist {
+              screen = s,
+              filter = awful.widget.taglist.filter.all,
+              layout = wibox.layout.fixed.vertical,
+              buttons = taglist_buttons,
+              style = {
+                font = "Iosevka Nerd Font Mono"
+              },
+              widget_template = {
+              {
+                id     = 'text_role',
+                align  = "center",
+                widget = wibox.widget.textbox,
+              },
+              id     = 'background_role',
+              widget = wibox.container.background,
+                    -- Add support for hover colors and an index label
+              create_callback = function(self, c3, index, objects) --luacheck: no unused args
+                self:connect_signal('mouse::press', function()
+                  bg = darkblue
+                end)
+              end,
+
+              },
+            }
 
             -- Create a tasklist widget
-            s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons)
+            s.mytasklist = awful.widget.tasklist(s,awful.widget.tasklist.filter.currenttags, tasklist_buttons)
 
             -- Create the wibox
-            s.mywibox = awful.wibar({ position = "bottom", screen = s })
+            s.mywibox = awful.wibar({ position = "right", screen = s })
 
             -- Add widgets to the wibox
             s.mywibox:setup {
-                layout = wibox.layout.align.horizontal,
+                layout = wibox.layout.align.vertical,
                 { -- Left widgets
-                    layout = wibox.layout.fixed.horizontal,
+                    layout = wibox.layout.fixed.vertical,
                     --mylauncher,
                     s.mytaglist,
                     s.mypromptbox,
                 },
-                s.mytasklist, -- Middle widget
+                { -- Middle widget
+                  s.mytasklist,
+                  direction = "east",
+                  widget = wibox.container.rotate,
+                },
                 { -- Right widgets
+                  {
                     layout = wibox.layout.fixed.horizontal,
+                    {
+                      s.mylayoutbox,
+                      direction = "west",
+                      widget = wibox.container.rotate,
+                    },
                     --mykeyboardlayout,
-                    wibox.widget.systray(),
                     mytextclock,
                     separator,
                     battery_widget,
                     separator,
-                    s.mylayoutbox,
+                    {
+                      wibox.widget.systray(),
+                      margins = 5,
+                      widget  = wibox.container.margin
+                    },
+                  },
+                  direction = "east",
+                  widget = wibox.container.rotate,
                 },
             }
         end)
