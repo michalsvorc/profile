@@ -2,27 +2,26 @@
 " # Initial settings
 "===============================================================================
 
-" Be iMproved
+" Use VIM settings rather than Vi settings
 if &compatible
   set nocompatible
 endif
 
+set encoding=utf-8
+
 " Ask before unsafe actions
 set confirm
-
-" Required: 
-filetype plugin indent on
 
 " Only set syntax highlighting once
 if !exists("g:syntax_on")
   syntax enable
 endif
 
-" Prevent CTRL+Z suspending Vim
+" Prevent CTRL+Z suspending the instance
 nnoremap <c-z> <nop
 
 " Leader key
-let mapleader="," 
+let mapleader=","
 
 "===============================================================================
 " # Buffers
@@ -80,7 +79,8 @@ set laststatus=2
 " Disable startup message
 set shortmess+=I
 
-" You will have bad experience for diagnostic messages when it's default 4000.
+" Having longer updatetime (default is 4000 ms) leads to noticeable
+" delays and poor user experience.
 set updatetime=300
 
 " don't give |ins-completion-menu| messages.

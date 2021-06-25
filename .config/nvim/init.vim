@@ -2,38 +2,37 @@
 " # Initial settings
 "===============================================================================
 
-" Be iMproved
+" Use VIM settings rather than Vi settings
 if &compatible
   set nocompatible
 endif
 
+set encoding=utf-8
+
 " Ask before unsafe actions
 set confirm
-
-" Required:
-filetype plugin indent on
 
 " Only set syntax highlighting once
 if !exists("g:syntax_on")
   syntax enable
 endif
 
-" Prevent CTRL+Z suspending Vim
+" Prevent CTRL+Z suspending the instance
 nnoremap <c-z> <nop
 
 " Leader key
 let mapleader=","
 
 "===============================================================================
+" # Plugins
+" Link: https://github.com/junegunn/vim-plug#neovim
+"
 " # System dependencies
 " Required: -
 " Optional: ripgrep
 "===============================================================================
 
-"===============================================================================
-" # Plugins
-" Link: https://github.com/junegunn/vim-plug#neovim
-"===============================================================================
+filetype plugin indent on
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -48,14 +47,14 @@ Plug 'tpope/vim-repeat'         " https://github.com/tpope/vim-repeat
 Plug 'ap/vim-buftabline'        " https://github.com/ap/vim-buftabline
 Plug 'wincent/ferret'           " https://github.com/wincent/ferret
 Plug 'tpope/vim-commentary'     " https://github.com/tpope/vim-commentary
-
 Plug 'editorconfig/editorconfig-vim'
-"https://github.com/editorconfig/editorconfig-vim
+  "https://github.com/editorconfig/editorconfig-vim
 
 " Git
 Plug 'mhinz/vim-signify'   " https://github.com/mhinz/vim-signify
 
 " Syntax
+" - Docker
 Plug 'ekalinin/Dockerfile.vim'  " https://github.com/ekalinin/Dockerfile.vim
 
 " Ranger file manager
@@ -121,7 +120,8 @@ set laststatus=2
 " Disable startup message
 set shortmess+=I
 
-" You will have bad experience for diagnostic messages when it's default 4000.
+" Having longer updatetime (default is 4000 ms) leads to noticeable
+" delays and poor user experience.
 set updatetime=300
 
 " don't give |ins-completion-menu| messages.
@@ -196,6 +196,7 @@ set linebreak
 set nobackup
 set nowb
 set noswapfile
+set nowritebackup
 
 "===============================================================================
 " # Vimdiff
