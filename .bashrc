@@ -18,7 +18,11 @@ fi
 #===============================================================================
 
 # $EDITOR
-export EDITOR='/usr/bin/nvim'
+export EDITOR=$(\
+  [[ -f '/usr/local/bin/nvim' ]] \
+  && printf '/usr/local/bin/nvim' \
+  || printf '/usr/bin/nvim' \
+)
 
 #===============================================================================
 # Command prompt
