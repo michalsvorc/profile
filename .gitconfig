@@ -28,18 +28,31 @@
 #===============================================================================
 
 [diff]
-  colorMoved = default
-  tool = vimdiff3
+  #tool = vimdiff3
+  tool = nvim_diff
 
 [difftool]
   prompt = false
+  colorMoved = default
+
+[difftool "nvim_diff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 #===============================================================================
 # Merge
 #===============================================================================
 
 [merge]
-  tool = vimdiff
+  #tool = vimdiff
+  tool = nvim_fugitive
+
+[mergetool]
+  prompt = false
+  keepBackup = false
+
+# https://github.com/tpope/vim-fugitive
+[mergetool "nvim_fugitive"]
+  cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 
 #===============================================================================
 # Aliases
