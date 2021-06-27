@@ -1,3 +1,7 @@
+#===============================================================================
+# Core
+#===============================================================================
+
 [user]
   email = dev@michalsvorc.com
   name = Michal Svorc
@@ -5,36 +9,8 @@
 [init]
   defaultBranch = main
 
-[merge]
-  tool = vimdiff3
-
 [pull]
   rebase = false
-
-[help]
-  autocorrect = 30
-
-[alias]
-  c = clone
-  cc = checkout
-  cm = commit
-  l = log
-  l1 = log -1 HEAD --stat
-  s = status
-
-[diff]
-  colorMoved = default
-  tool = vimdiff3
-
-[difftool]
-  prompt = false
-
-[tig "bind"]
-  status = P !git push origin
-  main = L !git pull origin
-
-[difftool "vimdiff3"]
-  path = nvim
 
 [pager]
   diff = delta
@@ -44,9 +20,57 @@
 [interactive]
   diffFilter = delta --color-only
 
+[help]
+  autocorrect = 30
+
+#===============================================================================
+# Diff
+#===============================================================================
+
+[diff]
+  colorMoved = default
+  tool = vimdiff3
+
+[difftool]
+  prompt = false
+
+#===============================================================================
+# Merge
+#===============================================================================
+
+[merge]
+  tool = vimdiff
+
+#===============================================================================
+# Aliases
+#===============================================================================
+
+[alias]
+  c = clone
+  cc = checkout
+  cm = commit
+  l = log
+  l1 = log -1 HEAD --stat
+  s = status
+
+#===============================================================================
+# tig
+# https://github.com/jonas/tig
+#===============================================================================
+
+[tig "bind"]
+  status = P !git push origin
+  main = L !git pull origin
+
+#===============================================================================
+# delta
+# https://github.com/dandavison/delta
+#===============================================================================
+
 [delta]
   features = side-by-side line-numbers decorations
   whitespace-error-style = 22 reverse
+  navigate = true
 
 [delta "decorations"]
   commit-decoration-style = bold yellow box ul
