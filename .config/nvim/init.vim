@@ -1,5 +1,6 @@
 "===============================================================================
-" # Initial settings
+" Version: NVIM v0.5.0-dev+1444-gc1120ad0e
+" Releases: https://github.com/neovim/neovim/releases
 "===============================================================================
 
 " Use VIM settings rather than Vi settings
@@ -25,43 +26,61 @@ let mapleader=","
 
 "===============================================================================
 " # Plugins
-" Link: https://github.com/junegunn/vim-plug#neovim
-"
-" # System dependencies
-" Required: -
-" Optional: ripgrep
+" https://github.com/junegunn/vim-plug#neovim
+" Dependencies: git
 "===============================================================================
 
 filetype plugin indent on
 
 call plug#begin('~/.config/nvim/plugged')
 
-" Theme
-Plug 'rakr/vim-one'             "https://github.com/rakr/vim-one
+"===============================================================================
+" ## Theme
+"===============================================================================
+" https://github.com/rakr/vim-one
+Plug 'rakr/vim-one'
 
-" General
-Plug 'alvan/vim-closetag'       " https://github.com/alvan/vim-closetag
-Plug 'jiangmiao/auto-pairs'     " https://github.com/jiangmiao/auto-pairs
-Plug 'tpope/vim-surround'       " https://github.com/tpope/vim-surround
-Plug 'tpope/vim-repeat'         " https://github.com/tpope/vim-repeat
-Plug 'ap/vim-buftabline'        " https://github.com/ap/vim-buftabline
-Plug 'wincent/ferret'           " https://github.com/wincent/ferret
-Plug 'tpope/vim-commentary'     " https://github.com/tpope/vim-commentary
+"===============================================================================
+" ## General
+"===============================================================================
+
+Plug 'alvan/vim-closetag'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'ap/vim-buftabline'
+Plug 'wincent/ferret'
+Plug 'tpope/vim-commentary'
 Plug 'editorconfig/editorconfig-vim'
-  "https://github.com/editorconfig/editorconfig-vim
 
-" Git
-Plug 'mhinz/vim-signify'   " https://github.com/mhinz/vim-signify
+"===============================================================================
+" ## Syntax
+"===============================================================================
 
-" Syntax
-" - Docker
-Plug 'ekalinin/Dockerfile.vim'  " https://github.com/ekalinin/Dockerfile.vim
+" Docker
+Plug 'ekalinin/Dockerfile.vim'
 
-" Ranger file manager
-Plug 'francoiscabrol/ranger.vim'  " https://github.com/francoiscabrol/ranger.vim
-Plug 'rbgrouleff/bclose.vim'      " https://github.com/rbgrouleff/bclose.vim
+"===============================================================================
+" ## Git
+" Dependencies: git
+"===============================================================================
 
-" LSP integration
+Plug 'mhinz/vim-signify'
+
+"===============================================================================
+" ## Ranger file manager
+" Dependencies: ranger
+"===============================================================================
+
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
+
+"===============================================================================
+" ## LSP integration
+" Dependencies: nodejs
+"===============================================================================
+
+" https://github.com/neoclide/coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Initialize plugin system
@@ -227,7 +246,7 @@ augroup END
 
 " Credit joshdick
 " Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-" Link: https://github.com/rakr/vim-one#true-color-support
+" https://github.com/rakr/vim-one#true-color-support
 if (has("nvim"))
   " For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -280,7 +299,7 @@ tnoremap <Esc> <C-\><C-n>
 
 "===============================================================================
 " # Plug 'francoiscabrol/ranger.vim'
-" Link: https://github.com/francoiscabrol/ranger.vim
+" https://github.com/francoiscabrol/ranger.vim
 "===============================================================================
 
 " open ranger when vim open a directory
@@ -288,7 +307,7 @@ let g:ranger_replace_netrw = 1
 
 "===============================================================================
 " # Plug 'neoclide/coc.nvim'
-" Link: https://github.com/neoclide/coc.nvim
+" https://github.com/neoclide/coc.nvim
 "===============================================================================
 
 " Give more space for displaying messages.
