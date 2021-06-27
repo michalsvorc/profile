@@ -1,14 +1,19 @@
 [user]
   email = dev@michalsvorc.com
   name = Michal Svorc
+
 [init]
   defaultBranch = main
+
 [merge]
   tool = vimdiff3
+
 [pull]
   rebase = false
+
 [help]
   autocorrect = 30
+
 [alias]
   c = clone
   cc = checkout
@@ -16,31 +21,34 @@
   l = log
   l1 = log -1 HEAD --stat
   s = status
+
 [diff]
   colorMoved = default
   tool = vimdiff3
+
 [difftool]
   prompt = false
+
 [tig "bind"]
   status = P !git push origin
   main = L !git pull origin
+
 [difftool "vimdiff3"]
   path = nvim
 
-
 [pager]
-    diff = delta
-    reflog = delta
-    show = delta
+  diff = delta
+  reflog = delta
+  show = delta
 
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 [delta]
-    features = side-by-side line-numbers decorations
-    whitespace-error-style = 22 reverse
+  features = side-by-side line-numbers decorations
+  whitespace-error-style = 22 reverse
 
 [delta "decorations"]
-    commit-decoration-style = bold yellow box ul
-    file-style = bold yellow ul
-    file-decoration-style = none
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
