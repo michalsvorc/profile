@@ -18,11 +18,7 @@ fi
 #===============================================================================
 
 # $EDITOR
-export EDITOR=$(
-[[ -e '/usr/local/bin/nvim' ]] \
-  && printf '/usr/local/bin/nvim' \
-  || printf '/usr/bin/nvim'
-)
+export EDITOR='/usr/local/bin/nvim'
 
 #===============================================================================
 # Command prompt
@@ -68,7 +64,7 @@ alias cryptsetup='sudo cryptsetup'
 alias rc-service='sudo rc-service'
 
 # Remap
-alias vim='nvim'
+alias vim=$EDITOR
 
 #===============================================================================
 # Ranger file manager integration
