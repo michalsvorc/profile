@@ -29,20 +29,22 @@ export EDITOR=$(
 #===============================================================================
 
 # git-prompt integration
-git_prompt='/usr/share/git/git-prompt.sh'
+git_prompt_dir=$(
+[[ -e '/usr/share/git' ]] \
+  && printf '/usr/share/git' \
+  || printf "${HOME}/.config/git"
+)
 
-if [[ -e $git_prompt ]]; then
-  source $git_prompt
-
-  export GIT_PS1_SHOWCOLORHINTS=true
-  export GIT_PS1_SHOWDIRTYSTATE=true
-  export GIT_PS1_SHOWUNTRACKEDFILES=true
-  export GIT_PS1_SHOWUPSTREAM="auto"
+if [[ -e "${git_prompt_dir}/git-prompt.sh" ]]; then
+  source "${git_prompt_dir}/git-prompt.sh" \
+  && export GIT_PS1_SHOWCOLORHINTS=true \
+  && export GIT_PS1_SHOWDIRTYSTATE=true \
+  && export GIT_PS1_SHOWUNTRACKEDFILES=true \
+  && export GIT_PS1_SHOWUPSTREAM="auto"
 
   PS1='\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[33m\]$(__git_ps1 "(%s) ")\[\e[34m\]\$\[\e[m\] '
 else
   PS1='\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[34m\]\$\[\e[m\] '
-  printf '.bashrc: Git prompt script %s not found\n' $git_prompt
 fi
 
 #===============================================================================
