@@ -18,10 +18,10 @@ fi
 #===============================================================================
 
 # $EDITOR
-export EDITOR=$(\
-  [[ -f '/usr/local/bin/nvim' ]] \
+export EDITOR=$(
+[[ -e '/usr/local/bin/nvim' ]] \
   && printf '/usr/local/bin/nvim' \
-  || printf '/usr/bin/nvim' \
+  || printf '/usr/bin/nvim'
 )
 
 #===============================================================================
@@ -30,7 +30,6 @@ export EDITOR=$(\
 
 # git-prompt integration
 git_prompt='/usr/share/git/git-prompt.sh'
-docker_env=$([[ -f '/.dockerenv' ]] && printf '(D) ')
 
 if [[ -e $git_prompt ]]; then
   source $git_prompt
@@ -40,10 +39,10 @@ if [[ -e $git_prompt ]]; then
   export GIT_PS1_SHOWUNTRACKEDFILES=true
   export GIT_PS1_SHOWUPSTREAM="auto"
 
-  PS1='$docker_env\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[33m\]$(__git_ps1 "(%s) ")\[\e[34m\]\$\[\e[m\] '
+  PS1='\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[33m\]$(__git_ps1 "(%s) ")\[\e[34m\]\$\[\e[m\] '
 else
-  PS1='$docker_env\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[34m\]\$\[\e[m\] '
-  printf '%s not found\n' $git_prompt
+  PS1='\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[34m\]\$\[\e[m\] '
+  printf '.bashrc: Git prompt script %s not found\n' $git_prompt
 fi
 
 #===============================================================================
@@ -73,13 +72,14 @@ alias vim='nvim'
 # Ranger file manager integration
 #===============================================================================
 
-## Automatically change the directory in bash after closing ranger with ranger-cd
-plugin='/opt/ranger/examples/shell_automatic_cd.sh'
+ranger_plugins_dir=$(
+[[ -e '/opt/ranger/plugins' ]] \
+  && printf '/opt/ranger/plugins' \
+  || printf "${HOME}/.config/ranger/plugins"
+)
 
-[[ -f $plugin ]] && source $plugin && alias ranger='ranger_cd'
+# Automatically change the directory in bash after closing ranger with ranger-cd
+source "${ranger_plugins_dir}/core/shell_automatic_cd.sh" && alias ranger='ranger_cd'
 
-
-## Change the prompt when you open a shell from inside ranger
-plugin='/opt/ranger/examples/shell_subshell_notice.sh'
-[[ -f $plugin ]] && source $plugin
-
+# Change the prompt when you open a shell from inside ranger
+source "${ranger_plugins_dir}/core/shell_subshell_notice.sh"
