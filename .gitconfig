@@ -59,12 +59,12 @@
 #===============================================================================
 
 [alias]
-  c = clone
-  cc = checkout
-  cm = commit
-  l = log
-  l1 = log -1 HEAD --stat
-  s = status
+  c   = clone
+  cc  = checkout
+  cm  = commit
+  l   = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  l1  = log -1 HEAD --stat
+  s   = status -s
 
 #===============================================================================
 # tig
