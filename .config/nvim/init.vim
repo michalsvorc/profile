@@ -75,9 +75,10 @@ Plug 'mhinz/vim-signify'
 Plug 'kyazdani42/nvim-web-devicons'
 
 "===============================================================================
-" ## File Explorer
+" ## File explorers
 "===============================================================================
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'mcchrish/nnn.vim'
 
 "===============================================================================
 " ## LSP integration

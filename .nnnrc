@@ -1,0 +1,27 @@
+#===============================================================================
+# nnn file manager
+# Link: https://github.com/jarun/nnn
+#===============================================================================
+
+# Bookmarks
+export NNN_BMS="p:$HOME/.local/profile;t:$HOME/tmp"
+
+# https://github.com/jarun/nnn/wiki/Usage
+export NNN_OPTS="deEHJPx" \
+  NNN_USE_EDITOR=1 \
+  NNN_ARCHIVE="\\.(7z|bz2|gz|tar|tgz|zip)$" \
+  NNN_COLORS='4321' \
+  NNN_FCOLORS='c1e2272e006033f7c6d6abc4' \
+  NNN_SEL="$HOME/tmp/.nnn_selection" \
+  NNN_FIFO="$HOME/tmp/.nnn_fifo"
+
+n () {
+    # Block nesting of nnn in subshells
+    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+        echo "nnn is already running"
+        return
+    fi
+
+    nnn "$@"
+}
+
