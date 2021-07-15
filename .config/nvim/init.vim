@@ -69,14 +69,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
 "===============================================================================
-" ## Ranger file manager
-" Dependencies: ranger
-"===============================================================================
-
-Plug 'francoiscabrol/ranger.vim'
-Plug 'rbgrouleff/bclose.vim'
-
-"===============================================================================
 " ## File icons
 " Dependencies: A patched font
 "===============================================================================
@@ -97,5 +89,3 @@ call plug#end()
 runtime! partials/core.vim
 runtime! partials/theme.vim
 runtime! partials/statusline.vim
-runtime! partials/plugins.vim
-
