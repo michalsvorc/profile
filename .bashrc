@@ -66,18 +66,3 @@ alias rc-service='sudo rc-service'
 # Remap
 alias vim=$EDITOR
 
-#===============================================================================
-# Ranger file manager integration
-#===============================================================================
-
-ranger_plugins_dir=$(
-[[ -e '/opt/ranger/plugins' ]] \
-  && printf '/opt/ranger/plugins' \
-  || printf "${HOME}/.config/ranger/plugins"
-)
-
-# Automatically change the directory in bash after closing ranger with ranger-cd
-source "${ranger_plugins_dir}/core/shell_automatic_cd.sh" && alias ranger='ranger_cd'
-
-# Change the prompt when you open a shell from inside ranger
-source "${ranger_plugins_dir}/core/shell_subshell_notice.sh"
