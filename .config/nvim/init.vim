@@ -75,6 +75,11 @@ Plug 'mhinz/vim-signify'
 Plug 'kyazdani42/nvim-web-devicons'
 
 "===============================================================================
+" ## File Explorer
+"===============================================================================
+Plug 'kyazdani42/nvim-tree.lua'
+
+"===============================================================================
 " ## LSP integration
 " Dependencies: nodejs
 "===============================================================================
@@ -83,9 +88,10 @@ Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 "===============================================================================
-" # Load partials
+" # Load partials and plugins
 "===============================================================================
 
 runtime! partials/core.vim
 runtime! partials/theme.vim
 runtime! partials/statusline.vim
+runtime! plugins/nvim-tree-lua.vim
