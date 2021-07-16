@@ -90,11 +90,11 @@ Plug 'mcchrish/nnn.vim'
 call plug#end()
 
 "===============================================================================
-" # Load partials and plugins
+" # Load partials
 "===============================================================================
 
 runtime! partials/core.vim
 runtime! partials/theme.vim
 runtime! partials/statusline.vim
-runtime! plugins/nvim-tree-lua.vim
-runtime! plugins/zen-mode.vim
+runtime! partials/plugins/nvim-tree-lua.vim
+runtime! partials/plugins/zen-mode.vim
