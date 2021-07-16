@@ -52,6 +52,7 @@ Plug 'ap/vim-buftabline'
 Plug 'wincent/ferret'
 Plug 'tpope/vim-commentary'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'folke/zen-mode.nvim'
 
 "===============================================================================
 " ## Syntax
@@ -96,3 +97,4 @@ runtime! partials/core.vim
 runtime! partials/theme.vim
 runtime! partials/statusline.vim
 runtime! plugins/nvim-tree-lua.vim
+runtime! plugins/zen-mode.vim
