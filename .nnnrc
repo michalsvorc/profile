@@ -1,27 +1,43 @@
 #===============================================================================
 # nnn file manager
-# Link: https://github.com/jarun/nnn
+# Link:   https://github.com/jarun/nnn
+# Usage:  https://github.com/jarun/nnn/wiki/Usage
 #===============================================================================
+
+# nnn file directory
+nnn_dir=$(
+  [ -e "$HOME/tmp/" ] \
+  && printf "$HOME/tmp/nnn" \
+  || printf "$HOME/.config/nnn"
+)
+
+mkdir -p $nnn_dir
 
 # Bookmarks
 export NNN_BMS="p:$HOME/.local/profile;t:$HOME/tmp"
 
-# https://github.com/jarun/nnn/wiki/Usage
-export NNN_OPTS="deEHJPx" \
-  NNN_USE_EDITOR=1 \
+export NNN_OPTS="acdEHJPx" \
   NNN_ARCHIVE="\\.(7z|bz2|gz|tar|tgz|zip)$" \
   NNN_COLORS='4321' \
   NNN_FCOLORS='c1e2272e006033f7c6d6abc4' \
-  NNN_SEL="$HOME/tmp/.nnn_selection" \
-  NNN_FIFO="$HOME/tmp/.nnn_fifo"
+  NNN_OPENER=$EDITOR
+
+export NNN_SEL="$nnn_dir/.selection" \
+  NNN_FIFO="$nnn_dir/.fifo"
 
 n () {
-    # Block nesting of nnn in subshells
-    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-        echo "nnn is already running"
-        return
-    fi
+  # Block nesting of nnn in subshells
+  if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+    echo "nnn is already running"
+    return
+  fi
 
-    nnn "$@"
+  # Unmask ^Q (, ^V etc.)
+  #stty start undef
+  #stty stop undef
+  #stty lwrap undef
+  #stty lnext undef
+
+  nnn "$@"
 }
 
