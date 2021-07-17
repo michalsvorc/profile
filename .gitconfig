@@ -12,14 +12,6 @@
 [pull]
   rebase = false
 
-[pager]
-  diff = delta
-  reflog = delta
-  show = delta
-
-[interactive]
-  diffFilter = delta --color-only
-
 [help]
   autocorrect = 30
 
@@ -75,17 +67,3 @@
   status = P !git push origin
   main = L !git pull origin
 
-#===============================================================================
-# delta
-# https://github.com/dandavison/delta
-#===============================================================================
-
-[delta]
-  features = side-by-side line-numbers decorations
-  whitespace-error-style = 22 reverse
-  navigate = true
-
-[delta "decorations"]
-  commit-decoration-style = bold yellow box ul
-  file-style = bold yellow ul
-  file-decoration-style = none
