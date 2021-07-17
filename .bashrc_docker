@@ -21,7 +21,10 @@ source "${HOME}/.local/profile/.bashrc"
 #===============================================================================
 
 # $EDITOR
-export EDITOR="${HOME}/bin/nvim"
+export EDITOR="nvim"
+
+# $PATH
+export PATH="${PATH}:$HOME/bin"
 
 #===============================================================================
 # Command prompt
