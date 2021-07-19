@@ -1,75 +1,28 @@
-# /etc/skel/.bashrc
-#
-# This file is sourced by all *interactive* bash shells on startup,
-# including some apparently interactive shells such as scp and rcp
-# that can't tolerate any output.  So make sure this doesn't display
-# anything or bad things will happen !
-
-# Test for an interactive shell.  There is no need to set anything
-# past this point for scp and rcp, and it's important to refrain from
-# outputting anything in those cases.
-if [[ $- != *i* ]] ; then
-  # Shell is non-interactive.  Be done now!
-  return
-fi
+# Bash shell configuration
 
 #===============================================================================
-# Settings
+# Source partials
 #===============================================================================
 
-# vi mode
-set -o vi
+shell_part_dir="$HOME/.local/profile/.config/shell"
 
-#===============================================================================
-# Exports
-#===============================================================================
+[ -f "$shell_part_dir/test_interactive.sh" ] && source "$shell_part_dir/test_interactive.sh"
 
-# $EDITOR
-export EDITOR='nvim'
+[ -f "$shell_part_dir/exports.sh" ] && source "$shell_part_dir/exports.sh"
+[ -f "$shell_part_dir/aliases.sh" ] && source "$shell_part_dir/aliases.sh"
 
 #===============================================================================
 # Command prompt
 #===============================================================================
 
-# git-prompt integration
-git_prompt_dir=$(
-[[ -e '/usr/share/git' ]] \
-  && printf '/usr/share/git' \
-  || printf "${HOME}/.config/git"
-)
+PS1='\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[33m\]\[\e[34m\]\$\[\e[m\] '
 
-if [[ -e "${git_prompt_dir}/git-prompt.sh" ]]; then
-  source "${git_prompt_dir}/git-prompt.sh" \
-  && export GIT_PS1_SHOWCOLORHINTS=true \
-  && export GIT_PS1_SHOWDIRTYSTATE=true \
-  && export GIT_PS1_SHOWUNTRACKEDFILES=true \
-  && export GIT_PS1_SHOWUPSTREAM="auto"
-
-  PS1='\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[33m\]$(__git_ps1 "(%s) ")\[\e[34m\]\$\[\e[m\] '
-else
-  PS1='\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[34m\]\$\[\e[m\] '
-fi
+# Git prompt integration
+[ -f "$shell_part_dir/git_prompt.sh" ] && source "$shell_part_dir/git_prompt.sh"
 
 #===============================================================================
-# Aliases
+# Vi mode
 #===============================================================================
 
-# GNU
-alias grep='grep --color=always'
-alias less='less -r'
-alias ll='find -maxdepth 1 -printf "%y %m %n %u %g %T+\t%p %f\n"'
-alias ls='ls -alF --color=auto --group-directories-first'
-alias sensors='watch -n5 sensors -A'
-alias tree='tree --dirsfirst'
-
-# Sudo
-alias poweroff='sudo poweroff'
-alias reboot='sudo reboot'
-alias mount='sudo mount'
-alias umount='sudo umount'
-alias cryptsetup='sudo cryptsetup'
-alias rc-service='sudo rc-service'
-
-# Remap
-alias vim=$EDITOR
+set -o vi
 
