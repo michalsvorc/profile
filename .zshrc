@@ -93,5 +93,6 @@ bindkey '^e' edit-command-line
 # Highlighting should be sourced at the end.
 #===============================================================================
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source "$HOME/.local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" \
+  2>/dev/null
 
