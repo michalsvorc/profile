@@ -4,13 +4,12 @@
 #===============================================================================
 # Source shell partials
 #===============================================================================
+
 shell_part_dir="$HOME/.local/profile/.config/shell"
 
-[ -f "$shell_part_dir/test_interactive.sh" ] \
-  && source "$shell_part_dir/test_interactive.sh"
-
-[ -f "$shell_part_dir/exports.sh" ] && source "$shell_part_dir/exports.sh"
-[ -f "$shell_part_dir/aliases.sh" ] && source "$shell_part_dir/aliases.sh"
+source "$shell_part_dir/test_interactive.sh" # show warning if file is missing
+source "$shell_part_dir/exports.sh" 2>/dev/null
+source "$shell_part_dir/aliases.sh" 2>/dev/null
 
 #===============================================================================
 # Colors
@@ -26,7 +25,7 @@ PS1="%{$fg[yellow]%}%n@$(date +"%R:%S") %{$fg[blue]%}%~%{$reset_color%}$%b "
 
 # Git prompt integration
 setopt PROMPT_SUBST
-[ -f "$shell_part_dir/git_prompt.sh" ] && source "$shell_part_dir/git_prompt.sh"
+source "$shell_part_dir/git_prompt.sh" 2>/dev/null
 
 #===============================================================================
 # Settings
@@ -46,7 +45,7 @@ autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
-_comp_options+=(globdots)		# Include hidden files.
+_comp_options+=(globdots)		# Include hidden files
 
 #===============================================================================
 # Vi mode

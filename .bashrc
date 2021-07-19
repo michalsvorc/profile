@@ -6,10 +6,9 @@
 
 shell_part_dir="$HOME/.local/profile/.config/shell"
 
-[ -f "$shell_part_dir/test_interactive.sh" ] && source "$shell_part_dir/test_interactive.sh"
-
-[ -f "$shell_part_dir/exports.sh" ] && source "$shell_part_dir/exports.sh"
-[ -f "$shell_part_dir/aliases.sh" ] && source "$shell_part_dir/aliases.sh"
+source "$shell_part_dir/test_interactive.sh" # show warning if file is missing
+source "$shell_part_dir/exports.sh" 2>/dev/null
+source "$shell_part_dir/aliases.sh" 2>/dev/null
 
 #===============================================================================
 # Command prompt
