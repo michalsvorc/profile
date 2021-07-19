@@ -22,6 +22,10 @@ font:
     style: Bold Italic
   size: 12
 
+cursor:
+  style:
+    blinking: Never
+
 # Color schemes
 # @ink: https://github.com/alacritty/alacritty/wiki/Color-schemes
 # Tested: Sourcerer, Oxide , Tomorrow Night, Gruvbox dark
