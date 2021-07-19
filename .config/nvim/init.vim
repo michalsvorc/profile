@@ -79,7 +79,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 " ## File explorers
 "===============================================================================
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'mcchrish/nnn.vim'
 
 "===============================================================================
 " ## LSP integration

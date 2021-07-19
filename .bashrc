@@ -73,9 +73,3 @@ alias rc-service='sudo rc-service'
 # Remap
 alias vim=$EDITOR
 
-#===============================================================================
-# nnn file manager
-# Link: https://github.com/jarun/nnn
-#===============================================================================
-
-source "${HOME}/.local/profile/.nnnrc"
