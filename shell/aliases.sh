@@ -18,6 +18,6 @@ alias umount='sudo umount'
 alias cryptsetup='sudo cryptsetup'
 alias rc-service='sudo rc-service'
 
-# Remap
-alias vim=$EDITOR
+# Shortcuts
+alias e=$EDITOR
 
