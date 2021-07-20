@@ -3,7 +3,6 @@
 # Link: https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 #===============================================================================
 
-# git-prompt integration
 git_prompt_dir=$(
 [[ -e '/usr/share/git' ]] \
   && printf '/usr/share/git' \

@@ -1,14 +1,10 @@
-# Bash shell configuration
+# Bash configuration
 
 #===============================================================================
-# Source shell partials
+# Variables
 #===============================================================================
 
-shell_part_dir="$HOME/.local/profile/.config/shell"
-
-source "$shell_part_dir/test_interactive.sh" # show warning if file is missing
-source "$shell_part_dir/exports.sh" 2>/dev/null
-source "$shell_part_dir/aliases.sh" 2>/dev/null
+shell_partials_dir="$HOME/.local/profile/shell"
 
 #===============================================================================
 # Command prompt
@@ -17,15 +13,13 @@ source "$shell_part_dir/aliases.sh" 2>/dev/null
 PS1='\[\e[33m\]\u@$(date +"%R:%S") \[\e[34m\]\w \[\e[33m\]\[\e[34m\]\$\[\e[m\] '
 
 # Git prompt integration
-[ -f "$shell_part_dir/git_prompt.sh" ] && source "$shell_part_dir/git_prompt.sh"
+source "$shell_partials_dir/git_prompt.sh"
 
 #===============================================================================
 # Settings
 #===============================================================================
 
-# History
-HISTSIZE=10000
-SAVEHIST=10000
+# History file
 HISTFILE=~/.cache/bash_history
 
 #===============================================================================

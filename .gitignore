@@ -1,8 +1,8 @@
-/.config/awesome/plugins/
-/.config/awesome/plugins
-/.config/awesome/themes/
-/.config/awesome/themes
-/.config/coc/
-/.config/configstore/
-/.config/nvim/.netrwhist
-/.config/nvim/plugged/
+/config/awesome/plugins/
+/config/awesome/plugins
+/config/awesome/themes/
+/config/awesome/themes
+
+/config/nvim/.netrwhist
+/config/nvim/plugged/
+/config/nvim/plugged

@@ -1,15 +1,11 @@
-# ZSH shell configuration
+# Zsh configuration
 # Inspired by https://gist.github.com/LukeSmithxyz/e62f26e55ea8b0ed41a65912fbebbe52/
 
 #===============================================================================
-# Source shell partials
+# Variables
 #===============================================================================
 
-shell_part_dir="$HOME/.local/profile/.config/shell"
-
-source "$shell_part_dir/test_interactive.sh" # show warning if file is missing
-source "$shell_part_dir/exports.sh" 2>/dev/null
-source "$shell_part_dir/aliases.sh" 2>/dev/null
+shell_partials_dir="$HOME/.local/profile/shell"
 
 #===============================================================================
 # Colors
@@ -25,15 +21,13 @@ PS1="%{$fg[yellow]%}%n@$(date +"%R:%S") %{$fg[blue]%}%~%{$reset_color%}$%b "
 
 # Git prompt integration
 setopt PROMPT_SUBST
-source "$shell_part_dir/git_prompt.sh" 2>/dev/null
+source "$shell_partials_dir/git_prompt.sh" 2>/dev/null
 
 #===============================================================================
 # Settings
 #===============================================================================
 
-# History
-HISTSIZE=10000
-SAVEHIST=10000
+# History file
 HISTFILE=~/.cache/zsh_history
 
 #===============================================================================
