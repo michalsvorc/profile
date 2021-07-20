@@ -8,14 +8,3 @@ if [[ -f ~/.bashrc ]]; then
   . ~/.bashrc
 fi
 
-# Non $DISPLAY environment
-if [ -z "${DISPLAY}" ]; then
-
-  printf 'Login shell: %s, %s\n' 'Non $DISPLAY environment' "$(date)"
-
-  # X server initialization for non-root users
-  if [ "`tty`" = /dev/tty1 ] && [[ $EUID -ne 0 ]]; then
-    startx
-  fi
-fi;
-
