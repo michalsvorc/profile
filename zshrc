@@ -17,7 +17,7 @@ autoload -U colors && colors
 # Command prompt
 #===============================================================================
 
-PS1="%{$fg[yellow]%}%n@$(date +"%R:%S") %{$fg[blue]%}%~%{$reset_color%}$%b "
+PS1="%{$fg[yellow]%}%n@%m %{$fg[blue]%}%~%{$reset_color%} $%b "
 
 # Git prompt integration
 setopt PROMPT_SUBST
