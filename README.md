@@ -21,3 +21,13 @@ $ config=profile; ln -s "$HOME/.local/profile/$config" "$HOME/.z${config}"
 $ config=zshrc;   ln -s "$HOME/.local/profile/$config" "$HOME/.${config}"
 $ config=logout;  ln -s "$HOME/.local/profile/$config" "$HOME/.z${config}"
 ```
+
+#### zsh-syntax-highlighting
+
+Fish shell-like syntax highlighting for Zsh.
+
+```console
+$ mkdir -p "$HOME/.local/share/zsh/" \
+  ; git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+  "$HOME/.local/share/zsh/zsh-syntax-highlighting"
+```
