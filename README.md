@@ -22,7 +22,7 @@ $ config=zshrc;   ln -s "$HOME/.local/profile/$config" "$HOME/.${config}"
 $ config=logout;  ln -s "$HOME/.local/profile/$config" "$HOME/.z${config}"
 ```
 
-#### zsh-syntax-highlighting
+#### [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
 Fish shell-like syntax highlighting for Zsh.
 
@@ -34,7 +34,7 @@ $ mkdir -p "$HOME/.local/share/zsh/" \
 
 ## Tmux
 
-### Tmux Plugin Manager
+### [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
 
 ```console
 $ mkdir -p "$HOME/.local/share/tmux/" \
