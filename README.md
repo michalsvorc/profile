@@ -31,3 +31,14 @@ $ mkdir -p "$HOME/.local/share/zsh/" \
   ; git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
   "$HOME/.local/share/zsh/zsh-syntax-highlighting"
 ```
+
+## Tmux
+
+### Tmux Plugin Manager
+
+```console
+$ mkdir -p "$HOME/.local/share/tmux/" \
+  ; git clone https://github.com/tmux-plugins/tpm.git \
+  "$HOME/.local/share/tmux/tpm"
+```
+
