@@ -19,5 +19,5 @@ alias cryptsetup='sudo cryptsetup'
 alias rc-service='sudo rc-service'
 
 # Shortcuts
-alias e=$EDITOR
+alias edit=$EDITOR
 
