@@ -8,9 +8,6 @@ if [[ -f ~/.bashrc ]]; then
   . ~/.bashrc
 fi
 
-# $PATH
-PATH="/home/share/bin:${PATH}"
-
 # Non $DISPLAY environment
 if [ -z "${DISPLAY}" ]; then
 
