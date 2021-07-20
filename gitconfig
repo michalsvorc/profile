@@ -59,12 +59,3 @@
   l1  = log -1 HEAD --stat
   s   = status -s
 
-#===============================================================================
-# tig
-# https://github.com/jonas/tig
-#===============================================================================
-
-[tig "bind"]
-  status = P !git push origin
-  main = L !git pull origin
-
