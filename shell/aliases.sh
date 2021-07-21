@@ -5,10 +5,7 @@
 # GNU
 alias grep='grep --color=always'
 alias less='less -r'
-alias ll='find -maxdepth 1 -printf "%y %m %n %u %g %T+\t%p %f\n"'
-alias ls='ls -alF --color=auto --group-directories-first'
-alias sensors='watch -n5 sensors -A'
-alias tree='tree --dirsfirst'
+alias ls='exa --long --header --git --group-directories-first'
 
 # Sudo
 alias poweroff='sudo poweroff'
