@@ -71,19 +71,29 @@ Plug 'mhinz/vim-signify'
 
 "===============================================================================
 " ## File icons
-" Dependencies: A patched font
+" Dependencies: A patched system font
 "===============================================================================
+
 Plug 'kyazdani42/nvim-web-devicons'
 
 "===============================================================================
 " ## File explorers
 "===============================================================================
+
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'ptzz/lf.vim'
 
 "===============================================================================
 " ## LSP integration
 " Dependencies: nodejs
 "===============================================================================
+
+"===============================================================================
+" ## Terminal
+" Some plugins may depend on vim-floaterm, load it at the end
+"===============================================================================
+
+Plug 'voldikss/vim-floaterm'
 
 " Initialize plugin system
 call plug#end()
@@ -95,5 +105,8 @@ call plug#end()
 runtime! partials/core.vim
 runtime! partials/theme.vim
 runtime! partials/statusline.vim
+runtime! partials/plugins/lf-vim.vim
 runtime! partials/plugins/nvim-tree-lua.vim
+runtime! partials/plugins/vim-floaterm.vim
 runtime! partials/plugins/zen-mode.vim
+
