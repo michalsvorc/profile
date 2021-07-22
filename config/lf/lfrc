@@ -85,7 +85,7 @@ map t push :touch<space>
 #===============================================================================
 
 # Open in $EDITOR by default
-cmd open $$EDITOR "$f"
+cmd open $$EDITOR "$fx"
 
 # Create symlinks (soft / hard)
 # y (select for copy) and P to paste soft-link
