@@ -64,9 +64,8 @@ set scrolloff 10
 # Use enter for shell commands
 map <enter> shell
 
-# Execute current file (must be executable)
-map x $$f
-map X !$f
+# Delete
+map x delete
 
 #===============================================================================
 # File / directory creation
@@ -81,34 +80,8 @@ cmd touch %touch "$@"
 map t push :touch<space>
 
 #===============================================================================
-# Custom commands
+# Selection commands
 #===============================================================================
-
-# Open in $EDITOR by default
-cmd open $$EDITOR "$fx"
-
-# Create symlinks (soft / hard)
-# y (select for copy) and P to paste soft-link
-# d (select for cut) and P to paste hard-link
-cmd link %{{
-    set -- $(cat ~/.local/share/lf/files)
-    mode="$1"
-    shift
-    if [ "$#" -lt 1 ]; then
-        lf -remote "send $id echo no files to link"
-        exit 0
-    fi
-    case "$mode" in
-        # symbolically copy mode is indicating a soft link
-        copy) ln -sr -t . -- "$@";;
-        # while a move mode is indicating a hard link
-        move) ln -t . -- "$@";;
-    esac
-    rm ~/.local/share/lf/files
-    lf -remote "send clear"
-}}
-
-map P :link
 
 # Select all files in the current directory
 cmd select-files ${{
@@ -135,15 +108,10 @@ cmd select-dirs ${{
         xargs -d '\n' -r -I{} lf -remote "send $id toggle {}"
 }}
 
-# Create new folder with selected item(s)
-cmd select-newdir ${{
-    set -f
-    read newd
-    mkdir -- "$newd"
-    mv -- $fx "$newd"
-}}
-
+#===============================================================================
 # Bulk rename multiple files
+#===============================================================================
+
 cmd bulk-rename ${{
     old="$(mktemp)"
     new="$(mktemp)"
@@ -164,26 +132,32 @@ cmd bulk-rename ${{
     lf -remote "send $id unselect"
 }}
 
-# Paste with rsync, file backups and progress status
-cmd paste-rsync &{{
-    set -- $(cat ~/.local/share/lf/files)
-    mode="$1"
-    shift
-    case "$mode" in
-        copy)
-            rsync -av --ignore-existing --progress -- "$@" . |
-            stdbuf -i0 -o0 -e0 tr '\r' '\n' |
-            while IFS= read -r line; do
-                lf -remote "send $id echo $line"
-            done
-            ;;
-        move) mv -n -- "$@" .;;
-    esac
+#===============================================================================
+# Paste commands
+#===============================================================================
+
+# Paste overwrite
+cmd paste-overwrite %{{
+  load=$(cat ~/.local/share/lf/files)
+    mode=$(echo "$load" | sed -n '1p')
+    list=$(echo "$load" | sed '1d')
+    if [ $mode = 'copy' ]; then
+      cp -R $list .
+    elif [ $mode = 'move' ]; then
+      mv $list .
+    fi
     rm ~/.local/share/lf/files
-    lf -remote "send clear"
+    lf -remote 'send clear'
 }}
 
+map p
+map pp paste
+map po paste-overwrite
+
+#===============================================================================
 # Yank paths into your clipboard
+#===============================================================================
+
 cmd yank-dirname $dirname -- "$f" | head -c-1 | xclip -i -selection clipboard
 cmd yank-path $printf '%s' "$fx" | xclip -i -selection clipboard
 cmd yank-basename $basename -a -- $fx | head -c-1 | xclip -i -selection clipboard
@@ -206,5 +180,46 @@ cmd yank-basename-without-extension ${{
       }' |
       if [ -n "$fs" ]; then cat; else tr -d '\n'; fi |
       xclip -i -selection clipboard
+}}
+
+#===============================================================================
+# Create symlinks (soft / hard)
+#===============================================================================
+
+# y (select for copy) and P to paste soft-link
+# d (select for cut) and P to paste hard-link
+cmd link %{{
+    set -- $(cat ~/.local/share/lf/files)
+    mode="$1"
+    shift
+    if [ "$#" -lt 1 ]; then
+        lf -remote "send $id echo no files to link"
+        exit 0
+    fi
+    case "$mode" in
+        # symbolically copy mode is indicating a soft link
+        copy) ln -sr -t . -- "$@";;
+        # while a move mode is indicating a hard link
+        move) ln -t . -- "$@";;
+    esac
+    rm ~/.local/share/lf/files
+    lf -remote "send clear"
+}}
+
+map P :link
+
+#===============================================================================
+# Other Commands
+#===============================================================================
+
+# Open in $EDITOR by default
+cmd open $$EDITOR "$fx"
+
+# Create new folder with selected item(s)
+cmd select-newdir ${{
+    set -f
+    read newd
+    mkdir -- "$newd"
+    mv -- $fx "$newd"
 }}
 
