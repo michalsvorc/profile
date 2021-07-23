@@ -21,7 +21,7 @@ PS1="%{$fg[yellow]%}%n@%m %{$fg[blue]%}%~%{$reset_color%} $%b "
 
 # Git prompt integration
 setopt PROMPT_SUBST
-source "$shell_partials_dir/git_prompt.sh" 2>/dev/null
+source "$shell_partials_dir/git_prompt.sh"
 
 #===============================================================================
 # Settings
