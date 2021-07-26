@@ -5,7 +5,7 @@
 # GNU
 alias grep='grep --color=always'
 alias less='less -r'
-alias ls='exa --all --git --group-directories-first --icons --long'
+alias ls='exa --all --git --group --group-directories-first --icons --long'
 
 # Sudo
 alias poweroff='sudo poweroff'
