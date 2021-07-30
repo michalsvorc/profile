@@ -8,11 +8,18 @@ alias less='less -r'
 alias ls='exa --all --git --group --group-directories-first --icons --long'
 
 # Sudo
+alias cryptsetup='sudo cryptsetup'
+alias make='sudo make'
+alias mount='sudo mount'
 alias poweroff='sudo poweroff'
 alias reboot='sudo reboot'
-alias mount='sudo mount'
 alias umount='sudo umount'
-alias cryptsetup='sudo cryptsetup'
+
+# Sudo for Gentoo system commands
+alias efibootmgr='sudo efibootmgr'
+alias emaint='sudo emaint'
+alias emerge='sudo emerge'
+alias eselect='sudo eselect'
 alias rc-service='sudo rc-service'
 
 # Shortcuts
