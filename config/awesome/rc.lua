@@ -70,7 +70,7 @@ beautiful.init(awful.util.getdir("config") .. "/themes/custom/theme.lua")
 
 cmd_terminal='alacritty'
 cmd_browser='firefox'
-cmd_browser_dev='chromium'
+cmd_browser_dev='firefox-devedition'
 cmd_ide_editor='vscodium'
 cmd_screenlock=''
 cmd_printscreen=''
@@ -312,13 +312,7 @@ globalkeys = gears.table.join(
 awful.key({ modkey, }, "b", function () awful.spawn(cmd_browser) end,
 {description = "Web browser", group = "hotkeys"}),
 awful.key({ modkey, }, "d", function () awful.spawn(cmd_browser_dev) end,
-{description = "Web browser developer", group = "hotkeys"}),
-awful.key({ modkey, }, "c", function () awful.spawn(cmd_ide_editor) end,
-{description = "VS Code", group = "hotkeys"}),
-awful.key({ modkey, }, "l", function () awful.spawn(cmd_screenlock) end,
-{description = "Screen lock", group = "hotkeys"}),
-awful.key({ modkey, "Shift" }, "p", function () awful.spawn(cmd_printscreen) end,
-{description = "Take a screenshot", group = "hotkeys"}),
+{description = "Web browser - developer", group = "hotkeys"}),
 
 awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
 {description="show help", group="awesome"}),
