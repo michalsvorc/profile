@@ -16,7 +16,7 @@ source "$shell_partials_dir/test_interactive.sh"
 # Environment variables
 #===============================================================================
 
-export EDITOR='nvim'
+source "$shell_partials_dir/env_variables.sh"
 
 #===============================================================================
 # Aliases
