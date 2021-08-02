@@ -9,17 +9,17 @@ Clone the repository to `$HOME/.local/profile` and create softlinks in your `$HO
 ### Bash
 
 ```console
-$ config=profile; ln -s "$HOME/.local/profile/$config" "$HOME/.bash_${config}"
-$ config=bashrc;  ln -s "$HOME/.local/profile/$config" "$HOME/.${config}"
-$ config=logout;  ln -s "$HOME/.local/profile/$config" "$HOME/.bash_${config}"
+$ config=profile; ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.bash_${config}"
+$ config=bashrc;  ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.${config}"
+$ config=logout;  ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.bash_${config}"
 ```
 
 ### Zsh
 
 ```console
-$ config=profile; ln -s "$HOME/.local/profile/$config" "$HOME/.z${config}"
-$ config=zshrc;   ln -s "$HOME/.local/profile/$config" "$HOME/.${config}"
-$ config=logout;  ln -s "$HOME/.local/profile/$config" "$HOME/.z${config}"
+$ config=profile; ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.z${config}"
+$ config=zshrc;   ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.${config}"
+$ config=logout;  ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.z${config}"
 ```
 
 #### [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
