@@ -36,15 +36,14 @@
 
 [merge]
   #tool = vimdiff
-  tool = nvim_fugitive
+  tool = nvim_merge
 
 [mergetool]
   prompt = false
   keepBackup = false
 
-# https://github.com/tpope/vim-fugitive
-[mergetool "nvim_fugitive"]
-  cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+[mergetool "nvim_merge"]
+  cmd = "nvim -d \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
 
 #===============================================================================
 # Aliases
