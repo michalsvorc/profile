@@ -1,16 +1,10 @@
-# Default Bash-like shell configuration
+# Shared shell profile sourced by interactive and login shells
 
 #===============================================================================
 # Variables
 #===============================================================================
 
 shell_partials_dir="$HOME/.local/profile/shell"
-
-#===============================================================================
-# Initialization
-#===============================================================================
-
-source "$shell_partials_dir/test_interactive.sh"
 
 #===============================================================================
 # Environment variables
@@ -44,15 +38,8 @@ if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
 fi
 
 #===============================================================================
-# lf integration
+# lf configuration
 #===============================================================================
 
-lf_config_dir="$HOME/.config/lf"
-
-# Icons
-source "$lf_config_dir/icons.sh"
-
-# lf command for changing current directory
-source "$lf_config_dir/lfcd.sh"
-alias lf='lfcd'
+source "$shell_partials_dir/lf.sh"
 

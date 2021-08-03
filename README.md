@@ -9,7 +9,6 @@ Clone the repository to `$HOME/.local/profile` and create softlinks in your `$HO
 ### Bash
 
 ```console
-$ config=profile; ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.bash_${config}"
 $ config=bashrc;  ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.${config}"
 $ config=logout;  ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.bash_${config}"
 ```
@@ -17,7 +16,6 @@ $ config=logout;  ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.bash_${confi
 ### Zsh
 
 ```console
-$ config=profile; ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.z${config}"
 $ config=zshrc;   ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.${config}"
 $ config=logout;  ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.z${config}"
 ```
