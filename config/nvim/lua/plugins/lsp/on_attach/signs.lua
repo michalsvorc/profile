@@ -1,12 +1,13 @@
-local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+-- Diagnostics
+local diagnostics_signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
 
-for type, icon in pairs(signs) do
+for type, icon in pairs(diagnostics_signs) do
     local hl = "LspDiagnosticsSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- symbols for autocomplete
-local lsp_symbols = {
+-- Autocomplete
+local autocomplete_signs = {
     Class = "   (Class)",
     Color = "   (Color)",
     Constant = "   (Constant)",
@@ -34,7 +35,7 @@ local lsp_symbols = {
     TypeParameter = "   (TypeParameter)",
 }
 
-for kind, symbol in pairs(lsp_symbols) do
+for kind, symbol in pairs(autocomplete_signs) do
     local kinds = vim.lsp.protocol.CompletionItemKind
     local index = kinds[kind]
 
