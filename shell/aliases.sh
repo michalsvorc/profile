@@ -16,6 +16,7 @@ alias reboot='sudo reboot'
 alias umount='sudo umount'
 
 # Sudo for Gentoo system commands
+alias dispatch-conf='sudo dispatch-conf'
 alias efibootmgr='sudo efibootmgr'
 alias emaint='sudo emaint'
 alias emerge='sudo emerge'
