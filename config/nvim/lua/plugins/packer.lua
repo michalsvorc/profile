@@ -59,8 +59,8 @@ return require('packer').startup(function(use)
   -- Treesitter
   --- Dependencies: C++ compiler
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-  use {'p00f/nvim-ts-rainbow', requires = {'nvim-treesitter/nvim-treesitter'}}
-  use {'romgrk/nvim-treesitter-context', requires = {'nvim-treesitter/nvim-treesitter'}}
+  use {'p00f/nvim-ts-rainbow', requires = 'nvim-treesitter/nvim-treesitter'}
+  use {'romgrk/nvim-treesitter-context', requires = 'nvim-treesitter/nvim-treesitter'}
 
   -- Snippets
   use 'L3MON4D3/LuaSnip'
@@ -74,6 +74,10 @@ return require('packer').startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  }
 
   -- Git
   use {
@@ -83,7 +87,7 @@ return require('packer').startup(function(use)
       'sindrets/diffview.nvim'
     }
   }
-  use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+  use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
 
 
   -- General plugins
