@@ -1,4 +1,4 @@
---https://github.com/romgrk/barbar.nvim
+-- https://github.com/romgrk/barbar.nvim
 
 -- Keymap
 local opts = {noremap=false, silent=false}

@@ -13,18 +13,18 @@ lspconfig.bashls.setup{}
 --table.insert(servers, 'tsserver')
 --lspconfig.tsserver.setup{}
 
-local keymap = require('plugins.lsp.keymap')
-
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches.
--- Use an on_attach function to only map the keymap
+-- Use an on_attach function to only map other functions
 -- after the language server attaches to the current buffer.
+local on_attach = function(client, bufnr)
+  local keymap = require('plugins.lsp.keymap')(client, bufnr)
+  local lightbulb = require('plugins.lsp.lightbulb')
+end
+
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
-    on_attach = keymap,
+    on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
     }
   }
 end
-

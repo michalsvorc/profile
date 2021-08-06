@@ -78,6 +78,7 @@ return require('packer').startup(function(use)
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
   }
+  use 'kosayoda/nvim-lightbulb'
 
   -- Git
   use {
