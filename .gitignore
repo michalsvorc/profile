@@ -4,5 +4,5 @@
 /config/awesome/themes
 
 /config/nvim/.netrwhist
-/config/nvim/plugged/
-/config/nvim/plugged
+/config/nvim/plugin/
+/config/nvim/plugin

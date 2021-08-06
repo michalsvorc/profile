@@ -1,0 +1,18 @@
+-- Plugins
+require('plugins.barbar')
+require('plugins.compe')
+require('plugins.gitsigns')
+require('plugins.hlslens')
+require('plugins.lsp')
+require('plugins.lualine')
+require('plugins.indent-blankline')
+require('plugins.luasnip')
+require('plugins.neogit')
+require('plugins.numb')
+require('plugins.startify')
+require('plugins.telescope')
+require('plugins.toggleterm')
+require('plugins.tree')
+require('plugins.treesitter')
+require('plugins.zen-mode')
+
