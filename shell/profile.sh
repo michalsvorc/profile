@@ -1,16 +1,10 @@
 # Shared shell profile sourced by interactive and login shells
 
 #===============================================================================
-# Variables
+# Local variables
 #===============================================================================
 
-shell_partials_dir="$HOME/.local/profile/shell"
-
-#===============================================================================
-# Environment variables
-#===============================================================================
-
-source "$shell_partials_dir/env_variables.sh"
+local shell_partials_dir="$HOME/.local/profile/shell"
 
 #===============================================================================
 # Aliases
@@ -38,7 +32,7 @@ if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
 fi
 
 #===============================================================================
-# lf configuration
+# lf file explorer
 #===============================================================================
 
 source "$shell_partials_dir/lf.sh"

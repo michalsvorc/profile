@@ -1,16 +1,16 @@
 # Zsh configuration
 
 #===============================================================================
-# Variables
+# Local variables
 #===============================================================================
 
-shell_partials_dir="$HOME/.local/profile/shell"
+local shell_partials_dir="$HOME/.local/profile/shell"
 
 #===============================================================================
-# Shell profile
+# Shared shell profile
 #===============================================================================
 
-source "$shell_partials_dir/shell_profile.sh"
+source "$shell_partials_dir/profile.sh"
 
 #===============================================================================
 # Colors
