@@ -53,8 +53,6 @@ return require('packer').startup(function(use)
 
   -- Autocompletion
   use 'hrsh7th/nvim-compe'
-  use 'jiangmiao/auto-pairs'
-  use 'alvan/vim-closetag'
 
   -- Treesitter
   --- Dependencies: C++ compiler
