@@ -1,6 +1,7 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter
 
 require('nvim-treesitter.configs').setup {
+  ensure_installed = require('languages').treesitter,
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
