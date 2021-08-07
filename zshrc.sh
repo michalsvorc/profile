@@ -5,6 +5,7 @@
 #===============================================================================
 
 shell_partials_dir="$HOME/.local/profile/shell"
+zsh_plugins_dir="$HOME/.local/share/zsh"
 
 #===============================================================================
 # Shared shell profile
@@ -45,6 +46,10 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files
+
+# Replace zsh's default completion selection menu with fzf.
+# Link: https://github.com/Aloxaf/fzf-tab
+source "$zsh_plugins_dir/fzf-tab/fzf-tab.plugin.zsh"
 
 #===============================================================================
 # Vi mode

@@ -2,7 +2,6 @@
 require('plugins.barbar')
 require('plugins.compe')
 require('plugins.gitsigns')
-require('plugins.hlslens')
 require('plugins.lsp')
 require('plugins.lualine')
 require('plugins.indent-blankline')

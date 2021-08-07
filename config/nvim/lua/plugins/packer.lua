@@ -38,7 +38,6 @@ return require('packer').startup(function(use)
 
   -- Search
   use 'wincent/ferret'
-  use 'kevinhwang91/nvim-hlslens'
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
