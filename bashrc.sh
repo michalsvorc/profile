@@ -4,7 +4,7 @@
 # Local variables
 #===============================================================================
 
-local shell_partials_dir="$HOME/.local/profile/shell"
+shell_partials_dir="$HOME/.local/profile/shell"
 
 #===============================================================================
 # Shared shell profile
