@@ -28,7 +28,7 @@ return require('packer').startup(function(use)
   use 'rakr/vim-one'
 
   -- User interface
-  use 'romgrk/barbar.nvim'
+  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
   use 'hoob3rt/lualine.nvim'
   use 'jeffkreeftmeijer/vim-numbertoggle'
   use 'folke/zen-mode.nvim'
@@ -93,7 +93,6 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'
   use 'akinsho/nvim-toggleterm.lua'
   use 'tversteeg/registers.nvim'
-  use 'ap/vim-buftabline'
   use 'tpope/vim-commentary'
   use 'tpope/vim-repeat'
   use 'airblade/vim-rooter'

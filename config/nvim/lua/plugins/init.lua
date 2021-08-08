@@ -1,5 +1,5 @@
 -- Plugins
-require('plugins.barbar')
+require('plugins.bufferline')
 require('plugins.compe')
 require('plugins.gitsigns')
 require('plugins.lsp')
