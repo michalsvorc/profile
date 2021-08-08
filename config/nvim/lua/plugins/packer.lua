@@ -91,7 +91,6 @@ return require('packer').startup(function(use)
 
 
   -- General plugins
-  use 'lukas-reineke/indent-blankline.nvim'
   use 'akinsho/nvim-toggleterm.lua'
   use 'tversteeg/registers.nvim'
   use 'tpope/vim-commentary'
