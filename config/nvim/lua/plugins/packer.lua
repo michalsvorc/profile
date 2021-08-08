@@ -29,7 +29,7 @@ return require('packer').startup(function(use)
 
   -- User interface
   use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
-  use 'hoob3rt/lualine.nvim'
+  use {'hoob3rt/lualine.nvim', requires = 'nvim-lua/lsp-status.nvim'}
   use 'jeffkreeftmeijer/vim-numbertoggle'
   use 'folke/zen-mode.nvim'
 
