@@ -65,6 +65,7 @@ return require('packer').startup(function(use)
   use 'rafamadriz/friendly-snippets'
 
   -- Syntax
+  use 'andymass/vim-matchup'
   --- Editor config
   use 'editorconfig/editorconfig-vim'
   --- Docker
