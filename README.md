@@ -59,3 +59,8 @@ $ mkdir -p "$HOME/.local/share/tmux/" \
   "$HOME/.local/share/tmux/tpm"
 ```
 
+## Awesome WM
+
+Create softlinks for `plugins` and `themes` in `.config/plugins/awesome`.
+
+Point them to the directories with your awesome wm plugins and themes.
