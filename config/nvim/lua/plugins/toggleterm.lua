@@ -20,10 +20,10 @@ vim.api.nvim_set_keymap('n', '<leader>tv', ':ToggleTerm direction=vertical<CR>',
 vim.api.nvim_set_keymap('n', '<leader>tf', ':ToggleTerm direction=float<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>tw', ':ToggleTerm direction=window<CR>', opts)
 
--- Keymap insite terminal buffer.
+-- Keymap inside terminal buffer.
 function _G.set_terminal_keymaps()
   local opts = {noremap = true}
-  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<ESC><ESC>', [[<C-\><C-n>]], opts)
 end
 
 vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')
