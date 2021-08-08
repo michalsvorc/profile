@@ -13,6 +13,7 @@ require('plugins.startify')
 require('plugins.telescope')
 require('plugins.toggleterm')
 require('plugins.tree')
+require('plugins.trouble')
 require('plugins.treesitter')
 require('plugins.zen-mode')
 
