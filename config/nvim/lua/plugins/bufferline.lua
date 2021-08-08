@@ -25,24 +25,10 @@ require('bufferline').setup {
 -- Keymap
 local opts = {noremap=false, silent=false}
 
---- Move to previous/next.
 vim.api.nvim_set_keymap('n', '<A-k>', ':BufferLineCycleNext<CR>', opts)
 vim.api.nvim_set_keymap('n', '<A-j>', ':BufferLineCyclePrev<CR>', opts)
-
---- Re-order to previous/next.
 vim.api.nvim_set_keymap('n', '<C-A-k>', ':BufferLineMoveNext<CR>', opts)
 vim.api.nvim_set_keymap('n', '<C-A-j>', ':BufferLineMovePrev<CR>', opts)
-
---- Close buffer.
 vim.api.nvim_set_keymap('n', '<A-w>', ':bdelete!<CR>', opts)
-
---- Goto buffer in position.
-vim.api.nvim_set_keymap('n', '<A-1>', ':buffer 1<CR>', opts)
-vim.api.nvim_set_keymap('n', '<A-2>', ':buffer 2<CR>', opts)
-vim.api.nvim_set_keymap('n', '<A-3>', ':buffer 3<CR>', opts)
-vim.api.nvim_set_keymap('n', '<A-4>', ':buffer 4<CR>', opts)
-vim.api.nvim_set_keymap('n', '<A-5>', ':buffer 5<CR>', opts)
-vim.api.nvim_set_keymap('n', '<A-6>', ':buffer 6<CR>', opts)
-vim.api.nvim_set_keymap('n', '<A-7>', ':buffer 7<CR>', opts)
-vim.api.nvim_set_keymap('n', '<A-8>', ':buffer 8<CR>', opts)
-vim.api.nvim_set_keymap('n', '<A-9>', ':buffer 9<CR>', opts)
+vim.api.nvim_set_keymap('n', '<A-s>', ':BufferLinePick<CR>', opts)
+vim.api.nvim_set_keymap('n', '<A-x>', ':BufferLinePickClose<CR>', opts)
