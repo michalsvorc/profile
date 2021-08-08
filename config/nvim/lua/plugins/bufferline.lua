@@ -1,6 +1,7 @@
 -- https://github.com/akinsho/nvim-bufferline.lua
 
-vim.opt.termguicolors = true
+-- You need to be using termguicolors for this plugin to work,
+-- as it reads the hex gui color values of various highlight groups.
 
 require('bufferline').setup {
   options = {
