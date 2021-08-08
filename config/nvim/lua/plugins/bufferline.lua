@@ -1,13 +1,13 @@
 -- https://github.com/akinsho/nvim-bufferline.lua
 
+local icons = require('icons')
+
 -- You need to be using termguicolors for this plugin to work,
 -- as it reads the hex gui color values of various highlight groups.
-
 require('bufferline').setup {
   options = {
     numbers = "ordinal",
     number_style = "none",
-    diagnostics = "nvim_lsp",
     right_mouse_command = nil,
     left_mouse_command = nil,
     middle_mouse_command = nil,
@@ -19,6 +19,11 @@ require('bufferline').setup {
     always_show_bufferline = true,
     separator_style = "thin",
     enforce_regular_tabs = false,
+    diagnostics = "nvim_lsp",
+    diagnostics_indicator = function(count, level, diagnostics_dict, context)
+      local icon = level:match("error") and icons.Error or icons.Warning
+      return " " .. icon .. count
+    end,
   }
 }
 
