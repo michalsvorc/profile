@@ -46,6 +46,7 @@ return require('packer').startup(function(use)
     }
   }
   use 'nacro90/numb.nvim'
+  use 'kevinhwang91/nvim-bqf'
 
   -- Explorers
   use 'kyazdani42/nvim-tree.lua'
