@@ -28,8 +28,8 @@ return require('packer').startup(function(use)
   use 'rakr/vim-one'
 
   -- User interface
-  use 'romgrk/barbar.nvim'
-  use 'hoob3rt/lualine.nvim'
+  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+  use {'hoob3rt/lualine.nvim', requires = 'nvim-lua/lsp-status.nvim'}
   use 'jeffkreeftmeijer/vim-numbertoggle'
   use 'folke/zen-mode.nvim'
 
@@ -65,6 +65,7 @@ return require('packer').startup(function(use)
   use 'rafamadriz/friendly-snippets'
 
   -- Syntax
+  use 'andymass/vim-matchup'
   --- Editor config
   use 'editorconfig/editorconfig-vim'
   --- Docker
@@ -90,10 +91,8 @@ return require('packer').startup(function(use)
 
 
   -- General plugins
-  use 'lukas-reineke/indent-blankline.nvim'
   use 'akinsho/nvim-toggleterm.lua'
   use 'tversteeg/registers.nvim'
-  use 'ap/vim-buftabline'
   use 'tpope/vim-commentary'
   use 'tpope/vim-repeat'
   use 'airblade/vim-rooter'
