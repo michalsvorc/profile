@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-sensible'
 
   -- Themes
-  use 'rakr/vim-one'
+  use 'sainnhe/edge'
 
   -- User interface
   use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
