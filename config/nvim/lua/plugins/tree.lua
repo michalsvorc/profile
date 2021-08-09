@@ -12,6 +12,8 @@ vim.g.nvim_tree_git_hl = 1 --0 by default, will enable file highlight for git at
 vim.g.nvim_tree_highlight_opened_files = 1 --0 by default, will enable folder and file icon highlight for opened files/directories.
 vim.g.nvim_tree_tab_open = 1 --0 by default, will open the tree when entering a new tab and the tree was previously open
 vim.g.nvim_tree_lsp_diagnostics = 1 --0 by default, will show lsp diagnostics in the signcolumn. See :help nvim_tree_lsp_diagnostics
+vim.g.nvim_tree_disable_netrw = 0 --1 by default, disables netrw
+vim.g.nvim_tree_hijack_netrw = 0 --1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
 
 vim.g.nvim_tree_icons = {
  default = '',
