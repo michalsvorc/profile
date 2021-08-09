@@ -2,6 +2,7 @@
 require('plugins.bufferline')
 require('plugins.compe')
 require('plugins.gitsigns')
+require('plugins.illuminate')
 require('plugins.lsp')
 require('plugins.lualine')
 require('plugins.luasnip')

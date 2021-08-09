@@ -66,6 +66,7 @@ return require('packer').startup(function(use)
 
   -- Syntax
   use 'andymass/vim-matchup'
+  use 'RRethy/vim-illuminate'
   --- Editor config
   use 'editorconfig/editorconfig-vim'
   --- Docker
