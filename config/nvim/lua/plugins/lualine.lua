@@ -4,10 +4,10 @@ local lsp_status = require('lsp-status')
 local icons = require('icons')
 
 lsp_status.config {
-    indicator_info = icons.Information,
-    indicator_errors = icons.Error,
-    indicator_hint= icons.Hint,
-    status_symbol= '',
+  indicator_info = icons.diagnostics.information,
+  indicator_errors = icons.diagnostics.error,
+  indicator_hint= icons.diagnostics.hint,
+  status_symbol= '',
 }
 
 require('lualine').setup {
@@ -17,10 +17,18 @@ require('lualine').setup {
     section_separators = {nil, nil},
   },
   sections = {
-    lualine_c = {
-      'filename',
-      lsp_status.status
-    }
+    lualine_a = {"mode"},
+    lualine_b = {"branch", "diff"},
+    lualine_c = {"filename"},
+    lualine_x = {
+      {"diagnostics", sources = {"nvim_lsp"}},
+      "encoding",
+      "fileformat",
+      "filetype"
+    },
+    lualine_y = {"progress"},
+    lualine_z = {"location"}
   },
   extensions = {'nvim-tree', 'quickfix'},
+lsp_status.status
 }

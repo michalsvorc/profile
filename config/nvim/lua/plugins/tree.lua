@@ -1,5 +1,7 @@
 -- Link: https://github.com/kyazdani42/nvim-tree.lua
 
+local icons = require('icons')
+
 vim.g.nvim_tree_side = 'right' --left by default
 vim.g.nvim_tree_width = 40 --30 by default, can be width_in_columns or 'width_in_percent%'
 vim.g.nvim_tree_ignore = {'.git', 'node_modules', '.cache'} --empty by default
@@ -16,32 +18,32 @@ vim.g.nvim_tree_disable_netrw = 0 --1 by default, disables netrw
 vim.g.nvim_tree_hijack_netrw = 0 --1 by default, prevents netrw from automatically opening when opening directories (but lets you keep its other utilities)
 
 vim.g.nvim_tree_icons = {
- default = '',
- symlink = '',
+ default = icons.file.default,
+ symlink = icons.file.symlink,
  git = {
-   unstaged = "✗",
-   staged = "✓",
-   unmerged = "",
-   renamed = "➜",
-   untracked = "★",
-   deleted = "",
-   ignored = "◌"
+   unstaged = icons.vcs.unstaged,
+   staged = icons.vcs.staged,
+   unmerged = icons.vcs.unmerged,
+   renamed = icons.vcs.renamed,
+   untracked = icons.vcs.untracked,
+   deleted = icons.vcs.deleted,
+   ignored = icons.vcs.ignored
  },
  folder = {
-   arrow_open = "",
-   arrow_closed = "",
-   default = "",
-   open = "",
-   empty = "",
-   empty_open = "",
-   symlink = "",
-   symlink_open = "",
+   arrow_open = icons.arrow_open,
+   arrow_closed = icons.arrow_closed,
+   default = icons.folder.default,
+   open = icons.folder.open,
+   empty = icons.folder.empty,
+   empty_open = icons.folder.empty_open,
+   symlink = icons.folder.symlink,
+   symlink_open = icons.folder.symlink_open,
  },
  lsp = {
-   hint = "",
-   info = "",
-   warning = "",
-   error = "",
+   hint = icons.diagnostics.hint,
+   info = icons.diagnostics.info,
+   warning = icons.diagnostics.warning,
+   error = icons.diagnostics.error,
  }
 }
 

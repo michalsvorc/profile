@@ -21,7 +21,7 @@ require('bufferline').setup {
     enforce_regular_tabs = false,
     diagnostics = "nvim_lsp",
     diagnostics_indicator = function(count, level, diagnostics_dict, context)
-      local icon = level:match("error") and icons.Error or icons.Warning
+      local icon = level:match("error") and icons.diagnostics.error or icons.diagnostics.warning
       return " " .. icon .. count
     end,
   }
