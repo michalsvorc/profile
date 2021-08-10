@@ -1,3 +1,8 @@
+shell:
+  program: /bin/zsh
+  args:
+    - --login
+
 hide_cursor_when_typing: true
 
 font:
