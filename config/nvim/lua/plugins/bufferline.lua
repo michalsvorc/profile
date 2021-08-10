@@ -20,12 +20,19 @@ require('bufferline').setup {
     separator_style = "thin",
     enforce_regular_tabs = false,
     diagnostics = "nvim_lsp",
+    modified_icon = icons.modified,
     diagnostics_indicator = function(count, level, diagnostics_dict, context)
       local icon = level:match("error") and icons.diagnostics.error or icons.diagnostics.warning
       return " " .. icon .. count
     end,
+  },
+  highlights = {
+    buffer_selected = {
+      gui = "NONE"
+    },
   }
 }
+
 
 -- Keymap
 local opts = {noremap=false, silent=false}
