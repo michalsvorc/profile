@@ -49,6 +49,9 @@ vim.opt.cursorline = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+-- Completion required by compe
+vim.opt.completeopt = 'menuone,noselect'
+
 -- Vimidff
 -- - Prevent opening files as RO in vimdiff.
 vim.g.noro = true

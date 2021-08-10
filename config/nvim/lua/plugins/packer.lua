@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-sensible'
 
   -- Themes
-  use 'rakr/vim-one'
+  use 'sainnhe/edge'
 
   -- User interface
   use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
@@ -46,6 +46,7 @@ return require('packer').startup(function(use)
     }
   }
   use 'nacro90/numb.nvim'
+  use 'kevinhwang91/nvim-bqf'
 
   -- Explorers
   use 'kyazdani42/nvim-tree.lua'
@@ -66,6 +67,7 @@ return require('packer').startup(function(use)
 
   -- Syntax
   use 'andymass/vim-matchup'
+  use 'RRethy/vim-illuminate'
   --- Editor config
   use 'editorconfig/editorconfig-vim'
   --- Docker
@@ -80,14 +82,8 @@ return require('packer').startup(function(use)
   use 'kosayoda/nvim-lightbulb'
 
   -- Git
-  use {
-    'TimUntersberger/neogit',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'sindrets/diffview.nvim'
-    }
-  }
   use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
+  use 'sindrets/diffview.nvim'
 
 
   -- General plugins
