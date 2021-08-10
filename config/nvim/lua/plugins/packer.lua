@@ -82,14 +82,8 @@ return require('packer').startup(function(use)
   use 'kosayoda/nvim-lightbulb'
 
   -- Git
-  use {
-    'TimUntersberger/neogit',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'sindrets/diffview.nvim'
-    }
-  }
   use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
+  use 'sindrets/diffview.nvim'
 
 
   -- General plugins
