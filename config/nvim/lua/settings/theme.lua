@@ -10,7 +10,7 @@ vim.g.edge_disable_italic_comment = 0
 vim.g.edge_diagnostic_text_highlight = 1
 vim.g.edge_diagnostic_line_highlight = 1
 vim.g.edge_diagnostic_virtual_text = 'colored'
-vim.g.edge_current_word = 'grey background'
+vim.g.edge_current_word = 'bold'
 
 -- Load the colorscheme
 vim.cmd[[colorscheme edge]]
