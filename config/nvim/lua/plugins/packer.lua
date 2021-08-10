@@ -45,7 +45,10 @@ return require('packer').startup(function(use)
       'nvim-lua/plenary.nvim'
     }
   }
-  use 'nacro90/numb.nvim'
+  use {
+    'nacro90/numb.nvim',
+    config = require('numb').setup()
+  }
   use 'kevinhwang91/nvim-bqf'
 
   -- Explorers
@@ -82,7 +85,11 @@ return require('packer').startup(function(use)
   use 'kosayoda/nvim-lightbulb'
 
   -- Git
-  use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = require('gitsigns').setup()
+  }
   use 'sindrets/diffview.nvim'
 
 
