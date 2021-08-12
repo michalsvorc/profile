@@ -41,6 +41,6 @@ vim.api.nvim_set_keymap('n', '<A-k>', ':BufferLineCycleNext<CR>', opts)
 vim.api.nvim_set_keymap('n', '<A-j>', ':BufferLineCyclePrev<CR>', opts)
 vim.api.nvim_set_keymap('n', '<C-A-k>', ':BufferLineMoveNext<CR>', opts)
 vim.api.nvim_set_keymap('n', '<C-A-j>', ':BufferLineMovePrev<CR>', opts)
-vim.api.nvim_set_keymap('n', '<A-w>', ':bdelete!<CR>', opts)
+vim.api.nvim_set_keymap('n', '<A-w>', ':Bdelete!<CR>', opts) -- famiu/bufdelete.nvim
 vim.api.nvim_set_keymap('n', '<A-s>', ':BufferLinePick<CR>', opts)
 vim.api.nvim_set_keymap('n', '<A-x>', ':BufferLinePickClose<CR>', opts)

@@ -94,6 +94,7 @@ return require('packer').startup(function(use)
 
 
   -- General plugins
+  use 'famiu/bufdelete.nvim'
   use 'akinsho/nvim-toggleterm.lua'
   use 'tversteeg/registers.nvim'
   use 'tpope/vim-commentary'
