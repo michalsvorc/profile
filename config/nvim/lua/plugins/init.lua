@@ -14,3 +14,6 @@ require('plugins.trouble')
 require('plugins.treesitter')
 require('plugins.zen-mode')
 
+-- Direct plugin setup
+require('gitsigns').setup()
+require('numb').setup()

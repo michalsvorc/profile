@@ -45,10 +45,7 @@ return require('packer').startup(function(use)
       'nvim-lua/plenary.nvim'
     }
   }
-  use {
-    'nacro90/numb.nvim',
-    config = require('numb').setup()
-  }
+  use 'nacro90/numb.nvim'
   use 'kevinhwang91/nvim-bqf'
 
   -- Explorers
@@ -90,11 +87,11 @@ return require('packer').startup(function(use)
   use {
     'lewis6991/gitsigns.nvim',
     requires = 'nvim-lua/plenary.nvim',
-    config = require('gitsigns').setup()
   }
   use 'sindrets/diffview.nvim'
 
   -- General plugins
+  use 'famiu/bufdelete.nvim'
   use 'akinsho/nvim-toggleterm.lua'
   use 'tversteeg/registers.nvim'
   use 'tpope/vim-commentary'
