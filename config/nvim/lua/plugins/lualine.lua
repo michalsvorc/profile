@@ -4,7 +4,7 @@ local lsp_status = require('lsp-status')
 local icons = require('icons')
 
 lsp_status.config {
-  indicator_info = icons.diagnostics.information,
+  indicator_info = icons.diagnostics.info,
   indicator_errors = icons.diagnostics.error,
   indicator_hint= icons.diagnostics.hint,
   status_symbol= '',

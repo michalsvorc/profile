@@ -11,6 +11,9 @@ local on_attach = function(client, bufnr)
   local lightbulb = require('plugins.lsp.on_attach.lightbulb')
   local borders = require('plugins.lsp.on_attach.borders')
   local illuminate = require('illuminate').on_attach(client)
+  local lsp_signature = require('lsp_signature').on_attach(
+    require('plugins.lsp.on_attach.signature')
+  )
 end
 
 for _, lsp in ipairs(servers) do

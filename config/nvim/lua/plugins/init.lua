@@ -1,6 +1,7 @@
 -- Plugins
 require('plugins.bufferline')
 require('plugins.compe')
+require('plugins.diffview')
 require('plugins.illuminate')
 require('plugins.lsp')
 require('plugins.lualine')

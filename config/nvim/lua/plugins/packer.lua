@@ -79,10 +79,12 @@ return require('packer').startup(function(use)
   -- LSP
   use 'neovim/nvim-lspconfig'
   use {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
+    'folke/trouble.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
   }
   use 'kosayoda/nvim-lightbulb'
+  use 'ray-x/lsp_signature.nvim'
+  use 'simrat39/symbols-outline.nvim'
 
   -- Git
   use {
@@ -92,9 +94,7 @@ return require('packer').startup(function(use)
   }
   use 'sindrets/diffview.nvim'
 
-
   -- General plugins
-  use 'famiu/bufdelete.nvim'
   use 'akinsho/nvim-toggleterm.lua'
   use 'tversteeg/registers.nvim'
   use 'tpope/vim-commentary'
