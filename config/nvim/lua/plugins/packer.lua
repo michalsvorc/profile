@@ -90,6 +90,7 @@ return require('packer').startup(function(use)
     requires = 'nvim-lua/plenary.nvim',
   }
   use 'sindrets/diffview.nvim'
+  use 'f-person/git-blame.nvim'
 
   -- Sessions
   use 'rmagatti/auto-session'
