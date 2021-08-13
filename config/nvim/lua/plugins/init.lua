@@ -1,6 +1,6 @@
 -- Plugins
 require('plugins.autopairs')
-require('plugins.auto-session')
+require('plugins.autosession')
 require('plugins.bufferline')
 require('plugins.compe')
 require('plugins.diffview')
@@ -13,7 +13,7 @@ require('plugins.toggleterm')
 require('plugins.tree')
 require('plugins.trouble')
 require('plugins.treesitter')
-require('plugins.zen-mode')
+require('plugins.zenmode')
 
 -- Direct plugin setup
 require('gitsigns').setup()
