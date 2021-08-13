@@ -107,6 +107,7 @@ return require('packer').startup(function(use)
   use 'famiu/bufdelete.nvim'
   use 'akinsho/nvim-toggleterm.lua'
   use 'tversteeg/registers.nvim'
+  use 'wincent/scalpel'
   use 'tpope/vim-commentary'
   use 'tpope/vim-repeat'
   use 'airblade/vim-rooter'
