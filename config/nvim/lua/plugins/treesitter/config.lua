@@ -13,6 +13,9 @@ require('nvim-treesitter.configs').setup {
     enable = true
   },
   matchup = {
-    enable = true, -- andymass/vim-matchup
+    enable = true -- andymass/vim-matchup
+  },
+  autopairs = {
+    enable = true -- windwp/nvim-autopairs
   },
 }

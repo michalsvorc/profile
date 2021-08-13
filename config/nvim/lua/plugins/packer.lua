@@ -68,6 +68,7 @@ return require('packer').startup(function(use)
   -- Syntax
   use 'andymass/vim-matchup'
   use 'RRethy/vim-illuminate'
+  use 'windwp/nvim-autopairs'
   --- Editor config
   use 'editorconfig/editorconfig-vim'
   --- Docker

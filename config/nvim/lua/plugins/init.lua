@@ -1,4 +1,5 @@
 -- Plugins
+require('plugins.autopairs')
 require('plugins.auto-session')
 require('plugins.bufferline')
 require('plugins.compe')
