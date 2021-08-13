@@ -97,7 +97,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'tpope/vim-repeat'
   use 'airblade/vim-rooter'
-  use 'mhinz/vim-startify'
   use 'tpope/vim-surround'
 
 end)
