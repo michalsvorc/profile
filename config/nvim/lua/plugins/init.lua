@@ -1,4 +1,5 @@
 -- Plugins
+require('plugins.auto-session')
 require('plugins.bufferline')
 require('plugins.compe')
 require('plugins.diffview')
@@ -16,3 +17,4 @@ require('plugins.zen-mode')
 -- Direct plugin setup
 require('gitsigns').setup()
 require('numb').setup()
+

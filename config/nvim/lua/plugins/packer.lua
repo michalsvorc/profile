@@ -90,6 +90,16 @@ return require('packer').startup(function(use)
   }
   use 'sindrets/diffview.nvim'
 
+  -- Sessions
+  use 'rmagatti/auto-session'
+  use {
+    'rmagatti/session-lens',
+    requires = {
+      'rmagatti/auto-session',
+      'nvim-telescope/telescope.nvim'
+    },
+  }
+
   -- General plugins
   use 'famiu/bufdelete.nvim'
   use 'akinsho/nvim-toggleterm.lua'
