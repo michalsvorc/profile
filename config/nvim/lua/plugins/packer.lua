@@ -60,6 +60,7 @@ return require('packer').startup(function(use)
   use {'p00f/nvim-ts-rainbow', requires = 'nvim-treesitter/nvim-treesitter'}
   use {'romgrk/nvim-treesitter-context', requires = 'nvim-treesitter/nvim-treesitter'}
   use {'JoosepAlviste/nvim-ts-context-commentstring', requires = 'nvim-treesitter/nvim-treesitter'}
+  use {'haringsrob/nvim_context_vt', requires = 'nvim-treesitter/nvim-treesitter'}
 
   -- Snippets
   use 'L3MON4D3/LuaSnip'
