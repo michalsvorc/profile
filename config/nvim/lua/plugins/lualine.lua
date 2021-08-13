@@ -12,16 +12,19 @@ lsp_status.config {
 
 require('lualine').setup {
   options = {
-    theme = 'codedark',
+    theme = 'jellybeans',
     component_separators = {nil, nil},
     section_separators = {nil, nil},
   },
   sections = {
     lualine_a = {"mode"},
-    lualine_b = {"branch", "diff"},
-    lualine_c = {"filename"},
+    lualine_b = {"branch"},
+    lualine_c = {
+      "filename",
+      "diff",
+      {"diagnostics", sources = {"nvim_lsp"}}
+    },
     lualine_x = {
-      {"diagnostics", sources = {"nvim_lsp"}},
       "encoding",
       "fileformat",
       "filetype"
@@ -30,5 +33,10 @@ require('lualine').setup {
     lualine_z = {"location"}
   },
   extensions = {'nvim-tree', 'quickfix'},
-lsp_status.status
+  lsp_status.status
 }
+
+-- Custom diff status colors
+vim.cmd[[highlight DiffAdd ctermfg=28 guifg=#9aaf6a]]
+vim.cmd[[highlight DiffChange ctermfg=31 guifg=#8298c0]]
+vim.cmd[[highlight DiffDelete ctermfg=124 guifg=#d06a4b]]
