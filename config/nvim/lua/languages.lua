@@ -38,8 +38,8 @@ function languages.lsp()
   -- TypeScript
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver
   --- Execute: npm install -g typescript typescript-language-server
-  table.insert(servers, 'tsserver')
-  lsp_config.tsserver.setup{}
+  -- table.insert(servers, 'tsserver')
+  -- lsp_config.tsserver.setup{}
 
   return servers
 end
@@ -55,8 +55,8 @@ languages.treesitter = {
   'json',
   'lua',
   -- 'scss',
-  'tsx',
-  'typescript',
+  -- 'tsx',
+  -- 'typescript',
   -- 'yaml',
 }
 
@@ -68,7 +68,7 @@ languages.snippets = {
   -- 'html',
   -- 'sass',
   'shell',
-  'typescript',
+  -- 'typescript',
   -- 'typescriptreact'
 }
 
@@ -83,13 +83,13 @@ local prettier = require("plugins.efm.prettier")
 local eslint = require("plugins.efm.eslint")
 
 languages.efm = {
-  typescript = {prettier, eslint},
-  javascript = {prettier, eslint},
-  typescriptreact = {prettier, eslint},
-  javascriptreact = {prettier, eslint},
+  -- typescript = {prettier, eslint},
+  -- javascript = {prettier, eslint},
+  -- typescriptreact = {prettier, eslint},
+  -- javascriptreact = {prettier, eslint},
   json = {prettier},
-  html = {prettier},
-  scss = {prettier},
+  -- html = {prettier},
+  -- scss = {prettier},
   markdown = {prettier},
 }
 
