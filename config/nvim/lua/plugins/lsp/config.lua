@@ -1,6 +1,6 @@
 -- https://github.com/neovim/nvim-lspconfig
 
-local lspconfig = require('lspconfig')
+local lsp_config = require('lspconfig')
 local servers = require('languages').lsp()
 
 -- Use an on_attach function to only map other functions
@@ -16,11 +16,16 @@ local on_attach = function(client, bufnr)
   )
 end
 
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+for _, server in ipairs(servers) do
+  lsp_config[server].setup {
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
     }
   }
 end
+
+-- efm language server
+local efm_config = require('plugins.efm.config')
+
+lsp_config.efm.setup(efm_config)

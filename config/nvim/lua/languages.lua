@@ -2,44 +2,44 @@ local languages = {}
 
 -- LSP language servers
 function languages.lsp()
-  local lspconfig = require('lspconfig')
+  local lsp_config = require('lspconfig')
   local servers = {}
 
   -- Bash
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#bashls
   --- Execute: npm install -g bash-language-server
   table.insert(servers, 'bashls')
-  lspconfig.bashls.setup{}
+  lsp_config.bashls.setup{}
 
   -- CSS
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#cssls
   --- Execute: npm install -g vscode-langservers-extracted
   -- table.insert(servers, 'cssls')
-  -- lspconfig.cssls.setup{}
+  -- lsp_config.cssls.setup{}
 
   -- Docker
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#dockerls
   --- Execute: npm install -g dockerfile-language-server-nodejs
   table.insert(servers, 'dockerls')
-  lspconfig.dockerls.setup{}
+  lsp_config.dockerls.setup{}
 
   -- Go
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#gopls
   --- For the most part, you should not need to install or update gopls.
   -- table.insert(servers, 'gopls')
-  -- lspconfig.gopls.setup{}
+  -- lsp_config.gopls.setup{}
 
   -- HTML
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#html
   --- Execute: npm install -g vscode-langservers-extracted
   -- table.insert(servers, 'html')
-  -- lspconfig.html.setup{}
+  -- lsp_config.html.setup{}
 
   -- TypeScript
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver
   --- Execute: npm install -g typescript typescript-language-server
-  -- table.insert(servers, 'tsserver')
-  -- lspconfig.tsserver.setup{}
+  table.insert(servers, 'tsserver')
+  lsp_config.tsserver.setup{}
 
   return servers
 end
@@ -55,8 +55,8 @@ languages.treesitter = {
   'json',
   'lua',
   -- 'scss',
-  -- 'tsx',
-  -- 'typescript',
+  'tsx',
+  'typescript',
   -- 'yaml',
 }
 
@@ -68,8 +68,29 @@ languages.snippets = {
   -- 'html',
   -- 'sass',
   'shell',
-  -- 'typescript',
+  'typescript',
   -- 'typescriptreact'
+}
+
+-- efm language server
+-- https://github.com/mattn/efm-langserver
+-- https://github.com/mattn/efm-langserver/releases
+-- Dependencies: Have efm-langserver binary available on your $PATH.
+
+-- Dependencies: Have Prettier installed as a node module in your project.
+local prettier = require("plugins.efm.prettier")
+-- Execute: npm install -g eslint_d
+local eslint = require("plugins.efm.eslint")
+
+languages.efm = {
+  typescript = {prettier, eslint},
+  javascript = {prettier, eslint},
+  typescriptreact = {prettier, eslint},
+  javascriptreact = {prettier, eslint},
+  json = {prettier},
+  html = {prettier},
+  scss = {prettier},
+  markdown = {prettier},
 }
 
 return languages
