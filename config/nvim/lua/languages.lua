@@ -73,13 +73,16 @@ languages.snippets = {
 }
 
 -- efm language server
--- https://github.com/mattn/efm-langserver
--- https://github.com/mattn/efm-langserver/releases
--- Dependencies: Have efm-langserver binary available on your $PATH.
+--- https://github.com/mattn/efm-langserver
+--- https://github.com/mattn/efm-langserver/releases
+--- Dependencies: Have efm-langserver binary available on your $PATH.
 
--- Dependencies: Have Prettier installed as a node module in your project.
+--- Formatters
+---- Dependencies: Have Prettier installed as a node module in your project.
 local prettier = require("plugins.efm.prettier")
--- Execute: npm install -g eslint_d
+
+--- Linters
+---- Execute: npm install -g eslint_d
 local eslint = require("plugins.efm.eslint")
 
 languages.efm = {
