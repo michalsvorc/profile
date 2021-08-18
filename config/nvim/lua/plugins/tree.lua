@@ -7,7 +7,7 @@ vim.g.nvim_tree_width = 40 --30 by default, can be width_in_columns or 'width_in
 vim.g.nvim_tree_ignore = {'.git', 'node_modules', '.cache'} --empty by default
 vim.g.nvim_tree_gitignore = 1 --0 by default
 vim.g.nvim_tree_auto_close = 0 --0 by default, closes the tree when it's the last window
-vim.g.nvim_tree_auto_ignore_ft = {'startify'} --empty by default, don't auto open tree on specific filetypes.
+vim.g.nvim_tree_auto_ignore_ft = {} --empty by default, don't auto open tree on specific filetypes.
 vim.g.nvim_tree_follow = 1 --0 by default, this option allows the cursor to be updated when entering a buffer
 vim.g.nvim_tree_indent_markers = 1 --0 by default, this option shows indent markers when folders are open
 vim.g.nvim_tree_git_hl = 1 --0 by default, will enable file highlight for git attributes (can be used without the icons).
@@ -48,5 +48,5 @@ vim.g.nvim_tree_icons = {
 }
 
 -- Keymap
-vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', {noremap=false, silent=false})
+vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', {noremap=false, silent=false})
 
