@@ -254,7 +254,7 @@ awful.screen.connect_for_each_screen(function(s)
   }
 
   -- Create a tasklist widget
-  s.mytasklist = awful.widget.tasklist(s,awful.widget.tasklist.filter.currenttags, tasklist_buttons)
+  s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons)
 
   -- Create the wibox
   s.mywibox = awful.wibar({ position = "right", screen = s })
@@ -549,8 +549,9 @@ root.keys(globalkeys)
 awful.rules.rules = {
   -- All clients will match this rule.
   { rule = { },
-    properties = { border_width = beautiful.border_width,
-      border_color = beautiful.border_normal,
+    properties = {
+      -- border_width = beautiful.border_width,
+      -- border_color = beautiful.border_normal,
       focus = awful.client.focus.filter,
       raise = true,
       keys = clientkeys,
@@ -673,14 +674,28 @@ tag.connect_signal(
     end
   end)
 
-
 client.connect_signal("focus", function(c)
   c.border_color = beautiful.border_focus
-  c.opacity = 1
+  -- c.opacity = 1
 end)
+
 client.connect_signal("unfocus", function(c)
   c.border_color = beautiful.border_normal
-  c.opacity = 0.7
+  -- c.opacity = 0.7
+end)
+
+-- Use borders only on tiled windows.
+screen.connect_signal("arrange", function (s)
+  local max = s.selected_tag.layout.name == "max"
+  local only_one = #s.tiled_clients == 1 -- use tiled_clients so that other floating windows don't affect the count
+  -- but iterate over clients instead of tiled_clients as tiled_clients doesn't include maximized windows
+  for _, c in pairs(s.clients) do
+    if (max or only_one) and not c.floating or c.maximized then
+      c.border_width = 0
+    else
+      c.border_width = beautiful.border_width
+    end
+  end
 end)
 -- }}}
 
@@ -698,3 +713,4 @@ switcher.settings.preview_box_title_color = {189,184,174,1}                -- th
 switcher.settings.client_opacity = false                             -- opacity for unselected clients
 switcher.settings.cycle_raise_client = false                          -- raise clients on cycle
 -- }}}
+
