@@ -1,6 +1,7 @@
 local languages = {}
 
 -- LSP language servers
+--- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#configurations
 function languages.lsp()
   local lsp_config = require('lspconfig')
   local servers = {}
