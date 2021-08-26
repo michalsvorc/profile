@@ -74,6 +74,9 @@ return require('packer').startup(function(use)
   use 'editorconfig/editorconfig-vim'
   --- Docker
   use 'ekalinin/Dockerfile.vim'
+  --- Markdown
+  ---- Dependencies: https://github.com/ellisonleao/glow.nvim
+  use {"ellisonleao/glow.nvim"}
 
   -- LSP
   use 'neovim/nvim-lspconfig'
