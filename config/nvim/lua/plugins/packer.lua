@@ -112,6 +112,7 @@ return require('packer').startup(function(use)
   use 'tversteeg/registers.nvim'
   use 'wincent/scalpel'
   use 'tpope/vim-commentary'
+  use 'easymotion/vim-easymotion'
   use 'tpope/vim-repeat'
   use 'airblade/vim-rooter'
   use 'tpope/vim-surround'
