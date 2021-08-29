@@ -6,8 +6,9 @@ local icons = require('icons')
 -- as it reads the hex gui color values of various highlight groups.
 require('bufferline').setup {
   options = {
-    numbers = "ordinal",
-    number_style = "none",
+    numbers = function(opts)
+      return string.format('%s.', opts.ordinal, opts.id)
+    end,
     right_mouse_command = nil,
     left_mouse_command = nil,
     middle_mouse_command = nil,
