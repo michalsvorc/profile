@@ -36,6 +36,14 @@ return require('packer').startup(function(use)
   -- File icons
   use 'kyazdani42/nvim-web-devicons'
 
+  -- File explorers
+  --- Dependencies: lf
+  use {
+  'ptzz/lf.vim',
+    requires = 'voldikss/vim-floaterm',
+  }
+  use 'tpope/vim-vinegar'
+
   -- Search
   use 'wincent/ferret'
   use {
@@ -47,9 +55,6 @@ return require('packer').startup(function(use)
   }
   use 'nacro90/numb.nvim'
   use 'kevinhwang91/nvim-bqf'
-
-  -- Explorers
-  use 'kyazdani42/nvim-tree.lua'
 
   -- Autocompletion
   use 'hrsh7th/nvim-compe'
@@ -108,7 +113,6 @@ return require('packer').startup(function(use)
 
   -- General plugins
   use 'famiu/bufdelete.nvim'
-  use 'akinsho/nvim-toggleterm.lua'
   use 'tversteeg/registers.nvim'
   use 'wincent/scalpel'
   use 'tpope/vim-commentary'
