@@ -4,6 +4,7 @@ local icons = require('icons')
 
 local config = {
   hint_prefix = icons.symbols.variable ..' ',
+  floating_window = false,
   use_lspsaga = false,
 }
 
