@@ -128,6 +128,7 @@ end
 -- {{{ Menu
 -- Create a launcher widget and a main menu
 mymainmenu = awful.menu({ items = {
+  { "terminal", function () awful.spawn(terminal) end},
   { "hotkeys", function() return false, hotkeys_popup.show_help end},
   { "restart", awesome.restart },
   { "quit", function() awesome.quit() end}
