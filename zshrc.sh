@@ -99,3 +99,21 @@ bindkey '^e' edit-command-line
 source "$HOME/.local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" \
   2>/dev/null
 
+#===============================================================================
+# Alacritty window title bar
+# Link: https://wiki.gentoo.org/wiki/Alacritty#Zsh
+#===============================================================================
+
+if [[ "${TERM}" != "" && "${TERM}" == "alacritty" ]]
+then
+  precmd()
+  {
+    print -Pn "\e]0;[%L] %~\a"
+  }
+
+  preexec()
+  {
+    echo -en "\e]0;${1}\a"
+  }
+fi
+
