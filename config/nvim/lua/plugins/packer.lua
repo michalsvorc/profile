@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
 
   -- File explorers
   --- Dependencies: lf
+  use 'kyazdani42/nvim-tree.lua'
   use {
   'ptzz/lf.vim',
     requires = 'voldikss/vim-floaterm',
@@ -81,7 +82,7 @@ return require('packer').startup(function(use)
   use 'ekalinin/Dockerfile.vim'
   --- Markdown
   ---- Dependencies: https://github.com/ellisonleao/glow.nvim
-  use {"ellisonleao/glow.nvim"}
+  use 'ellisonleao/glow.nvim'
 
   -- LSP
   use 'neovim/nvim-lspconfig'
@@ -92,6 +93,8 @@ return require('packer').startup(function(use)
   use 'kosayoda/nvim-lightbulb'
   use 'ray-x/lsp_signature.nvim'
   use 'simrat39/symbols-outline.nvim'
+  --- TypeScript
+  use {'jose-elias-alvarez/nvim-lsp-ts-utils', requires = 'neovim/nvim-lspconfig'}
 
   -- Git
   use {
@@ -101,22 +104,13 @@ return require('packer').startup(function(use)
   use 'sindrets/diffview.nvim'
   use 'f-person/git-blame.nvim'
 
-  -- Sessions
-  use 'rmagatti/auto-session'
-  use {
-    'rmagatti/session-lens',
-    requires = {
-      'rmagatti/auto-session',
-      'nvim-telescope/telescope.nvim'
-    },
-  }
-
   -- General plugins
   use 'famiu/bufdelete.nvim'
   use 'tversteeg/registers.nvim'
   use 'wincent/scalpel'
   use 'tpope/vim-commentary'
   use 'easymotion/vim-easymotion'
+  use 'tpope/vim-obsession'
   use 'tpope/vim-repeat'
   use 'airblade/vim-rooter'
   use 'tpope/vim-surround'

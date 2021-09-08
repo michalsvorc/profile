@@ -10,10 +10,20 @@ return function(client, bufnr)
     require('plugins.lsp.on_attach.signature')
   )
 
-  -- Use efm language server for document formatting
-  if client.name == "tsserver" then
+  -- TypeScript
+  if client.name == 'tsserver' then
+    -- Use efm language server for document formatting
     client.resolved_capabilities.document_formatting = false
+
+    local ts_utils = require('nvim-lsp-ts-utils')
+
+    ts_utils.setup {
+      update_imports_on_move = true,
+      require_confirmation_on_move = true,
+      watch_dir = nil,
+    }
+
+    ts_utils.setup_client(client)
   end
 end
-
 

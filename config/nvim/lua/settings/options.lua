@@ -49,6 +49,10 @@ vim.opt.cursorline = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+-- Netrw
+vim.g.netrw_liststyle = 3
+vim.g.netrw_winsize = 15
+
 -- Completion required by compe
 vim.opt.completeopt = 'menuone,noselect'
 

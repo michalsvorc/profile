@@ -32,7 +32,7 @@ require('lualine').setup {
     lualine_y = {"progress"},
     lualine_z = {"location"}
   },
-  extensions = {'quickfix'},
+  extensions = {'nvim-tree', 'quickfix'},
   lsp_status.status
 }
 
