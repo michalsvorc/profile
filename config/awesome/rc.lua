@@ -70,7 +70,7 @@ beautiful.init(awful.util.getdir("config") .. "/themes/custom/theme.lua")
 
 cmd_terminal='alacritty'
 cmd_browser='firefox'
-cmd_browser_dev='firefox-devedition'
+cmd_browser_dev='firefox-developer'
 cmd_ide_editor='vscodium'
 cmd_screenlock=''
 cmd_printscreen=''
