@@ -69,8 +69,10 @@ end
 beautiful.init(awful.util.getdir("config") .. "/themes/custom/theme.lua")
 
 cmd_terminal='alacritty'
+cmd_display='arandr'
 cmd_browser='firefox'
-cmd_browser_dev='firefox-devedition'
+cmd_browser_dev='firefox-developer'
+cmd_browser_private='firefox-private'
 cmd_ide_editor='vscodium'
 cmd_screenlock=''
 cmd_printscreen=''
@@ -129,6 +131,7 @@ end
 -- Create a launcher widget and a main menu
 mymainmenu = awful.menu({ items = {
   { "terminal", function () awful.spawn(terminal) end},
+  { "display", function () awful.spawn(cmd_display) end},
   { "hotkeys", function() return false, hotkeys_popup.show_help end},
   { "restart", awesome.restart },
   { "quit", function() awesome.quit() end}
@@ -314,6 +317,8 @@ globalkeys = gears.table.join(
     {description = "Web browser", group = "hotkeys"}),
   awful.key({ modkey, }, "d", function () awful.spawn(cmd_browser_dev) end,
     {description = "Web browser - developer", group = "hotkeys"}),
+  awful.key({ modkey, }, "p", function () awful.spawn(cmd_browser_private) end,
+    {description = "Web browser - private", group = "hotkeys"}),
 
   awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
     {description="show help", group="awesome"}),
