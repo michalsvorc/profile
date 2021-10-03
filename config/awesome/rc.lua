@@ -69,6 +69,7 @@ end
 beautiful.init(awful.util.getdir("config") .. "/themes/custom/theme.lua")
 
 cmd_terminal='alacritty'
+cmd_display='arandr'
 cmd_browser='firefox'
 cmd_browser_dev='firefox-developer'
 cmd_browser_private='firefox-private'
@@ -130,6 +131,7 @@ end
 -- Create a launcher widget and a main menu
 mymainmenu = awful.menu({ items = {
   { "terminal", function () awful.spawn(terminal) end},
+  { "display", function () awful.spawn(cmd_display) end},
   { "hotkeys", function() return false, hotkeys_popup.show_help end},
   { "restart", awesome.restart },
   { "quit", function() awesome.quit() end}
