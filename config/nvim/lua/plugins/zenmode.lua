@@ -8,7 +8,7 @@ require("zen-mode").setup {
       signcolumn = "no",
       number = false,
       relativenumber = false,
-      cursorline = false,
+      cursorline = true,
       cursorcolumn = false,
       foldcolumn = "0",
       list = false,
