@@ -83,6 +83,8 @@ return require('packer').startup(function(use)
   --- Markdown
   ---- Dependencies: https://github.com/ellisonleao/glow.nvim
   use 'ellisonleao/glow.nvim'
+  --- HTML
+  use 'mattn/emmet-vim'
 
   -- LSP
   use 'neovim/nvim-lspconfig'
