@@ -35,6 +35,9 @@ source "$shell_partials_dir/git_prompt.sh"
 
 # History file
 HISTFILE=~/.cache/zsh_history
+setopt INC_APPEND_HISTORY \
+  HIST_IGNORE_SPACE \
+  HIST_IGNORE_ALL_DUPS
 
 #===============================================================================
 # Completion
