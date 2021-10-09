@@ -13,6 +13,7 @@ shell_partials_dir="$HOME/.local/profile/shell"
 # History
 HISTSIZE=10000
 SAVEHIST=10000
+export LESSHISTFILE=/dev/null
 
 #===============================================================================
 # Aliases
