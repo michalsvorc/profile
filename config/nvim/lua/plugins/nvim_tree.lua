@@ -30,12 +30,6 @@ vim.g.nvim_tree_icons = {
    symlink = icons.folder.symlink,
    symlink_open = icons.folder.symlink_open,
  },
- lsp = {
-   hint = icons.diagnostics.hint,
-   info = icons.diagnostics.info,
-   warning = icons.diagnostics.warning,
-   error = icons.diagnostics.error,
- }
 }
 
 require('nvim-tree').setup {
@@ -63,7 +57,15 @@ require('nvim-tree').setup {
   -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
   update_cwd          = false,
   -- show lsp diagnostics in the signcolumn
-  lsp_diagnostics     = true,
+  diagnostics = {
+    enable = false,
+    icons = {
+      hint = icons.diagnostics.hint,
+      info = icons.diagnostics.info,
+      warning = icons.diagnostics.warning,
+      error = icons.diagnostics.error,
+    }
+  },
   -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
   update_focused_file = {
     -- enables the feature
@@ -84,8 +86,10 @@ require('nvim-tree').setup {
   },
 
   view = {
-    -- width of the window, can be either a number (columns) or a string in `%`
+    -- width of the window, can be either a number (columns) or a string in `%`, for left or right side placement
     width = 35,
+    -- height of the window, can be either a number (columns) or a string in `%`, for top or bottom side placement
+    height = 30,
     -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
     side = 'right',
     -- if true the tree will resize itself after opening a file
