@@ -23,6 +23,9 @@ alias emerge='sudo emerge'
 alias eselect='sudo eselect'
 alias rc-service='sudo rc-service'
 
+# AWS
+alias awsc='aws --cli-auto-prompt'
+
 # Shortcuts
 alias edit=$EDITOR
 
