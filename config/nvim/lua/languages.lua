@@ -33,14 +33,14 @@ function languages.lsp()
   -- HTML
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#html
   --- Execute: npm install -g vscode-langservers-extracted
-  -- table.insert(servers, 'html')
-  -- lsp_config.html.setup{}
+  table.insert(servers, 'html')
+  lsp_config.html.setup{}
 
   -- TypeScript
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver
   --- Execute: npm install -g typescript typescript-language-server
-  -- table.insert(servers, 'tsserver')
-  -- lsp_config.tsserver.setup{}
+  table.insert(servers, 'tsserver')
+  lsp_config.tsserver.setup{}
 
   return servers
 end
@@ -52,12 +52,12 @@ languages.treesitter = {
   -- 'css',
   -- 'dockerfile',
   -- 'go',
-  -- 'html',
+  'html',
   'json',
   'lua',
   -- 'scss',
-  -- 'tsx',
-  -- 'typescript',
+  'tsx',
+  'typescript',
   -- 'yaml',
 }
 
@@ -66,11 +66,11 @@ languages.treesitter = {
 languages.snippets = {
   -- 'css',
   -- 'go',
-  -- 'html',
+  'html',
   -- 'sass',
   'shell',
-  -- 'typescript',
-  -- 'typescriptreact'
+  'typescript',
+  'typescriptreact'
 }
 
 -- efm language server
@@ -87,12 +87,12 @@ local prettier = require("plugins.efm.prettier")
 local eslint = require("plugins.efm.eslint")
 
 languages.efm = {
-  -- typescript = {prettier, eslint},
-  -- javascript = {prettier, eslint},
-  -- typescriptreact = {prettier, eslint},
-  -- javascriptreact = {prettier, eslint},
+  typescript = {prettier, eslint},
+  javascript = {prettier, eslint},
+  typescriptreact = {prettier, eslint},
+  javascriptreact = {prettier, eslint},
   json = {prettier},
-  -- html = {prettier},
+  html = {prettier},
   -- scss = {prettier},
   markdown = {prettier},
 }
