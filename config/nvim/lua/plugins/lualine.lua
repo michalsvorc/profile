@@ -1,4 +1,4 @@
--- Link: https://github.com/hoob3rt/lualine.nvim
+-- https://github.com/hoob3rt/lualine.nvim
 
 local lsp_status = require('lsp-status')
 local icons = require('icons')

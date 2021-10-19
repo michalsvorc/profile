@@ -5,6 +5,3 @@ require('session-lens').setup {
   path_display = {'shorten'},
 }
 
--- Keymap
-vim.api.nvim_set_keymap('n', '<F3>', ':SearchSession<CR>', {noremap = true, silent = false})
-

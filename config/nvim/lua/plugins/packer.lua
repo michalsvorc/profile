@@ -1,4 +1,4 @@
--- Link: https://github.com/wbthomason/packer.nvim
+-- https://github.com/wbthomason/packer.nvim
 
 -- vim.cmd [[packadd packer.nvim]]
 local execute = vim.api.nvim_command

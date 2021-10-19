@@ -1,4 +1,4 @@
--- Link: https://github.com/folke/zen-mode.nvim
+-- https://github.com/folke/zen-mode.nvim
 
 require("zen-mode").setup {
   window = {
@@ -16,5 +16,3 @@ require("zen-mode").setup {
   },
 }
 
--- Keymap
-vim.api.nvim_set_keymap('n', '<leader>z', ':ZenMode<CR>', {noremap=false, silent=false})
