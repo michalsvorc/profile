@@ -63,9 +63,10 @@ vim.api.nvim_set_keymap('n', '<A-k>', ':BufferLineCycleNext<cr>', optff)
 vim.api.nvim_set_keymap('n', '<A-j>', ':BufferLineCyclePrev<cr>', optff)
 vim.api.nvim_set_keymap('n', '<C-A-k>', ':BufferLineMoveNext<cr>', optff)
 vim.api.nvim_set_keymap('n', '<C-A-j>', ':BufferLineMovePrev<cr>', optff)
-vim.api.nvim_set_keymap('n', '<A-w>', ':Bdelete!<cr>', optff) -- famiu/bufdelete.nvim
 vim.api.nvim_set_keymap('n', '<A-s>', ':BufferLinePick<cr>', optff)
 vim.api.nvim_set_keymap('n', '<A-x>', ':BufferLinePickClose<cr>', optff)
+--- https://github.com/famiu/bufdelete.nvim
+vim.api.nvim_set_keymap('n', '<A-w>', ':Bdelete!<cr>', optff)
 
 -- Autocomplete
 --- https://github.com/hrsh7th/nvim-compe
