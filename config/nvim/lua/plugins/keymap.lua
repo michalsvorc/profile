@@ -9,7 +9,7 @@ local opte = {expr = true}
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fc', '<cmd>lua require("telescope.builtin").builtin()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fe', '<cmd>lua require("telescope.builtin").file_browser()<cr>', opt)
-vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>lua require("telescope.builtin").find_files()<cr>', opt)
+vim.api.nvim_set_keymap('n', '<leader>fi', '<cmd>lua require("telescope.builtin").find_files()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>lua require("telescope.builtin").live_grep()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>lua require("telescope.builtin").oldfiles()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fj', '<cmd>lua require("telescope.builtin").jumplist()<cr>', opt)
