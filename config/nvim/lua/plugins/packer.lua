@@ -54,9 +54,10 @@ return require('packer').startup(function(use)
       'nvim-lua/plenary.nvim'
     }
   }
+  use 'eugen0329/vim-esearch'
+  use 'wincent/scalpel'
   use 'nacro90/numb.nvim'
   use 'kevinhwang91/nvim-bqf'
-  use 'wincent/scalpel'
 
   -- Autocompletion
   use 'hrsh7th/nvim-compe'
