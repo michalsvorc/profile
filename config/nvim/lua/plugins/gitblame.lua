@@ -6,5 +6,3 @@ vim.g.gitblame_enabled = 0
 vim.g.gitblame_message_template = '<summary>'..separator..'<date>'..separator..'<author>'..separator..'<sha>'
 vim.g.gitblame_date_format = '%r'..separator..'%d.%m.%y %H:%M'
 
--- Keymap
-vim.api.nvim_set_keymap('n', '<leader>gb', ':GitBlameToggle<CR>', {noremap = true, silent = false})

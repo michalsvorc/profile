@@ -1,4 +1,4 @@
--- Link: https://github.com/wbthomason/packer.nvim
+-- https://github.com/wbthomason/packer.nvim
 
 -- vim.cmd [[packadd packer.nvim]]
 local execute = vim.api.nvim_command
@@ -56,6 +56,7 @@ return require('packer').startup(function(use)
   }
   use 'nacro90/numb.nvim'
   use 'kevinhwang91/nvim-bqf'
+  use 'wincent/scalpel'
 
   -- Autocompletion
   use 'hrsh7th/nvim-compe'
@@ -109,7 +110,6 @@ return require('packer').startup(function(use)
   -- General plugins
   use 'famiu/bufdelete.nvim'
   use 'tversteeg/registers.nvim'
-  use 'wincent/scalpel'
   use 'tpope/vim-commentary'
   use 'easymotion/vim-easymotion'
   use 'tpope/vim-obsession'

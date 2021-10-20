@@ -1,4 +1,4 @@
--- Link: https://github.com/kyazdani42/nvim-tree.lua
+-- https://github.com/kyazdani42/nvim-tree.lua
 
 local icons = require('icons')
 
@@ -103,5 +103,3 @@ require('nvim-tree').setup {
   }
 }
 
--- Keymap
-vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', {noremap=false, silent=false})
