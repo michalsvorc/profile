@@ -46,7 +46,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-vinegar'
 
   -- Search
-  use 'wincent/ferret'
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
