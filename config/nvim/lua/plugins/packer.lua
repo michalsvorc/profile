@@ -109,7 +109,6 @@ return require('packer').startup(function(use)
 
   -- General plugins
   use 'famiu/bufdelete.nvim'
-  use 'tversteeg/registers.nvim'
   use 'tpope/vim-commentary'
   use 'easymotion/vim-easymotion'
   use 'tpope/vim-obsession'
