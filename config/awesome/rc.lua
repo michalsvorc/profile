@@ -76,6 +76,7 @@ cmd_browser_private='firefox-private'
 cmd_ide_editor='vscodium'
 cmd_screenlock=''
 cmd_printscreen=''
+cmd_youtube='freetube'
 
 
 -- This is used later as the default terminal and editor to run.
@@ -319,6 +320,8 @@ globalkeys = gears.table.join(
     {description = "Web browser - developer", group = "hotkeys"}),
   awful.key({ modkey, }, "p", function () awful.spawn(cmd_browser_private) end,
     {description = "Web browser - private", group = "hotkeys"}),
+  awful.key({ modkey, }, "y", function () awful.spawn(cmd_youtube) end,
+    {description = "YouTube client", group = "hotkeys"}),
 
   awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
     {description="show help", group="awesome"}),
