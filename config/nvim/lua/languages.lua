@@ -74,7 +74,7 @@ end
 languages.treesitter = {
   'bash',
   -- 'css',
-  -- 'dockerfile',
+  'dockerfile',
   -- 'go',
   -- 'html',
   'json',
@@ -82,7 +82,7 @@ languages.treesitter = {
   -- 'scss',
   -- 'tsx',
   -- 'typescript',
-  -- 'yaml',
+  'yaml',
 }
 
 -- Language snippets
@@ -121,7 +121,7 @@ local efm_filetypes = {
   markdown = {prettier},
 }
 
---- Setup
+--- Setup:
 -- lspconfig.efm.setup{
 --   root_dir = require('lspconfig').util.root_pattern('.git', 'yarn.lock'),
 --   filetypes = vim.tbl_keys(efm_filetypes),
