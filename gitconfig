@@ -28,7 +28,7 @@
   colorMoved = default
 
 [difftool "nvim_diff"]
-    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+    cmd = "nvim -d ${LOCAL} ${REMOTE}"
 
 #===============================================================================
 # Merge
@@ -43,7 +43,7 @@
   keepBackup = false
 
 [mergetool "nvim_merge"]
-  cmd = "nvim -d \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
+  cmd = "nvim -d ${LOCAL} ${MERGED} ${REMOTE}"
 
 #===============================================================================
 # Aliases
