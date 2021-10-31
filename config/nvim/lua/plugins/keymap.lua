@@ -83,6 +83,11 @@ vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', opte)
 vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>FloatermNew --height=0.8 --width=0.9 --wintype=float<cr>", opttt)
 vim.api.nvim_set_keymap("n", "<leader>tv", "<cmd>FloatermNew --width=0.33 --wintype=vsplit<cr>", opttt)
 vim.api.nvim_set_keymap("n", "<leader>th", "<cmd>FloatermNew --height=0.25 --wintype=split<cr>", opttt)
+vim.api.nvim_set_keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", opttt)
+vim.api.nvim_set_keymap("t", "<C-j>", "<C-\\><C-n><C-w>j", opttt)
+vim.api.nvim_set_keymap("t", "<C-k>", "<C-\\><C-n><C-w>k", opttt)
+vim.api.nvim_set_keymap("t", "<C-l>", "<C-\\><C-n><C-w>l", opttt)
+vim.api.nvim_set_keymap("t", "<C-w>", "<C-\\><C-n><C-w><C-w>", opttt)
 
 -- File explorers
 --- https://github.com/kyazdani42/nvim-tree.lua
