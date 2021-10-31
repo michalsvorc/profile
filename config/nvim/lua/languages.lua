@@ -1,46 +1,70 @@
+local lspconfig = require('lspconfig')
+local on_attach = require('plugins/lsp/on_attach')
 local languages = {}
+
+-- Global dependency: Yarn
+--- Link: https://github.com/yarnpkg/yarn
+--- Execute: npm install --global yarn
 
 -- LSP language servers
 --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#configurations
 function languages.lsp()
-  local lsp_config = require('lspconfig')
   local servers = {}
 
   -- Bash
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#bashls
-  --- Execute: npm install -g bash-language-server
+  --- Dependencies: https://github.com/bash-lsp/bash-language-server
+  --- Setup:
   table.insert(servers, 'bashls')
-  lsp_config.bashls.setup{}
+  lspconfig.bashls.setup{}
 
   -- CSS
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#cssls
-  --- Execute: npm install -g vscode-langservers-extracted
+  --- Dependencies: https://github.com/hrsh7th/vscode-langservers-extracted
+  --- Setup:
   -- table.insert(servers, 'cssls')
-  -- lsp_config.cssls.setup{}
+  -- lspconfig.cssls.setup{}
 
   -- Docker
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#dockerls
-  --- Execute: npm install -g dockerfile-language-server-nodejs
+  --- Dependencies: https://github.com/rcjsuen/dockerfile-language-server-nodejs
+  --- Setup:
   table.insert(servers, 'dockerls')
-  lsp_config.dockerls.setup{}
+  lspconfig.dockerls.setup{}
 
   -- Go
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#gopls
-  --- For the most part, you should not need to install or update gopls.
+  --- Setup:
   -- table.insert(servers, 'gopls')
-  -- lsp_config.gopls.setup{}
+  -- lspconfig.gopls.setup{}
 
   -- HTML
-  --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#html
-  --- Execute: npm install -g vscode-langservers-extracted
-  table.insert(servers, 'html')
-  lsp_config.html.setup{}
+  --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#htmtsserverl
+  --- Dependencies: https://github.com/hrsh7th/vscode-langservers-extracted
+  --- Setup:
+  -- table.insert(servers, 'html')
+  -- lspconfig.html.setup{}
 
   -- TypeScript
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver
-  --- Execute: npm install -g typescript typescript-language-server
-  table.insert(servers, 'tsserver')
-  lsp_config.tsserver.setup{}
+  --- Dependencies: https://github.com/theia-ide/typescript-language-server
+  --- Setup:
+  -- table.insert(servers, 'tsserver')
+  -- lspconfig.tsserver.setup{
+  --   on_attach = function(client, bufnr)
+  --     on_attach(client, bufnr)
+
+  --     local ts_utils = require('nvim-lsp-ts-utils')
+
+  --     ts_utils.setup {
+  --       update_imports_on_move = true,
+  --       require_confirmation_on_move = true,
+  --       watch_dir = nil,
+  --     }
+
+  --     ts_utils.setup_client(client)
+  --   end
+  -- }
 
   return servers
 end
@@ -49,16 +73,16 @@ end
 --- https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
 languages.treesitter = {
   'bash',
-  -- 'css',
+  'css',
   -- 'dockerfile',
   -- 'go',
   'html',
   'json',
   'lua',
-  -- 'scss',
+  'scss',
   'tsx',
   'typescript',
-  -- 'yaml',
+  'yaml',
 }
 
 -- Language snippets
@@ -74,19 +98,19 @@ languages.snippets = {
 }
 
 -- efm language server
---- https://github.com/mattn/efm-langserver
---- https://github.com/mattn/efm-langserver/releases
---- Dependencies: Have efm-langserver binary available on your $PATH.
+--- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#efm
+--- Dependencies: https://github.com/mattn/efm-langserver
 
 --- Formatters
----- Dependencies: Have Prettier installed as a node module in your project.
+---- Dependencies: prettier
 local prettier = require("plugins.efm.prettier")
 
 --- Linters
----- Execute: npm install -g eslint_d
+---- Dependencies: eslint_d
 local eslint = require("plugins.efm.eslint")
 
-languages.efm = {
+--- Filetypes
+local efm_filetypes = {
   typescript = {prettier, eslint},
   javascript = {prettier, eslint},
   typescriptreact = {prettier, eslint},
@@ -95,6 +119,20 @@ languages.efm = {
   html = {prettier},
   -- scss = {prettier},
   markdown = {prettier},
+}
+
+--- Setup:
+lspconfig.efm.setup{
+  root_dir = require('lspconfig').util.root_pattern('.git', 'yarn.lock'),
+  filetypes = vim.tbl_keys(efm_filetypes),
+  init_options = {
+    documentFormatting = true,
+    codeAction = true,
+  },
+  settings = {
+    languages = efm_filetypes,
+    log_level = 1,
+  },
 }
 
 return languages
