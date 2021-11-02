@@ -42,29 +42,29 @@ function languages.lsp()
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#htmtsserverl
   --- Dependencies: https://github.com/hrsh7th/vscode-langservers-extracted
   --- Setup:
-  -- table.insert(servers, 'html')
-  -- lspconfig.html.setup{}
+  table.insert(servers, 'html')
+  lspconfig.html.setup{}
 
   -- TypeScript
   --- Link: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver
   --- Dependencies: https://github.com/theia-ide/typescript-language-server
   --- Setup:
-  -- table.insert(servers, 'tsserver')
-  -- lspconfig.tsserver.setup{
-  --   on_attach = function(client, bufnr)
-  --     on_attach(client, bufnr)
+  table.insert(servers, 'tsserver')
+  lspconfig.tsserver.setup{
+    on_attach = function(client, bufnr)
+      on_attach(client, bufnr)
 
-  --     local ts_utils = require('nvim-lsp-ts-utils')
+      local ts_utils = require('nvim-lsp-ts-utils')
 
-  --     ts_utils.setup {
-  --       update_imports_on_move = true,
-  --       require_confirmation_on_move = true,
-  --       watch_dir = nil,
-  --     }
+      ts_utils.setup {
+        update_imports_on_move = true,
+        require_confirmation_on_move = true,
+        watch_dir = nil,
+      }
 
-  --     ts_utils.setup_client(client)
-  --   end
-  -- }
+      ts_utils.setup_client(client)
+    end
+  }
 
   return servers
 end
