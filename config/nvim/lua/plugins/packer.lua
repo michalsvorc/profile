@@ -24,12 +24,13 @@ return require('packer').startup(function(use)
   -- Sensible settings
   use 'tpope/vim-sensible'
 
-  -- Themes
-  use 'sainnhe/edge'
+  -- Color schemes
+  use 'EdenEast/nightfox.nvim'
 
   -- User interface
   use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
   use {'hoob3rt/lualine.nvim', requires = 'nvim-lua/lsp-status.nvim'}
+  use 'lukas-reineke/indent-blankline.nvim'
   use 'jeffkreeftmeijer/vim-numbertoggle'
   use 'folke/zen-mode.nvim'
 
@@ -107,14 +108,16 @@ return require('packer').startup(function(use)
   use 'sindrets/diffview.nvim'
   use 'f-person/git-blame.nvim'
 
+  -- Sessions
+  use 'Shatur/neovim-session-manager'
+
   -- General plugins
   use 'famiu/bufdelete.nvim'
   use 'tpope/vim-commentary'
-  use 'easymotion/vim-easymotion'
-  use 'tpope/vim-obsession'
   use 'tpope/vim-repeat'
   use 'airblade/vim-rooter'
   use 'tpope/vim-surround'
+  use 'ggandor/lightspeed.nvim'
 
 end)
 

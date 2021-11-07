@@ -9,17 +9,18 @@ local opte = {expr = true}
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fc', '<cmd>lua require("telescope.builtin").builtin()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fe', '<cmd>lua require("telescope.builtin").file_browser()<cr>', opt)
-vim.api.nvim_set_keymap('n', '<leader>fi', '<cmd>lua require("telescope.builtin").find_files()<cr>', opt)
+vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>lua require("telescope.builtin").live_grep()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>lua require("telescope.builtin").oldfiles()<cr>', opt)
+vim.api.nvim_set_keymap('n', '<leader>fi', '<cmd>lua require("telescope.builtin").find_files()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fj', '<cmd>lua require("telescope.builtin").jumplist()<cr>', opt)
+vim.api.nvim_set_keymap('n', '<leader>fk', '<cmd>lua require("telescope.builtin").keymaps()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fl', '<cmd>lua require("telescope.builtin").loclist()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fm', '<cmd>lua require("telescope.builtin").marks()<cr>', opt)
-vim.api.nvim_set_keymap('n', '<leader>fk', '<cmd>lua require("telescope.builtin").keymaps()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fp', '<cmd>lua require("telescope.builtin").spell_suggest()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fq', '<cmd>lua require("telescope.builtin").quickfix()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fr', '<cmd>lua require("telescope.builtin").registers()<cr>', opt)
-vim.api.nvim_set_keymap('n', '<leader>fs', '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>', opt)
+vim.api.nvim_set_keymap('n', '<leader>fs', '<cmd>Telescope sessions<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>ft', '<cmd>lua require("telescope.builtin").treesitter()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fw', '<cmd>lua require("telescope.builtin").grep_string()<cr>', opt)
 
@@ -54,10 +55,6 @@ vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opttt)
 vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opttt)
 vim.api.nvim_set_keymap("n", "<leader>xr", "<cmd>Trouble lsp_references<cr>", opttt)
 
--- Session
---- https://github.com/rmagatti/session-lens
-vim.api.nvim_set_keymap('n', '<F4>', '<cmd>lua require("session-lens").search_session()<cr>', opt)
-
 -- Buffers
 --- https://github.com/akinsho/nvim-bufferline.lua
 vim.api.nvim_set_keymap('n', '<A-k>', ':BufferLineCycleNext<cr>', optff)
@@ -80,20 +77,26 @@ vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', opte)
 
 -- Terminal
 --- https://github.com/voldikss/vim-floaterm
-vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>FloatermNew --height=0.8 --width=0.9 --wintype=float<cr>", opttt)
+vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>FloatermNew<cr>", opttt)
 vim.api.nvim_set_keymap("n", "<leader>tv", "<cmd>FloatermNew --width=0.33 --wintype=vsplit<cr>", opttt)
 vim.api.nvim_set_keymap("n", "<leader>th", "<cmd>FloatermNew --height=0.25 --wintype=split<cr>", opttt)
+vim.api.nvim_set_keymap("t", "<C-k>", "<C-\\><C-n><C-w><C-w>", opttt)
+vim.api.nvim_set_keymap("n", "<C-k>", "<cmd>FloatermShow<cr>", opttt)
+vim.api.nvim_set_keymap("t", "<C-j>", "<C-\\><C-n><C-w><C-w>", opttt)
+vim.api.nvim_set_keymap("n", "<C-j>", "<cmd>FloatermShow<cr>", opttt)
 vim.api.nvim_set_keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", opttt)
-vim.api.nvim_set_keymap("t", "<C-j>", "<C-\\><C-n><C-w>j", opttt)
-vim.api.nvim_set_keymap("t", "<C-k>", "<C-\\><C-n><C-w>k", opttt)
 vim.api.nvim_set_keymap("t", "<C-l>", "<C-\\><C-n><C-w>l", opttt)
-vim.api.nvim_set_keymap("t", "<C-w>", "<C-\\><C-n><C-w><C-w>", opttt)
+vim.api.nvim_set_keymap("n", "<C-t>", "<cmd>FloatermToggle<cr>", opttt)
+vim.api.nvim_set_keymap("t", "<C-t>", "<C-\\><C-n><cmd>FloatermToggle<cr>", opttt)
 
 -- File explorers
 --- https://github.com/kyazdani42/nvim-tree.lua
 vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeRefresh<cr>:NvimTreeToggle<cr>', optff)
 --- https://github.com/ptzz/lf.vim
 vim.api.nvim_set_keymap('n', '<F3>', ':Lf<cr>', optff)
+
+-- https://github.com/ggandor/lightspeed.nvim
+vim.api.nvim_set_keymap("n", "<C-s>", "<Plug>Lightspeed_s", {})
 
 -- Zen
 --- https://github.com/folke/zen-mode.nvim

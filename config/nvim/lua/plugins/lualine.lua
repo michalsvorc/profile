@@ -12,7 +12,7 @@ lsp_status.config {
 
 require('lualine').setup {
   options = {
-    theme = 'jellybeans',
+    theme = "nightfox",
     component_separators = {nil, nil},
     section_separators = {nil, nil},
   },
