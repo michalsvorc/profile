@@ -1,10 +1,15 @@
 # Shared shell profile sourced by interactive and login shells
 
 #===============================================================================
-# Local variables
+# Shell partials
 #===============================================================================
 
-shell_partials_dir="$HOME/.local/profile/shell"
+shell_partials_dir="${HOME}/.local/profile/shell"
+
+source "${shell_partials_dir}/term.sh"
+source "${shell_partials_dir}/aliases.sh"
+source "${shell_partials_dir}/history_search.sh"
+source "${shell_partials_dir}/lf.sh"
 
 #===============================================================================
 # Settings
@@ -16,30 +21,12 @@ SAVEHIST=10000
 export LESSHISTFILE=/dev/null
 
 #===============================================================================
-# Aliases
-#===============================================================================
-
-source "$shell_partials_dir/aliases.sh"
-
-#===============================================================================
-# Search and execute command from shell history file
-#===============================================================================
-
-source "$shell_partials_dir/history_search.sh"
-
-#===============================================================================
-# lf file explorer
-#===============================================================================
-
-source "$shell_partials_dir/lf.sh"
-
-#===============================================================================
 # Bash
 #===============================================================================
 
 # Read configuration for Bash interactive shell
 if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
-  if [ -f "$HOME/.bashrc" ]; then
-    . "$HOME/.bashrc"
+  if [ -f "${HOME}/.bashrc" ]; then
+    . "${HOME}/.bashrc"
   fi
 fi
