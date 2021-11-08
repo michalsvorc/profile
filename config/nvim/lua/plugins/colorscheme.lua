@@ -8,13 +8,10 @@ end
 local nightfox = require('nightfox')
 
 nightfox.setup({
-  fox = "nightfox",
+  fox = "nordfox",
   styles = {
     comments = "italic",
     keywords = "italic",
-  },
-  colors = {
-    bg = '#2f2f2f',
   },
   hlgroups = {
     TSVariable = { fg = '#cc887c' },
