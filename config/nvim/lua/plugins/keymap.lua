@@ -20,7 +20,6 @@ vim.api.nvim_set_keymap('n', '<leader>fm', '<cmd>lua require("telescope.builtin"
 vim.api.nvim_set_keymap('n', '<leader>fp', '<cmd>lua require("telescope.builtin").spell_suggest()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fq', '<cmd>lua require("telescope.builtin").quickfix()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fr', '<cmd>lua require("telescope.builtin").registers()<cr>', opt)
-vim.api.nvim_set_keymap('n', '<leader>fs', '<cmd>Telescope sessions<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>ft', '<cmd>lua require("telescope.builtin").treesitter()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fw', '<cmd>lua require("telescope.builtin").grep_string()<cr>', opt)
 

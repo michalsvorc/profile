@@ -6,3 +6,6 @@
 /config/nvim/.netrwhist
 /config/nvim/plugin/
 /config/nvim/plugin
+
+# IDE
+Session.vim

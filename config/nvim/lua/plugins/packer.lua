@@ -78,6 +78,7 @@ return require('packer').startup(function(use)
   use 'andymass/vim-matchup'
   use 'RRethy/vim-illuminate'
   use 'windwp/nvim-autopairs'
+  use 'folke/twilight.nvim'
   --- Editor config
   use 'editorconfig/editorconfig-vim'
   --- Docker
@@ -108,9 +109,6 @@ return require('packer').startup(function(use)
   use 'sindrets/diffview.nvim'
   use 'f-person/git-blame.nvim'
 
-  -- Sessions
-  use 'Shatur/neovim-session-manager'
-
   -- General plugins
   use 'famiu/bufdelete.nvim'
   use 'tpope/vim-commentary'
@@ -118,6 +116,7 @@ return require('packer').startup(function(use)
   use 'airblade/vim-rooter'
   use 'tpope/vim-surround'
   use 'ggandor/lightspeed.nvim'
+  use 'tpope/vim-obsession'
 
 end)
 
