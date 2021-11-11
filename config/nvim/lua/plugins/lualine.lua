@@ -10,6 +10,9 @@ lsp_status.config {
   status_symbol= '',
 }
 
+local fox = 'nordfox'
+local colors = require('nightfox.colors').load(fox)
+
 require('lualine').setup {
   options = {
     theme = "nightfox",
@@ -21,13 +24,21 @@ require('lualine').setup {
     lualine_b = {"branch"},
     lualine_c = {
       "filename",
-      "diff",
+      {
+        "diff",
+        diff_color = {
+          added = { fg = colors.green_br },
+          modified = { fg = colors.blue_br },
+          removed = { fg = colors.red_br },
+        }
+      },
+
       {"diagnostics", sources = {"nvim_lsp"}}
     },
     lualine_x = {
+      "filetype",
       "encoding",
       "fileformat",
-      "filetype"
     },
     lualine_y = {"progress"},
     lualine_z = {"location"}
@@ -35,8 +46,3 @@ require('lualine').setup {
   extensions = {'nvim-tree', 'quickfix'},
   lsp_status.status
 }
-
--- Custom diff status colors
-vim.cmd[[highlight DiffAdd ctermfg=28 guifg=#9aaf6a]]
-vim.cmd[[highlight DiffChange ctermfg=31 guifg=#8298c0]]
-vim.cmd[[highlight DiffDelete ctermfg=124 guifg=#d06a4b]]
