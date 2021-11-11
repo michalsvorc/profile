@@ -1,7 +1,6 @@
 -- Plugins
 require('plugins.autopairs')
 require('plugins.bufferline')
-require('plugins.colorscheme')
 require('plugins.compe')
 require('plugins.efm')
 require('plugins.gitblame')
@@ -17,9 +16,12 @@ require('plugins.scalpel')
 require('plugins.telescope')
 require('plugins.trouble')
 require('plugins.treesitter')
+
+-- Loading order is important
+require('plugins.colorscheme')
 require('plugins.zenmode')
 
--- Direct plugin setup
+-- Imperative setup
 require('gitsigns').setup()
 require('numb').setup()
 
