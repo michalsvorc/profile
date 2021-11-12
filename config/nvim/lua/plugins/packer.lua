@@ -40,10 +40,7 @@ return require('packer').startup(function(use)
   -- File explorers
   --- Dependencies: lf
   use 'kyazdani42/nvim-tree.lua'
-  use {
-  'ptzz/lf.vim',
-    requires = 'voldikss/vim-floaterm',
-  }
+  use { 'ptzz/lf.vim', requires = 'voldikss/vim-floaterm', }
   use 'tpope/vim-vinegar'
 
   -- Search
@@ -91,10 +88,7 @@ return require('packer').startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'
-  use {
-    'folke/trouble.nvim',
-    requires = 'kyazdani42/nvim-web-devicons',
-  }
+  use { 'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons', }
   use 'kosayoda/nvim-lightbulb'
   use 'ray-x/lsp_signature.nvim'
   use 'simrat39/symbols-outline.nvim'
@@ -102,11 +96,8 @@ return require('packer').startup(function(use)
   use {'jose-elias-alvarez/nvim-lsp-ts-utils', requires = 'neovim/nvim-lspconfig'}
 
   -- Git
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = 'nvim-lua/plenary.nvim',
-  }
-  use 'sindrets/diffview.nvim'
+  use { 'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim', }
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'f-person/git-blame.nvim'
 
   -- General plugins
