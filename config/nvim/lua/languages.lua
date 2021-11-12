@@ -25,11 +25,11 @@ function languages.lsp()
 
   -- HTML
   --- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#htmtsserverl
-  table.insert(servers, 'html')
+  -- table.insert(servers, 'html')
 
   -- TypeScript
   --- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
-  table.insert(servers, 'tsserver')
+  -- table.insert(servers, 'tsserver')
 
   return servers
 end
@@ -38,15 +38,15 @@ end
 --- https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
 languages.treesitter = {
   'bash',
-  'css',
+  -- 'css',
   -- 'dockerfile',
   -- 'go',
-  'html',
+  -- 'html',
   'json',
   'lua',
-  'scss',
-  'tsx',
-  'typescript',
+  -- 'scss',
+  -- 'tsx',
+  -- 'typescript',
   'yaml',
 }
 
@@ -55,11 +55,11 @@ languages.treesitter = {
 languages.snippets = {
   -- 'css',
   -- 'go',
-  'html',
+  -- 'html',
   -- 'sass',
   'shell',
-  'typescript',
-  'typescriptreact'
+  -- 'typescript',
+  -- 'typescriptreact'
 }
 
 return languages
