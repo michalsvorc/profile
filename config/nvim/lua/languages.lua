@@ -39,7 +39,7 @@ end
 languages.treesitter = {
   'bash',
   -- 'css',
-  -- 'dockerfile',
+  'dockerfile',
   -- 'go',
   -- 'html',
   'json',
