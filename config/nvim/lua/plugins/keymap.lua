@@ -77,8 +77,8 @@ vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', opte)
 -- Terminal
 --- https://github.com/voldikss/vim-floaterm
 vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>FloatermNew<cr>", opttt)
-vim.api.nvim_set_keymap("n", "<leader>tv", "<cmd>FloatermNew --width=0.33 --wintype=vsplit<cr>", opttt)
-vim.api.nvim_set_keymap("n", "<leader>th", "<cmd>FloatermNew --height=0.25 --wintype=split<cr>", opttt)
+vim.api.nvim_set_keymap("n", "<leader>tv", "<cmd>FloatermNew --width=0.5 --wintype=vsplit<cr>", opttt)
+vim.api.nvim_set_keymap("n", "<leader>th", "<cmd>FloatermNew --height=0.3 --wintype=split<cr>", opttt)
 vim.api.nvim_set_keymap("t", "<C-k>", "<C-\\><C-n><C-w><C-w>", opttt)
 vim.api.nvim_set_keymap("n", "<C-k>", "<cmd>FloatermShow<cr>", opttt)
 vim.api.nvim_set_keymap("t", "<C-j>", "<C-\\><C-n><C-w><C-w>", opttt)
