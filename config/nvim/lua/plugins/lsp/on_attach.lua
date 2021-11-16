@@ -1,5 +1,5 @@
 -- Initialize plugins after the language server attaches to the current buffer.
-function on_attach(client, bufnr)
+return function (client, bufnr)
   require('plugins.lsp.keymap')(client, bufnr)
   require('plugins.lsp.signs')
   require('plugins.lsp.lightbulb')
@@ -10,5 +10,3 @@ function on_attach(client, bufnr)
   )
   require('plugins.lsp.symbols_outline')
 end
-
-return on_attach

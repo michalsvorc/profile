@@ -1,38 +1,39 @@
-local lspconfig = require('lspconfig')
-local on_attach = require('plugins/lsp/on_attach')
 local languages = {}
 
 -- LSP language servers
 --- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#configurations
-function languages.lsp()
-  local servers = {}
 
-  -- Bash
-  --- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bashls
-  table.insert(servers, 'bashls')
+-- Servers with default configuration
+local lsp_servers = {}
 
-  -- CSS
-  --- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cssls
-  -- table.insert(servers, 'cssls')
+-- Bash
+--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bashls
+table.insert(lsp_servers, 'bashls')
 
-  -- Docker
-  --- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dockerls
-  table.insert(servers, 'dockerls')
+-- CSS
+--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#cssls
+-- table.insert(lsp_servers, 'cssls')
 
-  -- Go
-  --- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#gopls
-  -- table.insert(servers, 'gopls')
+-- HTML
+--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#htmtsserverl
+table.insert(lsp_servers, 'html')
 
-  -- HTML
-  --- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#htmtsserverl
-  -- table.insert(servers, 'html')
+-- Initialize default configuration for lsp_servers
+require('plugins/lsp/servers/default')(lsp_servers)
 
-  -- TypeScript
-  --- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
-  -- table.insert(servers, 'tsserver')
+-- LSP servers with custom configuration
 
-  return servers
-end
+-- Docker
+--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dockerls
+require('plugins/lsp/servers/dockerls')
+
+-- TypeScript
+--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
+-- require('plugins/lsp/servers/tsserver')
+
+-- Markdown
+--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#zeta_note
+require('plugins/lsp/servers/zeta-note')
 
 -- Treesitter language parsers
 --- https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
@@ -40,7 +41,6 @@ languages.treesitter = {
   'bash',
   -- 'css',
   'dockerfile',
-  -- 'go',
   -- 'html',
   'json',
   'lua',
@@ -54,7 +54,6 @@ languages.treesitter = {
 --- https://github.com/rafamadriz/friendly-snippets#snippets-for
 languages.snippets = {
   -- 'css',
-  -- 'go',
   -- 'html',
   -- 'sass',
   'shell',
