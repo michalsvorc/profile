@@ -1,6 +1,11 @@
 -- Engine: https://github.com/L3MON4D3/LuaSnip
 
-require("luasnip/loaders/from_vscode").load({
-  include = require('languages').snippets
+local languages = require('languages').snippets
+local loader = require("luasnip/loaders/from_vscode")
+
+loader.load({
+  include = languages
 })
+
+loader.lazy_load()
 
