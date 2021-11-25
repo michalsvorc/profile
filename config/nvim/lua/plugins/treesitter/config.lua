@@ -7,15 +7,18 @@ require('nvim-treesitter.configs').setup {
     additional_vim_regex_highlighting = false,
   },
   indent = {
-    enable = true -- NOTE: This is an experimental feature.
+    enable = true
   },
-  context_commentstring = { -- JoosepAlviste/nvim-ts-context-commentstring
+  context_commentstring = { -- https://github.com/JoosepAlviste/nvim-ts-context-commentstring
     enable = true
   },
   matchup = {
-    enable = true -- andymass/vim-matchup
+    enable = true -- https://github.com/andymass/vim-matchup
   },
   autopairs = {
-    enable = true -- windwp/nvim-autopairs
+    enable = true -- https://github.com/windwp/nvim-autopairs
   },
+   autotag = {
+    enable = true, -- https://github.com/windwp/nvim-ts-autotag
+  }
 }
