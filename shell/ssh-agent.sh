@@ -23,9 +23,9 @@ runtime_dir_fallback="/tmp/$UID"
 
 ttl="${1:-$ttl_default}"
 
-[[ -z "$runtime_dir" ]] \
+[[ ! -d "$runtime_dir" ]] \
   && mkdir -p "$runtime_dir_fallback" \
-  && runtime_dir="$runruntime_dir_fallback"
+  && runtime_dir="$runtime_dir_fallback"
 
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
   ssh-agent -t "$ttl" > "${runtime_dir}/${agent_env_file}"
