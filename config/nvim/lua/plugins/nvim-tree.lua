@@ -6,6 +6,7 @@ vim.g.nvim_tree_indent_markers = 1 -- 0 by default, this option shows indent mar
 vim.g.nvim_tree_git_hl = 1 -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
 vim.g.nvim_tree_highlight_opened_files = 1 -- 0 by default, will enable folder and file icon highlight for opened files/directories.
 vim.g.nvim_tree_symlink_arrow = icons.file.symlink -- used as a separator between symlinks' source and target.
+vim.g.nvim_tree_disable_window_picker = 1 -- 0 by default, will disable the window picker.
 
 vim.g.nvim_tree_icons = {
  default = icons.file.default,
