@@ -11,6 +11,8 @@ lspconfig['tsserver'].setup{
       importModuleSpecifierPreference = "relative", -- "shortest" | "project-relative" | "relative" | "non-relative"
     }
   },
+  root_dir = lspconfig.util.root_pattern('tsconfig.json', '.git', '.profile'),
+  flags = flags,
   on_attach = function(client, buffer)
     on_attach(client, buffer)
 

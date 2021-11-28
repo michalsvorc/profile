@@ -26,7 +26,7 @@ local efm_filetypes = {
 
 -- Setup
 lspconfig.efm.setup{
-  root_dir = lspconfig.util.root_pattern('.git', 'yarn.lock'),
+  root_dir = lspconfig.util.root_pattern('package.json', '.git', 'yarn.lock', '.profile'),
   filetypes = vim.tbl_keys(efm_filetypes),
   init_options = {
     documentFormatting = true,

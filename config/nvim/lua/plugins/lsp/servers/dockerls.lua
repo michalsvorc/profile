@@ -7,7 +7,7 @@ local on_attach = require('plugins/lsp/on_attach')
 
 lspconfig['dockerls'].setup{
   filetypes = { "dockerfile", "Dockerfile" },
-  root_dir = lspconfig.util.root_pattern('Dockerfile', '.git'),
+  root_dir = lspconfig.util.root_pattern('.git', '.profile'),
   flags = flags,
   on_attach = on_attach
 }

@@ -9,7 +9,7 @@ local bin_root = '/usr/local/bin'
 lspconfig['zeta_note'].setup{
   cmd = {bin_root .. '/zeta-note'},
   filetypes = { 'markdown' },
-  root_dir = lspconfig.util.root_pattern('.git'),
+  root_dir = lspconfig.util.root_pattern('.git', '.profile'),
   flags = flags,
   on_attach = on_attach
 }
