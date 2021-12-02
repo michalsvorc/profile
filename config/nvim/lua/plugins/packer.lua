@@ -38,7 +38,7 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
 
   -- File explorers
-  --- Dependencies: lf
+  -- Dependencies: lf
   use 'kyazdani42/nvim-tree.lua'
   use { 'ptzz/lf.vim', requires = 'voldikss/vim-floaterm', }
   use 'tpope/vim-vinegar'
@@ -60,7 +60,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-compe'
 
   -- Treesitter
-  --- Dependencies: C++ compiler
+  -- Dependencies: C++ compiler
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'p00f/nvim-ts-rainbow', requires = 'nvim-treesitter/nvim-treesitter'}
   use {'romgrk/nvim-treesitter-context', requires = 'nvim-treesitter/nvim-treesitter'}
@@ -77,14 +77,14 @@ return require('packer').startup(function(use)
   use 'RRethy/vim-illuminate'
   use 'windwp/nvim-autopairs'
   use 'folke/twilight.nvim'
-  --- Editor config
+  -- Editor config
   use 'editorconfig/editorconfig-vim'
-  --- Docker
+  -- Docker
   use 'ekalinin/Dockerfile.vim'
-  --- Markdown
-  ---- Dependencies: https://github.com/ellisonleao/glow.nvim
+  -- Markdown
+  -- Dependencies: https://github.com/ellisonleao/glow.nvim
   use 'ellisonleao/glow.nvim'
-  --- HTML
+  -- HTML
   use 'mattn/emmet-vim'
 
   -- LSP
@@ -93,13 +93,20 @@ return require('packer').startup(function(use)
   use 'kosayoda/nvim-lightbulb'
   use 'ray-x/lsp_signature.nvim'
   use 'simrat39/symbols-outline.nvim'
-  --- TypeScript
+  -- TypeScript
   use {'jose-elias-alvarez/nvim-lsp-ts-utils', requires = 'neovim/nvim-lspconfig'}
 
   -- Git
   use { 'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim', }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'f-person/git-blame.nvim'
+
+  -- REST
+  -- Dependencies: curl, jq
+  use {
+    "NTBBloodbath/rest.nvim",
+    requires = { "nvim-lua/plenary.nvim" }
+  }
 
   -- General plugins
   use 'famiu/bufdelete.nvim'
