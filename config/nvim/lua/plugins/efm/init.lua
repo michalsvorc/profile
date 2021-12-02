@@ -1,15 +1,14 @@
 -- efm language server
---- https://github.com/mattn/efm-langserver
---- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#efm
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#efm
 
-local lspconfig = require('lspconfig')
+local lspconfig = require("lspconfig")
 
 -- Formatters
---- Dependencies: prettier
+-- Dependencies: prettier
 local prettier = require("plugins.efm.prettier")
 
 -- Linters
---- Dependencies: eslint
+-- Dependencies: eslint
 local eslint = require("plugins.efm.eslint")
 
 -- Filetypes
@@ -26,13 +25,16 @@ local efm_filetypes = {
 
 -- Setup
 lspconfig.efm.setup{
-  root_dir = lspconfig.util.root_pattern('package.json', '.git', 'yarn.lock', '.profile'),
+  root_dir = function(fname)
+    return lspconfig.util.root_pattern("tsconfig.json", ".git")(fname);
+  end,
   filetypes = vim.tbl_keys(efm_filetypes),
   init_options = {
     documentFormatting = true,
     codeAction = true,
   },
   settings = {
+    rootMarkers = {".eslintrc.json", ".eslintrc.js", ".eslintrc", ".git/", 'yarn.lock', '.profile'},
     languages = efm_filetypes,
     log_level = 1,
   },
