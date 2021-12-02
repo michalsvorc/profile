@@ -9,7 +9,7 @@ local lspconfig = require('lspconfig')
 local prettier = require("plugins.efm.prettier")
 
 -- Linters
---- Dependencies: eslint_d
+--- Dependencies: eslint
 local eslint = require("plugins.efm.eslint")
 
 -- Filetypes
