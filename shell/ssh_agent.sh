@@ -14,8 +14,12 @@
 
 ttl_default='1h'
 agent_env_file='ssh-agent.env'
-runtime_dir="$XDG_RUNTIME_DIR"
-runtime_dir_fallback="/tmp/$UID"
+runtime_dir=$([[ "$XDG_RUNTIME_DIR" ]] \
+  && echo "$XDG_RUNTIME_DIR" \
+  || echo "/tmp/$UID" \
+)
+
+filepath="${runtime_dir}/${agent_env_file}"
 
 #===============================================================================
 # Execution
@@ -23,14 +27,12 @@ runtime_dir_fallback="/tmp/$UID"
 
 ttl="${1:-$ttl_default}"
 
-[[ ! -d "$runtime_dir" ]] \
-  && mkdir -p "$runtime_dir_fallback" \
-  && runtime_dir="$runtime_dir_fallback"
+[[ ! -d "$runtime_dir" ]] && mkdir -p "$runtime_dir"
 
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-  ssh-agent -t "$ttl" > "${runtime_dir}/${agent_env_file}"
+  ssh-agent -t "$ttl" > "${filepath}"
 fi
 
-if [[ -z "$SSH_AUTH_SOCK" ]]; then
-  source "${runtime_dir}/${agent_env_file}" >/dev/null
+if [[ -z "$SSH_AUTH_SOCK" && -f "${filepath}" ]]; then
+  source "${filepath}" >/dev/null
 fi
