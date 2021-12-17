@@ -10,8 +10,8 @@ lsp_status.config {
   status_symbol= '',
 }
 
-local fox = 'nordfox'
-local colors = require('nightfox.colors').load(fox)
+local colorscheme = 'nordfox'
+local colors = require('nightfox.colors').load(colorscheme)
 
 require('lualine').setup {
   options = {
@@ -32,8 +32,7 @@ require('lualine').setup {
           removed = { fg = colors.red_br },
         }
       },
-
-      {"diagnostics", sources = {"nvim_lsp"}}
+      {"diagnostics", sources = {"nvim_diagnostic"}}
     },
     lualine_x = {
       "filetype",
