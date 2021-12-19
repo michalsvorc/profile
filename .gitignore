@@ -1,10 +1,8 @@
-/config/awesome/plugins/
-/config/awesome/plugins
-/config/awesome/themes/
-/config/awesome/themes
-
+/config/awesome/plugins/*
+!/config/awesome/plugins/README.md
+/config/awesome/themes/*
+!/config/awesome/themes/README.md
 /config/nvim/.netrwhist
-/config/nvim/plugin/
 /config/nvim/plugin
 
 # IDE
