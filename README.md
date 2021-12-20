@@ -4,6 +4,21 @@
 
 Clone the repository to `$HOME/.local/profile` and create softlinks in your `$HOME` directory.
 
+## Git
+
+Link the configuration file:
+
+```console
+$ ln -s $HOME/.profile/gitconfig $HOME/.gitconfig
+```
+
+Configure Git username and email address:
+
+```console
+$ git config --global user.name "Your Name"
+$ git config --global user.email "youremail@yourdomain.com"
+```
+
 ## Shells
 
 ### Shared shell profile vs. Local shell profile
@@ -12,8 +27,8 @@ Shared shell profile in `shell/profile.sh` is sourced automatically from shell `
 
 Put user specific configuration to `$HOME/.profile` and create a symlink in `$HOME` directory.
 
-Bash: `ln -s $HOME/.profile $HOME/.bash_profile`
-Zsh:  `ln -s $HOME/.profile $HOME/.zprofile`
+Bash: `$ ln -s $HOME/.profile $HOME/.bash_profile`
+Zsh:  `$ ln -s $HOME/.profile $HOME/.zprofile`
 
 ### Bash
 
