@@ -64,3 +64,14 @@ $ mkdir -p "$HOME/.local/share/tmux/" \
 Create softlinks for `plugins` and `themes` in `.config/plugins/awesome`.
 
 Point them to the directories with your awesome wm plugins and themes.
+
+## Neovim
+
+1. Start by executing `nvim` or `edit` alias.
+2. Package manager should be installed on the first run.
+3. Run `:PackerInstall` vim command.
+
+### Package install fails
+
+1. Remove failed packages from `~/.local/share/nvim/site/pack/packer/start/`
+2. Rerun the `:PackerInstall` vim command.
