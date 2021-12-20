@@ -39,7 +39,7 @@ $ mkdir -p "$HOME/.local/share/zsh/" \
   "$HOME/.local/share/zsh/zsh-syntax-highlighting"
 ```
 
-#### [fzf-tab]()
+#### [fzf-tab](https://github.com/Aloxaf/fzf-tab)
 
 Replace zsh's default completion selection menu with fzf.
 
@@ -61,4 +61,15 @@ $ mkdir -p "$HOME/.local/share/tmux/" \
 
 ## Awesome WM
 
-Install plugins: `./config/awesome/plugins/README.md`
+Install plugins: see `./config/awesome/plugins/README.md`.
+
+## Neovim
+
+1. Start by executing `nvim` or `edit` alias.
+2. Package manager should be installed on the first run.
+3. Run `:PackerInstall` vim command.
+
+### Package install fails
+
+1. Remove failed packages from `~/.local/share/nvim/site/pack/packer/start/`
+2. Rerun the `:PackerInstall` vim command.
