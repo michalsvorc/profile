@@ -4,6 +4,8 @@
 
 Clone the repository to `$HOME/.local/profile` and create softlinks in your `$HOME` directory.
 
+
+
 ## Shells
 
 ### Shared shell profile vs. Local shell profile
@@ -39,7 +41,7 @@ $ mkdir -p "$HOME/.local/share/zsh/" \
   "$HOME/.local/share/zsh/zsh-syntax-highlighting"
 ```
 
-#### [fzf-tab]()
+#### [fzf-tab](https://github.com/Aloxaf/fzf-tab)
 
 Replace zsh's default completion selection menu with fzf.
 
