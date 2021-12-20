@@ -63,9 +63,7 @@ $ mkdir -p "$HOME/.local/share/tmux/" \
 
 ## Awesome WM
 
-Create softlinks for `plugins` and `themes` in `.config/plugins/awesome`.
-
-Point them to the directories with your awesome wm plugins and themes.
+Install plugins: see `./config/awesome/plugins/README.md`.
 
 ## Neovim
 
