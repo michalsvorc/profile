@@ -24,3 +24,5 @@ require('plugins.zenmode')
 require('gitsigns').setup()
 require('numb').setup()
 
+-- LSP
+require('plugins.lsp.symbols_outline')

@@ -8,5 +8,4 @@ return function (client, bufnr)
   require('lsp_signature').on_attach(
     require('plugins.lsp.signature')
   )
-  require('plugins.lsp.symbols_outline')
 end
