@@ -3,6 +3,7 @@
 local icons = require('icons')
 
 vim.g.symbols_outline = {
+  width = 35,
   show_numbers = true,
   symbols = {
     File = {icon = icons.file.default, hl = "TSURI"},
