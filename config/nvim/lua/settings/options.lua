@@ -42,12 +42,14 @@ vim.opt.smartcase = true
 vim.opt.lazyredraw = true
 vim.opt.fillchars = {vert = ' '}
 vim.opt.showtabline = 2
-vim.opt.number = true
-vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
 vim.opt.cursorline = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+-- Line numbers
+vim.opt.number = true
+vim.opt.relativenumber = false
 
 -- Netrw
 vim.g.netrw_liststyle = 3
