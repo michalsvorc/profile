@@ -77,7 +77,7 @@ vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', opte)
 -- Terminal
 -- https://github.com/voldikss/vim-floaterm
 vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>FloatermNew<cr>", opttt)
-vim.api.nvim_set_keymap("n", "<leader>tv", "<cmd>FloatermNew --width=0.5 --wintype=vsplit<cr>", opttt)
+vim.api.nvim_set_keymap("n", "<leader>tv", "<cmd>FloatermNew --width=0.35 --wintype=vsplit<cr>", opttt)
 vim.api.nvim_set_keymap("n", "<leader>th", "<cmd>FloatermNew --height=0.3 --wintype=split<cr>", opttt)
 vim.api.nvim_set_keymap("t", "<C-k>", "<C-\\><C-n><C-w><C-w>", opttt)
 vim.api.nvim_set_keymap("n", "<C-k>", "<cmd>FloatermShow<cr>", opttt)
@@ -87,6 +87,8 @@ vim.api.nvim_set_keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", opttt)
 vim.api.nvim_set_keymap("t", "<C-l>", "<C-\\><C-n><C-w>l", opttt)
 vim.api.nvim_set_keymap("n", "<C-t>", "<cmd>FloatermToggle<cr>", opttt)
 vim.api.nvim_set_keymap("t", "<C-t>", "<C-\\><C-n><cmd>FloatermToggle<cr>", opttt)
+vim.api.nvim_set_keymap("t", "<F8>", "<cmd>FloatermNext<cr>", opttt)
+vim.api.nvim_set_keymap("t", "<F9>", "<cmd>FloatermPrev<cr>", opttt)
 
 -- File explorers
 -- https://github.com/kyazdani42/nvim-tree.lua
