@@ -58,3 +58,5 @@
   l1  = log -1 HEAD --stat
   s   = status -s
 
+[credential]
+	helper = "!f() { /home/user/.vscode-server/bin/7db1a2b88f7557e0a43fec75b6ba7e50b3e9f77e/node /tmp/vscode-remote-containers-daa2d6be8844a29c62feb5cc24267d8e9f300029.js $*; }; f"
