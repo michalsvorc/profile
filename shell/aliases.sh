@@ -26,6 +26,9 @@ alias rc-service='sudo rc-service'
 # AWS
 alias awsc='aws --cli-auto-prompt'
 
+# Other
+alias tmux='tmux -2u'
+
 # Shortcuts
-alias edit=$EDITOR
+alias edit="$EDITOR"
 
