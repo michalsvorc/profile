@@ -25,7 +25,7 @@ vim.g.symbols_outline = {
     Boolean = {icon = icons.symbols.boolean, hl = "TSBoolean"},
     Array = {icon = icons.symbols.array, hl = "TSConstant"},
     Object = {icon = icons.symbols.object, hl = "TSType"},
-    Key = {icon = icons.symbols.key, hl = "TSType"},
+    Key = {icon = icons.symbols.keyword, hl = "TSType"},
     Null = {icon = icons.symbols.null, hl = "TSType"},
     EnumMember = {icon = icons.symbols.enum_member, hl = "TSField"},
     Struct = {icon = icons.symbols.struct, hl = "TSType"},

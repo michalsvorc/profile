@@ -2,7 +2,8 @@
 --- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
 
 local lspconfig = require('lspconfig')
-local flags = require('plugins/lsp/flags')
+local flags = require('plugins/lsp/options/flags')
+local capabilities = require('plugins/lsp/options/capabilities')
 local on_attach = require('plugins/lsp/on_attach')
 
 lspconfig['tsserver'].setup{
@@ -13,6 +14,7 @@ lspconfig['tsserver'].setup{
   },
   root_dir = lspconfig.util.root_pattern('tsconfig.json', '.git', '.profile'),
   flags = flags,
+  capabilities = capabilities,
   on_attach = function(client, buffer)
     on_attach(client, buffer)
 

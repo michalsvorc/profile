@@ -65,15 +65,6 @@ vim.api.nvim_set_keymap('n', '<A-x>', ':BufferLinePickClose<cr>', optff)
 -- https://github.com/famiu/bufdelete.nvim
 vim.api.nvim_set_keymap('n', '<A-w>', ':Bdelete!<cr>', optff)
 
--- Autocomplete
--- https://github.com/hrsh7th/nvim-compe
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", opte)
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", opte)
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", opte)
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", opte)
-vim.api.nvim_set_keymap('i', '<cr>', 'compe#confirm("<cr>")', opte)
-vim.api.nvim_set_keymap('i', '<c-space>', 'compe#complete()', opte)
-
 -- Terminal
 -- https://github.com/voldikss/vim-floaterm
 vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>FloatermNew<cr>", opttt)

@@ -55,8 +55,8 @@ vim.opt.relativenumber = false
 vim.g.netrw_liststyle = 3
 vim.g.netrw_winsize = 15
 
--- Completion required by compe
-vim.opt.completeopt = 'menuone,noselect'
+-- Completion plugin: nvim-compe
+vim.opt.completeopt = 'menu,menuone,noselect'
 
 -- Vimidff
 -- - Prevent opening files as RO in vimdiff.

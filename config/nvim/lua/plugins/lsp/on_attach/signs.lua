@@ -20,7 +20,7 @@ end
 -- https://github.com/neovim/nvim-lspconfig/wiki/UI-customization#completion-kinds
 local autocomplete_signs = {
   Class = icons.symbols.class ..' Class',
-  Color = icons.color ..' Color',
+  Color = icons.symbols.color ..' Color',
   Constant = icons.symbols.constant ..' Constant',
   Constructor = icons.symbols.constructor ..' Constructor',
   Enum = icons.symbols.enum ..' Enum',
@@ -30,11 +30,11 @@ local autocomplete_signs = {
   Folder = icons.folder.default ..' Folder',
   Function = icons.symbols.function_fn ..' Function',
   Interface = icons.symbols.interface ..' Interface',
-  Keyword = icons.symbols.key ..' Keyword',
+  Keyword = icons.symbols.keyword ..' Keyword',
   Method = icons.symbols.method ..' Method',
   Module = icons.symbols.module ..' Module',
   Property = icons.symbols.property ..' Property',
-  Snippet = icons.snippet ..' Snippet',
+  Snippet = icons.symbols.snippet ..' Snippet',
   Struct = icons.symbols.struct ..' Struct',
   Text = icons.symbols.string ..' Text ',
   Unit = icons.symbols.unit ..' Unit',
