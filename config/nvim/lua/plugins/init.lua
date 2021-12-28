@@ -25,4 +25,6 @@ require('gitsigns').setup()
 require('numb').setup()
 
 -- LSP
-require('plugins.lsp.symbols_outline')
+require('plugins.lsp.null-ls')
+require('plugins.lsp.symbols-outline')
+

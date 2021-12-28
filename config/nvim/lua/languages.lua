@@ -29,15 +29,11 @@ require('plugins/lsp/servers/dockerls')
 
 -- TypeScript
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
--- require('plugins/lsp/servers/tsserver')
-
--- efm language server (linting and formatting)
--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#efm
--- require('plugins/efm')
+require('plugins/lsp/servers/tsserver')
 
 -- Markdown
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#zeta_note
-require('plugins/lsp/servers/zeta-note')
+-- require('plugins/lsp/servers/zeta-note')
 
 -- Treesitter language parsers
 -- https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
@@ -50,7 +46,7 @@ languages.treesitter = {
   'lua',
   -- 'scss',
   -- 'tsx',
-  -- 'typescript',
+  'typescript',
   'yaml',
 }
 
@@ -61,8 +57,8 @@ languages.snippets = {
   -- 'html',
   -- 'sass',
   'shell',
-  -- 'typescript',
-  -- 'typescriptreact'
+  'typescript',
+  'typescriptreact'
 }
 
 return languages

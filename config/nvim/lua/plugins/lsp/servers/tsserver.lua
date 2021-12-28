@@ -16,7 +16,7 @@ lspconfig['tsserver'].setup{
   on_attach = function(client, buffer)
     on_attach(client, buffer)
 
-    -- Use efm language server for document formatting
+    -- Disable tsserver native document formatting.
     client.resolved_capabilities.document_formatting = false
 
     -- Utilities to improve the TypeScript development experience.
@@ -32,4 +32,3 @@ lspconfig['tsserver'].setup{
 
   end
 }
-

@@ -95,6 +95,7 @@ return require('packer').startup(function(use)
   use 'simrat39/symbols-outline.nvim'
   -- TypeScript
   use {'jose-elias-alvarez/nvim-lsp-ts-utils', requires = 'neovim/nvim-lspconfig'}
+  use {'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim'}
 
   -- Git
   use { 'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim', }
