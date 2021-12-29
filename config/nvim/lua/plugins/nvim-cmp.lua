@@ -2,6 +2,7 @@
 
 local luasnip = require('luasnip')
 local cmp = require('cmp')
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local icons = require('icons')
 
 local has_words_before = function()
@@ -105,3 +106,6 @@ cmp.setup.cmdline('/', {
   }
 })
 
+-- nvim-autopairs CR mapping
+-- https://github.com/windwp/nvim-autopairs#you-need-to-add-mapping-cr-on-nvim-cmp-setupcheck-readmemd-on-nvim-cmp-repo
+cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
