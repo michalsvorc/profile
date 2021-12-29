@@ -1,5 +1,5 @@
 -- LSP servers with default configuration
---- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#configurations
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#configurations
 
 return function (servers)
   local lspconfig = require('lspconfig')

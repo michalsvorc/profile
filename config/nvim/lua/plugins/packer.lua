@@ -81,7 +81,6 @@ return require('packer').startup(function(use)
   use 'andymass/vim-matchup'
   use 'RRethy/vim-illuminate'
   use 'windwp/nvim-autopairs'
-  use 'folke/twilight.nvim'
   -- Editor config
   use 'editorconfig/editorconfig-vim'
   -- Docker

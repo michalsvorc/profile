@@ -1,5 +1,5 @@
-  -- Docker
-  --- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dockerls
+-- Docker
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#dockerls
 
 local lspconfig = require('lspconfig')
 local flags = require('plugins/lsp/options/flags')

@@ -1,5 +1,5 @@
 -- TypeScript
---- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
 
 local lspconfig = require('lspconfig')
 local flags = require('plugins/lsp/options/flags')
@@ -22,7 +22,7 @@ lspconfig['tsserver'].setup{
     client.resolved_capabilities.document_formatting = false
 
     -- Utilities to improve the TypeScript development experience.
-    --- https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils
+    -- https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils
     local ts_utils = require('nvim-lsp-ts-utils')
 
     ts_utils.setup {

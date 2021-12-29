@@ -10,8 +10,7 @@ lsp_status.config {
   status_symbol= '',
 }
 
-local colorscheme = 'nordfox'
-local colors = require('nightfox.colors').load(colorscheme)
+local colors = require('nightfox.colors').load('nordfox')
 
 require('lualine').setup {
   options = {

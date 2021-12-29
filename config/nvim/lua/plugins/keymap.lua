@@ -1,4 +1,5 @@
 -- Keymap
+
 local opt = {noremap = true, silent = false}
 local optff = {noremap=false, silent=false}
 local opttt = {noremap = true, silent = true }

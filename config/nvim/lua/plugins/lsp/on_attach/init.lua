@@ -1,4 +1,5 @@
 -- Initialize plugins after the language server attaches to the current buffer.
+
 local icons = require('icons')
 
 return function (client, bufnr)
@@ -9,10 +10,10 @@ return function (client, bufnr)
   require('illuminate').on_attach(client)
 
   require('lsp_signature').on_attach({
-      bind = true,
-      hint_prefix = icons.symbols.variable ..' ',
-      handler_opts = {
-        border = "single"
-      }
-    }, bufnr)
+    bind = true,
+    hint_prefix = icons.symbols.variable ..' ',
+    handler_opts = {
+      border = "single"
+    }
+  }, bufnr)
 end
