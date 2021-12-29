@@ -79,8 +79,8 @@ vim.api.nvim_set_keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", opttt)
 vim.api.nvim_set_keymap("t", "<C-l>", "<C-\\><C-n><C-w>l", opttt)
 vim.api.nvim_set_keymap("n", "<C-t>", "<cmd>FloatermToggle<cr>", opttt)
 vim.api.nvim_set_keymap("t", "<C-t>", "<C-\\><C-n><cmd>FloatermToggle<cr>", opttt)
-vim.api.nvim_set_keymap("t", "<F8>", "<cmd>FloatermNext<cr>", opttt)
-vim.api.nvim_set_keymap("t", "<F9>", "<cmd>FloatermPrev<cr>", opttt)
+vim.api.nvim_set_keymap("t", "<C-n>", "<cmd>FloatermNext<cr>", opttt)
+vim.api.nvim_set_keymap("t", "<C-p>", "<cmd>FloatermPrev<cr>", opttt)
 
 -- File explorers
 -- https://github.com/kyazdani42/nvim-tree.lua
