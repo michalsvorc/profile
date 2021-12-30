@@ -48,7 +48,8 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = {
       'nvim-lua/popup.nvim',
-      'nvim-lua/plenary.nvim'
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-file-browser.nvim'
     }
   }
   use 'eugen0329/vim-esearch'

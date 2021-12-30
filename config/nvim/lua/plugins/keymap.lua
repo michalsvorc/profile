@@ -6,9 +6,9 @@ local opte = {expr = true}
 
 -- Fuzzy finder
 -- https://github.com/nvim-telescope/telescope.nvim
-vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<cr>', opt)
+vim.api.nvim_set_keymap('n', '<leader>fe', '<cmd>lua require("telescope.builtin").buffers()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fc', '<cmd>lua require("telescope.builtin").builtin()<cr>', opt)
-vim.api.nvim_set_keymap('n', '<leader>fe', '<cmd>lua require("telescope.builtin").file_browser()<cr>', opt)
+vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>lua require("telescope").extensions.file_browser.file_browser()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>lua require("telescope.builtin").live_grep()<cr>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>lua require("telescope.builtin").oldfiles()<cr>', opt)
