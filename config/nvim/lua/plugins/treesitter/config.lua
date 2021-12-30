@@ -18,7 +18,7 @@ require('nvim-treesitter.configs').setup {
   autopairs = {
     enable = true -- https://github.com/windwp/nvim-autopairs
   },
-   autotag = {
+  autotag = {
     enable = true, -- https://github.com/windwp/nvim-ts-autotag
   }
 }

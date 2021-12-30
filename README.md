@@ -84,7 +84,15 @@ Install plugins: see `./config/awesome/plugins/README.md`.
 2. Package manager should be installed on the first run.
 3. Run `:PackerInstall` vim command.
 
-### Package install fails
+### Configuration
+
+#### Programming languages support
+
+Edit `config/nvim/lua/languages.lua`.
+
+### Troubleshooting
+
+#### Initial package installation fails
 
 1. Remove failed packages from `~/.local/share/nvim/site/pack/packer/start/`
 2. Rerun the `:PackerInstall` vim command.

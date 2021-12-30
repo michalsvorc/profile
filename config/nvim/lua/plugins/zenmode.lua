@@ -14,5 +14,8 @@ require("zen-mode").setup {
       list = false,
     },
   },
+   plugins = {
+    gitsigns = { enabled = false }, -- disables git signs
+  },
 }
 

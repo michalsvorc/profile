@@ -22,7 +22,7 @@ require('plugins/lsp/servers/dockerls')
 
 -- TypeScript
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
--- require('plugins/lsp/servers/tsserver')
+require('plugins/lsp/servers/tsserver')
 
 -- Initialize LSP servers with default configuration
 require('plugins/lsp/servers/default')(lsp_servers)
@@ -38,7 +38,7 @@ languages.treesitter = {
   'lua',
   -- 'scss',
   -- 'tsx',
-  -- 'typescript',
+  'typescript',
   'yaml',
 }
 
@@ -49,8 +49,8 @@ languages.snippets = {
   -- 'html',
   -- 'sass',
   'shell',
-  -- 'typescript',
-  -- 'typescriptreact'
+  'typescript',
+  'typescriptreact'
 }
 
 return languages

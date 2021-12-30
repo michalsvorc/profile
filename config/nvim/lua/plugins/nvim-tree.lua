@@ -9,27 +9,27 @@ vim.g.nvim_tree_symlink_arrow = icons.file.symlink -- used as a separator betwee
 vim.g.nvim_tree_disable_window_picker = 1 -- 0 by default, will disable the window picker.
 
 vim.g.nvim_tree_icons = {
- default = icons.file.default,
- symlink = icons.file.symlink,
- git = {
-   unstaged = icons.vcs.unstaged,
-   staged = icons.vcs.staged,
-   unmerged = icons.vcs.unmerged,
-   renamed = icons.vcs.renamed,
-   untracked = icons.vcs.untracked,
-   deleted = icons.vcs.deleted,
-   ignored = icons.vcs.ignored
- },
- folder = {
-   arrow_open = icons.arrow_open,
-   arrow_closed = icons.arrow_closed,
-   default = icons.folder.default,
-   open = icons.folder.open,
-   empty = icons.folder.empty,
-   empty_open = icons.folder.empty_open,
-   symlink = icons.folder.symlink,
-   symlink_open = icons.folder.symlink_open,
- },
+  default = icons.file.default,
+  symlink = icons.file.symlink,
+  git = {
+    unstaged = icons.vcs.unstaged,
+    staged = icons.vcs.staged,
+    unmerged = icons.vcs.unmerged,
+    renamed = icons.vcs.renamed,
+    untracked = icons.vcs.untracked,
+    deleted = icons.vcs.deleted,
+    ignored = icons.vcs.ignored
+  },
+  folder = {
+    arrow_open = icons.arrow_open,
+    arrow_closed = icons.arrow_closed,
+    default = icons.folder.default,
+    open = icons.folder.open,
+    empty = icons.folder.empty,
+    empty_open = icons.folder.empty_open,
+    symlink = icons.folder.symlink,
+    symlink_open = icons.folder.symlink_open,
+  },
 }
 
 require('nvim-tree').setup {
