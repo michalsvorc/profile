@@ -2,7 +2,6 @@ local languages = {}
 local lsp_servers = {}
 
 -- LSP language servers
--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#configurations
 
 -- Bash
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bashls
@@ -22,7 +21,7 @@ require('plugins/lsp/servers/dockerls')
 
 -- TypeScript
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
-require('plugins/lsp/servers/tsserver')
+-- require('plugins/lsp/servers/tsserver')
 
 -- Initialize LSP servers with default configuration
 require('plugins/lsp/servers/default')(lsp_servers)
@@ -38,19 +37,19 @@ languages.treesitter = {
   'lua',
   -- 'scss',
   -- 'tsx',
-  'typescript',
+  -- 'typescript',
   'yaml',
 }
 
 -- Language snippets
--- https://github.com/rafamadriz/friendly-snippets#snippets-for
+-- https://github.com/rafamadriz/friendly-snippets/wiki
 languages.snippets = {
   -- 'css',
   -- 'html',
   -- 'sass',
   'shell',
-  'typescript',
-  'typescriptreact'
+  -- 'typescript',
+  -- 'typescriptreact'
 }
 
 return languages
