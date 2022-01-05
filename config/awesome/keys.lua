@@ -7,12 +7,6 @@ local switcher = require("plugins").switcher
 -- Default modkey.
 modkey = "Mod4"
 
--- Commands
-local browser = require("commands").browser
-local browser_development = require("commands").browser_development
-local browser_private = require("commands").browser_private
-local youtube = require("commands").youtube
-
 -- {{{ Key bindings
 globalkeys = gears.table.join(
   awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
@@ -115,13 +109,15 @@ globalkeys = gears.table.join(
     {description = "show the menubar", group = "launcher"}),
 
   -- Commands
-  awful.key({ modkey, 'Shift' }, "b", function () awful.spawn(browser) end,
+  awful.key({ modkey, 'Shift' }, "b", function () awful.spawn(require("commands").browser) end,
   {description = "web browser", group = "hotkeys"}),
-  awful.key({ modkey, 'Shift' }, "d", function () awful.spawn(browser_development) end,
+  awful.key({ modkey, 'Shift' }, "c", function () awful.spawn(require("commands").code) end,
+  {description = "code editor", group = "hotkeys"}),
+  awful.key({ modkey, 'Shift' }, "d", function () awful.spawn(require("commands").browser_development) end,
     {description = "web browser: developer", group = "hotkeys"}),
-  awful.key({ modkey, 'Shift' }, "p", function () awful.spawn(browser_private) end,
+  awful.key({ modkey, 'Shift' }, "p", function () awful.spawn(require("commands").browser_private) end,
     {description = "web browser: private", group = "hotkeys"}),
-  awful.key({ modkey, 'Shift' }, "y", function () awful.spawn(youtube) end,
+  awful.key({ modkey, 'Shift' }, "y", function () awful.spawn(require("commands").youtube) end,
     {description = "youtube client", group = "hotkeys"}),
 
   -- awesome-switcher plugin
