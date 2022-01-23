@@ -1,15 +1,29 @@
-# GNU/Linux profile configuration files  
+# GNU/Linux profile configuration files
+
+## Requirements
+
+- [exa](https://github.com/ogham/exa)
+- [fzf](https://github.com/junegunn/fzf)
+
+Optional:
+
+- [lf](https://github.com/gokcehan/lf)
+- Terminal emulator with patched [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts).
+  See example for Hack typeface [installation](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#linux).
 
 ## Usage
 
-Clone the repository to `$HOME/.local/profile` and create softlinks in your `$HOME` directory.
+Clone this repository to `$HOME/.local/profile` and create desired softlinks in your `$HOME` directory.
+
+Note that `$HOME/.local/profile` configuration files are without the hidden file `.` (dot) filename prefix.
+You must enter the correct configuration filenames when creating softlinks in your `$HOME` directory.
 
 ## Git
 
-Link the configuration file:
+Execute:
 
 ```console
-$ ln -s $HOME/.profile/gitconfig $HOME/.gitconfig
+$ file=gitconfig;   ln -s "$HOME/.local/profile/${file}" "$HOME/.${file}"
 ```
 
 Configure Git username and email address:
@@ -21,32 +35,39 @@ $ git config --global user.email "youremail@yourdomain.com"
 
 ## Shells
 
-### Shared shell profile vs. Local shell profile
+### Shell profile
 
-Shared shell profile in `shell/profile.sh` is sourced automatically from shell `rc` files.
+`$HOME/.local/profile/shell/profile.sh` is sourced from all shell `rc` files and its configuration will be present in
+all shells. You don't need to create softlinks for any `$HOME/.local/profile/shell` files.
 
-Put user specific configuration to `$HOME/.profile` and create a symlink in `$HOME` directory.
+Optionally, you can create a custom shared profile for variables that are not controlled by this repository:
 
-Bash: `$ ln -s $HOME/.profile $HOME/.bash_profile`
-Zsh:  `$ ln -s $HOME/.profile $HOME/.zprofile`
+```console
+$ touch "$HOME/.profile"
+
+# Bash
+$ file=profile;  ln -s "$HOME/.${file}" "$HOME/.bash_${file}"
+
+# Zsh
+$ file=profile;  ln -s "$HOME/.${file}" "$HOME/.z${file}"
+```
 
 ### Bash
 
 ```console
-$ config=bashrc;  ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.${config}"
-$ config=logout;  ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.bash_${config}"
+$ file=bashrc;  ln -s "$HOME/.local/profile/${file}.sh" "$HOME/.${file}"
+$ file=logout;  ln -s "$HOME/.local/profile/${file}.sh" "$HOME/.bash_${file}"
 ```
 
 ### Zsh
 
 ```console
-$ config=zshrc;   ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.${config}"
-$ config=logout;  ln -s "$HOME/.local/profile/${config}.sh" "$HOME/.z${config}"
+$ file=zshrc;   ln -s "$HOME/.local/profile/${file}.sh" "$HOME/.${file}"
+$ file=logout;  ln -s "$HOME/.local/profile/${file}.sh" "$HOME/.z${file}"
 ```
 
-#### [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-
-Fish shell-like syntax highlighting for Zsh.
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting): Fish shell-like syntax highlighting
+  for Zsh.
 
 ```console
 $ mkdir -p "$HOME/.local/share/zsh/" \
@@ -54,9 +75,7 @@ $ mkdir -p "$HOME/.local/share/zsh/" \
   "$HOME/.local/share/zsh/zsh-syntax-highlighting"
 ```
 
-#### [fzf-tab](https://github.com/Aloxaf/fzf-tab)
-
-Replace zsh's default completion selection menu with fzf.
+- [fzf-tab](https://github.com/Aloxaf/fzf-tab): Replace zsh's default completion selection menu with fzf.
 
 ```console
 $ mkdir -p "$HOME/.local/share/zsh/" \
@@ -66,7 +85,7 @@ $ mkdir -p "$HOME/.local/share/zsh/" \
 
 ## Tmux
 
-### [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
+- [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
 
 ```console
 $ mkdir -p "$HOME/.local/share/tmux/" \
@@ -76,23 +95,22 @@ $ mkdir -p "$HOME/.local/share/tmux/" \
 
 ## Awesome WM
 
-Install plugins: see `./config/awesome/plugins/README.md`.
+Read `./config/awesome/plugins/README.md`.
 
 ## Neovim
 
-1. Start by executing `nvim` or `edit` alias.
-2. Package manager should be installed on the first run.
-3. Run `:PackerInstall` vim command.
+- [Packer](https://github.com/wbthomason/packer.nvim): Package manager.
 
-### Configuration
+1. Execute `nvim` command, the package manager should be installed on the first run.
+2. Execute `:PackerInstall` command in Neovim.
 
-#### Programming languages support
+- Configure Programming languages:
 
 Edit `config/nvim/lua/languages.lua`.
 
 ### Troubleshooting
 
-#### Initial package installation fails
+- Initial package installation fails:
 
-1. Remove failed packages from `~/.local/share/nvim/site/pack/packer/start/`
-2. Rerun the `:PackerInstall` vim command.
+1. Remove failed packages from `$HOME/.local/share/nvim/site/pack/packer/start/`
+2. Execute `:PackerInstall` again.
