@@ -4,9 +4,9 @@ local icons = require('icons')
 
 return function (client, bufnr)
   require('plugins.lsp.on_attach.borders')
-  require('plugins.lsp.on_attach.keymap')(client, bufnr)
   require('plugins.lsp.on_attach.signs')
   require('plugins.lsp.on_attach.lightbulb')
+  require('keymap').on_attach.lsp(client, bufnr)
   require('illuminate').on_attach(client)
 
   require('lsp_signature').on_attach({
