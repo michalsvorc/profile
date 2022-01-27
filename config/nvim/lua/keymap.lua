@@ -4,6 +4,7 @@ local opt = {noremap = true, silent = false}
 local optff = {noremap=false, silent=false}
 local opttt = {noremap = true, silent = true }
 local opte = {expr = true}
+local on_attach = {}
 
 -- Fuzzy finder
 -- https://github.com/nvim-telescope/telescope.nvim
@@ -99,3 +100,33 @@ vim.api.nvim_set_keymap("n", "<leader>rt", "<Plug>RestNvimPreview", {})
 -- Zen
 -- https://github.com/folke/zen-mode.nvim
 vim.api.nvim_set_keymap('n', '<leader>z', ':ZenMode<cr>', optff)
+
+-- https://github.com/lewis6991/gitsigns.nvim
+on_attach.gitsigns = function(map)
+   -- Navigation
+    map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", {expr=true})
+    map('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", {expr=true})
+
+    -- Actions
+    map('n', '<leader>hs', '<cmd>Gitsigns stage_hunk<CR>')
+    map('v', '<leader>hs', '<cmd>Gitsigns stage_hunk<CR>')
+    map('n', '<leader>hr', '<cmd>Gitsigns reset_hunk<CR>')
+    map('v', '<leader>hr', '<cmd>Gitsigns reset_hunk<CR>')
+    map('n', '<leader>hS', '<cmd>Gitsigns stage_buffer<CR>')
+    map('n', '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<CR>')
+    map('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<CR>')
+    map('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<CR>')
+    map('n', '<leader>hb', '<cmd>lua require"gitsigns".blame_line{full=true}<CR>')
+    map('n', '<leader>tb', '<cmd>Gitsigns toggle_current_line_blame<CR>')
+    map('n', '<leader>hd', '<cmd>Gitsigns diffthis<CR>')
+    map('n', '<leader>hD', '<cmd>lua require"gitsigns".diffthis("~")<CR>')
+    map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>')
+
+    -- Text object
+    map('o', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+    map('x', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+end
+
+return {
+  on_attach = on_attach
+}

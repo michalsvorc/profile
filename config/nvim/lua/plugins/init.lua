@@ -2,6 +2,7 @@
 require('plugins.autopairs')
 require('plugins.bufferline')
 require('plugins.floatterm')
+require('plugins.gitsigns')
 require('plugins.indent-blankline')
 require('plugins.lf')
 require('plugins.lualine')
@@ -19,7 +20,6 @@ require('plugins.colorscheme')
 require('plugins.zenmode')
 
 -- Imperative setup
-require('gitsigns').setup()
 require('numb').setup()
 
 -- LSP
