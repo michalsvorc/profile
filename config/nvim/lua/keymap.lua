@@ -32,8 +32,6 @@ vim.api.nvim_set_keymap('n', '<leader>gs', '<cmd>lua require("telescope.builtin"
 vim.api.nvim_set_keymap('n', '<leader>gt', '<cmd>lua require("telescope.builtin").git_stash()<cr>', opt)
 -- https://github.com/sindrets/diffview.nvim
 vim.api.nvim_set_keymap('n', '<Leader>gd', ':DiffviewOpen<cr>', opt)
--- https://github.com/f-person/git-blame.nvim
-vim.api.nvim_set_keymap('n', '<leader>gb', ':GitBlameToggle<cr>', opt)
 
 -- LSP
 -- https://github.com/nvim-telescope/telescope.nvim

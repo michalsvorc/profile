@@ -1,7 +1,6 @@
 -- Plugins
 require('plugins.autopairs')
 require('plugins.bufferline')
-require('plugins.gitblame')
 require('plugins.floatterm')
 require('plugins.indent-blankline')
 require('plugins.lf')

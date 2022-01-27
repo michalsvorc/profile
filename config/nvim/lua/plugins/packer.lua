@@ -105,7 +105,6 @@ return require('packer').startup(function(use)
   -- Git
   use { 'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim', }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-  use 'f-person/git-blame.nvim'
 
   -- REST
   -- Dependencies: curl, jq
