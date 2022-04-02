@@ -1,3 +1,6 @@
+-- Loading order is important
+require('plugins.colorscheme')
+
 -- Plugins
 require('plugins.autopairs')
 require('plugins.bufferline')
@@ -16,7 +19,6 @@ require('plugins.trouble')
 require('plugins.treesitter')
 
 -- Loading order is important
-require('plugins.colorscheme')
 require('plugins.zenmode')
 
 -- Imperative setup
