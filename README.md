@@ -66,15 +66,6 @@ $ file=zshrc;   ln -s "$HOME/.local/profile/${file}.sh" "$HOME/.${file}"
 $ file=logout;  ln -s "$HOME/.local/profile/${file}.sh" "$HOME/.z${file}"
 ```
 
-- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting): Fish shell-like syntax highlighting
-  for Zsh.
-
-```console
-$ mkdir -p "$HOME/.local/share/zsh/" \
-  ; git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-  "$HOME/.local/share/zsh/zsh-syntax-highlighting"
-```
-
 - [fzf-tab](https://github.com/Aloxaf/fzf-tab): Replace zsh's default completion selection menu with fzf.
 
 ```console

@@ -95,14 +95,6 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 #===============================================================================
-# zsh-syntax-highlighting
-# Highlighting should be sourced at the end.
-#===============================================================================
-
-source "$HOME/.local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" \
-  2>/dev/null
-
-#===============================================================================
 # Alacritty window title bar
 # Link: https://wiki.gentoo.org/wiki/Alacritty#Zsh
 #===============================================================================
