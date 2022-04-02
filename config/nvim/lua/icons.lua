@@ -10,7 +10,10 @@ local icons = {
     renamed = "➜",
     untracked = "?",
     deleted = "×",
-    ignored = "◌"
+    ignored = "◌",
+    added = '⊕',
+    modified = '⊙',
+    removed = '⊖'
   },
   file = {
     default = '',
