@@ -70,9 +70,7 @@ return require('packer').startup(function(use)
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use {'p00f/nvim-ts-rainbow', requires = 'nvim-treesitter/nvim-treesitter'}
   use {'romgrk/nvim-treesitter-context', requires = 'nvim-treesitter/nvim-treesitter'}
-  use {'JoosepAlviste/nvim-ts-context-commentstring', requires = 'nvim-treesitter/nvim-treesitter'}
   use {'haringsrob/nvim_context_vt', requires = 'nvim-treesitter/nvim-treesitter'}
-  use {'windwp/nvim-ts-autotag', requires = 'nvim-treesitter/nvim-treesitter'}
 
   -- Snippets
   use 'L3MON4D3/LuaSnip'
@@ -89,8 +87,6 @@ return require('packer').startup(function(use)
   -- Markdown
   -- Dependencies: https://github.com/ellisonleao/glow.nvim
   use 'ellisonleao/glow.nvim'
-  -- HTML
-  use 'mattn/emmet-vim'
 
   -- LSP
   use 'neovim/nvim-lspconfig'
@@ -98,9 +94,6 @@ return require('packer').startup(function(use)
   use 'kosayoda/nvim-lightbulb'
   use 'ray-x/lsp_signature.nvim'
   use 'simrat39/symbols-outline.nvim'
-  -- TypeScript
-  use {'jose-elias-alvarez/nvim-lsp-ts-utils', requires = 'neovim/nvim-lspconfig'}
-  use {'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim'}
 
   -- Git
   use { 'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim', }

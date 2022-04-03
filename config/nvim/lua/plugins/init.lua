@@ -25,6 +25,5 @@ require('plugins.zenmode')
 require('numb').setup()
 
 -- LSP
-require('plugins.lsp.null-ls')
 require('plugins.lsp.symbols-outline')
 
