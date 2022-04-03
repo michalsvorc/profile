@@ -55,7 +55,7 @@ return require('packer').startup(function(use)
   use 'eugen0329/vim-esearch'
   use 'wincent/scalpel'
   use 'nacro90/numb.nvim'
-  use 'kevinhwang91/nvim-bqf'
+  use 'wincent/ferret'
 
   -- Autocompletion
   -- nvim-cmp
@@ -107,6 +107,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'ggandor/lightspeed.nvim'
   use 'tpope/vim-obsession'
+  use 'kevinhwang91/nvim-bqf'
 
 end)
 
