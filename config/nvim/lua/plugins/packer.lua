@@ -99,13 +99,6 @@ return require('packer').startup(function(use)
   use { 'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim', }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
-  -- REST
-  -- Dependencies: curl, jq
-  use {
-    "NTBBloodbath/rest.nvim",
-    requires = { "nvim-lua/plenary.nvim" }
-  }
-
   -- General plugins
   use 'famiu/bufdelete.nvim'
   use 'tpope/vim-commentary'
