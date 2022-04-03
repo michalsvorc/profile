@@ -33,14 +33,14 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'
   use 'jeffkreeftmeijer/vim-numbertoggle'
   use 'folke/zen-mode.nvim'
+  use 'kevinhwang91/nvim-bqf'
 
   -- File icons
   use 'kyazdani42/nvim-web-devicons'
 
   -- File explorers
-  -- Dependencies: lf
+  use { 'ptzz/lf.vim', requires = 'voldikss/vim-floaterm', } -- Dependencies: https://github.com/gokcehan/lf
   use 'kyazdani42/nvim-tree.lua'
-  use { 'ptzz/lf.vim', requires = 'voldikss/vim-floaterm', }
   use 'tpope/vim-vinegar'
 
   -- Search
@@ -56,9 +56,10 @@ return require('packer').startup(function(use)
   use 'wincent/scalpel'
   use 'nacro90/numb.nvim'
   use 'wincent/ferret'
+  use 'ggandor/lightspeed.nvim'
 
   -- Autocompletion
-  -- nvim-cmp
+  -- hrsh7th/nvim-cmp
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
@@ -66,8 +67,7 @@ return require('packer').startup(function(use)
   use {'saadparwaiz1/cmp_luasnip', require = 'L3MON4D3/LuaSnip' }
 
   -- Treesitter
-  -- Dependencies: C++ compiler
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'} -- Dependencies: C++ compiler
   use {'p00f/nvim-ts-rainbow', requires = 'nvim-treesitter/nvim-treesitter'}
   use {'romgrk/nvim-treesitter-context', requires = 'nvim-treesitter/nvim-treesitter'}
   use {'haringsrob/nvim_context_vt', requires = 'nvim-treesitter/nvim-treesitter'}
@@ -85,8 +85,7 @@ return require('packer').startup(function(use)
   -- Docker
   use 'ekalinin/Dockerfile.vim'
   -- Markdown
-  -- Dependencies: https://github.com/ellisonleao/glow.nvim
-  use 'ellisonleao/glow.nvim'
+  use 'ellisonleao/glow.nvim' -- Dependencies: https://github.com/ellisonleao/glow.nvim
 
   -- LSP
   use 'neovim/nvim-lspconfig'
@@ -105,9 +104,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-repeat'
   use 'airblade/vim-rooter'
   use 'tpope/vim-surround'
-  use 'ggandor/lightspeed.nvim'
   use 'tpope/vim-obsession'
-  use 'kevinhwang91/nvim-bqf'
 
 end)
 
