@@ -5,7 +5,6 @@
 #===============================================================================
 
 shell_partials_dir="$HOME/.local/profile/shell"
-zsh_plugins_dir="$HOME/.local/share/zsh"
 
 #===============================================================================
 # Shared shell profile
@@ -52,7 +51,7 @@ _comp_options+=(globdots)		# Include hidden files.
 
 # Replace zsh's default completion selection menu with fzf.
 # Link: https://github.com/Aloxaf/fzf-tab
-source "$zsh_plugins_dir/fzf-tab/fzf-tab.plugin.zsh"
+source "$HOME/.local/share/zsh/fzf-tab/fzf-tab.plugin.zsh"
 
 #===============================================================================
 # Vi mode
@@ -118,4 +117,10 @@ fi
 # Link: https://github.com/zsh-users/zsh-syntax-highlighting
 #===============================================================================
 
-source '/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+zsh_syntax_highlighting='zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+
+if [[ -f "/usr/local/share/${zsh_syntax_highlighting}" ]]; then
+  source "/usr/local/share/${zsh_syntax_highlighting}"
+elif [[ -f "/usr/share/${zsh_syntax_highlighting}" ]]; then
+  source "/usr/share/${zsh_syntax_highlighting}"
+fi
