@@ -5,7 +5,7 @@
 # GNU
 alias grep='grep --color=always'
 alias less='less -r'
-alias ls='exa --all --git --group --group-directories-first --icons --long --octal-permissions --time-style=long-iso'
+alias ls='exa --all --git --group --group-directories-first --icons --long --time-style=long-iso'
 
 # Sudo
 alias cryptsetup='sudo cryptsetup'
