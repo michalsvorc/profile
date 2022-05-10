@@ -1,0 +1,25 @@
+{
+  "workbench.startupEditor": "none",
+  "editor.cursorBlinking": "solid",
+  "window.menuBarVisibility": "toggle",
+  "editor.fontSize": 14,
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.sideBar.location": "right",
+  "editor.formatOnSave": true,
+  "oneDarkPro.bold": true,
+  "update.mode": "none",
+  "workbench.colorCustomizations": {
+    "tab.activeBorder": "#8d8d8d"
+  },
+  "workbench.colorTheme": "One Dark Pro",
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "terminal.integrated.cursorBlinking": false,
+  "terminal.integrated.allowChords": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "explorer.confirmDelete": false,
+  "editor.lineNumbers": "relative",
+  "vscode-easymotion.allowJumpingToWordlessLines": false,
+  "vim.easymotion": true,
+  "vim.leader": ",",
+  "vim.smartRelativeLine": true
+}
