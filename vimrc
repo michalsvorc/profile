@@ -1,5 +1,5 @@
 "===============================================================================
-" # Initial settings
+" Initial settings
 "===============================================================================
 
 " Use VIM settings rather than Vi settings
@@ -7,15 +7,8 @@ if &compatible
   set nocompatible
 endif
 
-set encoding=utf-8
-
 " Ask before unsafe actions
 set confirm
-
-" Only set syntax highlighting once
-if !exists("g:syntax_on")
-  syntax enable
-endif
 
 " Prevent CTRL+Z suspending the instance
 nnoremap <c-z> <nop
@@ -24,7 +17,7 @@ nnoremap <c-z> <nop
 let mapleader=","
 
 "===============================================================================
-" # Buffers
+" Buffers
 "===============================================================================
 
 " Acces buffer by number
@@ -40,7 +33,7 @@ map <Leader>9 :b9<CR>
 map <Leader>0 :b0<CR>
 
 "===============================================================================
-" # Key bindings
+" Key bindings
 "===============================================================================
 
 " Disable arrow keys in Normal mode to enforce vim navigation
@@ -54,7 +47,7 @@ nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 
 "===============================================================================
-" # General
+" General
 "===============================================================================
 
 " Show line numbers
@@ -73,9 +66,6 @@ set foldenable
 set splitbelow
 set splitright
 
-" Always show status line, even when 1 window is opened
-set laststatus=2
-
 " Disable startup message
 set shortmess+=I
 
@@ -87,11 +77,8 @@ set updatetime=300
 set shortmess+=c
 
 "===============================================================================
-" # Indentation
+" Indentation
 "===============================================================================
-
-" Indent
-filetype plugin indent on
 
 " show existing tab with N spaces width
 set tabstop=2
@@ -103,7 +90,7 @@ set shiftwidth=2
 set expandtab
 
 "===============================================================================
-" # Syntax
+" Syntax
 "===============================================================================
 
 " Disable syntax highlighting in vimdiff for better readability
@@ -112,57 +99,54 @@ if &diff
 endif
 
 "===============================================================================
-" # Spelling
+" Spelling
 "===============================================================================
 
 "set spell
-"set spelllang=en
+set spelllang=en
 
 "===============================================================================
-" # Search
+" Search
 "===============================================================================
 
-set incsearch   " Shows the match while typing
 set hlsearch    " Highlight found searches
 set ignorecase  " Search case insensitive...
 set smartcase   " ...but not when search pattern contains upper case characters
 
 "===============================================================================
-" # Scrolling
-"===============================================================================
-
-if !&scrolloff
-  set scrolloff=3       " Show next 3 lines while scrolling.
-endif
-if !&sidescrolloff
-  set sidescrolloff=5   " Show next 5 columns while side-scrolling.
-endif
-
-"===============================================================================
-" # Invisible characters
+" Invisible characters
 " "extends" and "precedes" is when long lines are not wrapped
 "===============================================================================
 set list
-set listchars=tab:→\ ,extends:>,precedes:<
 set showbreak=↪
 set linebreak
 
 "===============================================================================
-" # Swap files
+" Swap files
 "===============================================================================
+
 "set nobackup
 "set nowb
 "set noswapfile
 
 "===============================================================================
-" # Vimdiff
+" Vimdiff
 "===============================================================================
 
 " Prevent opening files as RO in vimdiff
 set noro
 
 "===============================================================================
-" # Cursor line
+" Cursor
+" block cursor for normal mode
+" bar cursor for insert mode
+"===============================================================================
+
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[2 q"
+
+"===============================================================================
+" Cursor line
 "===============================================================================
 set cursorline
 
@@ -174,6 +158,110 @@ augroup aug_cursor_line
 augroup END
 
 "===============================================================================
-" # Theme
+" Theme
 "===============================================================================
 set background=dark
+
+"===============================================================================
+" Vim-sensible plugin
+" Link: https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
+" License: Copyright © Tim Pope. Distributed under the same terms as Vim itself.
+"===============================================================================
+
+" sensible.vim - Defaults everyone can agree on
+" Maintainer:   Tim Pope <http://tpo.pe/>
+" Version:      1.2
+
+if has('autocmd')
+  filetype plugin indent on
+endif
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
+
+" Use :help 'option' to see the documentation for the given option.
+
+set autoindent
+set backspace=indent,eol,start
+set complete-=i
+set smarttab
+
+set nrformats-=octal
+
+if !has('nvim') && &ttimeoutlen == -1
+  set ttimeout
+  set ttimeoutlen=100
+endif
+
+set incsearch
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
+
+if &laststatus < 2
+  set laststatus=2
+endif
+set ruler
+set wildmenu
+
+if !&scrolloff
+  set scrolloff=1
+endif
+if !&sidescrolloff
+  set sidescrolloff=5
+endif
+set display+=lastline
+
+if &encoding ==# 'latin1' && has('gui_running')
+  set encoding=utf-8
+endif
+
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
+
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j " Delete comment character when joining commented lines
+endif
+
+if has('path_extra')
+  setglobal tags-=./tags tags-=./tags; tags^=./tags;
+endif
+
+if &shell =~# 'fish$' && (v:version < 704 || v:version == 704 && !has('patch276'))
+  set shell=/usr/bin/env\ bash
+endif
+
+set autoread
+
+if &history < 1000
+  set history=1000
+endif
+if &tabpagemax < 50
+  set tabpagemax=50
+endif
+if !empty(&viminfo)
+  set viminfo^=!
+endif
+set sessionoptions-=options
+set viewoptions-=options
+
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^Eterm'
+  set t_Co=16
+endif
+
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+
+if empty(mapcheck('<C-U>', 'i'))
+  inoremap <C-U> <C-G>u<C-U>
+endif
+if empty(mapcheck('<C-W>', 'i'))
+  inoremap <C-W> <C-G>u<C-W>
+endif
+
+" vim:set ft=vim et sw=2:
