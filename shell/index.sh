@@ -1,4 +1,4 @@
-# Shared shell profile sourced by interactive and login shells
+# Shared shell configuration sourced by interactive and login shells
 
 #===============================================================================
 # Shell partials

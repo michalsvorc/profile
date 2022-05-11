@@ -10,7 +10,7 @@ shell_partials_dir="$HOME/.local/profile/shell"
 # Shared shell profile
 #===============================================================================
 
-source "$shell_partials_dir/profile.sh"
+source "$shell_partials_dir/index.sh"
 
 #===============================================================================
 # Colors
