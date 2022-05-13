@@ -27,9 +27,4 @@ require('bufferline').setup {
       return " " .. icon .. count
     end,
   },
-  highlights = {
-    buffer_selected = {
-      gui = "NONE"
-    },
-  }
 }
