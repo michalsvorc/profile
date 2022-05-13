@@ -16,7 +16,7 @@ source "$shell_partials_dir/index.sh"
 # Command prompt
 #===============================================================================
 
-PS1='\[\e[33m\]\u@\h \[\e[34m\]\w \[\e[33m\]\[\e[34m\]\$\[\e[m\] '
+PS1='\[\e[34m\]\w \[\e[33m\]\[\e[34m\]\$\[\e[m\] '
 
 # Git prompt integration
 source "$shell_partials_dir/git_prompt.sh"
