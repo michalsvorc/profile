@@ -3,6 +3,8 @@
 ### Todos
 
 - [ ] Organize shell/partials
-- [ ] Script for softlink creation
-- [ ] Update README.md
-  - [ ] Remove tmux plugin manager
+- [ ] Remove tmux plugin manager from README
+
+### Done
+
+- [x] Script for softlink creation
