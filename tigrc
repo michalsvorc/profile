@@ -2,9 +2,9 @@
 # Colors
 #===============================================================================
 
-color cursor        black blue
+color cursor        white blue bold
 color title-blur    black blue
-color title-focus   black blue
+color title-focus   white blue bold
 
 #===============================================================================
 # Diff view git difftool
