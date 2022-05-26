@@ -67,7 +67,7 @@ return require('packer').startup(function(use)
   use {'saadparwaiz1/cmp_luasnip', require = 'L3MON4D3/LuaSnip' }
 
   -- Treesitter
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'} -- Dependencies: C++ compiler
+  use {'nvim-treesitter/nvim-treesitter'} -- Dependencies: C++ compiler
   use {'p00f/nvim-ts-rainbow', requires = 'nvim-treesitter/nvim-treesitter'}
   use {'romgrk/nvim-treesitter-context', requires = 'nvim-treesitter/nvim-treesitter'}
   use {'haringsrob/nvim_context_vt', requires = 'nvim-treesitter/nvim-treesitter'}
