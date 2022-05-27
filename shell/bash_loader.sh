@@ -1,7 +1,10 @@
 #===============================================================================
-# TERM environment variable
+# Read configuration for Bash interactive shell.
 #===============================================================================
 
-case $TERM in
-  xterm) TERM=xterm-256color;;
-esac
+if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
+  if [ -f "${HOME}/.bashrc" ]; then
+    . "${HOME}/.bashrc"
+  fi
+fi
+

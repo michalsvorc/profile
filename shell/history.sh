@@ -1,7 +1,8 @@
 #===============================================================================
-# TERM environment variable
+# Shell history configuration
 #===============================================================================
 
-case $TERM in
-  xterm) TERM=xterm-256color;;
-esac
+HISTSIZE=10000
+SAVEHIST=10000
+export LESSHISTFILE=/dev/null
+

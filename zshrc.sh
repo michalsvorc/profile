@@ -1,16 +1,16 @@
 # Zsh configuration
 
 #===============================================================================
-# Local variables
+# Variables
 #===============================================================================
 
-shell_partials_dir="$HOME/.local/profile/shell"
+shell_config_dir="${HOME}/.local/profile/shell"
 
 #===============================================================================
-# Shared shell profile
+# Shared shell configuration
 #===============================================================================
 
-source "$shell_partials_dir/index.sh"
+source "${shell_config_dir}/index.sh"
 
 #===============================================================================
 # Colors
@@ -26,13 +26,12 @@ PS1="%{$fg[blue]%}%~%{$reset_color%} $%b "
 
 # Git prompt integration.
 setopt PROMPT_SUBST
-source "$shell_partials_dir/git_prompt.sh"
+source "${shell_config_dir}/plugins/git_prompt.sh"
 
 #===============================================================================
-# Settings
+# History
 #===============================================================================
 
-# History file
 HISTFILE=~/.cache/zsh_history
 setopt INC_APPEND_HISTORY \
   HIST_IGNORE_SPACE \

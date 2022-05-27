@@ -1,16 +1,16 @@
 # Bash configuration
 
 #===============================================================================
-# Local variables
+# Variables
 #===============================================================================
 
-shell_partials_dir="$HOME/.local/profile/shell"
+shell_config_dir="${HOME}/.local/profile/shell"
 
 #===============================================================================
-# Shared shell profile
+# Shared shell configuration
 #===============================================================================
 
-source "$shell_partials_dir/index.sh"
+source "${shell_config_dir}/index.sh"
 
 #===============================================================================
 # Command prompt
@@ -19,13 +19,12 @@ source "$shell_partials_dir/index.sh"
 PS1='\[\e[34m\]\w \[\e[33m\]\[\e[34m\]\$\[\e[m\] '
 
 # Git prompt integration
-source "$shell_partials_dir/git_prompt.sh"
+source "${shell_config_dir}/plugins/git_prompt.sh"
 
 #===============================================================================
-# Settings
+# History
 #===============================================================================
 
-# History file
 HISTFILE=~/.cache/bash_history
 
 #===============================================================================
