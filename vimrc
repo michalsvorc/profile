@@ -115,10 +115,9 @@ set smartcase   " ...but not when search pattern contains upper case characters
 
 "===============================================================================
 " Invisible characters
-" "extends" and "precedes" is when long lines are not wrapped
 "===============================================================================
+
 set list
-set showbreak=↪
 set linebreak
 
 "===============================================================================
