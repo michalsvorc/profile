@@ -59,11 +59,12 @@ version() {
 
 export_env_variables() {
   local target="$1"
+
   printf '
 # Added by local profile initialization script.
 export SHELL=%s
 export EDITOR=%s
-export PATH=\"%s:${PATH}\"
+export PATH=\"%s:${PATH}\"\n
 ' \
     "$shell" \
     "$editor" \
