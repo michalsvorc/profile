@@ -87,10 +87,6 @@ vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeRefresh<cr>:NvimTreeToggle<c
 -- https://github.com/ptzz/lf.vim
 vim.api.nvim_set_keymap('n', '<F3>', ':Lf<cr>', optff)
 
--- https://github.com/ggandor/lightspeed.nvim
-vim.api.nvim_set_keymap("n", "<C-s>", "<Plug>Lightspeed_s", {})
-vim.api.nvim_set_keymap("v", "<C-s>", "<Plug>Lightspeed_s", {})
-
 -- Rest
 -- https://github.com/NTBBloodbath/rest.nvim#keybindings
 vim.api.nvim_set_keymap("n", "<leader>re", "<Plug>RestNvim", {})

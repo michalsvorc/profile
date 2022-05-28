@@ -56,7 +56,7 @@ return require('packer').startup(function(use)
   use 'wincent/scalpel'
   use 'nacro90/numb.nvim'
   use 'wincent/ferret'
-  use 'ggandor/lightspeed.nvim'
+  use 'easymotion/vim-easymotion'
 
   -- Autocompletion
   -- hrsh7th/nvim-cmp
