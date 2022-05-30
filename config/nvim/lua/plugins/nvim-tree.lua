@@ -2,11 +2,7 @@
 
 local icons = require('icons')
 
-vim.g.nvim_tree_git_hl = 1 -- 0 by default, will enable file highlight for git attributes (can be used without the icons).
-vim.g.nvim_tree_highlight_opened_files = 1 -- 0 by default, will enable folder and file icon highlight for opened files/directories.
-vim.g.nvim_tree_symlink_arrow = icons.file.symlink -- used as a separator between symlinks' source and target.
-
-vim.g.nvim_tree_icons = {
+local nvim_tree_icons = {
   default = icons.file.default,
   symlink = icons.file.symlink,
   git = {
@@ -47,9 +43,15 @@ require('nvim-tree').setup {
     side = 'right',
   },
   renderer = {
+    icons = {
+      symlink_arrow = icons.file.symlink,
+      glyphs = nvim_tree_icons
+    },
     indent_markers = {
       enable = true,
     },
+    highlight_git = true,
+    highlight_opened_files = 'icon'
   },
 }
 
