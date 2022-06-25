@@ -32,8 +32,6 @@ readonly repository_uri="https://api.github.com/repos/${repository_id}/releases"
 #===============================================================================
 
 get_release_metadata() {
-  local repository_uri="$1"
-
   printf '%s' $(\
     jq -r ".[0]" \
     <<< $(curl "$repository_uri")  \
@@ -64,7 +62,7 @@ parse_download_uri() {
 # Execution
 #===============================================================================
 
-release_metadata=$(get_release_metadata "$repository_uri")
+release_metadata=$(get_release_metadata)
 tag_name=$(parse_tag_name "$release_metadata")
 download_uri=$(parse_download_uri "$release_metadata")
 
