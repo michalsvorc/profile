@@ -49,7 +49,7 @@ if [ -n "$failsafe" ]; then
   unclutter &
   #xbindkeys &
 
-  sh "$HOME/.screenlayout/dual.sh"
+  sh "$HOME/.screenlayout/external.sh"
   exec awesome
 else
   exec $command

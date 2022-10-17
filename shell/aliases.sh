@@ -23,12 +23,8 @@ alias emerge='sudo emerge'
 alias eselect='sudo eselect'
 alias rc-service='sudo rc-service'
 
-# AWS
-alias awsc='aws --cli-auto-prompt'
 
 # Other
-alias tmux='tmux -2u'
-
-# Shortcuts
+alias awsc='aws --cli-auto-prompt'
 alias edit="$EDITOR"
-
+alias tmux='tmux -2u'

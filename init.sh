@@ -99,6 +99,7 @@ link_config() {
   dir='awesome';        create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
   dir='lf';             create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
   dir='nvim';           create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
+  dir='tmux';           create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
 }
 
 main() {
