@@ -12,7 +12,7 @@
 # Variables
 #===============================================================================
 
-ttl_default='1h'
+ttl_default='3h'
 agent_env_file='ssh-agent.env'
 runtime_dir=$([[ "$XDG_RUNTIME_DIR" ]] \
   && echo "$XDG_RUNTIME_DIR" \
