@@ -16,12 +16,15 @@ set -o pipefail     # Don't hide errors within pipes.
 # Variables
 #===============================================================================
 
-version='1.0.0'
-argv0=${0##*/}
-shell='/bin/zsh'
-editor='nvim'
-config_dir="${HOME}/.config"
-profile_dir="${HOME}/.local/profile"
+readonly version='1.1.0'
+readonly argv0=${0##*/}
+readonly shell='/bin/zsh'
+readonly editor='nvim'
+readonly remote_scripts='https://raw.githubusercontent.com/michalsvorc/scripts/main'
+
+readonly bin_dir="${HOME}/.local/bin"
+readonly config_dir="${HOME}/.config"
+readonly profile_dir="${HOME}/.local/profile"
 
 #===============================================================================
 # Usage
@@ -102,10 +105,56 @@ link_config() {
   dir='tmux';           create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
 }
 
+#===============================================================================
+# Install LF
+# Description: Terminal file manager.
+# Link: https://github.com/gokcehan/lf
+#===============================================================================
+
+install_lf() {
+  local app_install_script="${remote_scripts}/apps/lf.sh"
+
+  mkdir -p "$bin_dir"
+
+  cd "$bin_dir" \
+    && curl \
+    "$app_install_script" \
+    | bash
+}
+
+#===============================================================================
+# Install Neovim
+# Description: Vim-fork focused on extensibility and usability.
+# Link: https://github.com/neovim/neovim
+#===============================================================================
+
+install_neovim() {
+  local app_id='nvim'
+  local app_dir="${app_id}_appimage"
+  local app_install_script="${remote_scripts}/apps/nvim.sh"
+
+  mkdir -p "$bin_dir"
+
+  cd "$bin_dir" \
+    && mkdir -p "$app_dir" \
+    && cd "$app_dir" \
+    && curl \
+    "$app_install_script" \
+    | bash \
+    && cd .. \
+    && ln -s "${app_dir}/squashfs-root/AppRun" "$app_id"
+}
+
+#===============================================================================
+# Main
+#===============================================================================
+
 main() {
   export_env_variables "${HOME}/.profile"
   link_home
   link_config
+  install_lf
+  install_neovim
 }
 
 #===============================================================================
