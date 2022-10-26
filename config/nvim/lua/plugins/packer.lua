@@ -81,7 +81,7 @@ return require('packer').startup(function(use)
   use 'RRethy/vim-illuminate'
   use 'windwp/nvim-autopairs'
   -- Editor config
-  use 'editorconfig/editorconfig-vim'
+  use 'gpanders/editorconfig.nvim'
   -- Docker
   use 'ekalinin/Dockerfile.vim'
   -- Markdown
