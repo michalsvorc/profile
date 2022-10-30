@@ -15,14 +15,13 @@ alias poweroff='sudo poweroff'
 alias reboot='sudo reboot'
 alias umount='sudo umount'
 
-# Sudo for Gentoo system commands
+# Sudo Gentoo commands
 alias dispatch-conf='sudo dispatch-conf'
 alias efibootmgr='sudo efibootmgr'
 alias emaint='sudo emaint'
 alias emerge='sudo emerge'
 alias eselect='sudo eselect'
 alias rc-service='sudo rc-service'
-
 
 # Other
 alias awsc='aws --cli-auto-prompt'
