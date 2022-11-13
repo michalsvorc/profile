@@ -22,10 +22,10 @@ readonly shell='/bin/zsh'
 readonly editor='nvim'
 readonly remote_scripts='https://raw.githubusercontent.com/michalsvorc/scripts/main'
 
-readonly app_dir="${HOME}/.share/apps"
 readonly bin_dir="${HOME}/.local/bin"
 readonly config_dir="${HOME}/.config"
 readonly profile_dir="${HOME}/.local/profile"
+readonly share_dir="${HOME}/.local/share"
 
 #===============================================================================
 # Usage
@@ -105,13 +105,13 @@ link_config() {
 }
 
 prepare_directories() {
-  mkdir -p "$app_dir" "$bin_dir" "$config_dir" "$profile_dir"
+  mkdir -p "$bin_dir" "$config_dir" "$profile_dir" "$share_dir"
 }
 
-print_app_installation() {
+print_installation() {
   local app_id="$1"
 
-  printf 'Installing %s\n\n' "$app_id"
+  printf 'Installing %s\n' "$app_id"
 }
 
 #===============================================================================
@@ -123,9 +123,9 @@ print_app_installation() {
 install_lf() {
   local app_id='lf'
   local install_script="${remote_scripts}/apps/${app_id}.sh"
-  local install_dir="${app_dir}/${app_id}"
+  local install_dir="${share_dir}/${app_id}/bin"
 
-  print_app_installation "$app_id"
+  print_installation "$app_id"
 
   mkdir -p "$install_dir" \
     && cd "$_" \
@@ -144,9 +144,9 @@ install_lf() {
 install_neovim() {
   local app_id='nvim'
   local install_script="${remote_scripts}/apps/${app_id}.sh"
-  local install_dir="${app_dir}/${app_id}"
+  local install_dir="${share_dir}/${app_id}/appimage"
 
-  print_app_installation "$app_id"
+  print_installation "$app_id"
 
   mkdir -p "$install_dir" \
     && cd "$_" \
@@ -161,12 +161,14 @@ install_neovim() {
 #===============================================================================
 
 main() {
-  prepare_directories \
+  printf '%s\n' 'Initializing user profile' \
+    && prepare_directories \
     && export_env_variables "${HOME}/.profile" \
     && link_home \
     && link_config
 
-  install_lf \
+  print_installation 'additional applications' \
+    && install_lf \
     && install_neovim
 }
 
