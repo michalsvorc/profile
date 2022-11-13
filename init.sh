@@ -16,12 +16,13 @@ set -o pipefail     # Don't hide errors within pipes.
 # Variables
 #===============================================================================
 
-readonly version='1.1.0'
+readonly version='1.2.0'
 readonly argv0=${0##*/}
 readonly shell='/bin/zsh'
 readonly editor='nvim'
 readonly remote_scripts='https://raw.githubusercontent.com/michalsvorc/scripts/main'
 
+readonly app_dir="${HOME}/.share/apps"
 readonly bin_dir="${HOME}/.local/bin"
 readonly config_dir="${HOME}/.config"
 readonly profile_dir="${HOME}/.local/profile"
@@ -56,7 +57,7 @@ die() {
   usage 1 1>&2
 }
 
-version() {
+print_version() {
   printf '%s version: %s\n' "$argv0" "$version"
 }
 
@@ -96,13 +97,21 @@ link_home() {
 }
 
 link_config() {
-  mkdir -p "$config_dir"
-
   dir='alacritty';      create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
   dir='awesome';        create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
   dir='lf';             create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
   dir='nvim';           create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
   dir='tmux';           create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
+}
+
+prepare_directories() {
+  mkdir -p "$app_dir" "$bin_dir" "$config_dir" "$profile_dir"
+}
+
+print_app_installation() {
+  local app_id="$1"
+
+  printf 'Installing %s\n\n' "$app_id"
 }
 
 #===============================================================================
@@ -112,14 +121,18 @@ link_config() {
 #===============================================================================
 
 install_lf() {
-  local app_install_script="${remote_scripts}/apps/lf.sh"
+  local app_id='lf'
+  local install_script="${remote_scripts}/apps/${app_id}.sh"
+  local install_dir="${app_dir}/${app_id}"
 
-  mkdir -p "$bin_dir"
+  print_app_installation "$app_id"
 
-  cd "$bin_dir" \
+  mkdir -p "$install_dir" \
+    && cd "$_" \
     && curl \
-    "$app_install_script" \
-    | bash
+      "$install_script" \
+      | bash \
+    && create_symlink "${install_dir}/${app_id}" "${bin_dir}/${app_id}"
 }
 
 #===============================================================================
@@ -130,19 +143,17 @@ install_lf() {
 
 install_neovim() {
   local app_id='nvim'
-  local app_dir="${app_id}_appimage"
-  local app_install_script="${remote_scripts}/apps/nvim.sh"
+  local install_script="${remote_scripts}/apps/${app_id}.sh"
+  local install_dir="${app_dir}/${app_id}"
 
-  mkdir -p "$bin_dir"
+  print_app_installation "$app_id"
 
-  cd "$bin_dir" \
-    && mkdir -p "$app_dir" \
-    && cd "$app_dir" \
+  mkdir -p "$install_dir" \
+    && cd "$_" \
     && curl \
-    "$app_install_script" \
-    | bash \
-    && cd .. \
-    && ln -s "${app_dir}/squashfs-root/AppRun" "$app_id"
+      "$install_script" \
+      | bash \
+    && create_symlink "${install_dir}/squashfs-root/AppRun" "${bin_dir}/${app_id}"
 }
 
 #===============================================================================
@@ -150,11 +161,13 @@ install_neovim() {
 #===============================================================================
 
 main() {
-  export_env_variables "${HOME}/.profile"
-  link_home
-  link_config
-  install_lf
-  install_neovim
+  prepare_directories \
+    && export_env_variables "${HOME}/.profile" \
+    && link_home \
+    && link_config
+
+  install_lf \
+    && install_neovim
 }
 
 #===============================================================================
@@ -168,7 +181,7 @@ case "${1:-}" in
     usage 0
     ;;
   -v | --version )
-    version
+    print_version
     exit 0
     ;;
   * )
