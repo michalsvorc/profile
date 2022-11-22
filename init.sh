@@ -122,6 +122,7 @@ print_installation() {
 
 install_lf() {
   local app_id='lf'
+  local asset='lf-linux-amd64.tar.gz'
   local install_script="${remote_scripts}/apps/${app_id}.sh"
   local install_dir="${share_dir}/${app_id}/bin"
 
@@ -129,9 +130,9 @@ install_lf() {
 
   mkdir -p "$install_dir" \
     && cd "$_" \
-    && curl \
-      "$install_script" \
-      | bash \
+    && bash <(curl -Ls "$install_script") --asset "$asset" \
+    && tar -xvf "$asset" \
+    && rm "$asset" \
     && create_symlink "${install_dir}/${app_id}" "${bin_dir}/${app_id}"
 }
 
@@ -143,17 +144,21 @@ install_lf() {
 
 install_neovim() {
   local app_id='nvim'
+  local asset='nvim-linux64.tar.gz'
   local install_script="${remote_scripts}/apps/${app_id}.sh"
-  local install_dir="${share_dir}/${app_id}/appimage"
+  local install_dir="${share_dir}/${app_id}/bin"
+  local extracted_dir=$(printf "$asset" | cut -f1 -d".")
 
   print_installation "$app_id"
 
   mkdir -p "$install_dir" \
     && cd "$_" \
-    && curl \
-      "$install_script" \
-      | bash \
-    && create_symlink "${install_dir}/squashfs-root/AppRun" "${bin_dir}/${app_id}"
+    && bash <(curl -Ls "$install_script") --asset "$asset" \
+    && tar -xvf "$asset" \
+    && rm "$asset" \
+    && create_symlink \
+      "${install_dir}/${extracted_dir}/bin/${app_id}" \
+      "${bin_dir}/${app_id}"
 }
 
 #===============================================================================
