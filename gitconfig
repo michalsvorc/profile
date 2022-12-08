@@ -2,6 +2,9 @@
 # Core
 #===============================================================================
 
+[core]
+  pager = delta
+
 [user]
   email = dev@michalsvorc.com
   name = Michal Svorc
@@ -22,6 +25,7 @@
 [diff]
   #tool = vimdiff3
   tool = nvim_diff
+  colorMoved = default
 
 [difftool]
   prompt = false
@@ -37,6 +41,7 @@
 [merge]
   #tool = vimdiff
   tool = nvim_merge
+  conflictstyle = diff3
 
 [mergetool]
   prompt = false
@@ -65,4 +70,16 @@
 [tig "bind"]
   status = P !git push origin
   main = L !git pull origin
+
+#===============================================================================
+# git-delta
+# https://github.com/dandavison/delta
+#===============================================================================
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 
