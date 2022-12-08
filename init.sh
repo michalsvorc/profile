@@ -99,6 +99,7 @@ link_home() {
 link_config() {
   dir='alacritty';      create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
   dir='awesome';        create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
+  dir='lazygit';        create_symlink "${profile_dir}/config/${dir}/config.yml"   "${config_dir}/${dir}/config.yml"
   dir='lf';             create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
   dir='nvim';           create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
   dir='tmux';           create_symlink "${profile_dir}/config/${dir}"   "${config_dir}/${dir}"
