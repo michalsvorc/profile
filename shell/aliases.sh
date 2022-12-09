@@ -3,6 +3,7 @@
 #===============================================================================
 
 # GNU
+alias edit="$EDITOR"
 alias grep='grep --color=always'
 alias less='less -r'
 alias ls='exa --all --git --group --group-directories-first --icons --long --time-style=long-iso'
@@ -25,5 +26,5 @@ alias rc-service='sudo rc-service'
 
 # Other
 alias awsc='aws --cli-auto-prompt'
-alias edit="$EDITOR"
+alias qrencode='qrencode -t ASCIIi'
 alias tmux='tmux -2u'
