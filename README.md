@@ -12,9 +12,15 @@ Optional:
 
 ## Usage
 
-Create soft links to configuration files in $HOME:
+Clone with submodules:
 
 ```console
-$ ./init.sh
+git clone --recurse-submodules
+```
+
+Run initialization script:
+
+```console
+./init.sh
 ```
 
