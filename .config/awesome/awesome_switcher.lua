@@ -1,4 +1,7 @@
-local switcher = require("plugins.awesome-switcher")
+local status_ok, switcher = pcall(require, "plugins.awesome-switcher")
+if not status_ok then
+	return
+end
 
 switcher.settings.preview_box = true                                  -- display preview-box
 switcher.settings.preview_box_bg = "#252525"                          -- background color

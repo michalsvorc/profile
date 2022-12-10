@@ -1,6 +1,9 @@
-local battery_widget_plugin = require("plugins.battery-widget")
+local status_ok, plugin = pcall(require, "plugins.battery-widget")
+if not status_ok then
+  error("Battery widget not found")
+end
 
-local battery_widget = battery_widget_plugin {
+local battery_widget = plugin {
   ac = "AC",
   adapter = "BAT0",
   ac_prefix = "A:",
