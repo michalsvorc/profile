@@ -122,7 +122,7 @@ main() {
     && export_env_variables "${HOME}/.profile" \
     && link_home \
     && link_config \
-    && printf '%s\n' 'User profile initialized successfully.' \
+    && printf '%s\n' 'User profile initialized successfully.'
 }
 
 #===============================================================================
