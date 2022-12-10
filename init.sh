@@ -118,11 +118,11 @@ prepare_directories() {
 #===============================================================================
 
 main() {
-  printf '%s\n' 'Initializing user profile' \
-    && prepare_directories \
+    prepare_directories \
     && export_env_variables "${HOME}/.profile" \
     && link_home \
-    && link_config
+    && link_config \
+    && printf '%s\n' 'User profile initialized successfully.' \
 }
 
 #===============================================================================
