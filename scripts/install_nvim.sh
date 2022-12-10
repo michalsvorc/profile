@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 #
 # Application: Neovim
-# Description: Application install script.
+# Description: Vim-fork focused on extensibility and usability.
 # Releases: https://github.com/neovim/neovim/releases
-#
-# Dependencies: curl, jq
 #
 # Author: Michal Svorc <dev@michalsvorc.com>
 # License: MIT license (https://opensource.org/licenses/MIT)
@@ -22,48 +20,48 @@ set -o pipefail     # Don't hide errors within pipes.
 # Variables
 #===============================================================================
 
-readonly repository_id='neovim/neovim'
-readonly tag_name='nightly'
-readonly target_system='nvim-linux64'
-readonly asset="${target_system}.tar.gz"
-readonly local_dir="${HOME}/.local"
-readonly executable_dir="${local_dir}/bin"
-readonly repository_uri="https://api.github.com/repos/${repository_id}/releases"
+readonly app_id='nvim'
+readonly asset='nvim-linux64.tar.gz'
+readonly remote_scripts='https://raw.githubusercontent.com/michalsvorc/scripts/main'
+
+readonly bin_dir="${HOME}/.local/bin"
+readonly share_dir="${HOME}/.local/share"
 
 #===============================================================================
 # Functions
 #===============================================================================
 
-get_release_metadata() {
-  printf '%s' $(\
-    jq -r ".[] | select(.tag_name==\"${tag_name}\")" \
-    <<< $(curl "$repository_uri")  \
-  )
+create_symlink() {
+  local source="$1"
+  local target="$2"
+
+  ln -sfn "$source" "$target"
 }
 
-parse_download_uri() {
-  local release_metadata="$1"
+prepare_directories() {
+  mkdir -p \
+    "$bin_dir" \
+    "$share_dir"
+}
 
-  printf '%s' $(\
-    jq -r ".assets \
-    | map(select(.name==\"${asset}\"))[0] \
-    | .browser_download_url" \
-    <<< "$release_metadata"  \
-  )
+main() {
+  local install_script="${remote_scripts}/apps/${app_id}.sh"
+  local install_dir="${share_dir}/${app_id}/bin"
+  local extracted_dir=$(printf "$asset" | cut -f1 -d".")
+
+  mkdir -p "$install_dir" \
+    && cd "$_" \
+    && bash <(curl -Ls "$install_script") --asset "$asset" \
+    && tar -xvf "$asset" \
+    && rm "$asset" \
+    && create_symlink \
+      "${install_dir}/${extracted_dir}/bin/${app_id}" \
+      "${bin_dir}/${app_id}"
 }
 
 #===============================================================================
 # Execution
 #===============================================================================
 
-release_metadata=$(get_release_metadata)
-download_uri=$(parse_download_uri "$release_metadata")
-
-mkdir -p "$executable_dir" \
-  && cd "$local_dir" \
-  && curl -Lo "$asset" "$download_uri" \
-  && tar -xvf "$asset" -C . \
-  && rm "$asset" \
-  && cd "$executable_dir" \
-  && ln -sf "${local_dir}/${target_system}/bin/nvim" 'nvim'
-
+prepare_directories \
+  && main

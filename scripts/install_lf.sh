@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 #
-# Application: LF
-# Description: Application install script.
+# Application: lf
+# Description: Terminal file manager..
 # Releases: https://github.com/gokcehan/lf/releases
-#
-# Dependencies: curl, jq
 #
 # Author: Michal Svorc <dev@michalsvorc.com>
 # License: MIT license (https://opensource.org/licenses/MIT)
@@ -22,53 +20,45 @@ set -o pipefail     # Don't hide errors within pipes.
 # Variables
 #===============================================================================
 
-readonly repository_id='gokcehan/lf'
+readonly app_id='lf'
 readonly asset='lf-linux-amd64.tar.gz'
-readonly executable_dir="${HOME}/.local/bin"
-readonly repository_uri="https://api.github.com/repos/${repository_id}/releases"
+readonly remote_scripts='https://raw.githubusercontent.com/michalsvorc/scripts/main'
+
+readonly bin_dir="${HOME}/.local/bin"
+readonly share_dir="${HOME}/.local/share"
 
 #===============================================================================
 # Functions
 #===============================================================================
 
-get_release_metadata() {
-  printf '%s' $(\
-    jq -r ".[0]" \
-    <<< $(curl "$repository_uri")  \
-  )
+create_symlink() {
+  local source="$1"
+  local target="$2"
+
+  ln -sfn "$source" "$target"
 }
 
-parse_tag_name() {
-  local release_metadata="$1"
-
-  printf '%s' $(\
-    jq -r ".tag_name" \
-    <<< "$release_metadata"  \
-  )
+prepare_directories() {
+  mkdir -p \
+    "$bin_dir" \
+    "$share_dir"
 }
 
-parse_download_uri() {
-  local release_metadata="$1"
+main() {
+  local install_script="${remote_scripts}/apps/${app_id}.sh"
+  local install_dir="${share_dir}/${app_id}/bin"
 
-  printf '%s' $(\
-    jq -r ".assets \
-    | map(select(.name==\"${asset}\"))[0] \
-    | .browser_download_url" \
-    <<< "$release_metadata"  \
-  )
+  mkdir -p "$install_dir" \
+    && cd "$_" \
+    && bash <(curl -Ls "$install_script") --asset "$asset" \
+    && tar -xvf "$asset" \
+    && rm "$asset" \
+    && create_symlink "${install_dir}/${app_id}" "${bin_dir}/${app_id}"
 }
 
 #===============================================================================
 # Execution
 #===============================================================================
 
-release_metadata=$(get_release_metadata)
-tag_name=$(parse_tag_name "$release_metadata")
-download_uri=$(parse_download_uri "$release_metadata")
-
-mkdir -p "$executable_dir" \
-  && cd $_ \
-  && curl -Lo "$asset" "$download_uri" \
-  && tar -xvf "$asset" -C . \
-  && rm "$asset"
-
+prepare_directories \
+  && main

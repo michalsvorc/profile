@@ -20,7 +20,6 @@ readonly version='1.2.0'
 readonly argv0=${0##*/}
 readonly shell='/bin/zsh'
 readonly editor='nvim'
-readonly remote_scripts='https://raw.githubusercontent.com/michalsvorc/scripts/main'
 
 readonly bin_dir="${HOME}/.local/bin"
 readonly config_dir="${HOME}/.config"
@@ -114,59 +113,6 @@ prepare_directories() {
     "$share_dir"
 }
 
-print_installation() {
-  local app_id="$1"
-
-  printf 'Installing %s\n' "$app_id"
-}
-
-#===============================================================================
-# Install LF
-# Description: Terminal file manager.
-# Link: https://github.com/gokcehan/lf
-#===============================================================================
-
-install_lf() {
-  local app_id='lf'
-  local asset='lf-linux-amd64.tar.gz'
-  local install_script="${remote_scripts}/apps/${app_id}.sh"
-  local install_dir="${share_dir}/${app_id}/bin"
-
-  print_installation "$app_id"
-
-  mkdir -p "$install_dir" \
-    && cd "$_" \
-    && bash <(curl -Ls "$install_script") --asset "$asset" \
-    && tar -xvf "$asset" \
-    && rm "$asset" \
-    && create_symlink "${install_dir}/${app_id}" "${bin_dir}/${app_id}"
-}
-
-#===============================================================================
-# Install Neovim
-# Description: Vim-fork focused on extensibility and usability.
-# Link: https://github.com/neovim/neovim
-#===============================================================================
-
-install_neovim() {
-  local app_id='nvim'
-  local asset='nvim-linux64.tar.gz'
-  local install_script="${remote_scripts}/apps/${app_id}.sh"
-  local install_dir="${share_dir}/${app_id}/bin"
-  local extracted_dir=$(printf "$asset" | cut -f1 -d".")
-
-  print_installation "$app_id"
-
-  mkdir -p "$install_dir" \
-    && cd "$_" \
-    && bash <(curl -Ls "$install_script") --asset "$asset" \
-    && tar -xvf "$asset" \
-    && rm "$asset" \
-    && create_symlink \
-      "${install_dir}/${extracted_dir}/bin/${app_id}" \
-      "${bin_dir}/${app_id}"
-}
-
 #===============================================================================
 # Main
 #===============================================================================
@@ -177,10 +123,6 @@ main() {
     && export_env_variables "${HOME}/.profile" \
     && link_home \
     && link_config
-
-  print_installation 'additional applications' \
-    && install_lf \
-    && install_neovim
 }
 
 #===============================================================================
