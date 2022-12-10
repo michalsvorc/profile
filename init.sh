@@ -84,16 +84,16 @@ create_symlink() {
 }
 
 link_home() {
-  file='profile';       create_symlink "${HOME}/.${file}"           "${HOME}/.z${file}"
-  file='logout';        create_symlink "${profile_dir}/.${file}"     "${HOME}/.z${file}"
-  file='zshrc';         create_symlink "${profile_dir}/.${file}"     "${HOME}/.${file}"
   file='editorconfig';  create_symlink "${profile_dir}/.${file}"     "${HOME}/.${file}"
   file='gitconfig';     create_symlink "${profile_dir}/.${file}"     "${HOME}/.${file}"
-  file='vimrc';         create_symlink "${profile_dir}/.${file}"     "${HOME}/.${file}"
+  file='logout';        create_symlink "${profile_dir}/.${file}"     "${HOME}/.z${file}"
+  file='profile';       create_symlink "${HOME}/.${file}"           "${HOME}/.z${file}"
   file='tigrc';         create_symlink "${profile_dir}/.${file}"     "${HOME}/.${file}"
   file='tmux.conf';     create_symlink "${profile_dir}/.${file}"     "${HOME}/.${file}"
+  file='vimrc';         create_symlink "${profile_dir}/.${file}"     "${HOME}/.${file}"
   file='xinitrc';       create_symlink "${profile_dir}/.${file}"     "${HOME}/.${file}"
   file='Xresources';    create_symlink "${profile_dir}/.${file}"     "${HOME}/.${file}"
+  file='zshrc';         create_symlink "${profile_dir}/.${file}"     "${HOME}/.${file}"
 }
 
 link_config() {
