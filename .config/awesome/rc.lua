@@ -57,7 +57,7 @@ editor_cmd = terminal .. " -e " .. editor
 -- If you do not like this or do not have such a key,
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = require("keys").modkey
+modkey = require("keymap").modkey
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
@@ -225,7 +225,7 @@ awful.screen.connect_for_each_screen(function(s)
         -- separator,
         mytextclock,
         separator,
-        require("plugins").battery_widget,
+        require("battery_widget"),
         separator,
         {
           wibox.widget.systray(),
@@ -249,8 +249,8 @@ root.buttons(gears.table.join(
 -- }}}
 
 -- {{{ Key bindings
-local globalkeys = require("keys").globalkeys
-local clientkeys = require("keys").clientkeys
+local globalkeys = require("keymap").globalkeys
+local clientkeys = require("keymap").clientkeys
 
 -- Set keys
 root.keys(globalkeys)
