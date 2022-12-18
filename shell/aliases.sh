@@ -27,5 +27,7 @@ alias rc-service='sudo rc-service'
 
 # External
 alias awsc='aws --cli-auto-prompt'
+alias docker-ui='lazydocker'
+alias git-ui='lazygit'
 alias qrencode='qrencode -t ASCIIi'
 alias tmux='tmux -2u'
