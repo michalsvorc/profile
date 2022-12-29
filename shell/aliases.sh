@@ -25,9 +25,8 @@ alias emerge='sudo emerge'
 alias eselect='sudo eselect'
 alias rc-service='sudo rc-service'
 
-# External
+# Custom
 alias awsc='aws --cli-auto-prompt'
 alias docker-ui='lazydocker'
 alias git-ui='lazygit'
 alias qrencode='qrencode -t ASCIIi'
-alias tmux='tmux -2u'
