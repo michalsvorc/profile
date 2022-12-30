@@ -92,17 +92,18 @@ link_home() {
   file='.Xresources';    create_symlink "${profile_dir}/${file}"     "${HOME}/${file}"
   file='.zlogout';       create_symlink "${profile_dir}/${file}"     "${HOME}/${file}"
   file='.zshrc';         create_symlink "${profile_dir}/${file}"     "${HOME}/${file}"
+  file='.zshenv';        create_symlink "${profile_dir}/${file}"     "${HOME}/${file}"
 
-  file='profile';       create_symlink "${HOME}/.${file}"            "${HOME}/.z${file}"
+  file='profile';        create_symlink "${HOME}/.${file}"           "${HOME}/.z${file}"
 }
 
 link_config() {
-  dir='alacritty';      create_symlink "${profile_dir}/.config/${dir}"   "${config_dir}/${dir}"
-  dir='awesome';        create_symlink "${profile_dir}/.config/${dir}"   "${config_dir}/${dir}"
-  dir='lazygit';        create_symlink "${profile_dir}/.config/${dir}/config.yml"   "${config_dir}/${dir}/config.yml"
-  dir='lf';             create_symlink "${profile_dir}/.config/${dir}"   "${config_dir}/${dir}"
-  dir='nvim';           create_symlink "${profile_dir}/.config/${dir}"   "${config_dir}/${dir}"
-  dir='tmux';           create_symlink "${profile_dir}/.config/${dir}"   "${config_dir}/${dir}"
+  dir='alacritty';       create_symlink "${profile_dir}/.config/${dir}"   "${config_dir}/${dir}"
+  dir='awesome';         create_symlink "${profile_dir}/.config/${dir}"   "${config_dir}/${dir}"
+  dir='lazygit';         create_symlink "${profile_dir}/.config/${dir}/config.yml"   "${config_dir}/${dir}/config.yml"
+  dir='lf';              create_symlink "${profile_dir}/.config/${dir}"   "${config_dir}/${dir}"
+  dir='nvim';            create_symlink "${profile_dir}/.config/${dir}"   "${config_dir}/${dir}"
+  dir='tmux';            create_symlink "${profile_dir}/.config/${dir}"   "${config_dir}/${dir}"
 }
 
 prepare_directories() {
