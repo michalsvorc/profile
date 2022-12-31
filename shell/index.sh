@@ -4,8 +4,6 @@
 
 shell_config_dir="${HOME}/.local/profile/shell"
 
-source "${shell_config_dir}/term.sh"
-
 source "${shell_config_dir}/plugins/history_search.sh"
 source "${shell_config_dir}/plugins/lf.sh"
 source "${shell_config_dir}/plugins/nnn_quitcd.sh"
