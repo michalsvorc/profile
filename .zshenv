@@ -35,3 +35,10 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 export LESSHISTFILE=/dev/null
 
+#===============================================================================
+# nnn file explorer
+# https://github.com/jarun/nnn
+#===============================================================================
+
+export NNN_OPTS='aDeHirx'
+export NNN_PLUG='g:!git diff;l:-!git log;p:preview-tui;x:!chmod +x $nnn'
