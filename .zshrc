@@ -15,18 +15,9 @@ source "${shell_config_dir}/nnn_quitcd.sh"
 source "${shell_config_dir}/ssh_agent.sh"
 
 #===============================================================================
-# Colors
+# Git prompt integration
 #===============================================================================
 
-autoload -U colors && colors
-
-#===============================================================================
-# Command prompt
-#===============================================================================
-
-PS1="%{$fg[blue]%}%~%{$reset_color%} $%b "
-
-# Git prompt integration.
 setopt PROMPT_SUBST
 source "${shell_config_dir}/git_prompt.sh"
 
@@ -52,7 +43,7 @@ _comp_options+=(globdots)		# Include hidden files.
 
 # Replace zsh's default completion selection menu with fzf.
 # Link: https://github.com/Aloxaf/fzf-tab
-source "$HOME/.local/share/zsh/fzf-tab/fzf-tab.plugin.zsh"
+source "${HOME}/.local/share/zsh/fzf-tab/fzf-tab.plugin.zsh"
 
 #===============================================================================
 # Vi mode
