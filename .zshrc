@@ -4,13 +4,15 @@
 # Variables
 #===============================================================================
 
-shell_config_dir="${HOME}/.local/profile/shell"
+readonly shell_config_dir="${HOME}/.local/profile/shell"
 
 #===============================================================================
-# Shared shell configuration
+# Shell configuration scripts
 #===============================================================================
 
-source "${shell_config_dir}/index.sh"
+source "${shell_config_dir}/history_search.sh"
+source "${shell_config_dir}/nnn_quitcd.sh"
+source "${shell_config_dir}/ssh_agent.sh"
 
 #===============================================================================
 # Colors
@@ -126,3 +128,9 @@ elif [[ -f "/usr/share/${zsh_syntax_highlighting}" ]]; then
 elif [[ -f "/opt/homebrew/opt/zsh-syntax-highlighting/share/${zsh_syntax_highlighting}" ]]; then
   source "/opt/homebrew/opt/zsh-syntax-highlighting/share/${zsh_syntax_highlighting}"
 fi
+
+#===============================================================================
+# Shell aliases
+#===============================================================================
+
+source "${shell_config_dir}/aliases.sh"
