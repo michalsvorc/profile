@@ -1,3 +1,10 @@
+#===============================================================================
+# cd on nnn quit
+#
+# Dependencies: nnn
+# Link: https://github.com/jarun/nnn/blob/master/misc/quitcd/quitcd.bash_zsh
+#===============================================================================
+
 nnn_quitcd ()
 {
     # Block nesting of nnn in subshells
