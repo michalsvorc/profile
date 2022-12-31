@@ -10,14 +10,6 @@
 readonly shell_config_dir="${HOME}/.local/profile/shell"
 
 #===============================================================================
-# Shell configuration scripts
-#===============================================================================
-
-source "${shell_config_dir}/history_search.sh"
-source "${shell_config_dir}/nnn_quitcd.sh"
-source "${shell_config_dir}/ssh_agent.sh"
-
-#===============================================================================
 # Git prompt integration
 #===============================================================================
 
@@ -31,6 +23,8 @@ source "${shell_config_dir}/git_prompt.sh"
 setopt INC_APPEND_HISTORY \
   HIST_IGNORE_SPACE \
   HIST_IGNORE_ALL_DUPS
+
+source "${shell_config_dir}/history_search.sh"
 
 #===============================================================================
 # Completion
@@ -48,7 +42,7 @@ _comp_options+=(globdots)		# Include hidden files.
 source "${HOME}/.local/share/zsh/fzf-tab/fzf-tab.plugin.zsh"
 
 #===============================================================================
-# Alacritty window title bar.
+# Vi mode
 #===============================================================================
 
 source "${shell_config_dir}/vi_mode.sh"
@@ -58,6 +52,18 @@ source "${shell_config_dir}/vi_mode.sh"
 #===============================================================================
 
 source "${shell_config_dir}/alacritty.sh"
+
+#===============================================================================
+# nnn file explorer
+#===============================================================================
+
+source "${shell_config_dir}/nnn_quitcd.sh"
+
+#===============================================================================
+# SSH agent
+#===============================================================================
+
+source "${shell_config_dir}/ssh_agent.sh"
 
 #===============================================================================
 # Shell aliases
