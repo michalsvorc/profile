@@ -26,7 +26,7 @@ PS1="%{$fg[blue]%}%~%{$reset_color%} $%b "
 
 # Git prompt integration.
 setopt PROMPT_SUBST
-source "${shell_config_dir}/plugins/git_prompt.sh"
+source "${shell_config_dir}/git_prompt.sh"
 
 #===============================================================================
 # History
