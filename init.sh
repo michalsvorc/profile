@@ -99,14 +99,19 @@ prepare_directories() {
     "$share_dir"
 }
 
+install_nnn_plugins() {
+  local repository='https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs'
+
+  sh -c "$(curl -Ls $repository)"
+}
+
 #===============================================================================
 # Main
 #===============================================================================
 
 main() {
     prepare_directories \
-    && link_home \
-    && link_config \
+    && install_nnn_plugins \
     && printf '%s\n' 'User profile initialized successfully.'
 }
 
