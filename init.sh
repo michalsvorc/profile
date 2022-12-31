@@ -18,8 +18,6 @@ set -o pipefail     # Don't hide errors within pipes.
 
 readonly version='1.2.0'
 readonly argv0=${0##*/}
-readonly shell='/bin/zsh'
-readonly editor='nvim'
 
 readonly bin_dir="${HOME}/.local/bin"
 readonly profile_dir="${HOME}/.local/profile"
@@ -57,21 +55,6 @@ die() {
 
 print_version() {
   printf '%s version: %s\n' "$argv0" "$version"
-}
-
-export_env_variables() {
-  local target="$1"
-
-  printf '
-# Added by local profile initialization script.
-export SHELL=%s
-export EDITOR=%s
-export PATH=\"%s:${PATH}\"\n
-' \
-    "$shell" \
-    "$editor" \
-    '${HOME}/.local/bin' \
-    >> "$target"
 }
 
 create_symlink() {
@@ -122,7 +105,6 @@ prepare_directories() {
 
 main() {
     prepare_directories \
-    && export_env_variables "${HOME}/.profile" \
     && link_home \
     && link_config \
     && printf '%s\n' 'User profile initialized successfully.'

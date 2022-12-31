@@ -3,14 +3,21 @@
 # the -f option is set.
 #===============================================================================
 
+export SHELL='/bin/zsh'
+export EDITOR='nvim'
+export PATH="${HOME}/.local/bin:${PATH}"
+export XDG_CONFIG_HOME="${HOME}/.config"
+
+#===============================================================================
+# Terminal
+#===============================================================================
+
 case $TERM in
   xterm) TERM=xterm-256color;;
 esac
 
-export XDG_CONFIG_HOME="${HOME}/.config"
-
 #===============================================================================
-# Shell history configuration
+# History
 #===============================================================================
 
 export HISTSIZE=10000
