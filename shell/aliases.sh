@@ -3,7 +3,6 @@
 #===============================================================================
 
 # GNU
-alias edit="$EDITOR"
 alias grep='grep --color=always'
 alias mount_uid='mount -o umask=0022,gid=$(id -g),uid=$(id -u)'
 alias less='less -r'
@@ -28,6 +27,7 @@ alias rc-service='sudo rc-service'
 # Custom
 alias awsc='aws --cli-auto-prompt'
 alias docker-ui='lazydocker'
+alias edit="$EDITOR"
 alias git-ui='lazygit'
-alias explore='nnn_quitcd -e'
+alias explore='nnn_quitcd'
 alias qrencode='qrencode -t ASCIIi'
