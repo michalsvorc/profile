@@ -54,22 +54,10 @@ source "${HOME}/.local/share/zsh/fzf-tab/fzf-tab.plugin.zsh"
 source "${shell_config_dir}/vi_mode.sh"
 
 #===============================================================================
-# Alacritty window title bar.
-# Link: https://wiki.gentoo.org/wiki/Alacritty#Zsh
+# Alacritty terminal emulator
 #===============================================================================
 
-if [[ "${TERM}" != "" && "${TERM}" == "alacritty" ]]
-then
-  precmd()
-  {
-    print -Pn "\e]0;[%L] %~\a"
-  }
-
-  preexec()
-  {
-    echo -en "\e]0;${1}\a"
-  }
-fi
+source "${shell_config_dir}/alacritty.sh"
 
 #===============================================================================
 # Fish shell-like syntax highlighting for Zsh. zsh-syntax-highlighting.zsh must
