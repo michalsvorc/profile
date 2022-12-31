@@ -25,7 +25,6 @@ source "${shell_config_dir}/git_prompt.sh"
 # History
 #===============================================================================
 
-HISTFILE=~/.cache/zsh_history
 setopt INC_APPEND_HISTORY \
   HIST_IGNORE_SPACE \
   HIST_IGNORE_ALL_DUPS
@@ -110,7 +109,6 @@ fi
 #===============================================================================
 
 zsh_syntax_highlighting='zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
-
 
 if [[ -f "/usr/local/share/${zsh_syntax_highlighting}" ]]; then
   source "/usr/local/share/${zsh_syntax_highlighting}"

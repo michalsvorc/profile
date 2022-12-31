@@ -38,9 +38,10 @@ export PS1="%{$fg[blue]%}%~%{$reset_color%} $%b "
 # History
 #===============================================================================
 
+export HISTFILE="${HOME}/.cache/zsh_history"
 export HISTSIZE=10000
 export SAVEHIST=10000
-export LESSHISTFILE=/dev/null
+export LESSHISTFILE='/dev/null'
 
 #===============================================================================
 # nnn file explorer
