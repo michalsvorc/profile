@@ -19,6 +19,7 @@ source "${shell_dir}/aliases.sh"
 
 #===============================================================================
 # Git prompt integration
+# Link: https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 #===============================================================================
 
 setopt PROMPT_SUBST
@@ -47,18 +48,21 @@ _comp_options+=(globdots)		# Include hidden files.
 
 #===============================================================================
 # Vi mode
+# Link: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
 #===============================================================================
 
 source "${plugins_dir}/vi-mode.plugin.zsh"
 
 #===============================================================================
 # nnn file explorer
+# Link: https://github.com/jarun/nnn/wiki/Basic-use-cases#configure-cd-on-quit
 #===============================================================================
 
 source "${plugins_dir}/quitcd.bash_zsh"
 
 #===============================================================================
 # SSH agent
+# Link: https://wiki.archlinux.org/title/SSH_keys#SSH_agents
 #===============================================================================
 
 source "${shell_dir}/ssh_agent.sh"
