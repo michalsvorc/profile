@@ -16,7 +16,14 @@
 export SHELL='/bin/zsh'
 export EDITOR='nvim'
 export VISUAL="$EDITOR"
-export PATH="${HOME}/.local/bin:${PATH}"
+
+#===============================================================================
+# PATH
+#===============================================================================
+
+typeset -U PATH path
+path=("${HOME}/.local/bin" "$path[@]")
+export PATH
 
 #===============================================================================
 # XDG base directories
