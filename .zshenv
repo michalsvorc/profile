@@ -17,7 +17,13 @@ export SHELL='/bin/zsh'
 export EDITOR='nvim'
 export VISUAL="$EDITOR"
 export PATH="${HOME}/.local/bin:${PATH}"
-export XDG_CONFIG_HOME="${HOME}/.config"
+
+#===============================================================================
+# XDG base directories
+#===============================================================================
+
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 
 #===============================================================================
 # Terminal
