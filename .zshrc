@@ -46,7 +46,7 @@ source "${HOME}/.local/share/zsh/fzf-tab/fzf-tab.plugin.zsh"
 # Vi mode
 #===============================================================================
 
-source "${shell_dir}/vi_mode.sh"
+source "${plugins_dir}/vi-mode.plugin.zsh"
 
 #===============================================================================
 # Alacritty terminal emulator
