@@ -104,21 +104,33 @@ install_nnn_plugins() {
   sh -c "$(curl -Ls $repository)"
 }
 
+install_zsh_plugin() {
+  local repository="$1"
+
+  local install_dir="${share_dir}/zsh/${repository##*/}"
+  echo $install_dir
+
+  mkdir -p "${share_dir}/zsh"
+  [ ! -d "$install_dir" ] && git clone "$repository" "$install_dir"
+}
+
+
 #===============================================================================
 # Main
 #===============================================================================
 
 main() {
-    prepare_directories \
-    && install_nnn_plugins \
-    && printf '%s\n' 'User profile initialized successfully.'
+  prepare_directories \
+  && install_nnn_plugins \
+  && install_zsh_plugin 'https://github.com/Aloxaf/fzf-tab' \
+  && install_zsh_plugin 'https://github.com/zsh-users/zsh-syntax-highlighting' \
+  && printf '%s\n' 'User profile initialized successfully.'
 }
 
 #===============================================================================
 # Execution
 #===============================================================================
-
-test $# -eq 0 && main && exit 0
+#test $# -eq 0 && main && exit 0
 
 case "${1:-}" in
   -h | --help )

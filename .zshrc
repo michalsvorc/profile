@@ -9,6 +9,13 @@
 
 readonly shell_dir="${HOME}/.local/profile/shell"
 readonly plugins_dir="${shell_dir}/plugins"
+readonly share_dir="${HOME}/.local/share"
+
+#===============================================================================
+# Shell aliases
+#===============================================================================
+
+source "${shell_dir}/aliases.sh"
 
 #===============================================================================
 # Git prompt integration
@@ -38,10 +45,6 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-# Replace zsh's default completion selection menu with fzf.
-# Link: https://github.com/Aloxaf/fzf-tab
-source "${HOME}/.local/share/zsh/fzf-tab/fzf-tab.plugin.zsh"
-
 #===============================================================================
 # Vi mode
 #===============================================================================
@@ -67,14 +70,16 @@ source "${plugins_dir}/quitcd.bash_zsh"
 source "${shell_dir}/ssh_agent.sh"
 
 #===============================================================================
-# Shell aliases
+# fzf completion
+# Link: https://github.com/Aloxaf/fzf-tab
 #===============================================================================
 
-source "${shell_dir}/aliases.sh"
+source "${share_dir}/zsh/fzf-tab/fzf-tab.plugin.zsh"
 
 #===============================================================================
 # Syntax higlighting
 # Must be sourced at the end of the .zshrc file.
+# Link: https://github.com/zsh-users/zsh-syntax-highlighting
 #===============================================================================
 
-source "${shell_dir}/syntax_hlg.sh"
+source "${share_dir}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
