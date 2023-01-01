@@ -48,6 +48,16 @@ autoload -U colors && colors
 export PS1="%{$fg[blue]%}%~%{$reset_color%} $%b "
 
 #===============================================================================
+# Git prompt integration
+#===============================================================================
+
+export GIT_PS1_SHOWCOLORHINTS=true \
+export GIT_PS1_SHOWDIRTYSTATE=true \
+export GIT_PS1_SHOWUNTRACKEDFILES=true \
+export GIT_PS1_SHOWUPSTREAM="auto"
+export PS1=$PS1'$(__git_ps1 "(%s) ")'
+
+#===============================================================================
 # History
 #===============================================================================
 

@@ -8,13 +8,14 @@
 #===============================================================================
 
 readonly shell_dir="${HOME}/.local/profile/shell"
+readonly plugins_dir="${shell_dir}/plugins"
 
 #===============================================================================
 # Git prompt integration
 #===============================================================================
 
 setopt PROMPT_SUBST
-source "${shell_dir}/git_prompt.sh"
+source "${plugins_dir}/git-prompt.sh"
 
 #===============================================================================
 # History
