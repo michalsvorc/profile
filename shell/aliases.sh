@@ -28,8 +28,10 @@ alias eselect='sudo eselect'
 alias rc-service='sudo rc-service'
 
 # Custom
-alias ed="$EDITOR"
-alias fe='nnn_quitcd'
+alias edit="$EDITOR"
+alias ed='edit'
+alias file_explorer='nnn_quitcd'
+alias fe='file_explorer'
 alias mount_uid='mount -o umask=0022,gid=$(id -g),uid=$(id -u)'
 alias uid='lazydocker'
 alias uig='lazygit'
