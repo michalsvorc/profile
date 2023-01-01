@@ -1,11 +1,4 @@
-#===============================================================================
-# cd on nnn quit
-#
-# Dependencies: nnn
-# Link: https://github.com/jarun/nnn/blob/master/misc/quitcd/quitcd.bash_zsh
-#===============================================================================
-
-nnn_quitcd ()
+n ()
 {
     # Block nesting of nnn in subshells
     if [[ "${NNNLVL:-0}" -ge 1 ]]; then

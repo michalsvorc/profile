@@ -58,7 +58,7 @@ source "${shell_dir}/alacritty.sh"
 # nnn file explorer
 #===============================================================================
 
-source "${shell_dir}/nnn_quitcd.sh"
+source "${plugins_dir}/quitcd.bash_zsh"
 
 #===============================================================================
 # SSH agent
