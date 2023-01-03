@@ -17,13 +17,13 @@
 # Variables
 #===============================================================================
 
-readonly ttl_default='3h'
-readonly agent_env_file='ssh-agent.env'
-readonly runtime_dir=$([[ "$XDG_RUNTIME_DIR" ]] \
+ttl_default='3h'
+agent_env_file='ssh-agent.env'
+runtime_dir=$([[ "$XDG_RUNTIME_DIR" ]] \
   && echo "$XDG_RUNTIME_DIR" \
   || echo "/tmp/$UID" \
 )
-readonly filepath="${runtime_dir}/${agent_env_file}"
+filepath="${runtime_dir}/${agent_env_file}"
 
 #===============================================================================
 # Execution

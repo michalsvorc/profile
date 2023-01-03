@@ -7,9 +7,9 @@
 # Variables
 #===============================================================================
 
-readonly shell_dir="${HOME}/.local/profile/shell"
-readonly plugins_dir="${shell_dir}/plugins"
-readonly share_dir="${HOME}/.local/share"
+shell_dir="${HOME}/.local/profile/shell"
+plugins_dir="${shell_dir}/plugins"
+share_dir="${HOME}/.local/share"
 
 #===============================================================================
 # Shell aliases
