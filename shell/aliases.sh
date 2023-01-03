@@ -30,7 +30,7 @@ alias rc-service='sudo rc-service'
 # Custom
 alias edit="$EDITOR"
 alias ed='edit'
-alias file_explorer='n'
+alias file_explorer='n -a'
 alias fe='file_explorer'
 alias mount_uid='mount -o umask=0022,gid=$(id -g),uid=$(id -u)'
 alias uid='lazydocker'

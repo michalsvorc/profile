@@ -54,5 +54,5 @@ export LESSHISTFILE='/dev/null'
 # https://github.com/jarun/nnn
 #===============================================================================
 
-export NNN_OPTS='aDeHix'
+export NNN_OPTS='DeHix'
 export NNN_PLUG='g:!git diff;l:-!git log;p:preview-tui;x:!chmod +x $nnn'
