@@ -19,6 +19,7 @@ set -o pipefail     # Don't hide errors within pipes.
 readonly version='1.2.0'
 readonly argv0=${0##*/}
 
+readonly XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 readonly bin_dir="${HOME}/.local/bin"
 readonly profile_dir="${HOME}/.local/profile"
 readonly share_dir="${HOME}/.local/share"
@@ -130,7 +131,8 @@ main() {
 #===============================================================================
 # Execution
 #===============================================================================
-#test $# -eq 0 && main && exit 0
+
+test $# -eq 0 && main && exit 0
 
 case "${1:-}" in
   -h | --help )
