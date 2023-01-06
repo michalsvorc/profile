@@ -16,6 +16,7 @@
 export SHELL='/bin/zsh'
 export EDITOR='nvim'
 export VISUAL="$EDITOR"
+export MANPAGER="sh -c 'col -b | bat -l man -p'"
 
 #===============================================================================
 # PATH
