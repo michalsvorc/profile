@@ -26,7 +26,7 @@ font:
   bold_italic:
     family: Hack Nerd Font Mono
     style: Bold Italic
-  size: 14
+  size: 12
 
 cursor:
   style:
