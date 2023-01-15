@@ -45,7 +45,7 @@ esac
 # History
 #===============================================================================
 
-export HISTFILE="${HOME}/.cache/zsh_history"
+export HISTFILE="${XDG_CACHE_HOME}/zsh_history"
 export HISTSIZE=10000
 export SAVEHIST=10000
 export LESSHISTFILE='/dev/null'
