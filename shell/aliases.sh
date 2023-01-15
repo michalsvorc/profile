@@ -9,6 +9,7 @@ alias less='less -r'
 alias ls='exa --all --git --group --group-directories-first --icons --long --time-style=long-iso'
 ## External
 alias awsc='aws --cli-auto-prompt'
+alias bat='bat --plain'
 alias qrencode='qrencode -t ASCIIi'
 
 # Sudo
