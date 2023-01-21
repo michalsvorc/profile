@@ -10,18 +10,19 @@
 set -o errexit      # Abort on nonzero exit status.
 set -o nounset      # Abort on unbound variable.
 set -o pipefail     # Don't hide errors within pipes.
-# set -o xtrace       # Set debugging.
+#set -o xtrace       # Set debugging.
 
 #===============================================================================
 # Variables
 #===============================================================================
 
-readonly version='1.2.0'
+readonly version='1.3.0'
 readonly argv0=${0##*/}
 
 readonly XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 readonly bin_dir="${HOME}/.local/bin"
 readonly profile_dir="${HOME}/.local/profile"
+readonly profile_config_dir="${profile_dir}/.config"
 readonly share_dir="${HOME}/.local/share"
 
 #===============================================================================
@@ -50,7 +51,6 @@ die() {
   local message="$1"
 
   printf 'Error: %s\n\n' "$message" >&2
-
   usage 1 1>&2
 }
 
@@ -76,13 +76,10 @@ link_home() {
   file='.zlogout';       create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
   file='.zshrc';         create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
   file='.zshenv';        create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
-
   file='profile';        create_symlink "${HOME}/.${file}"          "${HOME}/.z${file}"
 }
 
 link_config() {
-  local profile_config_dir="${profile_dir}/.config"
-
   dir='alacritty';       create_symlink "${profile_config_dir}/${dir}"   "${XDG_CONFIG_HOME}/${dir}"
   dir='awesome';         create_symlink "${profile_config_dir}/${dir}"   "${XDG_CONFIG_HOME}/${dir}"
   dir='lazygit';         create_symlink "${profile_config_dir}/${dir}/config.yml"   "${XDG_CONFIG_HOME}/${dir}/config.yml"
@@ -103,18 +100,15 @@ install_nnn_plugins() {
   local repository='https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs'
 
   sh -c "$(curl -Ls $repository)"
-
-  file='nnn/plugins/preview-tui-custom' create_symlink "${profile_config_dir}/${file}" "${XDG_CONFIG_HOME}/${file}"
+  file='nnn/plugins/preview-tui-custom'; create_symlink "${profile_config_dir}/${file}" "${XDG_CONFIG_HOME}/${file}"
 }
 
 install_zsh_plugin() {
   local repository="$1"
-
   local install_dir="${share_dir}/zsh/${repository##*/}"
-  echo $install_dir
 
   mkdir -p "${share_dir}/zsh"
-  [ ! -d "$install_dir" ] && git clone "$repository" "$install_dir"
+  [ ! -d "$install_dir" ] && git clone "$repository" "$install_dir" || return 0
 }
 
 
@@ -124,6 +118,8 @@ install_zsh_plugin() {
 
 main() {
   prepare_directories \
+  && link_home \
+  && link_config \
   && install_nnn_plugins \
   && install_zsh_plugin 'https://github.com/Aloxaf/fzf-tab' \
   && install_zsh_plugin 'https://github.com/zsh-users/zsh-syntax-highlighting' \
@@ -134,7 +130,10 @@ main() {
 # Execution
 #===============================================================================
 
-test $# -eq 0 && main && exit 0
+if [[ $# -eq 0 ]] ; then
+    main
+    exit 0
+fi
 
 case "${1:-}" in
   -h | --help )
