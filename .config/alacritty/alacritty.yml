@@ -1,8 +1,7 @@
 shell:
-  program: /usr/bin/tmux
+  program: /bin/zsh
   args:
-    - -T 256
-    - -T UTF-8
+    - --login
 
 env:
   # TERM variable
