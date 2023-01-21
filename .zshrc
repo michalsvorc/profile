@@ -44,7 +44,7 @@ export PS1=$PS1'$(__git_ps1 "(%s) ")'
 
 test -f '/.dockerenv' && dockerenv_prefix='D '
 
-export PS1="%{$fg[magenta]%}${dockerenv_prefix:-}%{$reset_color%}$PS1"
+export PS1="%{$fg[yellow]%}${dockerenv_prefix:-}%{$reset_color%}$PS1"
 
 #===============================================================================
 # History
