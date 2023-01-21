@@ -2,15 +2,15 @@
 # Shell aliases
 #===============================================================================
 
-# Enhanced arguments
-## GNU
+# GNU
 alias grep='grep --color=always'
 alias less='less -r'
-alias ls='exa --all --git --group --group-directories-first --icons --long --time-style=long-iso'
-## External
+
+# 3rd party
 alias awsc='aws --cli-auto-prompt'
 alias bat='bat --plain'
 alias ftp='ncftp'
+alias ls='exa --all --git --group --group-directories-first --icons --long --time-style=long-iso'
 alias qrencode='qrencode -t ASCIIi'
 
 # Sudo

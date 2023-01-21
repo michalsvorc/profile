@@ -103,6 +103,8 @@ install_nnn_plugins() {
   local repository='https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs'
 
   sh -c "$(curl -Ls $repository)"
+
+  file='nnn/plugins/preview-tui-custom' create_symlink "${profile_config_dir}/${file}" "${XDG_CONFIG_HOME}/${file}"
 }
 
 install_zsh_plugin() {

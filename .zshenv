@@ -56,4 +56,4 @@ export LESSHISTFILE='/dev/null'
 #===============================================================================
 
 export NNN_OPTS='DeHix'
-export NNN_PLUG='g:!git diff;l:-!git log;p:preview-tui;x:!chmod +x $nnn'
+export NNN_PLUG='g:!git diff;l:-!git log;p:preview-tui-custom;x:!chmod +x $nnn'
