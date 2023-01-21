@@ -96,21 +96,21 @@ prepare_directories() {
     "$share_dir"
 }
 
+clone_repository() {
+  local subdir="$1"
+  local repository="$2"
+  local install_dir="${share_dir}/${subdir}/${repository##*/}"
+
+  mkdir -p "${share_dir}/${subdir}"
+  [ ! -d "$install_dir" ] && git clone "$repository" "$install_dir" || return 0
+}
+
 install_nnn_plugins() {
   local repository='https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs'
 
   sh -c "$(curl -Ls $repository)"
   file='nnn/plugins/preview-tui-custom'; create_symlink "${profile_config_dir}/${file}" "${XDG_CONFIG_HOME}/${file}"
 }
-
-install_zsh_plugin() {
-  local repository="$1"
-  local install_dir="${share_dir}/zsh/${repository##*/}"
-
-  mkdir -p "${share_dir}/zsh"
-  [ ! -d "$install_dir" ] && git clone "$repository" "$install_dir" || return 0
-}
-
 
 #===============================================================================
 # Main
@@ -121,8 +121,9 @@ main() {
   && link_home \
   && link_config \
   && install_nnn_plugins \
-  && install_zsh_plugin 'https://github.com/Aloxaf/fzf-tab' \
-  && install_zsh_plugin 'https://github.com/zsh-users/zsh-syntax-highlighting' \
+  && clone_repository 'zsh'   'https://github.com/Aloxaf/fzf-tab' \
+  && clone_repository 'zsh'   'https://github.com/zsh-users/zsh-syntax-highlighting' \
+  && clone_repository 'tmux'  'https://github.com/tmux-plugins/tmux-sensible' \
   && printf '%s\n' 'User profile initialized successfully.'
 }
 
