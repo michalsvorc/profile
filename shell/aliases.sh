@@ -10,6 +10,7 @@ alias ls='exa --all --git --group --group-directories-first --icons --long --tim
 ## External
 alias awsc='aws --cli-auto-prompt'
 alias bat='bat --plain'
+alias ftp='ncftp'
 alias qrencode='qrencode -t ASCIIi'
 
 # Sudo
