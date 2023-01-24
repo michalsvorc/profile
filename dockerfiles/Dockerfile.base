@@ -1,0 +1,163 @@
+#!/bin/bash
+
+#===============================================================================
+# Base image
+#===============================================================================
+
+FROM debian:bookworm-slim
+
+#===============================================================================
+# Build arguments
+#===============================================================================
+
+ARG shell='/bin/zsh'
+ARG user_name
+ARG user_profile
+ARG gh_release_download='https://raw.githubusercontent.com/michalsvorc/scripts/main/gh_release_download.sh'
+
+#===============================================================================
+# Update package repositories and install new packages
+#===============================================================================
+
+RUN apt-get update \
+  && DEBIAN_FRONTEND=noninteractive \
+  apt-get install \
+  --assume-yes \
+  --no-install-recommends \
+  --quiet \
+  bat \
+  ca-certificates \
+  curl \
+  exa \
+  fzf \
+  g++ \
+  git \
+  htop \
+  jq \
+  less \
+  nnn \
+  openssh-client \
+  p7zip \
+  procps \
+  ripgrep \
+  rsync \
+  tig \
+  tmux \
+  unzip \
+  vim \
+  zsh \
+  && rm -rf /var/lib/apt/lists/*
+
+#===============================================================================
+# Set up a non-root user
+#===============================================================================
+
+RUN useradd \
+  --create-home \
+  --shell "$shell" \
+  --user-group \
+  "$user_name"
+
+#===============================================================================
+# Set user environment variables
+#===============================================================================
+
+ENV HOME "/home/${user_name}"
+ENV USER "$user_name"
+
+#===============================================================================
+# Set the non-root user
+#===============================================================================
+
+USER $USER
+
+#===============================================================================
+# Create $HOME directories
+#===============================================================================
+
+ARG cache_dir="${HOME}/.cache"
+ARG local_dir="${HOME}/.local"
+ARG bin_dir="${local_dir}/bin"
+ARG profile_dir="${local_dir}/profile"
+ARG share_dir="${local_dir}/share"
+ARG ssh_dir="${HOME}/.ssh"
+
+RUN mkdir -p \
+  "$cache_dir" \
+  "$local_dir" \
+  "$bin_dir" \
+  "$profile_dir" \
+  "$share_dir" \
+  "$ssh_dir"
+
+#===============================================================================
+# Use Bash for executing Docker commands
+#===============================================================================
+
+SHELL ["/bin/bash", "-c"]
+
+#===============================================================================
+# User profile configuration files
+#===============================================================================
+
+RUN git clone --recurse-submodules "$user_profile" "$profile_dir" \
+  && bash "${profile_dir}/init.sh"
+
+#===============================================================================
+# Download Neovim binary
+# Link: https://github.com/neovim/neovim/releases
+#===============================================================================
+
+ARG app_id='nvim'
+ARG repository='neovim/neovim'
+ARG asset='nvim-linux64.tar.gz$'
+
+RUN cd ${share_dir} \
+  && bash <(curl -Ls "$gh_release_download") "$repository" "$asset" \
+  | tar -xz \
+  && ln -sf "${share_dir}/nvim-linux64/bin/${app_id}" "${bin_dir}/${app_id}" \
+  && cd -
+
+#===============================================================================
+# Download Lazygit binary
+# Link: https://github.com/jesseduffield/lazygit/releases
+#===============================================================================
+
+ARG app_id='lazygit'
+ARG repository='jesseduffield/lazygit'
+ARG asset='lazygit_([0-9]{1,}\.)+[0-9]{1,}_Linux_x86_64.tar.gz$'
+
+RUN mkdir -p "${share_dir}/${app_id}/bin" \
+  && cd "${share_dir}/${app_id}" \
+  && bash <(curl -Ls "$gh_release_download") "$repository" "$asset" \
+  | tar -xz --directory 'bin' \
+  && ln -sf "${share_dir}/${app_id}/bin/${app_id}" "${bin_dir}/${app_id}" \
+  && cd -
+
+#===============================================================================
+# Download delta binary
+# Link: https://github.com/dandavison/delta/releases
+#===============================================================================
+
+ARG app_id='delta'
+ARG repository='dandavison/delta'
+ARG asset='delta-([0-9]{1,}\.)+[0-9]{1,}-x86_64-unknown-linux-gnu.tar.gz$'
+
+RUN mkdir -p "${share_dir}/${app_id}/bin" \
+  && cd "${share_dir}/${app_id}" \
+  && bash <(curl -Ls "$gh_release_download") "$repository" "$asset" \
+  | tar -xz --directory 'bin' --strip-components 1 \
+  && ln -sf "${share_dir}/${app_id}/bin/${app_id}" "${bin_dir}/${app_id}" \
+  && cd -
+
+#===============================================================================
+# Change working directory
+#===============================================================================
+
+WORKDIR "$HOME"
+
+#===============================================================================
+# Runtime entrypoint
+#===============================================================================
+
+ENTRYPOINT ["/bin/zsh", "--login"]

@@ -1,0 +1,90 @@
+#===============================================================================
+# Base image
+#===============================================================================
+
+FROM devcontainer:base
+
+#===============================================================================
+# Build arguments
+#===============================================================================
+
+ARG user_name
+ARG python_version='3.10'
+
+#===============================================================================
+# Install pyenv dependencies
+#
+# Link: https://github.com/pyenv/pyenv/wiki#suggested-build-environment
+#===============================================================================
+
+USER root
+
+RUN apt-get update \
+  && DEBIAN_FRONTEND=noninteractive \
+  apt-get install \
+  --assume-yes \
+  --no-install-recommends \
+  --quiet \
+  build-essential \
+  libssl-dev \
+  zlib1g-dev \
+  libbz2-dev \
+  libreadline-dev \
+  libsqlite3-dev \
+  wget \
+  curl \
+  llvm \
+  libncursesw5-dev \
+  xz-utils \
+  tk-dev \
+  libxml2-dev \
+  libxmlsec1-dev \
+  libffi-dev \
+  liblzma-dev \
+  && rm -rf /var/lib/apt/lists/*
+
+#===============================================================================
+# Set user environment variables
+#===============================================================================
+
+ENV USER "$user_name"
+
+#===============================================================================
+# Set the non-root user
+#===============================================================================
+
+USER $USER
+
+#===============================================================================
+# Install Python Version Management (pyenv)
+#
+# Links:
+# - https://github.com/pyenv/pyenv
+# - https://github.com/pyenv/pyenv#automatic-installer
+#===============================================================================
+
+RUN curl https://pyenv.run | bash \
+  && printf '%s\n%s\n%s\n%s\n' \
+  '# Python Version Manager' \
+  'export PYENV_ROOT="$HOME/.pyenv"' \
+  'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' \
+  'eval "$(pyenv init -)"' \
+  >> "${HOME}/.profile"
+
+#===============================================================================
+# Install and set global Python version
+#
+# Link: https://github.com/pyenv/pyenv/pull/1831
+#===============================================================================
+
+ENV pyenv_bin=${HOME}/.pyenv/bin/pyenv
+
+RUN $pyenv_bin install ${python_version}:latest
+
+RUN $pyenv_bin versions | tail -1 | xargs $pyenv_bin global
+
+#===============================================================================
+# Runtime entrypoint
+#===============================================================================
+
+ENTRYPOINT ["/bin/zsh", "--login"]
