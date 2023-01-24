@@ -1,14 +1,25 @@
 # GNU/Linux profile configuration files
 
-## Requirements
+## Dependencies
 
-- [exa](https://github.com/ogham/exa)
-- [fzf](https://github.com/junegunn/fzf)
+### Required
 
-Optional:
+- [delta diff](https://github.com/dandavison/delta#readme)
+- [exa](https://github.com/ogham/exa#readme)
+- [fzf](https://github.com/junegunn/fzf#readme)
+- [lazygit](https://github.com/jesseduffield/lazygit#readme)
+- [zsh](https://www.zsh.org/)
 
-- Terminal emulator with patched [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts), [installation example](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#linux).
-- [bat](https://github.com/sharkdp/bat)
+### Optional
+
+- [bat](https://github.com/sharkdp/bat#readme)
+- [nnn](https://github.com/jarun/nnn#readme)
+- [ripgrep](https://github.com/BurntSushi/ripgrep#readme)
+- [tmux](https://github.com/tmux/tmux#readme)
+
+### Neovim
+
+- [config](https://github.com/michalsvorc/nvim-basic-ide#readme)
 
 ## Usage
 
@@ -24,3 +35,8 @@ Run initialization script:
 ./init.sh
 ```
 
+## Terminal icons 
+
+Requires terminal emulator with patched [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts#readme). 
+
+See [installation example](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#linux).
