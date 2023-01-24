@@ -7,8 +7,8 @@
 
 Optional:
 
-- Terminal emulator with patched [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts).
-  See example for Hack typeface [installation](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#linux).
+- Terminal emulator with patched [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts), [installation example](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#linux).
+- [bat](https://github.com/sharkdp/bat)
 
 ## Usage
 
