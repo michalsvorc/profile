@@ -98,8 +98,12 @@ SHELL ["/bin/bash", "-c"]
 # User profile configuration files
 #===============================================================================
 
-RUN git clone --recurse-submodules "$user_profile" "$profile_dir" \
-  && bash "${profile_dir}/init.sh"
+RUN git clone \
+  --recurse-submodules \
+  --single-branch \
+  --branch 'main' \
+  "$user_profile" "$profile_dir" \
+  && bash "${profile_dir}/scripts/init.sh"
 
 #===============================================================================
 # Download Neovim binary
