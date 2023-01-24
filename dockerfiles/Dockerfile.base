@@ -41,7 +41,6 @@ RUN apt-get update \
   pwgen \
   ripgrep \
   rsync \
-  tig \
   tmux \
   unzip \
   vim \

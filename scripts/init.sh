@@ -68,7 +68,6 @@ create_symlink() {
 link_home() {
   file='.editorconfig';  create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
   file='.gitconfig';     create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
-  file='.tigrc';         create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
   file='.tmux.conf';     create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
   file='.vimrc';         create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
   file='.xinitrc';       create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
