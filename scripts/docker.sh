@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 #
+# Dependencies: docker, git
+#
 # Author: Michal Svorc (https://michalsvorc.com)
 # License: MIT license (https://opensource.org/licenses/MIT)
-# Dependencies: docker, git
 
 #===============================================================================
 # Abort the script on errors and unbound variables
@@ -17,7 +18,7 @@ set -o pipefail     # Don't hide errors within pipes.
 # Variables
 #===============================================================================
 
-readonly version='1.7.0'
+readonly version='1.8.0'
 readonly argv0=${0##*/}
 
 # Environments
@@ -32,7 +33,7 @@ readonly image_name='devcontainer'
 
 # User
 readonly user_name='guest'
-readonly user_profile_default='https://github.com/michalsvorc/profile'
+readonly user_profile='https://github.com/michalsvorc/profile'
 
 # Registry
 readonly registry_host_default='dockerhub.com'
@@ -66,12 +67,6 @@ Options:
                           ${env_python}
                           ${env_golang}
                         Default: ${env_default}
-
-  -p, --user-profile <URL>
-                        Git repository URL with user profile configuration files.
-                        Used only during base environment build.
-                        Default: ${user_profile_default}
-
   -t, --tag <string>    Set custom image tag.
 
 Commands:
@@ -115,8 +110,7 @@ create_image_handle() {
 docker_build() {
   local image_tag="$1"
   local dockerfile="${2:-Dockerfile}"
-  local user_profile="$3"
-  local rest_args="$4"
+  local rest_args="$3"
   local project_root_dir=$(get_project_root_dir)
   local image_handle=$(create_image_handle "$image_tag")
 
@@ -212,14 +206,6 @@ while test $# -gt 0 ; do
       shift
       test $# -eq 0 && die 'Missing "command" argument.'
       ;;
-    -p | --user-profile )
-      shift
-      test $# -eq 0 && die 'Missing argument for option "--user-profile".'
-      user_profile="${1:-}"
-
-      shift
-      test $# -eq 0 && die 'Missing "command" argument.'
-      ;;
     -t | --tag )
       shift
       test $# -eq 0 && die 'Missing argument for option "--tag".'
@@ -230,14 +216,12 @@ while test $# -gt 0 ; do
       ;;
     build)
       image_tag="${image_tag:-$env}"
-      user_profile="${user_profile:-$user_profile_default}"
       dockerfile="Dockerfile.${env}"
       rest_args="${@:2}"
 
       docker_build \
         "$image_tag" \
         "$dockerfile" \
-        "$user_profile" \
         "$rest_args"
       break
       ;;
