@@ -65,7 +65,7 @@ Environment id: `nodejs`
 
 Features:
 - [Node.js LTS](https://nodejs.org/en/download/)
-- [Node Version Manager](https://github.com/nvm-sh/nvm)
+- [fnm](https://github.com/Schniz/fnm#readme)
 
 ### Python
 

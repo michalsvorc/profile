@@ -5,34 +5,18 @@
 FROM devcontainer:base
 
 #===============================================================================
-# Install Node Version Manager (NVM)
-#
-# Links:
-# - https://stackoverflow.com/questions/25899912/how-to-install-nvm-in-docker
-# - https://github.com/nvm-sh/nvm#install--update-script
+# Fast Node Manager (fnm)
 #===============================================================================
 
-ENV NVM_DIR "${HOME}/.nvm"
+RUN curl -fsSL https://fnm.vercel.app/install | bash
 
-RUN mkdir -p "$NVM_DIR" \
-  && printf '%s\n%s\n%s\n%s\n' \
-  '# Node Version Manager' \
-  'export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"' \
-  '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' \
-  '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"' \
-  >> "${HOME}/.profile"
+#===============================================================================
+# Node.js LTS version
+#===============================================================================
 
-RUN nvm_version=$(\
-  curl -s \
-  'https://api.github.com/repos/nvm-sh/nvm/releases/latest' \
-  | grep -Po '"tag_name": "v\K[0-9.]+'\
-  ) \
-  && curl -o- \
-  "https://raw.githubusercontent.com/nvm-sh/nvm/v${nvm_version}/install.sh" \
-  | bash \
-  && . "${NVM_DIR}/nvm.sh" \
-  && nvm install --lts \
-  && nvm alias default node
+ARG fnm_bin='/home/guest/.local/share/fnm/fnm'
+
+RUN "$fnm_bin" install --lts
 
 #===============================================================================
 # Runtime entrypoint
