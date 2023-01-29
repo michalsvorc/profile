@@ -18,9 +18,15 @@
 - [tmux](https://github.com/tmux/tmux#readme)
 - terminal emulator with patched [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts#readme), [installation example](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#linux)
 
-### Submodules (installed by git)
+### Plugins 
 
 - [gitsubmodules](.gitsubmodules)
+
+Installed by init script:
+
+- [fzf-tab](https://github.com/Aloxaf/fzf-tab)
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [tmux-sensible](https://github.com/tmux-plugins/tmux-sensible)
 
 ## Usage
 
