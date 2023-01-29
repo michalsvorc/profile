@@ -16,6 +16,7 @@
 - [nnn](https://github.com/jarun/nnn#readme)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#readme)
 - [tmux](https://github.com/tmux/tmux#readme)
+- terminal emulator with patched [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts#readme), [installation example](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#linux)
 
 ### Neovim
 
@@ -35,8 +36,3 @@ Run initialization script:
 ./scripts/init.sh
 ```
 
-## Terminal icons 
-
-Requires terminal emulator with patched [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts#readme). 
-
-See [installation example](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#linux).
