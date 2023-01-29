@@ -32,7 +32,7 @@ git clone --recurse-submodules
 Run initialization script:
 
 ```console
-./init.sh
+./scripts/init.sh
 ```
 
 ## Terminal icons 
