@@ -18,9 +18,9 @@
 - [tmux](https://github.com/tmux/tmux#readme)
 - terminal emulator with patched [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts#readme), [installation example](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#linux)
 
-### Neovim
+### Submodules (installed by git)
 
-- [config](https://github.com/michalsvorc/nvim-basic-ide#readme)
+- [gitsubmodules](.gitsubmodules)
 
 ## Usage
 
@@ -36,3 +36,6 @@ Run initialization script:
 ./scripts/init.sh
 ```
 
+## Nvim configuration
+
+- [nvim-basic-ide](https://github.com/michalsvorc/nvim-basic-ide#readme)
