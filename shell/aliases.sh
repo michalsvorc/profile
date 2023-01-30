@@ -2,17 +2,11 @@
 # Shell aliases
 #===============================================================================
 
-# GNU
-alias grep='grep --color=always'
-alias less='less -r'
-
-# 3rd party
 alias awsc='aws --cli-auto-prompt'
 alias bat='bat --plain'
 alias ftp='ncftp'
 alias ls='exa --all --git --group --group-directories-first --icons --long --time-style=long-iso'
 alias qrencode='qrencode -t ASCIIi'
-alias t='tmux -2'
 
 # Sudo
 alias cryptsetup='sudo cryptsetup'
@@ -36,5 +30,6 @@ alias ed='edit'
 alias file_explorer='n -a'
 alias fe='file_explorer'
 alias mount_uid='mount -o umask=0022,gid=$(id -g),uid=$(id -u)'
+alias t='tmux -2'
 alias uid='lazydocker'
 alias uig='lazygit'
