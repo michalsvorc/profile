@@ -62,6 +62,11 @@ create_symlink() {
   local source="$1"
   local target="$2"
 
+  if [ -e "$target" ] ; then
+    printf "Warn: ln: failed to create symbolic link '%s': File exists. Continue\n" "$target"
+    return 0
+  fi
+
   ln -s "$source" "$target"
 }
 
