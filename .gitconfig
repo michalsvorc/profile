@@ -23,7 +23,6 @@
 #===============================================================================
 
 [diff]
-  #tool = vimdiff3
   tool = nvim_diff
   colorMoved = default
 
@@ -39,7 +38,6 @@
 #===============================================================================
 
 [merge]
-  #tool = vimdiff
   tool = nvim_merge
   conflictstyle = diff3
 
