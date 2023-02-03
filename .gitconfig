@@ -7,6 +7,18 @@
   name = Michal Svorc
 
 #===============================================================================
+# Aliases
+#===============================================================================
+
+[alias]
+  c  = clone
+  d  = difftool
+  cc = checkout
+  cm = commit
+  l  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr: %cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=iso
+  s  = status -s
+
+#===============================================================================
 # Main
 #===============================================================================
 
@@ -51,18 +63,6 @@
 
 [mergetool "nvim_merge"]
   cmd = "nvim -d ${LOCAL} ${MERGED} ${REMOTE}"
-
-#===============================================================================
-# Aliases
-#===============================================================================
-
-[alias]
-  c   = clone
-  d   = difftool
-  cc  = checkout
-  cm  = commit
-  l   = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr: %cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=iso
-  s   = status -s
 
 #===============================================================================
 # tig
