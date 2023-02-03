@@ -110,9 +110,14 @@ clone_repository() {
 
 install_nnn_plugins() {
   local repository='https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs'
+  local nnn_plugins_dir='/nnn/plugins'
 
+  mkdir -p "${XDG_CONFIG_HOME}/${nnn_plugins_dir}"
   sh -c "$(curl -Ls $repository)"
-  file='nnn/plugins/preview-tui-custom'; create_symlink "${profile_config_dir}/${file}" "${XDG_CONFIG_HOME}/${file}"
+  file='preview-tui-custom'
+  create_symlink \
+    "${profile_config_dir}/${nnn_plugins_dir}/${file}" \
+    "${XDG_CONFIG_HOME}/${nnn_plugins_dir}/${file}"
 }
 
 #===============================================================================
