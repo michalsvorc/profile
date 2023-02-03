@@ -62,7 +62,7 @@ create_symlink() {
   local source="$1"
   local target="$2"
 
-  ln -sfn "$source" "$target"
+  ln -s "$source" "$target"
 }
 
 link_home() {
