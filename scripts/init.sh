@@ -16,7 +16,7 @@ set -o pipefail     # Don't hide errors within pipes.
 # Variables
 #===============================================================================
 
-readonly version='1.3.0'
+readonly version='1.3.1'
 readonly argv0=${0##*/}
 
 readonly XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
@@ -101,11 +101,18 @@ prepare_directories() {
 
 clone_repository() {
   local subdir="$1"
-  local repository="$2"
+  local repository="https://github.com/${2}"
+  local branch="$3"
   local install_dir="${share_dir}/${subdir}/${repository##*/}"
 
   mkdir -p "${share_dir}/${subdir}"
-  [ ! -d "$install_dir" ] && git clone "$repository" "$install_dir" || return 0
+  [ ! -d "$install_dir" ] \
+    && git clone \
+      --depth 1 \
+      --branch "$branch" \
+      "$repository" \
+      "$install_dir" \
+    || return 0
 }
 
 install_nnn_plugins() {
@@ -129,9 +136,18 @@ main() {
   && link_home \
   && link_config \
   && install_nnn_plugins \
-  && clone_repository 'zsh'   'https://github.com/Aloxaf/fzf-tab' \
-  && clone_repository 'zsh'   'https://github.com/zsh-users/zsh-syntax-highlighting' \
-  && clone_repository 'tmux'  'https://github.com/tmux-plugins/tmux-sensible' \
+  && clone_repository \
+    'zsh' \
+    'Aloxaf/fzf-tab' \
+    'master' \
+  && clone_repository \
+    'zsh' \
+    'zsh-users/zsh-syntax-highlighting' \
+    '0.7.1' \
+  && clone_repository \
+    'tmux' \
+    'tmux-plugins/tmux-sensible' \
+    'v3.0.0' \
   && printf '%s\n' 'User profile initialized successfully.'
 }
 
