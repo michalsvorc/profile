@@ -9,7 +9,7 @@ modkey = "Mod4"
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-  awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+  awful.key({ modkey,           }, "h",      hotkeys_popup.show_help,
     {description="show help", group="awesome"}),
   awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
     {description = "view previous", group = "tag"}),
@@ -119,6 +119,8 @@ globalkeys = gears.table.join(
     {description = "web browser: private", group = "hotkeys"}),
   awful.key({ modkey, 'Shift' }, "y", function () awful.spawn(require("commands").youtube) end,
     {description = "youtube client", group = "hotkeys"}),
+  awful.key({ modkey, 'Shift' }, "s", function () awful.spawn(require("commands").screenshot) end,
+  {description = "take screenshot in $HOME/tmp", group = "hotkeys"}),
 
   -- awesome-switcher plugin
   awful.key({ "Mod1",           }, "Tab",
