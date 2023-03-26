@@ -8,6 +8,7 @@ alias ftp='ncftp'
 alias ls='exa --all --git --group --group-directories-first --icons --long --time-style=long-iso'
 alias qrdecode='zbarimg'
 alias qrencode='qrencode -t ASCIIi'
+alias xclip_c='xclip -selection c'
 
 # Sudo
 alias cryptsetup='sudo cryptsetup'
