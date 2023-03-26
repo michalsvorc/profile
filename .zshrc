@@ -8,6 +8,7 @@
 #===============================================================================
 
 shell_dir="${HOME}/.local/profile/shell"
+completions_dir="${shell_dir}/completions"
 plugins_dir="${shell_dir}/plugins"
 share_dir="${HOME}/.local/share"
 
@@ -102,3 +103,9 @@ source "${share_dir}/zsh/fzf-tab/fzf-tab.plugin.zsh"
 #===============================================================================
 
 source "${share_dir}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+
+#===============================================================================
+# Completions
+#===============================================================================
+
+source "${completions_dir}/ykman.zsh"
