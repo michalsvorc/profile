@@ -127,6 +127,18 @@ install_nnn_plugins() {
     "${XDG_CONFIG_HOME}/${nnn_plugins_dir}/${file}"
 }
 
+install_tmux_plugins() {
+  local subdir='tmux'
+
+  clone_repository "$subdir" 'tmux-plugins/tmux-sensible' 'v3.0.0'
+}
+install_zsh_plugins() {
+  local subdir='zsh'
+
+  clone_repository "$subdir" 'Aloxaf/fzf-tab' 'master' \
+  && clone_repository "$subdir" 'zsh-users/zsh-syntax-highlighting' '0.7.1'
+}
+
 #===============================================================================
 # Main
 #===============================================================================
@@ -136,18 +148,8 @@ main() {
   && link_home \
   && link_config \
   && install_nnn_plugins \
-  && clone_repository \
-    'zsh' \
-    'Aloxaf/fzf-tab' \
-    'master' \
-  && clone_repository \
-    'zsh' \
-    'zsh-users/zsh-syntax-highlighting' \
-    '0.7.1' \
-  && clone_repository \
-    'tmux' \
-    'tmux-plugins/tmux-sensible' \
-    'v3.0.0' \
+  && install_zsh_plugins \
+  && install_tmux_plugins \
   && printf '%s\n' 'User profile initialized successfully.'
 }
 
