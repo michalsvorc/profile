@@ -131,7 +131,8 @@ install_tmux_plugins() {
   local subdir='tmux'
 
   clone_repository "$subdir" 'tmux-plugins/tmux-sensible' 'v3.0.0' \
-  && clone_repository "$subdir" 'tmux-plugins/tmux-resurrect' 'v4.0.0'
+  && clone_repository "$subdir" 'tmux-plugins/tmux-resurrect' 'v4.0.0' \
+  && clone_repository "$subdir" 'janoamaral/tokyo-night-tmux' 'master'
 }
 
 install_zsh_plugins() {
