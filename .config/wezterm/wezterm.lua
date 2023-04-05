@@ -22,6 +22,7 @@ config.cursor_blink_rate = 0
 config.exit_behavior = "Close"
 config.audible_bell = "Disabled"
 config.hide_tab_bar_if_only_one_tab = true
+config.check_for_updates = false
 
 -- Return the configuration to wezterm
 return config
