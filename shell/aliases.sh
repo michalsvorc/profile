@@ -27,10 +27,8 @@ alias eselect='sudo eselect'
 alias rc-service='sudo rc-service'
 
 # Custom
-alias edit="$EDITOR"
-alias ed='edit'
-alias file_explorer='n -a'
-alias fe='file_explorer'
+alias ed="$EDITOR"
+alias fe='n -a'
 alias mount_uid='mount -o umask=0022,gid=$(id -g),uid=$(id -u)'
 alias t='tmux -u2'
 alias uid='lazydocker'
