@@ -80,7 +80,7 @@ source "${plugins_dir}/vi-mode.plugin.zsh"
 # Link: https://github.com/jarun/nnn/wiki/Basic-use-cases#configure-cd-on-quit
 #===============================================================================
 
-source "${plugins_dir}/quitcd.bash_zsh"
+source "${plugins_dir}/nnn_quitcd.bash_zsh"
 
 #===============================================================================
 # SSH agent
