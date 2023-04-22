@@ -87,6 +87,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## Downloaded by initialization script
 
-- [tmux-plugins/tmux-sensible](https://github.com/tmux-plugins/tmux-sensible/blob/master/LICENSE.md)
+MIT:
 - [Aloxaf/fzf-tab](https://github.com/Aloxaf/fzf-tab/blob/master/LICENSE)
+- [tmux-plugins/tmux-sensible](https://github.com/tmux-plugins/tmux-sensible/blob/master/LICENSE.md)
+- [tmux-plugins/tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect/blob/master/LICENSE.md)
+- [janoamaral/tokyo-night-tmux](https://github.com/janoamaral/tokyo-night-tmux/blob/master/LICENSE.md)
+
+BSD 3:
 - [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/COPYING.md)
