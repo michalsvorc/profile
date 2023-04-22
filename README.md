@@ -7,41 +7,42 @@
 - [delta diff](https://github.com/dandavison/delta#readme)
 - [exa](https://github.com/ogham/exa#readme)
 - [fzf](https://github.com/junegunn/fzf#readme)
-- [lazygit](https://github.com/jesseduffield/lazygit#readme)
-- [zsh](https://www.zsh.org/)
+- [zsh](https://github.com/ohmyzsh/ohmyzsh#readme)
 
 ### Optional
 
 - [bat](https://github.com/sharkdp/bat#readme)
-- [nnn](https://github.com/jarun/nnn#readme)
+- [fd](https://github.com/sharkdp/fd)
+- [lazygit](https://github.com/jesseduffield/lazygit#readme)
+- [neovim](https://github.com/neovim/neovim#readme)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#readme)
 - [tmux](https://github.com/tmux/tmux#readme)
 - terminal emulator with patched [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts#readme), [installation example](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#linux)
 
 ### Plugins 
 
-- [gitsubmodules](.gitsubmodules)
+- [git submodules](.gitmodules)
+- [nvim-basic-ide](https://github.com/michalsvorc/nvim-basic-ide#readme)
 
-Installed by init script:
+Installed by [initialization](scripts/init.sh) script:
 
-- [fzf-tab](https://github.com/Aloxaf/fzf-tab)
-- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-- [tmux-sensible](https://github.com/tmux-plugins/tmux-sensible)
+- [fzf-tab](https://github.com/Aloxaf/fzf-tab#readme)
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting#readme)
+- Tmux:
+  - [tmux-sensible](https://github.com/tmux-plugins/tmux-sensible#readme)
+  - [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect#readme)
+  - [tokyo-night-tmux](https://github.com/janoamaral/tokyo-night-tmux#readme)
 
 ## Usage
 
-Clone with submodules:
+Clone with submodules flag:
 
-```console
+```shell
 git clone --recurse-submodules
 ```
 
 Run initialization script:
 
-```console
+```shell
 ./scripts/init.sh
 ```
-
-## Nvim configuration
-
-- [nvim-basic-ide](https://github.com/michalsvorc/nvim-basic-ide#readme)
