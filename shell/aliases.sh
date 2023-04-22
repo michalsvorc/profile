@@ -28,7 +28,6 @@ alias rc-service='sudo rc-service'
 
 # Custom
 alias ed="$EDITOR"
-alias fe='n -aG'
 alias mount_uid='mount -o umask=0022,gid=$(id -g),uid=$(id -u)'
 alias t='tmux -u2'
 alias uid='lazydocker'

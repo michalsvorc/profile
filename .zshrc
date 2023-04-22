@@ -76,13 +76,6 @@ _comp_options+=(globdots)		# Include hidden files.
 source "${plugins_dir}/vi-mode.plugin.zsh"
 
 #===============================================================================
-# nnn file explorer
-# Link: https://github.com/jarun/nnn/wiki/Basic-use-cases#configure-cd-on-quit
-#===============================================================================
-
-source "${plugins_dir}/nnn_quitcd.bash_zsh"
-
-#===============================================================================
 # SSH agent
 # Link: https://wiki.archlinux.org/title/SSH_keys#SSH_agents
 #===============================================================================

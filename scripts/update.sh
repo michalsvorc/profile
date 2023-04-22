@@ -21,11 +21,3 @@ source='https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/vi-mode
 target="${plugins_dir}/$(basename $source)"
 curl -JL "$source" -o "$target"
 
-#===============================================================================
-# nnn quit cd
-# https://github.com/jarun/nnn/blob/master/misc/quitcd/quitcd.bash_zsh
-#===============================================================================
-
-source='https://raw.githubusercontent.com/jarun/nnn/master/misc/quitcd/quitcd.bash_zsh'
-target="${plugins_dir}/nnn_$(basename $source)"
-curl -JL "$source" -o "$target"
