@@ -26,9 +26,12 @@ alias emerge='sudo emerge'
 alias eselect='sudo eselect'
 alias rc-service='sudo rc-service'
 
+# OpenRC services
+alias docker_start='rc-service docker start'
+
 # Custom
 alias ed="$EDITOR"
-alias mount_uid='mount -o umask=0022,gid=$(id -g),uid=$(id -u)'
+alias mount_as_user='mount -o umask=0022,gid=$(id -g),uid=$(id -u)'
 alias t='tmux -u2'
 alias uid='lazydocker'
 alias uig='lazygit'
