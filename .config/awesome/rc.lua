@@ -62,11 +62,14 @@ editor_cmd = terminal .. " -e " .. editor
 modkey = require("keymap").modkey
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
+-- https://awesomewm.org/apidoc/libraries/awful.layout.html
 awful.layout.layouts = {
   awful.layout.suit.max,
-  awful.layout.suit.max.fullscreen,
-  awful.layout.suit.tile,
+  awful.layout.suit.tile.right,
+  awful.layout.suit.tile.left,
   awful.layout.suit.tile.bottom,
+  awful.layout.suit.tile.top,
+  awful.layout.suit.max.fullscreen,
 }
 -- }}}
 
