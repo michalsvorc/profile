@@ -28,10 +28,6 @@ Installed by [initialization](scripts/init.sh) script:
 
 - [fzf-tab](https://github.com/Aloxaf/fzf-tab#readme)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting#readme)
-- Tmux:
-  - [tmux-sensible](https://github.com/tmux-plugins/tmux-sensible#readme)
-  - [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect#readme)
-  - [tokyo-night-tmux](https://github.com/janoamaral/tokyo-night-tmux#readme)
 
 ## Usage
 
