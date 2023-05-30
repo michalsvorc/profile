@@ -115,6 +115,13 @@ clone_repository() {
     || return 0
 }
 
+install_zsh_plugins() {
+  local subdir='zsh'
+
+  clone_repository "$subdir" 'Aloxaf/fzf-tab' 'master' \
+  && clone_repository "$subdir" 'zsh-users/zsh-syntax-highlighting' '0.7.1'
+}
+
 #===============================================================================
 # Main
 #===============================================================================
