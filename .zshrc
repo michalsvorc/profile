@@ -58,17 +58,6 @@ setopt INC_APPEND_HISTORY \
 source "${shell_dir}/history_search.sh"
 
 #===============================================================================
-# Completion
-#===============================================================================
-
-# Basic auto/tab complete.
-autoload -U compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots)		# Include hidden files.
-
-#===============================================================================
 # Vi mode
 # Link: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
 #===============================================================================
@@ -83,13 +72,6 @@ source "${plugins_dir}/vi-mode.plugin.zsh"
 source "${shell_dir}/ssh_agent.sh"
 
 #===============================================================================
-# fzf completion
-# Link: https://github.com/Aloxaf/fzf-tab
-#===============================================================================
-
-source "${share_dir}/zsh/fzf-tab/fzf-tab.plugin.zsh"
-
-#===============================================================================
 # Syntax higlighting
 # Must be sourced at the end of the .zshrc file.
 # Link: https://github.com/zsh-users/zsh-syntax-highlighting
@@ -101,4 +83,16 @@ source "${share_dir}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.
 # Completions
 #===============================================================================
 
+# Basic auto/tab complete.
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
+
+# fzf completion
+# Link: https://github.com/Aloxaf/fzf-tab
+source "${share_dir}/zsh/fzf-tab/fzf-tab.plugin.zsh"
+
+# yubikey-manager (ykman)
 source "${completions_dir}/ykman.zsh"
