@@ -7,9 +7,10 @@
 # Variables
 #===============================================================================
 
-shell_dir="${HOME}/.local/profile/shell"
-completions_dir="${shell_dir}/completions"
-plugins_dir="${shell_dir}/plugins"
+profile_dir="${HOME}/.local/profile"
+shell_dir="${profile_dir}/shell"
+completions_dir="${profile_dir}/completions"
+plugins_dir="${profile_dir}/plugins"
 
 #===============================================================================
 # Shell aliases
@@ -30,7 +31,7 @@ export PS1="%{$fg[blue]%}%~%{$reset_color%} $%b "
 #===============================================================================
 
 setopt PROMPT_SUBST
-source "${plugins_dir}/git-prompt.sh"
+source "${plugins_dir}/git/git-prompt.sh"
 
 export GIT_PS1_SHOWCOLORHINTS=true \
 export GIT_PS1_SHOWDIRTYSTATE=true \
@@ -61,7 +62,7 @@ source "${shell_dir}/history_search.sh"
 # Link: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
 #===============================================================================
 
-source "${plugins_dir}/vi-mode.plugin.zsh"
+source "${plugins_dir}/zsh/vi-mode.plugin.zsh"
 
 #===============================================================================
 # SSH agent
