@@ -23,7 +23,6 @@ readonly XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 readonly bin_dir="${HOME}/.local/bin"
 readonly profile_dir="${HOME}/.local/profile"
 readonly profile_config_dir="${profile_dir}/.config"
-readonly share_dir="${HOME}/.local/share"
 
 #===============================================================================
 # Usage
@@ -63,7 +62,7 @@ create_symlink() {
   local target="$2"
 
   if [ -e "$target" ] ; then
-    printf "Warn: ln: failed to create symbolic link '%s': File exists. Continue\n" "$target"
+    printf "Warn: ln: failed to create symbolic link '%s': File already exists. Continue...\n" "$target"
     return 0
   fi
 
@@ -90,29 +89,12 @@ link_config() {
   dir='nvim';            create_symlink "${profile_config_dir}/${dir}"   "${XDG_CONFIG_HOME}/${dir}"
 }
 
-prepare_directories() {
+create_directories() {
   mkdir -p \
     "$bin_dir" \
     "$XDG_CONFIG_HOME" \
     "${XDG_CONFIG_HOME}/lazygit" \
-    "$profile_dir" \
-    "$share_dir"
-}
-
-clone_repository() {
-  local subdir="$1"
-  local repository="https://github.com/${2}"
-  local branch="$3"
-  local install_dir="${share_dir}/${subdir}/${repository##*/}"
-
-  mkdir -p "${share_dir}/${subdir}"
-  [ ! -d "$install_dir" ] \
-    && git clone \
-      --depth 1 \
-      --branch "$branch" \
-      "$repository" \
-      "$install_dir" \
-    || return 0
+    "$profile_dir"
 }
 
 #===============================================================================
@@ -120,7 +102,7 @@ clone_repository() {
 #===============================================================================
 
 main() {
-  prepare_directories \
+  create_directories \
   && link_home \
   && link_config \
   && printf '%s\n' 'User profile initialized successfully.'
