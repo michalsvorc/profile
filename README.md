@@ -21,7 +21,7 @@
 
 ## Plugins 
 
-See [git submodules](.gitmodules) for full list.
+See [git submodules](.gitmodules) for the full list.
 
 ## Usage
 

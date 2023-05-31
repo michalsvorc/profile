@@ -58,8 +58,8 @@ setopt INC_APPEND_HISTORY \
 source "${shell_dir}/history_search.sh"
 
 #===============================================================================
-# Vi mode
-# Link: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
+# ohmyzsh vi mode
+# Link: https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/vi-mode/vi-mode.plugin.zsh
 #===============================================================================
 
 source "${plugins_dir}/zsh/vi-mode.plugin.zsh"
