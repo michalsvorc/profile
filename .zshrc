@@ -10,7 +10,6 @@
 shell_dir="${HOME}/.local/profile/shell"
 completions_dir="${shell_dir}/completions"
 plugins_dir="${shell_dir}/plugins"
-share_dir="${HOME}/.local/share"
 
 #===============================================================================
 # Shell aliases
@@ -72,14 +71,6 @@ source "${plugins_dir}/vi-mode.plugin.zsh"
 source "${shell_dir}/ssh_agent.sh"
 
 #===============================================================================
-# Syntax higlighting
-# Must be sourced at the end of the .zshrc file.
-# Link: https://github.com/zsh-users/zsh-syntax-highlighting
-#===============================================================================
-
-source "${share_dir}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
-
-#===============================================================================
 # Completions
 #===============================================================================
 
@@ -92,7 +83,16 @@ _comp_options+=(globdots)		# Include hidden files.
 
 # fzf completion
 # Link: https://github.com/Aloxaf/fzf-tab
-source "${share_dir}/zsh/fzf-tab/fzf-tab.plugin.zsh"
+source "${plugins_dir}/zsh/fzf-tab/fzf-tab.plugin.zsh"
 
 # yubikey-manager (ykman)
+# Link: https://developers.yubico.com/yubikey-manager/#_shell_completion
 source "${completions_dir}/ykman.zsh"
+
+#===============================================================================
+# Syntax higlighting
+# Must be sourced at the end of the .zshrc file.
+# Link: https://github.com/zsh-users/zsh-syntax-highlighting
+#===============================================================================
+
+source "${plugins_dir}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"

@@ -17,17 +17,11 @@
 - [neovim](https://github.com/neovim/neovim#readme)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#readme)
 - [tmux](https://github.com/tmux/tmux#readme)
-- terminal emulator with patched [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts#readme), [installation example](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack#linux)
+- terminal emulator with patched [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts#readme)
 
-### Plugins 
+## Plugins 
 
-- [git submodules](.gitmodules)
-- [nvim-basic-ide](https://github.com/michalsvorc/nvim-basic-ide#readme)
-
-Installed by [initialization](scripts/init.sh) script:
-
-- [fzf-tab](https://github.com/Aloxaf/fzf-tab#readme)
-- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting#readme)
+See [git submodules](.gitmodules) for full list.
 
 ## Usage
 
