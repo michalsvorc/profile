@@ -7,12 +7,6 @@ readonly plugins_dir="${script_dir}/../plugins"
 # Functions
 #===============================================================================
 
-construct_target() {
-  local source="$1"
-
-  printf '%s' "${plugins_dir}/$(basename $source)"
-}
-
 download_script() {
   local source="$1"
   local target="$2"
@@ -29,7 +23,6 @@ download_script() {
 
 source='https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh'
 target="${plugins_dir}/git/$(basename $source)"
-target2=$(construct_target "$source")
 
 download_script "$source" "$target"
 
@@ -40,6 +33,5 @@ download_script "$source" "$target"
 
 source='https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/vi-mode/vi-mode.plugin.zsh'
 target="${plugins_dir}/zsh/$(basename $source)"
-target2=$(construct_target "$source")
 
 download_script "$source" "$target"
