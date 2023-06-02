@@ -31,6 +31,7 @@ alias docker_start='rc-service docker start'
 
 # Custom
 alias ed="$EDITOR"
+alias fe='n'
 alias mount_as_user='mount -o umask=0022,gid=$(id -g),uid=$(id -u)'
 alias npr='npm run'
 alias t='tmux -u2'

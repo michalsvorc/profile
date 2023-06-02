@@ -23,6 +23,7 @@ readonly XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 readonly bin_dir="${HOME}/.local/bin"
 readonly profile_dir="${HOME}/.local/profile"
 readonly profile_config_dir="${profile_dir}/.config"
+readonly plugins_dir="${profile_dir}/plugins"
 
 #===============================================================================
 # Usage
@@ -97,6 +98,12 @@ create_directories() {
     "$profile_dir"
 }
 
+link_nnn_plugins() {
+  create_symlink \
+    "${plugins_dir}/nnn" \
+    "${XDG_CONFIG_HOME}/nnn/plugins"
+}
+
 #===============================================================================
 # Main
 #===============================================================================
@@ -105,6 +112,7 @@ main() {
   create_directories \
   && link_home \
   && link_config \
+  && link_nnn_plugins \
   && printf '%s\n' 'User profile initialized successfully.'
 }
 

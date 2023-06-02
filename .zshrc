@@ -72,6 +72,14 @@ source "${plugins_dir}/zsh/vi-mode.plugin.zsh"
 source "${shell_dir}/ssh_agent.sh"
 
 #===============================================================================
+# nnn file explorer
+# https://github.com/jarun/nnn
+# https://github.com/jarun/nnn/wiki/Usage
+#===============================================================================
+
+source "${plugins_dir}/nnn/quitcd.bash_sh_zsh"
+
+#===============================================================================
 # Completions
 #===============================================================================
 

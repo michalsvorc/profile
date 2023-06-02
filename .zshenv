@@ -49,3 +49,12 @@ export HISTFILE="${XDG_CACHE_HOME}/zsh_history"
 export HISTSIZE=10000
 export SAVEHIST=10000
 export LESSHISTFILE='/dev/null'
+
+#===============================================================================
+# nnn file explorer
+# https://github.com/jarun/nnn
+# https://github.com/jarun/nnn/wiki/Usage
+#===============================================================================
+
+export NNN_OPTS='aDeHix'
+export NNN_PLUG='p:preview-tui;x:!chmod +x $nnn'
