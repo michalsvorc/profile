@@ -99,6 +99,8 @@ create_directories() {
 }
 
 link_nnn_plugins() {
+  mkdir -p "${XDG_CONFIG_HOME}/nnn"
+
   create_symlink \
     "${plugins_dir}/nnn" \
     "${XDG_CONFIG_HOME}/nnn/plugins"
