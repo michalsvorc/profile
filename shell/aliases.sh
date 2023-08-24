@@ -9,6 +9,7 @@ alias ls='exa --all --git --group --group-directories-first --icons --long --tim
 alias qrdecode='zbarimg'
 alias qrencode='qrencode -t ASCIIi'
 alias xclip_c='xclip -selection c'
+alias temp='cat /sys/class/thermal/thermal_zone*/temp'
 
 # Sudo
 alias cryptsetup='sudo cryptsetup'
