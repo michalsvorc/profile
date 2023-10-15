@@ -2,15 +2,10 @@
 # Shell aliases
 #===============================================================================
 
-alias awsc='aws --cli-auto-prompt'
+# Options
 alias bat='bat --plain'
-alias ftp='ncftp'
-alias ls='exa --all --git --group --group-directories-first --icons --long --time-style=long-iso'
-alias qrdecode='zbarimg'
-alias qrencode='qrencode -t ASCIIi'
 alias ls='ls -alF'
 alias xclip_c='xclip -selection c'
-alias temp='cat /sys/class/thermal/thermal_zone*/temp'
 
 # Sudo
 alias cryptsetup='sudo cryptsetup'
@@ -32,11 +27,16 @@ alias rc-service='sudo rc-service'
 alias docker_start='rc-service docker start'
 
 # Custom
+alias aws_prompt='aws --cli-auto-prompt'
 alias ed="$EDITOR"
 alias fe='n'
+alias ftp='ncftp'
 alias ll='eza --all --git --group --group-directories-first --icons --long --time-style=long-iso'
 alias mount_as_user='mount -o umask=0022,gid=$(id -g),uid=$(id -u)'
 alias npr='npm run'
 alias t='tmux -u2'
+alias temp='cat /sys/class/thermal/thermal_zone*/temp'
+alias qrdecode='zbarimg'
+alias qrencode='qrencode -t ASCIIi'
 alias uid='lazydocker'
 alias uig='lazygit'
