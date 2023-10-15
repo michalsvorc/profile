@@ -6,5 +6,4 @@ return {
   display='arandr',
   screenshot='import tmp/screenshot.png',
   terminal = 'alacritty',
-  youtube = 'freetube',
  }
