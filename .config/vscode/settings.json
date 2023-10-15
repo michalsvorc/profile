@@ -1,0 +1,42 @@
+{
+  "editor.cursorBlinking": "solid",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.tabCompletion": "on",
+  "editor.minimap.enabled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.lineNumbers": "relative",
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "terminal.integrated.cursorBlinking": false,
+  "terminal.integrated.allowChords": false,
+  "vim.easymotion": true,
+  "vim.leader": ",",
+  "vim.smartRelativeLine": true,
+  "window.menuBarVisibility": "toggle",
+  "workbench.colorTheme": "One Dark Pro Mix",
+  "workbench.colorCustomizations": {
+    "tab.activeBorder": "#8d8d8d"
+  },
+  "workbench.startupEditor": "none",
+  "telemetry.telemetryLevel": "off",
+  "prettier.requireConfig": true,
+  "update.mode": "none",
+  "explorer.confirmDelete": false,
+  "oneDarkPro.bold": true,
+  "vscode-easymotion.allowJumpingToWordlessLines": false,
+  "eslint.packageManager": "yarn",
+  "npm.packageManager": "yarn",
+  "eslint.alwaysShowStatus": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.panel.defaultLocation": "right",
+  "codeium.enableConfig": {
+    "*": false
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "editor.accessibilitySupport": "off"
+}
