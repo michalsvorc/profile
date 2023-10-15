@@ -8,6 +8,7 @@ alias ftp='ncftp'
 alias ls='exa --all --git --group --group-directories-first --icons --long --time-style=long-iso'
 alias qrdecode='zbarimg'
 alias qrencode='qrencode -t ASCIIi'
+alias ls='ls -alF'
 alias xclip_c='xclip -selection c'
 alias temp='cat /sys/class/thermal/thermal_zone*/temp'
 
@@ -33,6 +34,7 @@ alias docker_start='rc-service docker start'
 # Custom
 alias ed="$EDITOR"
 alias fe='n'
+alias ll='eza --all --git --group --group-directories-first --icons --long --time-style=long-iso'
 alias mount_as_user='mount -o umask=0022,gid=$(id -g),uid=$(id -u)'
 alias npr='npm run'
 alias t='tmux -u2'
