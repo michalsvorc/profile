@@ -38,5 +38,6 @@
     "markdown": true,
     "scminput": false
   },
-  "editor.accessibilitySupport": "off"
+  "editor.accessibilitySupport": "off",
+  "audioCues.volume": 0
 }
