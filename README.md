@@ -19,6 +19,12 @@
 - [tmux](https://github.com/tmux/tmux#readme)
 - terminal emulator with patched [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts#readme)
 
+### Formatting and linting
+
+Bash:
+- [shellcheck](https://github.com/koalaman/shellcheck#readme)
+- [shfmt](https://github.com/patrickvane/shfmt#readme)
+
 ## Plugins 
 
 See [git submodules](.gitmodules) for the full list.
