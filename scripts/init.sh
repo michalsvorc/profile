@@ -79,10 +79,6 @@ link_home() {
   create_symlink "${profile_dir}/${file}" "${HOME}/${file}"
   file='.vimrc'
   create_symlink "${profile_dir}/${file}" "${HOME}/${file}"
-  file='.xinitrc'
-  create_symlink "${profile_dir}/${file}" "${HOME}/${file}"
-  file='.Xresources'
-  create_symlink "${profile_dir}/${file}" "${HOME}/${file}"
   file='.zlogout'
   create_symlink "${profile_dir}/${file}" "${HOME}/${file}"
   file='.zshrc'
