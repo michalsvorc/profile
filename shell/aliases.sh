@@ -28,7 +28,7 @@ alias docker_start='rc-service docker start'
 
 # Custom
 alias aws_prompt='aws --cli-auto-prompt'
-alias ed="$EDITOR"
+alias ed="nvim"
 alias fe='n'
 alias ftp='ncftp'
 alias ll='eza --all --git --group --group-directories-first --icons --long --time-style=long-iso'
