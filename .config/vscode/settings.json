@@ -39,5 +39,6 @@
     "scminput": false
   },
   "editor.accessibilitySupport": "off",
-  "audioCues.volume": 0
+  "audioCues.volume": 0,
+  "editor.fontSize": 18
 }
