@@ -4,9 +4,6 @@
 [submodule ".config/awesome/plugins/battery-widget"]
 	path = .config/awesome/plugins/battery-widget
 	url = https://github.com/deficient/battery-widget
-[submodule ".config/nvim"]
-	path = .config/nvim
-	url = https://github.com/michalsvorc/nvim-basic-ide
 [submodule "plugins/tmux/tmux-resurrect"]
 	path = plugins/tmux/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
