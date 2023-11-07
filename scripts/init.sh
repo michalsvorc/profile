@@ -7,10 +7,10 @@
 # Abort the script on errors and unbound variables
 #===============================================================================
 
-set -o errexit      # Abort on nonzero exit status.
-set -o nounset      # Abort on unbound variable.
-set -o pipefail     # Don't hide errors within pipes.
-#set -o xtrace       # Set debugging.
+set -o errexit
+set -o nounset
+set -o pipefail
+# set -o xtrace
 
 #===============================================================================
 # Variables
@@ -40,7 +40,7 @@ Options:
     -v, --version   Show program version and exit.
 
 EOF
-  exit ${1:-0}
+  exit "${1:-0}"
 }
 
 #===============================================================================
@@ -62,7 +62,7 @@ create_symlink() {
   local source="$1"
   local target="$2"
 
-  if [ -e "$target" ] ; then
+  if [ -e "$target" ]; then
     printf "Warn: ln: failed to create symbolic link '%s': File already exists. Continue...\n" "$target"
     return 0
   fi
@@ -71,23 +71,37 @@ create_symlink() {
 }
 
 link_home() {
-  file='.editorconfig';  create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
-  file='.gitconfig';     create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
-  file='.tmux.conf';     create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
-  file='.vimrc';         create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
-  file='.xinitrc';       create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
-  file='.Xresources';    create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
-  file='.zlogout';       create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
-  file='.zshrc';         create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
-  file='.zshenv';        create_symlink "${profile_dir}/${file}"    "${HOME}/${file}"
-  file='profile';        create_symlink "${HOME}/.${file}"          "${HOME}/.z${file}"
+  file='.editorconfig'
+  create_symlink "${profile_dir}/${file}" "${HOME}/${file}"
+  file='.gitconfig'
+  create_symlink "${profile_dir}/${file}" "${HOME}/${file}"
+  file='.tmux.conf'
+  create_symlink "${profile_dir}/${file}" "${HOME}/${file}"
+  file='.vimrc'
+  create_symlink "${profile_dir}/${file}" "${HOME}/${file}"
+  file='.xinitrc'
+  create_symlink "${profile_dir}/${file}" "${HOME}/${file}"
+  file='.Xresources'
+  create_symlink "${profile_dir}/${file}" "${HOME}/${file}"
+  file='.zlogout'
+  create_symlink "${profile_dir}/${file}" "${HOME}/${file}"
+  file='.zshrc'
+  create_symlink "${profile_dir}/${file}" "${HOME}/${file}"
+  file='.zshenv'
+  create_symlink "${profile_dir}/${file}" "${HOME}/${file}"
+  file='profile'
+  create_symlink "${HOME}/.${file}" "${HOME}/.z${file}"
 }
 
 link_config() {
-  dir='alacritty';       create_symlink "${profile_config_dir}/${dir}"   "${XDG_CONFIG_HOME}/${dir}"
-  dir='awesome';         create_symlink "${profile_config_dir}/${dir}"   "${XDG_CONFIG_HOME}/${dir}"
-  dir='lazygit';         create_symlink "${profile_config_dir}/${dir}/config.yml"   "${XDG_CONFIG_HOME}/${dir}/config.yml"
-  dir='nvim';            create_symlink "${profile_config_dir}/${dir}"   "${XDG_CONFIG_HOME}/${dir}"
+  dir='alacritty'
+  create_symlink "${profile_config_dir}/${dir}" "${XDG_CONFIG_HOME}/${dir}"
+  dir='awesome'
+  create_symlink "${profile_config_dir}/${dir}" "${XDG_CONFIG_HOME}/${dir}"
+  dir='lazygit'
+  create_symlink "${profile_config_dir}/${dir}/config.yml" "${XDG_CONFIG_HOME}/${dir}/config.yml"
+  dir='nvim'
+  create_symlink "${profile_config_dir}/${dir}" "${XDG_CONFIG_HOME}/${dir}"
 }
 
 create_directories() {
@@ -111,32 +125,31 @@ link_nnn_plugins() {
 #===============================================================================
 
 main() {
-  create_directories \
-  && link_home \
-  && link_config \
-  && link_nnn_plugins \
-  && printf '%s\n' 'User profile initialized successfully.'
+  create_directories &&
+    link_home &&
+    link_config &&
+    link_nnn_plugins &&
+    printf '%s\n' 'User profile initialized successfully.'
 }
 
 #===============================================================================
 # Execution
 #===============================================================================
 
-if [ $# -eq 0 ] ; then
-    main
-    exit 0
+if [ $# -eq 0 ]; then
+  main
+  exit 0
 fi
 
 case "${1:-}" in
-  -h | --help )
-    usage 0
-    ;;
-  -v | --version )
-    print_version
-    exit 0
-    ;;
-  * )
-    die "$(printf 'Unrecognized argument "%s".' "${1#-}")"
-    ;;
+-h | --help)
+  usage 0
+  ;;
+-v | --version)
+  print_version
+  exit 0
+  ;;
+*)
+  die "$(printf 'Unrecognized argument "%s".' "${1#-}")"
+  ;;
 esac
-
