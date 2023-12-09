@@ -22,7 +22,7 @@ source "${shell_dir}/aliases.sh"
 #===============================================================================
 
 typeset -U PATH path
-path=("${HOME}/.local/bin" "$path[@]")
+path=("$DIR_BIN_HOME" "$path[@]")
 export PATH
 
 #===============================================================================
@@ -91,7 +91,7 @@ source "${plugins_dir}/nnn/quitcd.bash_sh_zsh"
 # You may have to force rebuild zcompdump after adding a completion file:
 # $ rm -f ~/.zcompdump; compinit
 #===============================================================================
-fpath=($DIR_COMPLETIONS_HOME $fpath)
+fpath=("$DIR_COMPLETIONS_HOME" "$fpath")
 
 # Basic auto/tab complete.
 autoload -U compinit
