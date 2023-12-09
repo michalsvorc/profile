@@ -7,8 +7,7 @@
 # Variables
 #===============================================================================
 
-readonly profile_dir="${XDG_LOCAL_HOME}/profile"
-readonly completions_dir="${XDG_DATA_HOME}/zsh/completions"
+readonly profile_dir="${DIR_LOCAL_HOME}/profile"
 readonly plugins_dir="${profile_dir}/plugins"
 readonly shell_dir="${profile_dir}/shell"
 

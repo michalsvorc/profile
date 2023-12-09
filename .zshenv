@@ -28,13 +28,21 @@ export PATH
 
 #===============================================================================
 # XDG base directories
+# https://wiki.archlinux.org/title/XDG_Base_Directory
 #===============================================================================
 
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
-export XDG_LOCAL_HOME="${XDG_LOCAL_HOME:-$HOME/.local}"
-export XDG_BIN_HOME="${XDG_BIN_HOME:-$HOME/.local/bin}"
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
+
+#===============================================================================
+# Custom $HOME directories
+#===============================================================================
+
+export DIR_BIN_HOME="${HOME}/.local/bin"
+export DIR_COMPLETIONS_HOME="${HOME}/.local/share/completions"
+export DIR_LOCAL_HOME="${HOME}/.local"
 
 #===============================================================================
 # Terminal

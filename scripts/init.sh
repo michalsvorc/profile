@@ -13,14 +13,19 @@ set -o pipefail
 # set -o xtrace
 
 #===============================================================================
+# Setup
+#===============================================================================
+
+source "${HOME}/.zshenv"
+
+#===============================================================================
 # Variables
 #===============================================================================
 
 readonly version='1.3.1'
 readonly argv0=${0##*/}
 
-readonly profile_dir="${XDG_LOCAL_HOME}/profile"
-readonly completions_dir="${XDG_DATA_HOME}/zsh/completions"
+readonly profile_dir="${DIR_LOCAL_HOME}/profile"
 readonly plugins_dir="${profile_dir}/plugins"
 readonly profile_config_dir="${profile_dir}/.config"
 
@@ -97,16 +102,26 @@ link_config() {
   create_symlink "${profile_config_dir}/${dir}" "${XDG_CONFIG_HOME}/${dir}"
 }
 
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
+
+#===============================================================================
+# Create $HOME directories
+#===============================================================================
+
 create_directories() {
   mkdir -p \
     "$XDG_CONFIG_HOME" \
     "$XDG_CACHE_HOME" \
-    "$XDG_LOCAL_HOME" \
-    "$XDG_BIN_HOME" \
     "$XDG_DATA_HOME" \
+    "$XDG_STATE_HOME" \
+    "$DIR_BIN_HOME" \
+    "$DIR_COMPLETIONS_HOME" \
+    "$DIR_LOCAL_HOME" \
     "${XDG_CONFIG_HOME}/lazygit" \
-    "$profile_dir" \
-    "$completions_dir"
+    "$profile_dir"
 }
 
 link_nnn_plugins() {
