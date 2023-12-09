@@ -22,7 +22,9 @@ fi
 # Setup
 #===============================================================================
 
-source "${HOME}/.zshenv"
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+readonly script_dir
+source "${script_dir}/../.zshenv"
 
 #===============================================================================
 # Variables
