@@ -80,7 +80,10 @@ source "${plugins_dir}/nnn/quitcd.bash_sh_zsh"
 
 #===============================================================================
 # Completions
+# You may have to force rebuild zcompdump after adding a completion file:
+# $ rm -f ~/.zcompdump; compinit
 #===============================================================================
+fpath=($DIR_COMPLETIONS_HOME $fpath)
 
 # Basic auto/tab complete.
 autoload -U compinit
@@ -89,13 +92,9 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-# fzf completion
+# Replace default completion selection menu with fzf
 # Link: https://github.com/Aloxaf/fzf-tab
 source "${plugins_dir}/zsh/fzf-tab/fzf-tab.plugin.zsh"
-
-# yubikey-manager (ykman)
-# Link: https://developers.yubico.com/yubikey-manager/#_shell_completion
-source "${completions_dir}/ykman.zsh"
 
 #===============================================================================
 # Syntax higlighting
