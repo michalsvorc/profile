@@ -7,10 +7,10 @@
 # Variables
 #===============================================================================
 
-profile_dir="${HOME}/.local/profile"
-shell_dir="${profile_dir}/shell"
-completions_dir="${profile_dir}/completions"
-plugins_dir="${profile_dir}/plugins"
+readonly profile_dir="${XDG_LOCAL_HOME}/profile"
+readonly completions_dir="${XDG_DATA_HOME}/zsh/completions"
+readonly plugins_dir="${profile_dir}/plugins"
+readonly shell_dir="${profile_dir}/shell"
 
 #===============================================================================
 # Shell aliases

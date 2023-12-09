@@ -19,11 +19,10 @@ set -o pipefail
 readonly version='1.3.1'
 readonly argv0=${0##*/}
 
-readonly XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-readonly bin_dir="${HOME}/.local/bin"
-readonly profile_dir="${HOME}/.local/profile"
-readonly profile_config_dir="${profile_dir}/.config"
+readonly profile_dir="${XDG_LOCAL_HOME}/profile"
+readonly completions_dir="${XDG_DATA_HOME}/zsh/completions"
 readonly plugins_dir="${profile_dir}/plugins"
+readonly profile_config_dir="${profile_dir}/.config"
 
 #===============================================================================
 # Usage
@@ -100,10 +99,14 @@ link_config() {
 
 create_directories() {
   mkdir -p \
-    "$bin_dir" \
     "$XDG_CONFIG_HOME" \
+    "$XDG_CACHE_HOME" \
+    "$XDG_LOCAL_HOME" \
+    "$XDG_BIN_HOME" \
+    "$XDG_DATA_HOME" \
     "${XDG_CONFIG_HOME}/lazygit" \
-    "$profile_dir"
+    "$profile_dir" \
+    "$completions_dir"
 }
 
 link_nnn_plugins() {
