@@ -10,7 +10,13 @@
 set -o errexit
 set -o nounset
 set -o pipefail
-# set -o xtrace
+
+# Enable script debugging when the DEBUG is set to positive value
+
+if [[ "${DEBUG-}" =~ ^(1|true|yes)$ ]]; then
+  set -o xtrace # Trace the execution of the script
+  printf '%s\n' 'Debugging mode enabled'
+fi
 
 #===============================================================================
 # Setup
