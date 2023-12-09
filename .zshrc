@@ -91,7 +91,7 @@ source "${plugins_dir}/nnn/quitcd.bash_sh_zsh"
 # You may have to force rebuild zcompdump after adding a completion file:
 # $ rm -f ~/.zcompdump; compinit
 #===============================================================================
-fpath=("$DIR_COMPLETIONS_HOME" "$fpath")
+fpath=("$DIR_COMPLETIONS_HOME" $fpath)
 
 # Basic auto/tab complete.
 autoload -U compinit
