@@ -121,7 +121,6 @@ create_directories() {
     "$XDG_DATA_HOME" \
     "$XDG_STATE_HOME" \
     "$DIR_BIN_HOME" \
-    "$DIR_COMPLETIONS_HOME" \
     "$DIR_LOCAL_HOME" \
     "${XDG_CONFIG_HOME}/lazygit" \
     "$profile_dir"

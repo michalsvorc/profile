@@ -33,7 +33,6 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 #===============================================================================
 
 export DIR_BIN_HOME="${HOME}/.local/bin"
-export DIR_COMPLETIONS_HOME="${HOME}/.local/share/completions"
 export DIR_LOCAL_HOME="${HOME}/.local"
 
 #===============================================================================
