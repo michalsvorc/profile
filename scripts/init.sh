@@ -123,6 +123,7 @@ create_directories() {
     "$DIR_BIN_HOME" \
     "$DIR_LOCAL_HOME" \
     "${XDG_CONFIG_HOME}/lazygit" \
+    "${XDG_DATA_HOME}/zsh/site-functions" \
     "$profile_dir"
 }
 
