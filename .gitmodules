@@ -7,9 +7,6 @@
 [submodule "plugins/tmux/tmux-sensible"]
 	path = plugins/tmux/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible.git
-[submodule "plugins/tmux/tokyo-night-tmux"]
-	path = plugins/tmux/tokyo-night-tmux
-	url = https://github.com/michalsvorc/tokyo-night-tmux.git
 [submodule "plugins/zsh/fzf-tab"]
 	path = plugins/zsh/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab.git
