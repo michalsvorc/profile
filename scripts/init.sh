@@ -106,8 +106,6 @@ link_config() {
   create_symlink "${profile_config_dir}/${dir}" "${XDG_CONFIG_HOME}/${dir}"
   dir='lazygit'
   create_symlink "${profile_config_dir}/${dir}/config.yml" "${XDG_CONFIG_HOME}/${dir}/config.yml"
-  dir='nvim'
-  create_symlink "${profile_config_dir}/${dir}" "${XDG_CONFIG_HOME}/${dir}"
 }
 
 #===============================================================================
