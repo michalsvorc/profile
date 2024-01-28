@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-readonly script_dir=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+script_dir=$(
+  cd "$(dirname "${BASH_SOURCE[0]}")" || exit
+  pwd -P
+)
+readonly script_dir
 readonly plugins_dir="${script_dir}/../plugins"
 
 #===============================================================================
@@ -11,10 +15,22 @@ download_script() {
   local source="$1"
   local target="$2"
 
-  printf 'Downloading %s\n' "$(basename $source)"
+  printf 'Downloading %s\n' "$(basename "$source")"
 
   curl -JL "$source" -o "$target"
 }
+
+update_git_submodules() {
+  printf 'Updating git submodules\n'
+  git submodule update --recursive --remote
+}
+
+#===============================================================================
+# Git submodules
+# See .gitmodules in project root
+#===============================================================================
+
+update_git_submodules
 
 #===============================================================================
 # Git prompt
