@@ -1,25 +1,3 @@
-# MIT License
-#
-# Copyright (c) 2009-2022 Robby Russell and contributors (https://github.com/ohmyzsh/ohmyzsh/contributors)
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-#
 # Control whether to force a redraw on each mode change.
 #
 # Resetting the prompt on every mode change can cause lag when switching modes.
@@ -169,9 +147,19 @@ function wrap_clipboard_widgets() {
   done
 }
 
-wrap_clipboard_widgets copy vi-yank vi-yank-eol vi-backward-kill-word vi-change-whole-line vi-delete vi-delete-char
-wrap_clipboard_widgets paste vi-put-{before,after}
-unfunction wrap_clipboard_widgets
+if [[ -z "${VI_MODE_DISABLE_CLIPBOARD:-}" ]]; then
+  wrap_clipboard_widgets copy \
+      vi-yank vi-yank-eol vi-yank-whole-line \
+      vi-change vi-change-eol vi-change-whole-line \
+      vi-kill-line vi-kill-eol vi-backward-kill-word \
+      vi-delete vi-delete-char vi-backward-delete-char
+
+  wrap_clipboard_widgets paste \
+      vi-put-{before,after} \
+      put-replace-selection
+
+  unfunction wrap_clipboard_widgets
+fi
 
 # if mode indicator wasn't setup by theme, define default, we'll leave INSERT_MODE_INDICATOR empty by default
 if [[ -z "$MODE_INDICATOR" ]]; then
