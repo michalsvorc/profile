@@ -7,15 +7,15 @@
 # Variables
 #===============================================================================
 
-PROFILE_DIR="${DIR_LOCAL_HOME}/profile"
-PLUGINS_DIR="${PROFILE_DIR}/plugins"
-SHELL_DIR="${PROFILE_DIR}/shell"
+profile_dir="${DIR_LOCAL_HOME}/profile"
+plugins_dir="${profile_dir}/plugins"
+shell_dir="${profile_dir}/shell"
 
 #===============================================================================
 # Shell aliases
 #===============================================================================
 
-source "${SHELL_DIR}/aliases.sh"
+source "${shell_dir}/aliases.sh"
 
 #===============================================================================
 # PATH
@@ -38,7 +38,7 @@ export PS1='%{$fg[blue]%}%~%{$reset_color%} $%b '
 #===============================================================================
 
 setopt PROMPT_SUBST
-source "${PLUGINS_DIR}/git/git-prompt.sh"
+source "${plugins_dir}/git/git-prompt.sh"
 
 GIT_PROMPT='$(__git_ps1 "(%s) ")'
 export GIT_PS1_SHOWCOLORHINTS=true
@@ -64,21 +64,21 @@ setopt INC_APPEND_HISTORY \
   HIST_IGNORE_SPACE \
   HIST_IGNORE_ALL_DUPS
 
-source "${SHELL_DIR}/history_search.sh"
+source "${shell_dir}/history_search.sh"
 
 #===============================================================================
 # ohmyzsh vi mode
 # Link: https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/vi-mode/vi-mode.plugin.zsh
 #===============================================================================
 
-source "${PLUGINS_DIR}/zsh/vi-mode.plugin.zsh"
+source "${plugins_dir}/zsh/vi-mode.plugin.zsh"
 
 #===============================================================================
 # SSH agent
 # Link: https://wiki.archlinux.org/title/SSH_keys#SSH_agents
 #===============================================================================
 
-source "${SHELL_DIR}/ssh_agent.sh"
+source "${shell_dir}/ssh_agent.sh"
 
 #===============================================================================
 # Helper functions
@@ -92,7 +92,7 @@ source "${shell_dir}/cd_up.sh"
 # https://github.com/jarun/nnn/wiki/Usage
 #===============================================================================
 
-source "${PLUGINS_DIR}/nnn/quitcd.bash_sh_zsh"
+source "${plugins_dir}/nnn/quitcd.bash_sh_zsh"
 
 #===============================================================================
 # Completions
@@ -110,7 +110,7 @@ _comp_options+=(globdots) # Include hidden files.
 
 # Replace default completion selection menu with fzf
 # Link: https://github.com/Aloxaf/fzf-tab
-source "${PLUGINS_DIR}/zsh/fzf-tab/fzf-tab.plugin.zsh"
+source "${plugins_dir}/zsh/fzf-tab/fzf-tab.plugin.zsh"
 
 #===============================================================================
 # Syntax higlighting
@@ -118,4 +118,4 @@ source "${PLUGINS_DIR}/zsh/fzf-tab/fzf-tab.plugin.zsh"
 # Link: https://github.com/zsh-users/zsh-syntax-highlighting
 #===============================================================================
 
-source "${PLUGINS_DIR}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+source "${plugins_dir}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
