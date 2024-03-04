@@ -81,6 +81,12 @@ source "${PLUGINS_DIR}/zsh/vi-mode.plugin.zsh"
 source "${SHELL_DIR}/ssh_agent.sh"
 
 #===============================================================================
+# Helper functions
+#===============================================================================
+
+source "${shell_dir}/cd_up.sh"
+
+#===============================================================================
 # nnn file explorer
 # https://github.com/jarun/nnn
 # https://github.com/jarun/nnn/wiki/Usage
