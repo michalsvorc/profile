@@ -1,3 +1,6 @@
+[submodule "plugins/tmux/tmux-fuzzback"]
+	path = plugins/tmux/tmux-fuzzback
+	url = https://github.com/roosta/tmux-fuzzback.git
 [submodule "plugins/tmux/tmux-resurrect"]
 	path = plugins/tmux/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
