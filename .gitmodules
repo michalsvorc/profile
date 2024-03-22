@@ -5,6 +5,9 @@
 [submodule "plugins/tmux/tmux-jump"]
 	path = plugins/tmux/tmux-jump
 	url = https://github.com/schasse/tmux-jump.git
+[submodule "plugins/tmux/tmux-menus"]
+	path = plugins/tmux/tmux-menus
+	url = https://github.com/jaclu/tmux-menus.git
 [submodule "plugins/tmux/tmux-resurrect"]
 	path = plugins/tmux/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
