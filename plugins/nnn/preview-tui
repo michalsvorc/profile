@@ -365,12 +365,12 @@ preview_file() {
             [ "$NNN_SPLIT" = v ] && BSTR="\n"
             # shellcheck disable=SC2012
             ls -F --group-directories-first | head -n "$((lines - 3))" | "$(dirname "$0")"/.iconlookup -l "$cols" -B "$BSTR" -b " "
+        elif exists eza; then # eza is a community fork of exa (exa is unmaintained)
+            fifo_pager eza -T --group-directories-first --colour=always -L 3 --all --group --icons --long --time-style=long-iso
         elif exists tree; then
             fifo_pager tree --filelimit "$(find . -maxdepth 1 | wc -l)" -L 3 -C -F --dirsfirst --noreport
         elif exists exa; then
             fifo_pager exa -T --group-directories-first --colour=always -L 3
-        elif exists eza; then # eza is a community fork of exa (exa is unmaintained)
-            fifo_pager eza -T --group-directories-first --colour=always -L 3
         else
             fifo_pager ls -F --group-directories-first --color=always
         fi
