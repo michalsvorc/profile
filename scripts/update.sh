@@ -20,18 +20,6 @@ download_script() {
   curl -JL "$source" -o "$target"
 }
 
-update_git_submodules() {
-  printf 'Updating git submodules\n'
-  git submodule update --recursive --remote
-}
-
-#===============================================================================
-# Git submodules
-# See .gitmodules in project root
-#===============================================================================
-
-update_git_submodules
-
 #===============================================================================
 # Git prompt
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
