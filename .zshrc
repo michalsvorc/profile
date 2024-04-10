@@ -87,14 +87,6 @@ source "${shell_dir}/ssh_agent.sh"
 source "${shell_dir}/cd_up.sh"
 
 #===============================================================================
-# nnn file explorer
-# https://github.com/jarun/nnn
-# https://github.com/jarun/nnn/wiki/Usage
-#===============================================================================
-
-source "${plugins_dir}/nnn/quitcd.bash_sh_zsh"
-
-#===============================================================================
 # Completions
 # You may have to force rebuild zcompdump after adding a completion file:
 # $ rm -f ~/.zcompdump; compinit

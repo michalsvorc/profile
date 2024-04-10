@@ -39,23 +39,3 @@ source='https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/vi-mode
 target="${plugins_dir}/zsh/$(basename $source)"
 
 download_script "$source" "$target"
-
-#===============================================================================
-# nnn quit cd
-# https://github.com/jarun/nnn/blob/master/misc/quitcd/quitcd.bash_sh_zsh
-#===============================================================================
-
-source='https://raw.githubusercontent.com/jarun/nnn/master/misc/quitcd/quitcd.bash_sh_zsh'
-target="${plugins_dir}/nnn/$(basename $source)"
-
-download_script "$source" "$target"
-
-#===============================================================================
-# nnn preview-tui
-# https://github.com/jarun/nnn/blob/master/plugins/preview-tui
-#===============================================================================
-
-source='https://raw.githubusercontent.com/jarun/nnn/master/plugins/preview-tui'
-target="${plugins_dir}/nnn/$(basename $source)"
-
-download_script "$source" "$target"
