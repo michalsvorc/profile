@@ -4,6 +4,7 @@
 # Dependencies: fzf, sed
 #===============================================================================
 
-cd..() {
-  cd "$(printf "%0.s../" $(seq 1 "$1"))" || return
+cdu() {
+  local -r n_dirs="${1:-1}"
+  cd "$(printf "%0.s../" $(seq 1 "$n_dirs"))" || return
 }
