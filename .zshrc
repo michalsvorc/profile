@@ -48,12 +48,12 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 export PS1="${PS1}${GIT_PROMPT}"
 
 #===============================================================================
-# Docker environment prefix in prompt
+# Container environment prefix in prompt
 #===============================================================================
 
 if [[ -f '/.dockerenv' ]]; then
-  DOCKERENV_PROMPT='%{$fg[yellow]%}D %{$reset_color%}'
-  export PS1="${DOCKERENV_PROMPT}${PS1}"
+  CONTAINER_ENV_PROMPT='%{$fg[yellow]%}C %{$reset_color%}'
+  export PS1="${CONTAINER_ENV_PROMPT}${PS1}"
 fi
 
 #===============================================================================
