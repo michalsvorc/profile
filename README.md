@@ -13,7 +13,6 @@
 
 - [bat](https://github.com/sharkdp/bat#readme)
 - [fd](https://github.com/sharkdp/fd)
-- [lazygit](https://github.com/jesseduffield/lazygit#readme)
 - [neovim](https://github.com/neovim/neovim#readme)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#readme)
 - [tmux](https://github.com/tmux/tmux#readme)

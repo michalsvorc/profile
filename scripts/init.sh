@@ -104,8 +104,6 @@ link_home() {
 link_config() {
   dir='alacritty'
   create_symlink "${profile_config_dir}/${dir}" "${XDG_CONFIG_HOME}/${dir}"
-  dir='lazygit'
-  create_symlink "${profile_config_dir}/${dir}/config.yml" "${XDG_CONFIG_HOME}/${dir}/config.yml"
 }
 
 #===============================================================================
@@ -120,7 +118,6 @@ create_directories() {
     "$XDG_STATE_HOME" \
     "$DIR_BIN_HOME" \
     "$DIR_LOCAL_HOME" \
-    "${XDG_CONFIG_HOME}/lazygit" \
     "${XDG_DATA_HOME}/zsh/site-functions" \
     "$profile_dir"
 }
