@@ -101,11 +101,6 @@ link_home() {
   create_symlink "${HOME}/.${file}" "${HOME}/.z${file}"
 }
 
-link_config() {
-  dir='alacritty'
-  create_symlink "${profile_config_dir}/${dir}" "${XDG_CONFIG_HOME}/${dir}"
-}
-
 #===============================================================================
 # Create $HOME directories
 #===============================================================================
@@ -129,7 +124,6 @@ create_directories() {
 main() {
   create_directories &&
     link_home &&
-    link_config &&
     printf '%s\n' 'User profile initialized successfully.'
 }
 
