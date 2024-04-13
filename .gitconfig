@@ -23,7 +23,6 @@
 #===============================================================================
 
 [core]
-  pager = delta
   editor = nvim
 
 [init]
@@ -67,17 +66,3 @@
 
 [mergetool "nvim_merge"]
   cmd = "nvim -d ${LOCAL} ${MERGED} ${REMOTE}"
-
-#===============================================================================
-# git-delta
-# https://github.com/dandavison/delta
-#===============================================================================
-
-[interactive]
-  diffFilter = delta --color-only
-
-[delta]
-  navigate = true       # use n and N to move between diff sections
-  light = false         # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-  side-by-side = false  # side-by-side view
-

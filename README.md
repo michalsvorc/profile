@@ -4,7 +4,6 @@
 
 ### Required
 
-- [delta diff](https://github.com/dandavison/delta#readme)
 - [exa](https://github.com/ogham/exa#readme)
 - [fzf](https://github.com/junegunn/fzf#readme)
 - [zsh](https://github.com/ohmyzsh/ohmyzsh#readme)
