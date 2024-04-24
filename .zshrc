@@ -81,9 +81,10 @@ source "${plugins_dir}/zsh/vi-mode.plugin.zsh"
 source "${shell_dir}/ssh_agent.sh"
 
 #===============================================================================
-# Helper functions
+# Change directory functions
 #===============================================================================
 
+source "${shell_dir}/cd/ancestor.sh"
 source "${shell_dir}/cd_up.sh"
 
 #===============================================================================
