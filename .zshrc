@@ -85,7 +85,7 @@ source "${shell_dir}/ssh_agent.sh"
 #===============================================================================
 
 source "${shell_dir}/cd/ancestor.sh"
-source "${shell_dir}/cd_up.sh"
+source "${shell_dir}/cd/up.sh"
 
 #===============================================================================
 # Completions
