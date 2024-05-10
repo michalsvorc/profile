@@ -8,8 +8,9 @@
 #===============================================================================
 
 # Keep in .zshrc to override default system editor
-export EDITOR='nvim'
+export EDITOR='nvim --clean'
 export VISUAL="$EDITOR"
+export EDITOR_ADV="nvim"
 
 #===============================================================================
 # Variables
