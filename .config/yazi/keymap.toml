@@ -7,3 +7,8 @@ desc = "Open shell here"
 on  = [ "T" ]
 run = "plugin --sync max-preview"
 desc = "Maximize preview pane"
+
+[[manager.prepend_keymap]]
+on  = [ "H" ]
+run = "plugin --sync hide-preview"
+desc = "Hide preview pane"
