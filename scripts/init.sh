@@ -34,8 +34,7 @@ readonly version='1.3.1'
 readonly argv0=${0##*/}
 
 readonly profile_dir="${DIR_LOCAL_HOME}/profile"
-readonly plugins_dir="${profile_dir}/plugins"
-readonly profile_config_dir="${profile_dir}/.config"
+readonly config_dir="${XDG_CONFIG_HOME:-$HOME/.config}"
 
 #===============================================================================
 # Usage
@@ -75,7 +74,7 @@ create_symlink() {
   local target="$2"
 
   if [ -e "$target" ]; then
-    printf "Warn: ln: failed to create symbolic link '%s': File already exists. Continue...\n" "$target"
+    printf "Warn: Failed to create symbolic link '%s', target already exists. Continue.\n" "$target"
     return 0
   fi
 
@@ -101,6 +100,28 @@ link_home() {
   create_symlink "${HOME}/.${file}" "${HOME}/.z${file}"
 }
 
+link_config() {
+  local -r source_dir="${profile_dir}/.config"
+  local -r target_dir="$config_dir"
+
+  if [ ! -d "${source_dir}" ]; then
+    printf 'Source directory %s does not exist.\n' "$source_dir"
+    exit 1
+  fi
+
+  if [ ! -d "$target_dir" ]; then
+    mkdir -p "$target_dir"
+  fi
+
+  for subdir in "$source_dir"/*; do
+    if [ -d "$subdir" ]; then
+      subdir_name=$(basename "$subdir")
+      target_subdir="${target_dir}/${subdir_name}"
+      create_symlink "$subdir" "$target_subdir"
+    fi
+  done
+}
+
 #===============================================================================
 # Create $HOME directories
 #===============================================================================
@@ -124,6 +145,7 @@ create_directories() {
 main() {
   create_directories &&
     link_home &&
+    link_config &&
     printf '%s\n' 'User profile initialized successfully.'
 }
 
