@@ -1,7 +1,10 @@
+# Core
+
 [[manager.prepend_keymap]]
-on   = [ "<C-s>" ]
+
+on   = [ "!" ]
 run  = 'shell "$SHELL" --block --confirm'
-desc = "Open shell here"
+desc = "Open shell"
 
 [[manager.prepend_keymap]]
 on  = [ "T" ]
