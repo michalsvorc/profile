@@ -1,3 +1,4 @@
+-- https://yazi-rs.github.io/docs/tips/#max-preview
 local function entry(st)
   if st.old then
     Manager.layout, st.old = st.old, nil
