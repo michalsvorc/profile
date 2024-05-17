@@ -21,6 +21,33 @@ on  = [ "%", "h" ]
 run = "plugin --sync hide-preview"
 desc = "Hide preview pane"
 
+# https://github.com/DreamMaoMao/keyjump.yazi
+
+[[manager.prepend_keymap]]
+on   = [ "f" ]
+run  = "plugin keyjump"
+desc = "Keyjump (Normal mode)"
+
+[[manager.prepend_keymap]]
+on   = [ "F" ]
+run  = "plugin keyjump --args=global"
+desc = "Keyjump (Global mode)"
+
+[[manager.prepend_keymap]]
+on   = [ "@", "k" ]
+run  = "plugin keyjump --args=keep"
+desc = "Keyjump (Keep mode)"
+
+[[manager.prepend_keymap]]
+on   = [ "@", "s" ]
+run  = "plugin keyjump --args=select"
+desc = "Keyjump (Select mode)"
+
+[[manager.prepend_keymap]]
+on   = [ "@", "g" ]
+run  = "plugin keyjump --args='global once'"
+desc = "Keyjump (once Global mode)"
+
 # https://github.com/dedukun/bookmarks.yazi
 
 [[manager.prepend_keymap]]
