@@ -51,7 +51,7 @@
   colorMoved = default
 
 [difftool "nvim_diff"]
-    cmd = "nvim -d ${LOCAL} ${REMOTE}"
+  cmd = nvim -c Gvdiffsplit! "$MERGED"
 
 #===============================================================================
 # Merge
@@ -66,4 +66,4 @@
   keepBackup = false
 
 [mergetool "nvim_merge"]
-  cmd = "nvim -d ${LOCAL} ${MERGED} ${REMOTE}"
+  cmd = nvim -f -c Gvdiffsplit! "$MERGED"
