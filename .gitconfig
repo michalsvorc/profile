@@ -24,7 +24,7 @@
 
 [core]
   pager = bat --plain
-  editor = $EDITOR_ADV
+  editor = nvim
 
 [init]
   defaultBranch = main
