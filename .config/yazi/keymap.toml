@@ -7,11 +7,6 @@ run  = 'shell "$SHELL" --block --confirm'
 desc = "Open shell"
 
 [[manager.prepend_keymap]]
-on = [ "<C-f>" ]
-run = "filter --smart"
-desc = "Filter the files"
-
-[[manager.prepend_keymap]]
 on  = [ "%", "m"]
 run = "plugin --sync max-preview"
 desc = "Maximize preview pane"
@@ -24,14 +19,14 @@ desc = "Hide preview pane"
 # https://github.com/DreamMaoMao/keyjump.yazi
 
 [[manager.prepend_keymap]]
-on   = [ "f" ]
-run  = "plugin keyjump"
-desc = "Keyjump (Normal mode)"
-
-[[manager.prepend_keymap]]
-on   = [ "F" ]
+on   = [ "<C-f>" ]
 run  = "plugin keyjump --args=global"
 desc = "Keyjump (Global mode)"
+
+[[manager.prepend_keymap]]
+on = [ "F" ]
+run  = "plugin keyjump"
+desc = "Keyjump (Normal mode)"
 
 [[manager.prepend_keymap]]
 on   = [ "@", "k" ]
