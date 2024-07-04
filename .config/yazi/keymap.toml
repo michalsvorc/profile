@@ -47,7 +47,7 @@ desc = "Keyjump (once Global mode)"
 # https://github.com/dedukun/bookmarks.yazi
 
 [[manager.prepend_keymap]]
-on = [ "m" ]
+on = [ "B", "a" ]
 run = "plugin bookmarks --args=save"
 desc = "Save current position as a bookmark"
 
