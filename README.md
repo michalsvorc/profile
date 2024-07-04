@@ -6,7 +6,7 @@
 
 - [exa](https://github.com/ogham/exa#readme)
 - [fzf](https://github.com/junegunn/fzf#readme)
-- [zsh](https://github.com/ohmyzsh/ohmyzsh#readme)
+- [zsh](https://en.wikipedia.org/wiki/Z_shell)
 
 ### Optional
 

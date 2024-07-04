@@ -85,11 +85,11 @@ setopt INC_APPEND_HISTORY \
 source "${shell_dir}/history_search.sh"
 
 #===============================================================================
-# ohmyzsh vi mode
-# Link: https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/vi-mode/vi-mode.plugin.zsh
+# vi mode
+# https://github.com/jeffreytse/zsh-vi-mode
 #===============================================================================
 
-source "${plugins_dir}/zsh/vi-mode.plugin.zsh"
+source "${plugins_dir}/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 
 #===============================================================================
 # SSH agent

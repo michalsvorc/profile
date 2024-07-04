@@ -29,13 +29,3 @@ source='https://raw.githubusercontent.com/git/git/master/contrib/completion/git-
 target="${plugins_dir}/git/$(basename $source)"
 
 download_script "$source" "$target"
-
-#===============================================================================
-# ohmyzsh vi mode
-# https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/vi-mode/vi-mode.plugin.zsh
-#===============================================================================
-
-source='https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/vi-mode/vi-mode.plugin.zsh'
-target="${plugins_dir}/zsh/$(basename $source)"
-
-download_script "$source" "$target"
