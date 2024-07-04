@@ -1,3 +1,4 @@
+# https://github.com/sxyazi/yazi/blob/latest/yazi-config/preset/keymap.toml
 # Core
 
 [[manager.prepend_keymap]]
