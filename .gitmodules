@@ -28,3 +28,6 @@
 [submodule "plugins/zsh/zsh-vi-mode"]
 	path = plugins/zsh/zsh-vi-mode
 	url = https://github.com/jeffreytse/zsh-vi-mode.git
+[submodule ".config/yazi/plugins/bookmarks.yazi"]
+	path = .config/yazi/plugins/bookmarks.yazi
+	url = https://github.com/dedukun/bookmarks.yazi.git
