@@ -44,24 +44,19 @@ on   = [ "@", "g" ]
 run  = "plugin keyjump --args='global once'"
 desc = "Keyjump (once Global mode)"
 
-# https://github.com/dedukun/bookmarks.yazi
+# https://github.com/DreamMaoMao/bookmarks-persistence.yazi
 
 [[manager.prepend_keymap]]
-on = [ "B", "a" ]
-run = "plugin bookmarks --args=save"
+on = [ "M", "a" ]
+run = "plugin bookmarks-persistence --args=save"
 desc = "Save current position as a bookmark"
 
 [[manager.prepend_keymap]]
-on = [ "'" ]
-run = "plugin bookmarks --args=jump"
+on = [ "\"" ]
+run = "plugin bookmarks-persistence --args=jump"
 desc = "Jump to a bookmark"
 
 [[manager.prepend_keymap]]
-on = [ "B", "d" ]
-run = "plugin bookmarks --args=delete"
+on = [ "M", "d" ]
+run = "plugin bookmarks-persistence --args=delete"
 desc = "Delete a bookmark"
-
-[[manager.prepend_keymap]]
-on = [ "B", "D" ]
-run = "plugin bookmarks --args=delete_all"
-desc = "Delete all bookmarks"
