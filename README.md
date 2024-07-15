@@ -23,7 +23,7 @@ Bash:
 - [shellcheck](https://github.com/koalaman/shellcheck#readme)
 - [shfmt](https://github.com/patrickvane/shfmt#readme)
 
-## Plugins 
+## Plugins
 
 See [git submodules](.gitmodules) for the full list.
 
