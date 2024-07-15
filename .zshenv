@@ -49,3 +49,11 @@ export HISTFILE="${XDG_CACHE_HOME}/zsh_history"
 export HISTSIZE=10000
 export SAVEHIST=10000
 export LESSHISTFILE='/dev/null'
+
+#===============================================================================
+# Directory bookmarks
+#===============================================================================
+
+export B_PROFILE="${HOME}/.local/profile"
+export B_CONFIG="$XDG_CONFIG_HOME"
+export B_CONFIG_NVIM="${XDG_CONFIG_HOME}/nvim"
