@@ -31,7 +31,6 @@ alias pass='EDITOR=$EDITOR_SIMPLE pass'
 
 # Custom
 alias e="$EDITOR"
-alias f='yazi'
 alias g='git'
 alias t='tmux -u2'
 

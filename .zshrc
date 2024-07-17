@@ -57,15 +57,6 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 export PS1="${PS1}${GIT_PROMPT}"
 
 #===============================================================================
-# File explorer prompt prefix
-#===============================================================================
-
-if [[ ! -z "${YAZI_LEVEL}" ]]; then
-  FILE_EXPLORER_ENV_PROMPT='%{$fg[yellow]%}E %{$reset_color%}'
-  export PS1="${FILE_EXPLORER_ENV_PROMPT}${PS1}"
-fi
-
-#===============================================================================
 # Container environment prompt prefix
 #===============================================================================
 
