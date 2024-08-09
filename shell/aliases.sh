@@ -41,7 +41,6 @@ alias mount_as_user='mount -o umask=0022,gid=$(id -g),uid=$(id -u)'
 alias temp='cat /sys/class/thermal/thermal_zone*/temp'
 alias qrdecode='zbarimg'
 alias qrencode='qrencode -t ASCIIi'
-alias uid='lazydocker'
 alias uig='nvim -c "tab Git"'
 alias screenshot='import $HOME/tmp/screenshot.png'
 
