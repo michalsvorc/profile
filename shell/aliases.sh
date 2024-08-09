@@ -44,6 +44,9 @@ alias qrencode='qrencode -t ASCIIi'
 alias uig='nvim -c "tab Git"'
 alias screenshot='import $HOME/tmp/screenshot.png'
 
-## NPM
+# NPM
 alias npr='npm run'
 alias npi='npm install'
+
+# TypeScript
+alias tscheck='npx tsc --noEmit'
