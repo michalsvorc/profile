@@ -64,3 +64,4 @@ export B_CONFIG_NVIM="${XDG_CONFIG_HOME}/nvim"
 
 # Command to run when fzf is executed without any arguments
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_DEFAULT_OPTS='--multi'
