@@ -121,3 +121,10 @@ source "${plugins_dir}/zsh/fzf-tab/fzf-tab.plugin.zsh"
 #===============================================================================
 
 source "${plugins_dir}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+
+#===============================================================================
+# fzf utilities
+#===============================================================================
+
+source "${shell_dir}/fzf/fzf-rg.sh"
+source "${shell_dir}/fzf/fzf-fd.sh"

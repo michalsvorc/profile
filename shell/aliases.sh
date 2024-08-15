@@ -33,6 +33,8 @@ alias t='tmux -u2'
 
 alias aws_prompt='aws --cli-auto-prompt'
 alias ftp='ncftp'
+alias fzf-bat='fzf --preview="bat --style=numbers --color=always --line-range :500 {}"'
+alias fzf-ll='fzf --preview="eza --all --git --group --group-directories-first --icons --long --time-style=long-iso {}"'
 alias ll='eza --all --git --group --group-directories-first --icons --long --time-style=long-iso'
 alias mount-as-user='mount -o umask=0022,gid=$(id -g),uid=$(id -u)'
 alias temp='cat /sys/class/thermal/thermal_zone*/temp'
