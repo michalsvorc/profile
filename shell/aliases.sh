@@ -23,9 +23,6 @@ alias emerge='sudo emerge'
 alias eselect='sudo eselect'
 alias rc-service='sudo rc-service'
 
-# OpenRC services
-alias docker_start='rc-service docker start'
-
 # Use simple editor for sensitive commands
 alias pass='EDITOR=$EDITOR_SIMPLE pass'
 
