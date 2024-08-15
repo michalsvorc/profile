@@ -4,17 +4,21 @@
 #
 # Dependencies: cat
 #===============================================================================
+
 cdanc() {
   cmd="cat"
-    [[ $1 == -r ]] && { cmd=tac; shift; }
-    occ=1
-    [[ $2 =~ ^[0-9]+$ ]] && occ=$2
+  [[ $1 == -r ]] && {
+    cmd=tac
+    shift
+  }
+  occ=1
+  [[ $2 =~ ^[0-9]+$ ]] && occ=$2
 
-    p="${PWD}"
-    cd "$(
-        while [[ $p != "${HOME}" ]]; do
-            p=${p%/*}
-            echo "${p}"
-        done | grep -E "$1[^/]*$" | $cmd | sed -ne "${occ}p"
-    )" || return
+  p="${PWD}"
+  cd "$(
+    while [[ $p != "${HOME}" ]]; do
+      p=${p%/*}
+      echo "${p}"
+    done | grep -E "$1[^/]*$" | $cmd | sed -ne "${occ}p"
+  )" || return
 }

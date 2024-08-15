@@ -19,9 +19,10 @@
 
 ttl_default='3h'
 agent_env_file='ssh-agent.env'
-runtime_dir=$([[ "$XDG_RUNTIME_DIR" ]] \
-  && echo "$XDG_RUNTIME_DIR" \
-  || echo "/tmp/$UID" \
+runtime_dir=$(
+  [[ "$XDG_RUNTIME_DIR" ]] &&
+    echo "$XDG_RUNTIME_DIR" ||
+    echo "/tmp/$UID"
 )
 filepath="${runtime_dir}/${agent_env_file}"
 
@@ -33,8 +34,8 @@ ttl="${1:-$ttl_default}"
 
 [[ ! -d "$runtime_dir" ]] && mkdir -p "$runtime_dir"
 
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-  ssh-agent -t "$ttl" > "${filepath}"
+if ! pgrep -u "$USER" ssh-agent >/dev/null; then
+  ssh-agent -t "$ttl" >"${filepath}"
 fi
 
 if [[ -z "$SSH_AUTH_SOCK" && -f "${filepath}" ]]; then
