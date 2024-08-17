@@ -32,6 +32,7 @@ source "${shell_dir}/aliases.sh"
 
 typeset -U PATH path
 path=("$DIR_BIN_HOME" "${path[@]}")
+path=("$HOME/.cargo/bin/" "${path[@]}")
 export PATH
 
 #===============================================================================
