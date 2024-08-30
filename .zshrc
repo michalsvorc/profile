@@ -129,3 +129,9 @@ source "${plugins_dir}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugi
 
 source "${shell_dir}/fzf/fzf-rg.sh"
 source "${shell_dir}/fzf/fzf-fd.sh"
+
+#===============================================================================
+# git utilities
+#===============================================================================
+
+source "${shell_dir}/git/remote-branches.sh"
