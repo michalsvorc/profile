@@ -29,3 +29,9 @@ source='https://raw.githubusercontent.com/git/git/master/contrib/completion/git-
 target="${plugins_dir}/git/$(basename $source)"
 
 download_script "$source" "$target"
+
+#===============================================================================
+# Git submodules
+#===============================================================================
+
+git submodule update --remote --merge
