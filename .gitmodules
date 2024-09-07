@@ -1,24 +1,24 @@
 [submodule "plugins/tmux/tmux-fuzzback"]
-	path = plugins/tmux/tmux-fuzzback
-	url = https://github.com/roosta/tmux-fuzzback.git
+  path = plugins/tmux/tmux-fuzzback
+  url = https://github.com/roosta/tmux-fuzzback.git
 [submodule "plugins/tmux/tmux-menus"]
-	path = plugins/tmux/tmux-menus
-	url = https://github.com/jaclu/tmux-menus.git
+  path = plugins/tmux/tmux-menus
+  url = https://github.com/jaclu/tmux-menus.git
 [submodule "plugins/tmux/tmux-open"]
-	path = plugins/tmux/tmux-open
-	url = https://github.com/tmux-plugins/tmux-open
+  path = plugins/tmux/tmux-open
+  url = https://github.com/tmux-plugins/tmux-open
 [submodule "plugins/tmux/tmux-resurrect"]
-	path = plugins/tmux/tmux-resurrect
-	url = https://github.com/tmux-plugins/tmux-resurrect.git
+  path = plugins/tmux/tmux-resurrect
+  url = https://github.com/tmux-plugins/tmux-resurrect.git
 [submodule "plugins/tmux/tmux-sensible"]
-	path = plugins/tmux/tmux-sensible
-	url = https://github.com/tmux-plugins/tmux-sensible.git
+  path = plugins/tmux/tmux-sensible
+  url = https://github.com/tmux-plugins/tmux-sensible.git
 [submodule "plugins/zsh/fzf-tab"]
-	path = plugins/zsh/fzf-tab
-	url = https://github.com/Aloxaf/fzf-tab.git
+  path = plugins/zsh/fzf-tab
+  url = https://github.com/Aloxaf/fzf-tab.git
 [submodule "plugins/zsh/zsh-syntax-highlighting"]
-	path = plugins/zsh/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+  path = plugins/zsh/zsh-syntax-highlighting
+  url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "plugins/zsh/zsh-vi-mode"]
-	path = plugins/zsh/zsh-vi-mode
-	url = https://github.com/jeffreytse/zsh-vi-mode.git
+  path = plugins/zsh/zsh-vi-mode
+  url = https://github.com/jeffreytse/zsh-vi-mode.git
