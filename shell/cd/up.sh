@@ -1,10 +1,25 @@
 #===============================================================================
-# Change into multiple parent directories
+# Change directory to one of the searchable parent directory.
+# https://www.reddit.com/r/commandline/comments/1cbj6sg/simple_cli_utility_to_cd_to_a_particular_ancestor/
 #
-# Dependencies: fzf, sed
+# Dependencies: cat, fzf, grep
 #===============================================================================
 
-cdup() {
-  local -r n_dirs="${1:-1}"
-  cd "$(printf "%0.s../" $(seq 1 "$n_dirs"))" || return
+cd-up() {
+  local cmd="cat"
+  if [[ $1 == "-r" ]]; then
+    cmd="tac"
+    shift
+  fi
+
+  local p="${PWD}"
+
+  local target_dir=$(while [[ $p != "${HOME}" ]]; do
+    p=${p%/*}
+    echo "${p}"
+  done | grep -E "$1[^/]*$" | $cmd | fzf --reverse --inline-info)
+
+  if [[ -n "$target_dir" ]]; then
+    cd "$target_dir" || return
+  fi
 }

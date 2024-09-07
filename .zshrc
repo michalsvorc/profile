@@ -91,13 +91,6 @@ source "${plugins_dir}/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 source "${shell_dir}/ssh_agent.sh"
 
 #===============================================================================
-# Change directory functions
-#===============================================================================
-
-source "${shell_dir}/cd/ancestor.sh"
-source "${shell_dir}/cd/up.sh"
-
-#===============================================================================
 # Completions
 # You may have to force rebuild zcompdump after adding a completion file:
 # $ rm -f ~/.zcompdump; compinit
@@ -124,14 +117,15 @@ source "${plugins_dir}/zsh/fzf-tab/fzf-tab.plugin.zsh"
 source "${plugins_dir}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 
 #===============================================================================
-# fzf utilities
+# Utilities
 #===============================================================================
 
+# change directory
+source "${shell_dir}/cd/up.sh"
+
+# fzf
 source "${shell_dir}/fzf/fzf-rg.sh"
 source "${shell_dir}/fzf/fzf-fd.sh"
 
-#===============================================================================
-# git utilities
-#===============================================================================
-
+# git
 source "${shell_dir}/git/remote.sh"
