@@ -134,4 +134,4 @@ source "${shell_dir}/fzf/fzf-fd.sh"
 # git utilities
 #===============================================================================
 
-source "${shell_dir}/git/remote-branches.sh"
+source "${shell_dir}/git/remote.sh"
