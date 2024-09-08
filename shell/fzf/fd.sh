@@ -3,6 +3,7 @@
 #
 # https://github.com/junegunn/fzf/blob/master/ADVANCED.md
 #===============================================================================
+
 fzf-fd() {
   fd --type file |
     fzf --prompt 'Files> ' \
@@ -11,5 +12,5 @@ fzf-fd() {
               echo "change-prompt(Files> )+reload(fd --type file)" ||
               echo "change-prompt(Directories> )+reload(fd --type directory)"' \
       --bind 'ctrl-o:become($EDITOR {})' \
-      --preview '[[ $FZF_PROMPT =~ Files ]] && bat --color=always {} || eza --all --git --group --group-directories-first --icons --long --time-style=long-iso {}'
+      --preview '[[ $FZF_PROMPT =~ Files ]] && $CMD_PAGER {} || $CMD_LIST_DIR {}'
 }

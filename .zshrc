@@ -104,9 +104,13 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots) # Include hidden files.
 
-# Replace default completion selection menu with fzf
-# Link: https://github.com/Aloxaf/fzf-tab
-source "${plugins_dir}/zsh/fzf-tab/fzf-tab.plugin.zsh"
+#===============================================================================
+# fzf tab completion
+# https://github.com/lincheney/fzf-tab-completion
+#===============================================================================
+
+source "${plugins_dir}/zsh/fzf-tab-completion/zsh/fzf-zsh-completion.sh"
+bindkey '^I' fzf_completion
 
 #===============================================================================
 # Syntax higlighting
@@ -124,8 +128,9 @@ source "${plugins_dir}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugi
 source "${shell_dir}/cd/up.sh"
 
 # fzf
-source "${shell_dir}/fzf/fzf-rg.sh"
-source "${shell_dir}/fzf/fzf-fd.sh"
+source "${shell_dir}/fzf/rg.sh"
+source "${shell_dir}/fzf/fd.sh"
+source "${shell_dir}/fzf/tab-completion.sh"
 
 # git
 source "${shell_dir}/git/remote.sh"

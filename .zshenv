@@ -66,9 +66,23 @@ export CMD_LIST_DIR='eza --all --git --group --group-directories-first --icons -
 export CMD_PAGER='bat --plain --color=always'
 
 #===============================================================================
+# Clipboard
+#===============================================================================
+
+if [[ "$(uname)" == "Darwin" ]]; then
+  export CLIPBOARD_CMD="pbcopy"
+else
+  export CLIPBOARD_CMD="xclip -selection clipboard"
+fi
+
+#===============================================================================
 # fzf
 #===============================================================================
 
-# Command to run when fzf is executed without any arguments
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
-export FZF_DEFAULT_OPTS='--multi'
+
+# https://github.com/lincheney/fzf-tab-completion?tab=readme-ov-file#--tiebreakchunk
+export FZF_COMPLETION_OPTS='--tiebreak=chunk'
+
+export FZF_DEFAULT_OPTS="--bind='ctrl-y:execute-silent(echo {} | tr -d '\n' | ${CLIPBOARD_CMD})'"
+export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --multi"

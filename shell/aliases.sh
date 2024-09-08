@@ -34,8 +34,6 @@ alias t='tmux -u2'
 alias aws_prompt='aws --cli-auto-prompt'
 alias fe="nvim -c \"lua require('oil').open()\""
 alias ftp='ncftp'
-alias fzf-bat='fzf --preview="bat --style=numbers --color=always --line-range :500 {}"'
-alias fzf-ll='fzf --preview="eza --all --git --group --group-directories-first --icons --long --time-style=long-iso {}"'
 alias gi="git-client"
 alias ll="$CMD_LIST_DIR"
 alias mount-as-user='mount -o umask=0022,gid=$(id -g),uid=$(id -u)'

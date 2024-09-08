@@ -13,12 +13,12 @@
 [submodule "plugins/tmux/tmux-sensible"]
   path = plugins/tmux/tmux-sensible
   url = https://github.com/tmux-plugins/tmux-sensible.git
-[submodule "plugins/zsh/fzf-tab"]
-  path = plugins/zsh/fzf-tab
-  url = https://github.com/Aloxaf/fzf-tab.git
 [submodule "plugins/zsh/zsh-syntax-highlighting"]
   path = plugins/zsh/zsh-syntax-highlighting
   url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "plugins/zsh/zsh-vi-mode"]
   path = plugins/zsh/zsh-vi-mode
   url = https://github.com/jeffreytse/zsh-vi-mode.git
+[submodule "plugins/zsh/fzf-tab-completion"]
+  path = plugins/zsh/fzf-tab-completion
+  url = https://github.com/lincheney/fzf-tab-completion
