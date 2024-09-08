@@ -91,5 +91,6 @@ export FZF_COMPLETION_OPTS='--tiebreak=chunk'
 export FZF_DEFAULT_OPTS="
   --bind 'ctrl-j:down,ctrl-k:up'
   --bind='ctrl-y:execute-silent(echo {} | tr -d "\n\t" | xargs | ${CMD_CLIPBOARD})'
+  --height=80%
   --multi
 "
