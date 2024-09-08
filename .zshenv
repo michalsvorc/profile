@@ -81,8 +81,15 @@ fi
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 
+# Set FZF completion options to prioritize larger file chunks when multiple results are equally ranked
 # https://github.com/lincheney/fzf-tab-completion?tab=readme-ov-file#--tiebreakchunk
 export FZF_COMPLETION_OPTS='--tiebreak=chunk'
 
-export FZF_DEFAULT_OPTS="--bind='ctrl-y:execute-silent(echo {} | tr -d '\n' | ${CMD_CLIPBOARD})'"
-export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --multi"
+# Vim navigation in results
+# Copy to clipboard
+# Enable multiple results to be selected
+export FZF_DEFAULT_OPTS="
+  --bind 'ctrl-j:down,ctrl-k:up'
+  --bind='ctrl-y:execute-silent(echo {} | tr -d "\n\t" | xargs | ${CMD_CLIPBOARD})'
+  --multi
+"
