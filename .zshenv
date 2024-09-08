@@ -70,9 +70,9 @@ export CMD_PAGER='bat --plain --color=always'
 #===============================================================================
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  export CLIPBOARD_CMD="pbcopy"
+  export CMD_CLIPBOARD="pbcopy"
 else
-  export CLIPBOARD_CMD="xclip -selection clipboard"
+  export CMD_CLIPBOARD="xclip -selection clipboard"
 fi
 
 #===============================================================================
@@ -84,5 +84,5 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 # https://github.com/lincheney/fzf-tab-completion?tab=readme-ov-file#--tiebreakchunk
 export FZF_COMPLETION_OPTS='--tiebreak=chunk'
 
-export FZF_DEFAULT_OPTS="--bind='ctrl-y:execute-silent(echo {} | tr -d '\n' | ${CLIPBOARD_CMD})'"
+export FZF_DEFAULT_OPTS="--bind='ctrl-y:execute-silent(echo {} | tr -d '\n' | ${CMD_CLIPBOARD})'"
 export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --multi"
