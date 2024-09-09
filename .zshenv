@@ -94,4 +94,5 @@ export FZF_DEFAULT_OPTS="
   --bind='ctrl-y:execute-silent(echo {} | tr -d "\n\t" | xargs | ${CMD_CLIPBOARD})'
   --height=80%
   --multi
+  --cycle
 "
