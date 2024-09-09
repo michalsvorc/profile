@@ -32,11 +32,17 @@ See [git submodules](.gitmodules) for the full list.
 Clone with submodules flag:
 
 ```shell
-git clone --recurse-submodules
+git clone --recurse-submodules https://github.com/michalsvorc/profile.git "$HOME/.local/profile"
 ```
 
-Run initialization script:
+Run the initialization script:
 
 ```shell
-./scripts/init.sh
+$HOME/.local/profile/scripts/init.sh
+```
+
+Update with:
+
+```shell
+$HOME/.local/profile/scripts/update.sh
 ```
