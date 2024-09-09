@@ -89,6 +89,7 @@ export FZF_COMPLETION_OPTS='--tiebreak=chunk'
 # Copy to clipboard
 # Enable multiple results to be selected
 export FZF_DEFAULT_OPTS="
+  --bind 'tab:down,shift-tab:up,ctrl-space:toggle+down'
   --bind 'ctrl-j:down,ctrl-k:up'
   --bind='ctrl-y:execute-silent(echo {} | tr -d "\n\t" | xargs | ${CMD_CLIPBOARD})'
   --height=80%
