@@ -46,3 +46,13 @@ Update with:
 ```shell
 $HOME/.local/profile/scripts/update.sh
 ```
+
+## Troubleshooting
+
+### fzf tab completion not working on MacOS
+
+https://github.com/lincheney/fzf-tab-completion/issues/37
+
+```shell
+brew install gawk
+```
