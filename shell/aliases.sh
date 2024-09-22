@@ -4,7 +4,6 @@
 
 # Options
 alias bat="$CMD_PAGER"
-alias ls='ls -alF'
 alias xclip-c='xclip -selection c'
 
 # Sudo
