@@ -10,7 +10,9 @@ preview_dynamic="[[ -d {2} ]] && ${preview_dir} || ([[ -f {2} ]] && eval ${previ
 zstyle ':completion::*:bat::*' fzf-completion-opts --preview="${preview_dynamic}"
 zstyle ':completion::*:cp::*' fzf-completion-opts --preview="${preview_dynamic}"
 zstyle ':completion::*:cd::*' fzf-completion-opts --preview="${preview_dir}"
+zstyle ':completion::*:eza::*' fzf-completion-opts --preview="${preview_dir}"
 zstyle ':completion::*:git::git,add,*' fzf-completion-opts --preview='git -c color.status=always status --short'
+zstyle ':completion::*:ls::*' fzf-completion-opts --preview="${preview_dir}"
 zstyle ':completion::*:nvim::*' fzf-completion-opts --preview="${preview_dynamic}"
 zstyle ':completion::*:mv::*' fzf-completion-opts --preview="${preview_dynamic}"
 zstyle ':completion::*:rm::*' fzf-completion-opts --preview="${preview_dynamic}"
