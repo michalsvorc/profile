@@ -43,21 +43,6 @@ autoload -U colors && colors
 export PS1='%F{blue}%~%f $ '
 
 #===============================================================================
-# Git prompt integration
-# Link: https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
-#===============================================================================
-
-setopt PROMPT_SUBST
-source "${plugins_dir}/git/git-prompt.sh"
-
-GIT_PROMPT='$(__git_ps1 "(%s) ")'
-export GIT_PS1_SHOWCOLORHINTS=true
-export GIT_PS1_SHOWDIRTYSTATE=true
-export GIT_PS1_SHOWUNTRACKEDFILES=true
-export GIT_PS1_SHOWUPSTREAM="auto"
-export PS1="${PS1}${GIT_PROMPT}"
-
-#===============================================================================
 # Virtual environment prompt prefix
 #===============================================================================
 

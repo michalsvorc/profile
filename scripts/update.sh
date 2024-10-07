@@ -21,16 +21,6 @@ download_script() {
 }
 
 #===============================================================================
-# Git prompt
-# https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
-#===============================================================================
-
-source='https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh'
-target="${plugins_dir}/git/$(basename $source)"
-
-download_script "$source" "$target"
-
-#===============================================================================
 # Git submodules
 #===============================================================================
 
