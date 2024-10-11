@@ -15,7 +15,7 @@
   d  = difftool
   cc = checkout
   cm = commit
-  l  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr: %cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=iso
+  l  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr: %cd) %C(bold blue)<%ae>%Creset' --abbrev-commit --date=iso
   s  = status -s
 
 #===============================================================================
