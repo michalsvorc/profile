@@ -46,9 +46,9 @@ export PS1='%F{blue}%~%f $ '
 # Virtual environment prompt prefix
 #===============================================================================
 
-if [[ -f '/.dockerenv' ]]; then
-  VIRTUAL_ENV_PREFIX='%{$fg[yellow]%}V%{$reset_color%} '
-  export PS1="${VIRTUAL_ENV_PREFIX}${PS1}"
+if [[ -n "$VIRTUAL_ENV" ]]; then
+    virtual_env_prefix='%F{yellow}v%f'
+    export PS1="${virtual_env_prefix} ${PS1}"
 fi
 
 #===============================================================================
