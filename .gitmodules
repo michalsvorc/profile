@@ -22,3 +22,6 @@
 [submodule "plugins/zsh/fzf-tab-completion"]
   path = plugins/zsh/fzf-tab-completion
   url = https://github.com/lincheney/fzf-tab-completion
+[submodule "plugins/git/git-prompt.zsh"]
+  path = plugins/git/git-prompt.zsh
+  url = https://github.com/michalsvorc/git-prompt.zsh.git

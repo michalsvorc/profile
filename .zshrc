@@ -40,7 +40,16 @@ export PATH
 #===============================================================================
 
 autoload -U colors && colors
-export PS1='%F{blue}%~%f $ '
+export PS1='%F{blue}%~%f $'
+
+#===============================================================================
+# Git prompt
+# https://github.com/michalsvorc/git-prompt.zsh
+#===============================================================================
+
+GIT_PROMPT='$(gitprompt)'
+export PS1="${PS1} ${GIT_PROMPT}"
+source "${plugins_dir}/git/git-prompt.zsh/git-prompt.zsh"
 
 #===============================================================================
 # Virtual environment prompt prefix
