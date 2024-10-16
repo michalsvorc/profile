@@ -79,7 +79,7 @@ source "${plugins_dir}/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 
 #===============================================================================
 # SSH agent
-# Link: https://wiki.archlinux.org/title/SSH_keys#SSH_agents
+# https://wiki.archlinux.org/title/SSH_keys#SSH_agents
 #===============================================================================
 
 source "${shell_dir}/ssh_agent.sh"
@@ -109,7 +109,7 @@ bindkey '^I' fzf_completion
 #===============================================================================
 # Syntax higlighting
 # Must be sourced at the end of the .zshrc file.
-# Link: https://github.com/zsh-users/zsh-syntax-highlighting
+# https://github.com/zsh-users/zsh-syntax-highlighting
 #===============================================================================
 
 source "${plugins_dir}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
