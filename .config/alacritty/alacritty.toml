@@ -1,11 +1,11 @@
 # https://alacritty.org/config-alacritty.html
 
-import = [
+general.import = [
     "~/.config/alacritty/theme.toml",
     "~/.config/alacritty/font.toml"
 ]
 
-[shell]
+[terminal.shell]
 args = ["--login"]
 program = "/bin/zsh"
 
