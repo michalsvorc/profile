@@ -15,8 +15,7 @@ hiss() {
   eval "$(
     history 1 |
       fzf +s --tac \
-        --bind="ctrl-c:execute-silent(echo {} | sed 's/ *[0-9]* *//' | tr -d '\n' | $clipboard_command)" \
-        --header='CTRL-C to copy to clipboard, ENTER to execute' |
+        --bind="ctrl-y:execute-silent(echo {} | sed 's/ *[0-9]* *//' | tr -d '\n' | $clipboard_command)" |
       sed 's/ *[0-9]* *//'
   )"
 }
