@@ -129,3 +129,6 @@ source "${shell_dir}/fzf/tab-completion.sh"
 # git
 source "${shell_dir}/git/remote.sh"
 source "${shell_dir}/git/client.sh"
+
+# processes
+source "${shell_dir}/killport.sh"
