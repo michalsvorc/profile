@@ -8,6 +8,8 @@ alias xclip-c='xclip -selection c'
 
 # Sudo
 alias cryptsetup='sudo cryptsetup'
+alias eject='sudo eject'
+alias make='sudo make'
 alias mount='sudo mount'
 alias poweroff='sudo poweroff'
 alias reboot='sudo reboot'
