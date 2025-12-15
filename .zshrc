@@ -10,7 +10,7 @@
 # Keep in .zshrc to override default system editor
 export EDITOR='nvim'
 export VISUAL="$EDITOR"
-export EDITOR_SIMPLE='nvim --clean'
+export SUDO_EDITOR='nvim --noplugin'
 
 #===============================================================================
 # Variables

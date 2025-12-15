@@ -23,8 +23,8 @@ alias emerge='sudo emerge'
 alias eselect='sudo eselect'
 alias rc-service='sudo rc-service'
 
-# Use simple editor for sensitive commands
-alias pass='EDITOR=$EDITOR_SIMPLE pass'
+# Editor for sensitive commands
+alias pass='EDITOR=$SUDO_EDITOR pass'
 
 # Custom
 alias e="$EDITOR"
