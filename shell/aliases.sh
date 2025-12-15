@@ -14,6 +14,7 @@ alias mount='sudo mount'
 alias poweroff='sudo poweroff'
 alias reboot='sudo reboot'
 alias umount='sudo umount'
+alias eject='sudo eject'
 
 ## Gentoo sudo
 alias dispatch-conf='sudo dispatch-conf'
