@@ -132,3 +132,7 @@ source "${shell_dir}/git/client.sh"
 
 # processes
 source "${shell_dir}/killport.sh"
+
+# aichat
+source "${shell_dir}/aichat/integration.sh"
+source "${shell_dir}/aichat/completion.sh"
