@@ -11,12 +11,17 @@
 #===============================================================================
 
 [alias]
-  c  = clone
-  d  = difftool
+  c  = commit
   cc = checkout
-  cm = commit
+  cl = clone
+  d  = diff
+  ds = diff --staged
+  dt = difftool
   l  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr: %cd) %C(bold blue)<%ae>%Creset' --abbrev-commit --date=iso
-  s  = status -s
+  r  = restore
+  rs = restore --staged
+  s  = status --short
+  sw = switch
 
 #===============================================================================
 # Main
