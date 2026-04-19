@@ -28,8 +28,8 @@
 #===============================================================================
 
 [core]
-  pager = bat --plain
-  editor = $EDITOR
+  pager = bat --style=plain --paging=never --language=diff
+  editor = nvim
 
 [init]
   defaultBranch = main
@@ -50,6 +50,19 @@
 [diff]
   tool = nvim_diff
   colorMoved = default
+  colorMoved = zebra
+  colorMovedWS = allow-indentation-change
+  algorithm = histogram
+  indentHeuristic = true
+  context = 5
+  interHunkContext = 3
+  compactionHeuristic = true
+  renameLimit = 9999
+  wordRegex = [^[:space:]]+
+
+[color "diff"]
+  oldMoved = red bold
+  newMoved = green bold
 
 [difftool]
   prompt = false
@@ -69,6 +82,7 @@
 [mergetool]
   prompt = false
   keepBackup = false
+  trustExitCode = false
 
 [mergetool "nvim_merge"]
   cmd = nvim -d "$LOCAL" "$REMOTE" "$MERGED"

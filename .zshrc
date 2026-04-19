@@ -11,6 +11,7 @@
 export EDITOR='nvim'
 export VISUAL="$EDITOR"
 export SUDO_EDITOR='nvim --noplugin'
+export GIT_EDITOR="$EDITOR"
 
 #===============================================================================
 # Variables
