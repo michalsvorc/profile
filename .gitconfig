@@ -18,6 +18,7 @@
   ds = diff --staged
   dt = difftool
   l  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr: %cd) %C(bold blue)<%ae>%Creset' --abbrev-commit --date=iso
+  ll = log --date=iso --patch --ext-diff
   r  = restore
   rs = restore --staged
   s  = status --short
