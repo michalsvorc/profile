@@ -52,7 +52,6 @@
   external = difft
   tool = nvim
   colorMoved = default
-  colorMoved = zebra
   colorMovedWS = allow-indentation-change
   algorithm = histogram
   indentHeuristic = true
