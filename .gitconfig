@@ -49,7 +49,6 @@
 #===============================================================================
 
 [diff]
-  external = difft
   tool = nvim
   colorMoved = default
   colorMovedWS = allow-indentation-change
@@ -73,10 +72,6 @@
 # :help DiffTool
 [difftool "nvim"]
   cmd = nvim -c \"packadd nvim.difftool\" -d \"$LOCAL\" \"$REMOTE\"
-
-# https://difftastic.wilfred.me.uk/git.html#difftool
-[difftool "difftastic"]
-    cmd = difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
 
 #===============================================================================
 # Merge
