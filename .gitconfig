@@ -11,11 +11,14 @@
 #===============================================================================
 
 [alias]
-  cm  = commit
+  cm = commit
   cc = checkout
   cl = clone
-  dd = difftool
-  l  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr: %cd) %C(bold blue)<%ae>%Creset' --abbrev-commit --date=iso
+  d  = diff
+  dt = difftool
+  l  = log --graph --all --oneline --decorate -15
+  ll = log --graph --all --decorate=short --date=iso-strict \
+    --pretty=format:'%Cred%h%Creset %C(auto)%d%Creset %s %Cgreen%ar | %ad%Creset %Cblue<%ae>%Creset'
   r  = restore
   rs = restore --staged
   s  = status --short
@@ -23,10 +26,9 @@
 
   # Difftastic
   # https://difftastic.wilfred.me.uk/git.html
-  d  = -c diff.external=difft diff
-  ds = -c diff.external=difft diff --staged
-  ll = -c diff.external=difft log --patch --ext-diff
-  ss  = -c diff.external=difft show --ext-diff
+  dd = -c diff.external=difft diff
+  ds = -c diff.external=difft show --ext-diff
+  dl = -c diff.external=difft log --patch --ext-diff
 
 #===============================================================================
 # Main
