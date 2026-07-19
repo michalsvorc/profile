@@ -31,10 +31,13 @@ source "${shell_dir}/aliases.sh"
 # PATH
 #===============================================================================
 
-typeset -U PATH path
-path=("$DIR_BIN_HOME" "${path[@]}")
-path=("$HOME/.cargo/bin/" "${path[@]}")
-export PATH
+typeset -U path PATH
+
+path=(
+  "$HOME/.local/bin"
+  "$HOME/.cargo/bin"
+  $path
+)
 
 #===============================================================================
 # Command prompt
