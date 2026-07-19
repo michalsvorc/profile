@@ -24,6 +24,10 @@
   s  = status --short
   sw = switch
 
+  # Destructive aliases
+  xr = "!f() { read -p \"Reset hard [y/N] \" r; [[ \"$r\" == \"y\" ]] && git reset --hard; }; f"
+  xc = "!f() { read -p \"Clean force [y/N] \" r; [[ \"$r\" == \"y\" ]] && git clean --force; }; f"
+
   # Difftastic
   # https://difftastic.wilfred.me.uk/git.html
   dd = -c diff.external=difft diff
