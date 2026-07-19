@@ -33,7 +33,7 @@
 #===============================================================================
 
 [core]
-  pager = bat --style=plain --paging=never --language=diff
+  pager = less -RFX
   editor = nvim
 
 [init]
