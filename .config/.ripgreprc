@@ -1,0 +1,11 @@
+--hidden
+--smart-case
+
+--glob
+!**/.git/**
+--glob
+!**/node_modules/**
+--glob
+!**/__pycache__/**
+--glob
+!**/coverage/**
