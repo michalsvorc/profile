@@ -16,9 +16,12 @@
   cl = clone
   d  = diff
   dt = difftool
-  l  = log --graph --all --oneline --decorate -15
-  ll = log --graph --all --decorate=short --date=iso-strict \
-    --pretty=format:'%Cred%h%Creset %C(auto)%d%Creset %s %Cgreen%ar | %ad%Creset %Cblue<%ae>%Creset'
+  l  = log --graph --decorate=short --date=iso-strict \
+    --pretty=format:'%Cred%h%Creset %C(auto)%d%Creset %s %Cgreen%ar%Creset' \
+    -15
+  ll = log --graph --decorate=short --date=iso-strict \
+    --pretty=format:'%Cred%h%Creset %C(auto)%d%Creset %s %Cgreen%ar | %ad%Creset %Cblue<%ae>%Creset' \
+    -50
   r  = restore
   rs = restore --staged
   s  = status --short
