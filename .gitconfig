@@ -14,7 +14,6 @@
   cm = commit
   cc = checkout
   cl = clone
-  d  = diff
   dt = difftool
   l  = log --graph --decorate=short --date=iso-strict \
     --pretty=format:'%Cred%h%Creset %C(auto)%d%Creset %s %Cgreen%ar%Creset' \
@@ -33,9 +32,9 @@
 
   # Difftastic
   # https://difftastic.wilfred.me.uk/git.html
-  dd = -c diff.external=difft diff
+  d  = -c diff.external=difft diff
   ds = -c diff.external=difft show --ext-diff
-  dl = -c diff.external=difft log --patch --ext-diff
+  dl = -c diff.external=difft log --ext-diff --patch
 
 #===============================================================================
 # Main
