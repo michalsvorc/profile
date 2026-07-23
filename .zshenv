@@ -62,7 +62,12 @@ export B_CONFIG_NVIM="${XDG_CONFIG_HOME}/nvim"
 # Default commands
 #===============================================================================
 
-export CMD_LIST_DIR='eza --all --git --group --group-directories-first --icons --long --time-style=long-iso --color=always'
+export CMD_LIST_DIR='eza \
+  --all \
+  --group \
+  --group-directories-first \
+  --icons --long --time-style=long-iso \
+  --color=auto'
 export CMD_PAGER='bat --plain --color=always'
 
 #===============================================================================
