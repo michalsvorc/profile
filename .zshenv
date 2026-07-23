@@ -91,7 +91,8 @@ export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"
 # fzf
 #===============================================================================
 
-export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+# Command to supply fzf with a file list of files when no stdin is provided
+export FZF_DEFAULT_COMMAND='rg --files'
 
 # Set FZF completion options to prioritize larger file chunks when multiple results are equally ranked
 # https://github.com/lincheney/fzf-tab-completion?tab=readme-ov-file#--tiebreakchunk
