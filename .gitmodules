@@ -1,6 +1,3 @@
-[submodule "plugins/tmux/tmux-fuzzback"]
-  path = plugins/tmux/tmux-fuzzback
-  url = https://github.com/roosta/tmux-fuzzback.git
 [submodule "plugins/tmux/tmux-menus"]
   path = plugins/tmux/tmux-menus
   url = https://github.com/jaclu/tmux-menus.git
