@@ -1,9 +1,6 @@
 [submodule "plugins/tmux/tmux-menus"]
   path = plugins/tmux/tmux-menus
   url = https://github.com/jaclu/tmux-menus.git
-[submodule "plugins/tmux/tmux-open"]
-  path = plugins/tmux/tmux-open
-  url = https://github.com/tmux-plugins/tmux-open
 [submodule "plugins/tmux/tmux-resurrect"]
   path = plugins/tmux/tmux-resurrect
   url = https://github.com/tmux-plugins/tmux-resurrect.git
