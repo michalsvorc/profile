@@ -1,0 +1,5 @@
+# Reference: https://github.com/jonas/tig/blob/tig-2.6.1/tigrc
+
+source ~/.config/tig/colorscheme.tigrc
+source ~/.config/tig/view.tigrc
+source ~/.config/tig/vim.tigrc
